@@ -63,7 +63,7 @@
 - [ ] [Equivalent Deformation](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1623&lang=jp)
 - [ ] [Magic Triangles](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2908)
 - [ ] [Making Perimeter of the Convex Hull Shortest](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1381)
-- [ ] [? Tiny Room](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2852)
+- [ ] [Tiny Room](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2852) (幾何？)
 - [ ] [NINJA GAME](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2888&lang=jp)
 
 ### geocon2013 - AtCoder
@@ -72,7 +72,7 @@
 問題読んだけどヤバそう
 
 ### Codeforces
-- [ ] [problem set geometry tag](http://codeforces.com/problemset?tags=geometry)
+- [ ] [tag:geometry](http://codeforces.com/problemset?tags=geometry)
 
 ## Links
 [AOJ-ICPC 幾何問題集 - うさぎ小屋](https://kimiyuki.net/writeup/algo/aoj/icpc-geometry-problems/)
