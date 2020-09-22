@@ -69,6 +69,24 @@
 - [ ] [Twin Trees Bros.](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1403)
 - [ ] [Fun Region](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1409)
 
+### PCK
+
+手作業で集めた　ミスがあるかも
+
+- [ ] [Is it Convex?](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0035?year=2004)
+- [ ] [Treasure Hunt II](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0076?year=2005)
+- [ ] [Area of Polygon](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0079?year=2005) (?)
+- [ ] [A Symmetric Point](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0081?year=2005) (?)
+- [ ] [Overlaps of Seals](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0090?year=2005)
+- [ ] [Hide-and-Seek Supporting System](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0129?year=2006)
+- [ ] [Triangle and Circle](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0153?year=2007)
+- [ ] [UFO Shooting Down Operation](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0204?year=2009) (?)
+- [ ] [Cats Going Straight](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0265?year=2012)
+- [ ] [Happy End Problem](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0284?year=2013)
+- [ ] [Road Planning](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0342?year=2016)
+- [ ] [Points on a Straight Line](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0388?year=2018)
+- [ ] [Castle in the Sky](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Prelim/0412?year=2019)
+
 ### geocon2013 - AtCoder
 - [ ] [geocon2013](https://atcoder.jp/contests/geocon2013)
 
