@@ -63,8 +63,11 @@
 - [ ] [Equivalent Deformation](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1623&lang=jp)
 - [ ] [Magic Triangles](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2908)
 - [ ] [Making Perimeter of the Convex Hull Shortest](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1381)
-- [ ] [Tiny Room](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2852) (幾何？)
+- [ ] [Tiny Room](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2852) (?)
 - [ ] [NINJA GAME](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2888&lang=jp)
+- [ ] [Addition on Convex Polygons](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1639&lang=ja) (?)
+- [ ] [Twin Trees Bros.](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1403)
+- [ ] [Fun Region](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1409)
 
 ### geocon2013 - AtCoder
 - [ ] [geocon2013](https://atcoder.jp/contests/geocon2013)
