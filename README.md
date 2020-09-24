@@ -2,6 +2,10 @@
 
 # problem list
 
+### yosupo judge
+- [ ] [Sort Points by Argument](https://judge.yosupo.jp/problem/sort_points_by_argument)
+- [ ] [Convex Layers](https://judge.yosupo.jp/problem/convex_layers_)
+
 ## AOJ course
 - [ ] [CGL](https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all)
 
@@ -108,20 +112,14 @@
 - [ ] [Evening](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0356?year=2016)
 - [ ] [Lake Survey](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0375?year=2017)
 
-### geocon2013 - AtCoder
-- [ ] [geocon2013](https://atcoder.jp/contests/geocon2013)
-
-問題読んだけどヤバそう
-
-### Codeforces
-- [ ] [tag:geometry](http://codeforces.com/problemset?tags=geometry)
-
 ### yukicoder
 - [ ] [tag:幾何](https://yukicoder.me/problems?tags=%E5%B9%BE%E4%BD%95)
 
-### yosupo judge
-- [ ] [Sort Points by Argument](https://judge.yosupo.jp/problem/sort_points_by_argument)
-- [ ] [Convex Layers](https://judge.yosupo.jp/problem/convex_layers_)
+### geocon2013 - AtCoder
+- [ ] [geocon2013](https://atcoder.jp/contests/geocon2013)
+
+### Codeforces
+- [ ] [tag:geometry](http://codeforces.com/problemset?tags=geometry)
 
 ## Links
 [AOJ-ICPC 幾何問題集 - うさぎ小屋](https://kimiyuki.net/writeup/algo/aoj/icpc-geometry-problems/)
