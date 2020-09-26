@@ -112,6 +112,10 @@
 - [ ] [Evening](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0356?year=2016)
 - [ ] [Lake Survey](https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0375?year=2017)
 
+## Voluntary Programming Contest - AOJ
+
+- [ ] [Star Watching](https://onlinejudge.u-aizu.ac.jp/challenges/sources/VPC/UTPC/2210?year=2010)
+
 ## yukicoder
 - [ ] [tag:幾何](https://yukicoder.me/problems?tags=%E5%B9%BE%E4%BD%95)
 
