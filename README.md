@@ -13,10 +13,13 @@
 
 ### 350
 - [ ] [Railroad Conflict](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2003&lang=jp)
+- [ ] [And Then. How Many Are There?](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1175&lang=jp)
 
 ### 400
 - [ ] [Milky Way](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2402&lang=jp)
 - [ ] [Coin Slider](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2862)
+- [ ] [ConvexCut](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2442&lang=jp)
+- [ ] [Carrot Tour](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2233&lang=jp)
 
 ### 450
 - [ ] [Roll-A-Big-Ball](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1157&lang=jp)
