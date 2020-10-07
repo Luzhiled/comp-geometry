@@ -28,6 +28,7 @@
 
 ### 500
 - [ ] [Rose Garden Witch](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2310&lang=jp)
+- [ ] [Roads on Towns](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2334&lang=jp)
 - [ ] [Industrial Convex Pillar City](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2827&lang=jp)
 
 ### 550
