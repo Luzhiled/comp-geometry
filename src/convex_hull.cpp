@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#pragma once
+
 #include "./point.cpp"
 #include "./polygon.cpp"
 #include "./compare.cpp"

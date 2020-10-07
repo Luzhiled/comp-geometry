@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#pragma once
+
 #include "./base.cpp"
 #include "./point.cpp"
 #include "./segment.cpp"

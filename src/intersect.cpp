@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#pragma once
+
 #include "../segment.cpp"
 #include "../ccw.cpp"
 

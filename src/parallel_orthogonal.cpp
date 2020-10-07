@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#pragma once
+
 #include "./base.cpp"
 #include "./line.cpp"
 #include "./angle.cpp"

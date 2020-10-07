@@ -2,6 +2,7 @@
 using namespace std;
 
 #pragma once
+
 #include "./base.cpp"
 #include "./point.cpp"
 #include "./line.cpp"
