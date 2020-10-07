@@ -39,6 +39,7 @@
 - [ ] [Don't Burst the Balloon](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1342)
 
 ### 600
+- [ ] [Malfatti Circles](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1301)
 - [ ] [Divide the Cake](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2256&lang=jp)
 - [ ] [Snake](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2635&lang=jp)
 
