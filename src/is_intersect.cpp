@@ -3,8 +3,8 @@ using namespace std;
 
 #pragma once
 
-#include "../segment.cpp"
-#include "../ccw.cpp"
+#include "./segment.cpp"
+#include "./ccw.cpp"
 
 // intersect
 namespace geometry {
