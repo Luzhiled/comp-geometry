@@ -16,7 +16,7 @@ namespace geometry {
     b = b - a, c = c - a;
     if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;
     if (sign(cross(b, c)) == -1) return CLOCKWISE;
-    if (dot(b, c) < 0) return ONLINE_BACK;
+    if (sign(dot(b, c)) == -1) return ONLINE_BACK;
     if (norm(b) < norm(c)) return ONLINE_FRONT;
     return ON_SEGMENT;
   }
