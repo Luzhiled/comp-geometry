@@ -1,10 +1,10 @@
-// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_A
+// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_B
 
 #include <bits/stdc++.h>
 using namespace std;
 
 #define call_from_test
-#include "../../src/area.hpp"
+#include "../../src/is_convex.hpp"
 #undef call_from_test
 
 using namespace geometry;
@@ -17,6 +17,5 @@ int main() {
     cin >> p;
   }
 
-  cout << fixed << setprecision(1);
-  cout << area(poly) << endl;
+  cout << is_convex(poly) << endl;
 }

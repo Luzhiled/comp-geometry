@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../src/segment.cpp"
-#include "../../src/is_intersect.cpp"
+#include "../../src/segment.hpp"
+#include "../../src/is_intersect.hpp"
 #undef call_from_test
 
 using namespace geometry;

@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../src/is_parallel.cpp"
-#include "../../src/is_orthogonal.cpp"
+#include "../../src/is_parallel.hpp"
+#include "../../src/is_orthogonal.hpp"
 #undef call_from_test
 
 using namespace geometry;

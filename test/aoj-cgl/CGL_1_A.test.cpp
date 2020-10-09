@@ -5,7 +5,7 @@
 using namespace std;
 
 #define call_from_test
-#include "../../src/projection.cpp"
+#include "../../src/projection.hpp"
 #undef call_from_test
 
 using namespace geometry;

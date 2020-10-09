@@ -4,8 +4,8 @@
 using namespace std;
 
 #define call_from_test
-#include "../../src/point.cpp"
-#include "../../src/ccw.cpp"
+#include "../../src/point.hpp"
+#include "../../src/ccw.hpp"
 #undef call_from_test
 
 using namespace geometry;
