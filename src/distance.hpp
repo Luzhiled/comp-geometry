@@ -3,12 +3,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./point.cpp"
-#include "./segment.cpp"
-#include "./ccw.cpp"
-#include "./projection.cpp"
-#include "./is_intersect.cpp"
+#include "./base.hpp"
+#include "./point.hpp"
+#include "./segment.hpp"
+#include "./ccw.hpp"
+#include "./projection.hpp"
+#include "./is_intersect.hpp"
 
 // distance
 namespace geometry {

@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./segment.cpp"
-#include "./ccw.cpp"
+#include "./segment.hpp"
+#include "./ccw.hpp"
 
 // intersect
 namespace geometry {

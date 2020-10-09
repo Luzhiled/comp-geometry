@@ -3,9 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./polygon.cpp"
-#include "./point.cpp"
+#include "./base.hpp"
+#include "./polygon.hpp"
+#include "./point.hpp"
 
 namespace geometry {
   // O(N)

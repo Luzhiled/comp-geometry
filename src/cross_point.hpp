@@ -3,9 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./segment.cpp"
-#include "./angle.cpp"
+#include "./base.hpp"
+#include "./segment.hpp"
+#include "./angle.hpp"
 
 // cross point
 namespace geometry {

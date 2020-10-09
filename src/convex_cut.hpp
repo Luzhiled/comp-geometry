@@ -3,10 +3,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./polygon.cpp"
-#include "./line.cpp"
-#include "./angle.cpp"
+#include "./base.hpp"
+#include "./polygon.hpp"
+#include "./line.hpp"
+#include "./angle.hpp"
 
 // convex cut
 namespace geometry {

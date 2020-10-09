@@ -3,10 +3,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./point.cpp"
-#include "./polygon.cpp"
-#include "./compare.cpp"
-#include "./angle.cpp"
+#include "./point.hpp"
+#include "./polygon.hpp"
+#include "./compare.hpp"
+#include "./angle.hpp"
 
 // convex_hull
 namespace geometry {

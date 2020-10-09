@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./line.cpp"
+#include "./line.hpp"
 
 // segment
 namespace geometry {

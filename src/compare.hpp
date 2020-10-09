@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./point.cpp"
+#include "./point.hpp"
 
 namespace geometry {
   bool compare_x(const point &a, const point &b) {

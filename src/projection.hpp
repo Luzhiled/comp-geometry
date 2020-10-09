@@ -3,10 +3,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./point.cpp"
-#include "./line.cpp"
-#include "./angle.cpp"
+#include "./base.hpp"
+#include "./point.hpp"
+#include "./line.hpp"
+#include "./angle.hpp"
 
 // projection
 namespace geometry {

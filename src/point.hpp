@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
+#include "./base.hpp"
 
 // point
 namespace geometry {

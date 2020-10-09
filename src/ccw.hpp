@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./angle.cpp"
+#include "./angle.hpp"
 
 // ccw
 namespace geometry {

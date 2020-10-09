@@ -3,9 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./projection.cpp"
-#include "./line.cpp"
-#include "./point.cpp"
+#include "./projection.hpp"
+#include "./line.hpp"
+#include "./point.hpp"
 
 namespace geometry {
   point reflection(const line &l, const point &p) {

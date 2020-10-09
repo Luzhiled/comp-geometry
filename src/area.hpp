@@ -3,9 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./polygon.cpp"
-#include "./angle.cpp"
+#include "./base.hpp"
+#include "./polygon.hpp"
+#include "./angle.hpp"
 
 // area
 namespace geometry {

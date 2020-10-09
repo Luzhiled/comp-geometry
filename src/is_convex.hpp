@@ -3,8 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./polygon.cpp"
-#include "./ccw.cpp"
+#include "./polygon.hpp"
+#include "./ccw.hpp"
 
 namespace geometry {
   bool is_convex(const polygon &poly) { // poly given counterclockwise 

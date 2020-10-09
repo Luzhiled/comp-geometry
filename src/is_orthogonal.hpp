@@ -3,9 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "./base.cpp"
-#include "./line.cpp"
-#include "./angle.cpp"
+#include "./base.hpp"
+#include "./line.hpp"
+#include "./angle.hpp"
 
 // orthogonal
 namespace geometry {
