@@ -4,14 +4,18 @@
 using namespace std;
 
 #include "./base.hpp"
+#include "./angle.hpp"
 #include "./polygon.hpp"
 #include "./point.hpp"
 
 namespace geometry {
-  // O(N)
-  // 0 : poing out the polygon
-  // 1 : point on the polygon edge
-  // 2 : poing in the polygon
+  /// O(N)
+  /// 0 : point out the polygon
+  /// 1 : point on the polygon edge
+  /// 2 : point in the polygon
+  constexpr int OUT     = 0;
+  constexpr int ON_EDGE = 1;
+  constexpr int IN      = 2;
   int contains(const polygon &poly, const point &p) {
     bool in = false;
     int n = poly.size();
@@ -21,10 +25,10 @@ namespace geometry {
       if (a.imag() > b.imag()) swap(a, b);
       if (a.imag() <= 0 && 0 < b.imag() && cross(a, b) < 0) in = !in;
       if (sign(cross(a, b)) == 0 && sign(dot(a, b)) <= 0) {
-        return 1;
+        return ON_EDGE;
       }
     }
 
-    return in ? 2 : 0;
+    return in ? IN : OUT;
   }
 }
