@@ -1,12 +1,12 @@
+#pragma once
+
 #include <bits/stdc++.h>
 using namespace std;
-
-#pragma once
 
 #include "./polygon.cpp"
 #include "./ccw.cpp"
 
-using geometry {
+namespace geometry {
   bool is_convex(const polygon &poly) { // poly given counterclockwise 
     int n = poly.size();
     for (int i = 0; i < n; ++i) {

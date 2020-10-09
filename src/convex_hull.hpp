@@ -1,7 +1,7 @@
+#pragma once
+
 #include <bits/stdc++.h>
 using namespace std;
-
-#pragma once
 
 #include "./point.cpp"
 #include "./polygon.cpp"
