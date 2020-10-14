@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/angle.hpp
-    title: src/angle.hpp
-  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
@@ -16,6 +13,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/product.hpp
+    title: src/product.hpp
   - icon: ':heavy_check_mark:'
     path: src/segment.hpp
     title: src/segment.hpp
@@ -55,23 +55,16 @@ data:
     \ {\n    struct segment : line {\n        segment() = default;\n        using\
     \ line::line;\n    };\n\n    using segments = vector< segment >;\n}\n#line 2 \"\
     src/cross_point.hpp\"\n\n#line 4 \"src/cross_point.hpp\"\nusing namespace std;\n\
-    \n#line 2 \"src/angle.hpp\"\n\n#line 4 \"src/angle.hpp\"\nusing namespace std;\n\
-    \n#line 7 \"src/angle.hpp\"\n\n// angle\nnamespace geometry {\n    real_number\
-    \ cross(const point &a, const point &b) {\n        return a.real() * b.imag()\
-    \ - a.imag() * b.real();\n    }\n\n    real_number dot(const point &a, const point\
-    \ &b) {\n        return a.real() * b.real() + a.imag() * b.imag();\n    }\n\n\
-    \    real_number radian_to_degree(real_number theta) {\n        return theta *\
-    \ 180.0 / pi;\n    }\n\n    real_number degree_to_radian(const real_number deg)\
-    \ {\n        return deg * pi / 180.0;\n    }\n\n    real_number get_smaller_angle(const\
-    \ point &a, const point &b, const point &c) {\n        const point v(b - a), w(c\
-    \ - b);\n        real_number alpha = atan2(v.imag(), v.real());\n        real_number\
-    \ beta = atan2(w.imag(), w.real());\n        if (alpha > beta) swap(alpha, beta);\n\
-    \        real_number theta = beta - alpha;\n        return min(theta, 2 * pi -\
-    \ theta);\n    }\n}\n#line 9 \"src/cross_point.hpp\"\n\n// cross point\nnamespace\
-    \ geometry {\n  point cross_point(const segment &s1, const segment &s2) {\n  \
-    \  real_number a = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number b = cross(s1.b\
-    \ - s1.a, s1.b - s2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return s2.a;\n\
-    \    return s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n#line 9 \"test/aoj-cgl/CGL_2_C.test.cpp\"\
+    \n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\nusing namespace\
+    \ std;\n\n#line 7 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  \
+    \  real_number cross(const point &a, const point &b) {\n        return a.real()\
+    \ * b.imag() - a.imag() * b.real();\n    }\n\n    real_number dot(const point\
+    \ &a, const point &b) {\n        return a.real() * b.real() + a.imag() * b.imag();\n\
+    \    }\n}\n#line 9 \"src/cross_point.hpp\"\n\n// cross point\nnamespace geometry\
+    \ {\n  point cross_point(const segment &s1, const segment &s2) {\n    real_number\
+    \ a = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number b = cross(s1.b - s1.a,\
+    \ s1.b - s2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return s2.a;\n    return\
+    \ s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n#line 9 \"test/aoj-cgl/CGL_2_C.test.cpp\"\
     \n\nusing namespace geometry;\nint main() {\n  int q;\n  cin >> q;\n\n  cout <<\
     \ fixed << setprecision(15);\n  while (q--) {\n    segment s1, s2;\n    cin >>\
     \ s1.a >> s1.b >> s2.a >> s2.b;\n\n    cout << cross_point(s1, s2) << endl;\n\
@@ -89,11 +82,11 @@ data:
   - src/point.hpp
   - src/base.hpp
   - src/cross_point.hpp
-  - src/angle.hpp
+  - src/product.hpp
   isVerificationFile: true
   path: test/aoj-cgl/CGL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-10-14 18:34:04+09:00'
+  timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_2_C.test.cpp

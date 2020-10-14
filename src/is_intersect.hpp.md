@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/angle.hpp
-    title: src/angle.hpp
-  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
@@ -16,6 +13,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/product.hpp
+    title: src/product.hpp
   - icon: ':heavy_check_mark:'
     path: src/segment.hpp
     title: src/segment.hpp
@@ -58,21 +58,14 @@ data:
     \ = vector< line >;\n}\n#line 7 \"src/segment.hpp\"\n\n// segment\nnamespace geometry\
     \ {\n    struct segment : line {\n        segment() = default;\n        using\
     \ line::line;\n    };\n\n    using segments = vector< segment >;\n}\n#line 2 \"\
-    src/ccw.hpp\"\n\n#line 4 \"src/ccw.hpp\"\nusing namespace std;\n\n#line 2 \"src/angle.hpp\"\
-    \n\n#line 4 \"src/angle.hpp\"\nusing namespace std;\n\n#line 7 \"src/angle.hpp\"\
-    \n\n// angle\nnamespace geometry {\n    real_number cross(const point &a, const\
+    src/ccw.hpp\"\n\n#line 4 \"src/ccw.hpp\"\nusing namespace std;\n\n#line 2 \"src/product.hpp\"\
+    \n\n#line 4 \"src/product.hpp\"\nusing namespace std;\n\n#line 7 \"src/product.hpp\"\
+    \n\n// product\nnamespace geometry {\n    real_number cross(const point &a, const\
     \ point &b) {\n        return a.real() * b.imag() - a.imag() * b.real();\n   \
     \ }\n\n    real_number dot(const point &a, const point &b) {\n        return a.real()\
-    \ * b.real() + a.imag() * b.imag();\n    }\n\n    real_number radian_to_degree(real_number\
-    \ theta) {\n        return theta * 180.0 / pi;\n    }\n\n    real_number degree_to_radian(const\
-    \ real_number deg) {\n        return deg * pi / 180.0;\n    }\n\n    real_number\
-    \ get_smaller_angle(const point &a, const point &b, const point &c) {\n      \
-    \  const point v(b - a), w(c - b);\n        real_number alpha = atan2(v.imag(),\
-    \ v.real());\n        real_number beta = atan2(w.imag(), w.real());\n        if\
-    \ (alpha > beta) swap(alpha, beta);\n        real_number theta = beta - alpha;\n\
-    \        return min(theta, 2 * pi - theta);\n    }\n}\n#line 7 \"src/ccw.hpp\"\
-    \n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr\
-    \ int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
+    \ * b.real() + a.imag() * b.imag();\n    }\n}\n#line 7 \"src/ccw.hpp\"\n\n// ccw\n\
+    namespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int\
+    \ CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
     \  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr int ON_SEGMENT\
     \        =  0; // a-c-b\n  int ccw(const point &a, point b, point c) {\n    b\
     \ = b - a, c = c - a;\n    if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;\n\
@@ -93,12 +86,12 @@ data:
   - src/point.hpp
   - src/base.hpp
   - src/ccw.hpp
-  - src/angle.hpp
+  - src/product.hpp
   isVerificationFile: false
   path: src/is_intersect.hpp
   requiredBy:
   - src/distance.hpp
-  timestamp: '2020-10-14 18:34:04+09:00'
+  timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_2_B.test.cpp

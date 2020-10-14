@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: src/angle.hpp
-    title: src/angle.hpp
-  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
@@ -19,6 +16,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/polygon.hpp
     title: src/polygon.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/product.hpp
+    title: src/product.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -50,33 +50,26 @@ data:
     \  }\n}\n#line 7 \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using\
     \ polygon = vector< point >;\n  using polygons = vector< polygon >;\n}\n#line\
     \ 2 \"src/ccw.hpp\"\n\n#line 4 \"src/ccw.hpp\"\nusing namespace std;\n\n#line\
-    \ 2 \"src/angle.hpp\"\n\n#line 4 \"src/angle.hpp\"\nusing namespace std;\n\n#line\
-    \ 7 \"src/angle.hpp\"\n\n// angle\nnamespace geometry {\n    real_number cross(const\
-    \ point &a, const point &b) {\n        return a.real() * b.imag() - a.imag() *\
-    \ b.real();\n    }\n\n    real_number dot(const point &a, const point &b) {\n\
-    \        return a.real() * b.real() + a.imag() * b.imag();\n    }\n\n    real_number\
-    \ radian_to_degree(real_number theta) {\n        return theta * 180.0 / pi;\n\
-    \    }\n\n    real_number degree_to_radian(const real_number deg) {\n        return\
-    \ deg * pi / 180.0;\n    }\n\n    real_number get_smaller_angle(const point &a,\
-    \ const point &b, const point &c) {\n        const point v(b - a), w(c - b);\n\
-    \        real_number alpha = atan2(v.imag(), v.real());\n        real_number beta\
-    \ = atan2(w.imag(), w.real());\n        if (alpha > beta) swap(alpha, beta);\n\
-    \        real_number theta = beta - alpha;\n        return min(theta, 2 * pi -\
-    \ theta);\n    }\n}\n#line 7 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n\
-    \  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE         =\
-    \ -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n  constexpr int ONLINE_FRONT\
-    \      = -2; // a-b-c\n  constexpr int ON_SEGMENT        =  0; // a-c-b\n  int\
-    \ ccw(const point &a, point b, point c) {\n    b = b - a, c = c - a;\n    if (sign(cross(b,\
-    \ c)) == +1) return COUNTER_CLOCKWISE;\n    if (sign(cross(b, c)) == -1) return\
-    \ CLOCKWISE;\n    if (sign(dot(b, c)) == -1) return ONLINE_BACK;\n    if (norm(b)\
-    \ < norm(c)) return ONLINE_FRONT;\n    return ON_SEGMENT;\n  }\n}\n#line 8 \"\
-    src/is_convex.hpp\"\n\nnamespace geometry {\n  bool is_convex(const polygon &poly)\
-    \ { // poly given counterclockwise \n    int n = poly.size();\n    for (int i\
-    \ = 0; i < n; ++i) {\n      if (ccw(poly[(i + n - 1) % n], poly[i], poly[(i +\
-    \ 1) % n]) == -1) return false;\n    }\n    return true;\n  }\n}\n#line 7 \"test/aoj-cgl/CGL_3_B.test.cpp\"\
-    \n\nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon\
-    \ poly(n);\n  for (auto &p: poly) {\n    cin >> p;\n  }\n\n  cout << is_convex(poly)\
-    \ << endl;\n}\n"
+    \ 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\nusing namespace std;\n\
+    \n#line 7 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n    real_number\
+    \ cross(const point &a, const point &b) {\n        return a.real() * b.imag()\
+    \ - a.imag() * b.real();\n    }\n\n    real_number dot(const point &a, const point\
+    \ &b) {\n        return a.real() * b.real() + a.imag() * b.imag();\n    }\n}\n\
+    #line 7 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE\
+    \ = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK\
+    \       = +2; // c-a-b\n  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr\
+    \ int ON_SEGMENT        =  0; // a-c-b\n  int ccw(const point &a, point b, point\
+    \ c) {\n    b = b - a, c = c - a;\n    if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;\n\
+    \    if (sign(cross(b, c)) == -1) return CLOCKWISE;\n    if (sign(dot(b, c)) ==\
+    \ -1) return ONLINE_BACK;\n    if (norm(b) < norm(c)) return ONLINE_FRONT;\n \
+    \   return ON_SEGMENT;\n  }\n}\n#line 8 \"src/is_convex.hpp\"\n\nnamespace geometry\
+    \ {\n  bool is_convex(const polygon &poly) { // poly given counterclockwise \n\
+    \    int n = poly.size();\n    for (int i = 0; i < n; ++i) {\n      if (ccw(poly[(i\
+    \ + n - 1) % n], poly[i], poly[(i + 1) % n]) == -1) return false;\n    }\n   \
+    \ return true;\n  }\n}\n#line 7 \"test/aoj-cgl/CGL_3_B.test.cpp\"\n\nusing namespace\
+    \ geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon poly(n);\n  for\
+    \ (auto &p: poly) {\n    cin >> p;\n  }\n\n  cout << is_convex(poly) << endl;\n\
+    }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_B\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../src/is_convex.hpp\"\
     \n\nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon\
@@ -88,11 +81,11 @@ data:
   - src/point.hpp
   - src/base.hpp
   - src/ccw.hpp
-  - src/angle.hpp
+  - src/product.hpp
   isVerificationFile: true
   path: test/aoj-cgl/CGL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2020-10-14 18:34:04+09:00'
+  timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_3_B.test.cpp

@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: src
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: src/angle.hpp
       title: src/angle.hpp
     - icon: ':heavy_check_mark:'
@@ -57,6 +57,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/polygon.hpp
       title: src/polygon.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/product.hpp
+      title: src/product.hpp
     - icon: ':heavy_check_mark:'
       path: src/projection.hpp
       title: src/projection.hpp
