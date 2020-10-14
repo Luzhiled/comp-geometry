@@ -7,8 +7,8 @@ using namespace std;
 namespace geometry {
     using real_number = long double;
 
-    constexpr real_number eps = 1e-8;
-    constexpr real_number pi = acos(-1);
+    const real_number eps = 1e-8;
+    const real_number pi = acos(-1);
 
     inline int sign(real_number r) {
         if (r < -eps) return -1;
