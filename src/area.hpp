@@ -5,7 +5,7 @@ using namespace std;
 
 #include "./base.hpp"
 #include "./polygon.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 
 // area
 namespace geometry {

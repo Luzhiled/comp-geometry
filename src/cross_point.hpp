@@ -5,7 +5,7 @@ using namespace std;
 
 #include "./base.hpp"
 #include "./segment.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 
 // cross point
 namespace geometry {

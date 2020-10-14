@@ -6,7 +6,7 @@ using namespace std;
 #include "./point.hpp"
 #include "./polygon.hpp"
 #include "./compare.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 
 // convex_hull
 namespace geometry {

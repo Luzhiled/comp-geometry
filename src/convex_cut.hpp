@@ -6,7 +6,7 @@ using namespace std;
 #include "./base.hpp"
 #include "./polygon.hpp"
 #include "./line.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 
 // convex cut
 namespace geometry {

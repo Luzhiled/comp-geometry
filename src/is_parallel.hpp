@@ -5,7 +5,7 @@ using namespace std;
 
 #include "./base.hpp"
 #include "./line.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 
 // parallel
 namespace geometry {

@@ -4,7 +4,7 @@
 using namespace std;
 
 #include "./base.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 #include "./polygon.hpp"
 #include "./point.hpp"
 

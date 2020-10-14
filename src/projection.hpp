@@ -6,7 +6,7 @@ using namespace std;
 #include "./base.hpp"
 #include "./point.hpp"
 #include "./line.hpp"
-#include "./angle.hpp"
+#include "./product.hpp"
 
 // projection
 namespace geometry {
