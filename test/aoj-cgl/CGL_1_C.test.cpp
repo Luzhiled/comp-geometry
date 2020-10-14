@@ -3,10 +3,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define call_from_test
 #include "../../src/point.hpp"
 #include "../../src/ccw.hpp"
-#undef call_from_test
 
 using namespace geometry;
 int main() {

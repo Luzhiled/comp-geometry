@@ -4,11 +4,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define call_from_test
 #include "../../src/line.hpp"
 #include "../../src/area.hpp"
 #include "../../src/convex_cut.hpp"
-#undef call_from_test
 
 using namespace geometry;
 int main() {
