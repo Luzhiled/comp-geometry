@@ -9,12 +9,24 @@ data:
     title: src/point.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/closest_pair.hpp
+    title: src/closest_pair.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/convex_diameter.hpp
+    title: src/convex_diameter.hpp
+  - icon: ':heavy_check_mark:'
     path: src/convex_hull.hpp
     title: src/convex_hull.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_A.test.cpp
     title: test/aoj-cgl/CGL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_4_B.test.cpp
+    title: test/aoj-cgl/CGL_4_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_5_A.test.cpp
+    title: test/aoj-cgl/CGL_5_A.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -52,11 +64,15 @@ data:
   isVerificationFile: false
   path: src/compare.hpp
   requiredBy:
+  - src/closest_pair.hpp
+  - src/convex_diameter.hpp
   - src/convex_hull.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp
+  - test/aoj-cgl/CGL_5_A.test.cpp
+  - test/aoj-cgl/CGL_4_B.test.cpp
 documentation_of: src/compare.hpp
 layout: document
 redirect_from:

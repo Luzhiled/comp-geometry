@@ -12,6 +12,9 @@ data:
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
+    path: src/closest_pair.hpp
+    title: src/closest_pair.hpp
+  - icon: ':heavy_check_mark:'
     path: src/compare.hpp
     title: src/compare.hpp
   - icon: ':heavy_check_mark:'
@@ -20,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/convex_cut.hpp
     title: src/convex_cut.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/convex_diameter.hpp
+    title: src/convex_diameter.hpp
   - icon: ':heavy_check_mark:'
     path: src/convex_hull.hpp
     title: src/convex_hull.hpp
@@ -91,8 +97,14 @@ data:
     path: test/aoj-cgl/CGL_4_A.test.cpp
     title: test/aoj-cgl/CGL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_4_B.test.cpp
+    title: test/aoj-cgl/CGL_4_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_C.test.cpp
     title: test/aoj-cgl/CGL_4_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_5_A.test.cpp
+    title: test/aoj-cgl/CGL_5_A.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -128,38 +140,42 @@ data:
   isVerificationFile: false
   path: src/point.hpp
   requiredBy:
-  - src/distance.hpp
-  - src/convex_hull.hpp
-  - src/contains.hpp
-  - src/circle.hpp
   - src/convex_cut.hpp
-  - src/is_orthogonal.hpp
   - src/compare.hpp
-  - src/cross_point.hpp
-  - src/is_intersect.hpp
+  - src/closest_pair.hpp
   - src/is_parallel.hpp
+  - src/is_orthogonal.hpp
   - src/line.hpp
-  - src/is_convex.hpp
-  - src/segment.hpp
-  - src/reflection.hpp
-  - src/projection.hpp
-  - src/polygon.hpp
   - src/area.hpp
+  - src/segment.hpp
+  - src/distance.hpp
+  - src/convex_diameter.hpp
+  - src/projection.hpp
+  - src/is_convex.hpp
+  - src/convex_hull.hpp
+  - src/reflection.hpp
+  - src/circle.hpp
+  - src/is_intersect.hpp
+  - src/cross_point.hpp
+  - src/contains.hpp
+  - src/polygon.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_1_B.test.cpp
+  - test/aoj-cgl/CGL_4_A.test.cpp
+  - test/aoj-cgl/CGL_2_A.test.cpp
   - test/aoj-cgl/CGL_3_C.test.cpp
-  - test/aoj-cgl/CGL_2_C.test.cpp
-  - test/aoj-cgl/CGL_1_A.test.cpp
+  - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
+  - test/aoj-cgl/CGL_3_A.test.cpp
+  - test/aoj-cgl/CGL_5_A.test.cpp
+  - test/aoj-cgl/CGL_1_C.test.cpp
+  - test/aoj-cgl/CGL_1_A.test.cpp
+  - test/aoj-cgl/CGL_1_B.test.cpp
+  - test/aoj-cgl/CGL_2_C.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
-  - test/aoj-cgl/CGL_4_A.test.cpp
-  - test/aoj-cgl/CGL_1_C.test.cpp
-  - test/aoj-cgl/CGL_3_B.test.cpp
-  - test/aoj-cgl/CGL_2_A.test.cpp
-  - test/aoj-cgl/CGL_3_A.test.cpp
+  - test/aoj-cgl/CGL_4_B.test.cpp
 documentation_of: src/point.hpp
 layout: document
 redirect_from:

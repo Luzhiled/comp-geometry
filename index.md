@@ -19,6 +19,9 @@ data:
       path: src/circle.hpp
       title: src/circle.hpp
     - icon: ':heavy_check_mark:'
+      path: src/closest_pair.hpp
+      title: src/closest_pair.hpp
+    - icon: ':heavy_check_mark:'
       path: src/compare.hpp
       title: src/compare.hpp
     - icon: ':heavy_check_mark:'
@@ -27,6 +30,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/convex_cut.hpp
       title: src/convex_cut.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/convex_diameter.hpp
+      title: src/convex_diameter.hpp
     - icon: ':heavy_check_mark:'
       path: src/convex_hull.hpp
       title: src/convex_hull.hpp
@@ -106,7 +112,13 @@ data:
       path: test/aoj-cgl/CGL_4_A.test.cpp
       title: test/aoj-cgl/CGL_4_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_4_B.test.cpp
+      title: test/aoj-cgl/CGL_4_B.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_4_C.test.cpp
       title: test/aoj-cgl/CGL_4_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_5_A.test.cpp
+      title: test/aoj-cgl/CGL_5_A.test.cpp
 layout: toppage
 ---

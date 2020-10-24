@@ -18,6 +18,9 @@ data:
     path: src/convex_cut.hpp
     title: src/convex_cut.hpp
   - icon: ':heavy_check_mark:'
+    path: src/convex_diameter.hpp
+    title: src/convex_diameter.hpp
+  - icon: ':heavy_check_mark:'
     path: src/convex_hull.hpp
     title: src/convex_hull.hpp
   - icon: ':heavy_check_mark:'
@@ -79,6 +82,9 @@ data:
     path: test/aoj-cgl/CGL_4_A.test.cpp
     title: test/aoj-cgl/CGL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_4_B.test.cpp
+    title: test/aoj-cgl/CGL_4_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_C.test.cpp
     title: test/aoj-cgl/CGL_4_C.test.cpp
   _pathExtension: hpp
@@ -106,34 +112,36 @@ data:
   isVerificationFile: false
   path: src/product.hpp
   requiredBy:
-  - src/distance.hpp
-  - src/convex_hull.hpp
-  - src/ccw.hpp
-  - src/contains.hpp
   - src/convex_cut.hpp
-  - src/is_orthogonal.hpp
-  - src/cross_point.hpp
-  - src/is_intersect.hpp
   - src/is_parallel.hpp
-  - src/is_convex.hpp
-  - src/reflection.hpp
-  - src/projection.hpp
+  - src/ccw.hpp
+  - src/is_orthogonal.hpp
   - src/area.hpp
+  - src/distance.hpp
+  - src/convex_diameter.hpp
+  - src/projection.hpp
+  - src/is_convex.hpp
+  - src/convex_hull.hpp
+  - src/reflection.hpp
+  - src/is_intersect.hpp
+  - src/cross_point.hpp
+  - src/contains.hpp
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_1_B.test.cpp
+  - test/aoj-cgl/CGL_4_A.test.cpp
+  - test/aoj-cgl/CGL_2_A.test.cpp
   - test/aoj-cgl/CGL_3_C.test.cpp
-  - test/aoj-cgl/CGL_2_C.test.cpp
-  - test/aoj-cgl/CGL_1_A.test.cpp
+  - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
+  - test/aoj-cgl/CGL_3_A.test.cpp
+  - test/aoj-cgl/CGL_1_C.test.cpp
+  - test/aoj-cgl/CGL_1_A.test.cpp
+  - test/aoj-cgl/CGL_1_B.test.cpp
+  - test/aoj-cgl/CGL_2_C.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
-  - test/aoj-cgl/CGL_4_A.test.cpp
-  - test/aoj-cgl/CGL_1_C.test.cpp
-  - test/aoj-cgl/CGL_3_B.test.cpp
-  - test/aoj-cgl/CGL_2_A.test.cpp
-  - test/aoj-cgl/CGL_3_A.test.cpp
+  - test/aoj-cgl/CGL_4_B.test.cpp
 documentation_of: src/product.hpp
 layout: document
 redirect_from:

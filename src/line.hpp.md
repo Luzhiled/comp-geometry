@@ -91,25 +91,25 @@ data:
   isVerificationFile: false
   path: src/line.hpp
   requiredBy:
-  - src/distance.hpp
   - src/convex_cut.hpp
-  - src/is_orthogonal.hpp
-  - src/cross_point.hpp
-  - src/is_intersect.hpp
   - src/is_parallel.hpp
+  - src/is_orthogonal.hpp
   - src/segment.hpp
-  - src/reflection.hpp
+  - src/distance.hpp
   - src/projection.hpp
+  - src/reflection.hpp
+  - src/is_intersect.hpp
+  - src/cross_point.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj-cgl/CGL_2_A.test.cpp
+  - test/aoj-cgl/CGL_2_B.test.cpp
+  - test/aoj-cgl/CGL_1_A.test.cpp
   - test/aoj-cgl/CGL_1_B.test.cpp
   - test/aoj-cgl/CGL_2_C.test.cpp
-  - test/aoj-cgl/CGL_1_A.test.cpp
-  - test/aoj-cgl/CGL_2_B.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
-  - test/aoj-cgl/CGL_2_A.test.cpp
 documentation_of: src/line.hpp
 layout: document
 redirect_from:

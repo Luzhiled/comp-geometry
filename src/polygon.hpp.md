@@ -18,6 +18,9 @@ data:
     path: src/convex_cut.hpp
     title: src/convex_cut.hpp
   - icon: ':heavy_check_mark:'
+    path: src/convex_diameter.hpp
+    title: src/convex_diameter.hpp
+  - icon: ':heavy_check_mark:'
     path: src/convex_hull.hpp
     title: src/convex_hull.hpp
   - icon: ':heavy_check_mark:'
@@ -36,6 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_A.test.cpp
     title: test/aoj-cgl/CGL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_4_B.test.cpp
+    title: test/aoj-cgl/CGL_4_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_C.test.cpp
     title: test/aoj-cgl/CGL_4_C.test.cpp
@@ -71,19 +77,21 @@ data:
   isVerificationFile: false
   path: src/polygon.hpp
   requiredBy:
+  - src/convex_cut.hpp
+  - src/area.hpp
+  - src/convex_diameter.hpp
+  - src/is_convex.hpp
   - src/convex_hull.hpp
   - src/contains.hpp
-  - src/convex_cut.hpp
-  - src/is_convex.hpp
-  - src/area.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_3_C.test.cpp
-  - test/aoj-cgl/CGL_4_C.test.cpp
   - test/aoj-cgl/CGL_4_A.test.cpp
+  - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_3_A.test.cpp
+  - test/aoj-cgl/CGL_4_C.test.cpp
+  - test/aoj-cgl/CGL_4_B.test.cpp
 documentation_of: src/polygon.hpp
 layout: document
 redirect_from:

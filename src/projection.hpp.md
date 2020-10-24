@@ -81,8 +81,8 @@ data:
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_1_B.test.cpp
   - test/aoj-cgl/CGL_1_A.test.cpp
+  - test/aoj-cgl/CGL_1_B.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
 documentation_of: src/projection.hpp
 layout: document
