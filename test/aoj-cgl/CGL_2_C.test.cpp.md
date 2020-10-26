@@ -61,9 +61,9 @@ data:
     \ * b.imag() - a.imag() * b.real();\n    }\n\n    real_number dot(const point\
     \ &a, const point &b) {\n        return a.real() * b.real() + a.imag() * b.imag();\n\
     \    }\n}\n#line 9 \"src/cross_point.hpp\"\n\n// cross point\nnamespace geometry\
-    \ {\n  point cross_point(const segment &s1, const segment &s2) {\n    real_number\
-    \ a = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number b = cross(s1.b - s1.a,\
-    \ s1.b - s2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return s2.a;\n    return\
+    \ {\n  point cross_point(const line &s1, const line &s2) {\n    real_number a\
+    \ = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number b = cross(s1.b - s1.a, s1.b\
+    \ - s2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return s2.a;\n    return\
     \ s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n#line 9 \"test/aoj-cgl/CGL_2_C.test.cpp\"\
     \n\nusing namespace geometry;\nint main() {\n  int q;\n  cin >> q;\n\n  cout <<\
     \ fixed << setprecision(15);\n  while (q--) {\n    segment s1, s2;\n    cin >>\
@@ -86,7 +86,7 @@ data:
   isVerificationFile: true
   path: test/aoj-cgl/CGL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-10-15 00:41:16+09:00'
+  timestamp: '2020-10-27 07:41:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_2_C.test.cpp

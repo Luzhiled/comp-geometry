@@ -12,9 +12,6 @@ data:
     title: src/point.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: src/cross_point.hpp
-    title: src/cross_point.hpp
-  - icon: ':heavy_check_mark:'
     path: src/distance.hpp
     title: src/distance.hpp
   - icon: ':heavy_check_mark:'
@@ -77,7 +74,6 @@ data:
   - src/distance.hpp
   - src/inscribed_circle.hpp
   - src/is_intersect.hpp
-  - src/cross_point.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
