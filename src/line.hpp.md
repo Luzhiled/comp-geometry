@@ -18,6 +18,9 @@ data:
     path: src/cross_point.hpp
     title: src/cross_point.hpp
   - icon: ':heavy_check_mark:'
+    path: src/cross_point_cl.hpp
+    title: src/cross_point_cl.hpp
+  - icon: ':heavy_check_mark:'
     path: src/distance.hpp
     title: src/distance.hpp
   - icon: ':heavy_check_mark:'
@@ -69,6 +72,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_C.test.cpp
     title: test/aoj-cgl/CGL_7_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_D.test.cpp
+    title: test/aoj-cgl/CGL_7_D.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -106,6 +112,7 @@ data:
   - src/convex_cut.hpp
   - src/circumscribed_circle.hpp
   - src/is_parallel.hpp
+  - src/cross_point_cl.hpp
   - src/is_orthogonal.hpp
   - src/segment.hpp
   - src/distance.hpp
@@ -126,6 +133,7 @@ data:
   - test/aoj-cgl/CGL_2_C.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
+  - test/aoj-cgl/CGL_7_D.test.cpp
 documentation_of: src/line.hpp
 layout: document
 redirect_from:
