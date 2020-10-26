@@ -1,4 +1,4 @@
-// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/7/CGL_7_A
+// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_A
 
 #include <bits/stdc++.h>
 using namespace std;
