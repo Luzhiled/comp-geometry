@@ -10,6 +10,7 @@ namespace geometry {
   struct circle {
     point p;
     real_number r;
+    circle() {}
     circle(point p, real_number r) : p(p), r(r) {}
   };
 
