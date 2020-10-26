@@ -12,6 +12,9 @@ data:
     path: src/ccw.hpp
     title: src/ccw.hpp
   - icon: ':heavy_check_mark:'
+    path: src/circumscribed_circle.hpp
+    title: src/circumscribed_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/contains.hpp
     title: src/contains.hpp
   - icon: ':heavy_check_mark:'
@@ -93,6 +96,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_B.test.cpp
     title: test/aoj-cgl/CGL_7_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_C.test.cpp
+    title: test/aoj-cgl/CGL_7_C.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -119,6 +125,7 @@ data:
   path: src/product.hpp
   requiredBy:
   - src/convex_cut.hpp
+  - src/circumscribed_circle.hpp
   - src/is_parallel.hpp
   - src/ccw.hpp
   - src/is_orthogonal.hpp
@@ -139,6 +146,7 @@ data:
   - test/aoj-cgl/CGL_4_A.test.cpp
   - test/aoj-cgl/CGL_2_A.test.cpp
   - test/aoj-cgl/CGL_7_B.test.cpp
+  - test/aoj-cgl/CGL_7_C.test.cpp
   - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp

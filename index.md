@@ -19,6 +19,9 @@ data:
       path: src/circle.hpp
       title: src/circle.hpp
     - icon: ':heavy_check_mark:'
+      path: src/circumscribed_circle.hpp
+      title: src/circumscribed_circle.hpp
+    - icon: ':heavy_check_mark:'
       path: src/closest_pair.hpp
       title: src/closest_pair.hpp
     - icon: ':heavy_check_mark:'
@@ -132,5 +135,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_B.test.cpp
       title: test/aoj-cgl/CGL_7_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_7_C.test.cpp
+      title: test/aoj-cgl/CGL_7_C.test.cpp
 layout: toppage
 ---

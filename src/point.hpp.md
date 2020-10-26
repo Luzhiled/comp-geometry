@@ -12,6 +12,9 @@ data:
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
+    path: src/circumscribed_circle.hpp
+    title: src/circumscribed_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/closest_pair.hpp
     title: src/closest_pair.hpp
   - icon: ':heavy_check_mark:'
@@ -117,6 +120,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_B.test.cpp
     title: test/aoj-cgl/CGL_7_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_C.test.cpp
+    title: test/aoj-cgl/CGL_7_C.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -154,6 +160,7 @@ data:
   requiredBy:
   - src/convex_cut.hpp
   - src/compare.hpp
+  - src/circumscribed_circle.hpp
   - src/closest_pair.hpp
   - src/is_parallel.hpp
   - src/is_orthogonal.hpp
@@ -180,6 +187,7 @@ data:
   - test/aoj-cgl/CGL_2_A.test.cpp
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_7_A.test.cpp
+  - test/aoj-cgl/CGL_7_C.test.cpp
   - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
