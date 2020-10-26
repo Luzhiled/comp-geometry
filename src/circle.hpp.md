@@ -7,10 +7,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/intersect_cc.hpp
+    title: src/intersect_cc.hpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_A.test.cpp
+    title: test/aoj-cgl/CGL_7_A.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/circle.hpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
@@ -31,21 +37,23 @@ data:
     \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n        sin(theta)\
     \ * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/circle.hpp\"\n\n\
     // circle\nnamespace geometry {\n  struct circle {\n    point p;\n    real_number\
-    \ r;\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles\
-    \ = vector< circle >;\n}\n"
+    \ r;\n    circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\
+    \n  using circles = vector< circle >;\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"./point.hpp\"\n\n// circle\nnamespace geometry {\n  struct circle {\n    point\
-    \ p;\n    real_number r;\n    circle(point p, real_number r) : p(p), r(r) {}\n\
-    \  };\n\n  using circles = vector< circle >;\n}\n"
+    \ p;\n    real_number r;\n    circle() {}\n    circle(point p, real_number r)\
+    \ : p(p), r(r) {}\n  };\n\n  using circles = vector< circle >;\n}\n"
   dependsOn:
   - src/point.hpp
   - src/base.hpp
   isVerificationFile: false
   path: src/circle.hpp
-  requiredBy: []
-  timestamp: '2020-10-14 18:34:04+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy:
+  - src/intersect_cc.hpp
+  timestamp: '2020-10-27 06:59:35+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj-cgl/CGL_7_A.test.cpp
 documentation_of: src/circle.hpp
 layout: document
 redirect_from:

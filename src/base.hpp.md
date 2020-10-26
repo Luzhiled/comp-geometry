@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/ccw.hpp
     title: src/ccw.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
@@ -38,6 +38,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/distance.hpp
     title: src/distance.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/intersect_cc.hpp
+    title: src/intersect_cc.hpp
   - icon: ':heavy_check_mark:'
     path: src/is_convex.hpp
     title: src/is_convex.hpp
@@ -114,6 +117,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_5_A.test.cpp
     title: test/aoj-cgl/CGL_5_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_A.test.cpp
+    title: test/aoj-cgl/CGL_7_A.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -157,11 +163,13 @@ data:
   - src/cross_point.hpp
   - src/contains.hpp
   - src/polygon.hpp
+  - src/intersect_cc.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp
   - test/aoj-cgl/CGL_2_A.test.cpp
+  - test/aoj-cgl/CGL_7_A.test.cpp
   - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
