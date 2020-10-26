@@ -36,6 +36,9 @@ data:
     path: src/distance.hpp
     title: src/distance.hpp
   - icon: ':heavy_check_mark:'
+    path: src/inscribed_circle.hpp
+    title: src/inscribed_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/intersect_cc.hpp
     title: src/intersect_cc.hpp
   - icon: ':heavy_check_mark:'
@@ -111,6 +114,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_A.test.cpp
     title: test/aoj-cgl/CGL_7_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_B.test.cpp
+    title: test/aoj-cgl/CGL_7_B.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -160,6 +166,7 @@ data:
   - src/is_convex.hpp
   - src/convex_hull.hpp
   - src/reflection.hpp
+  - src/inscribed_circle.hpp
   - src/circle.hpp
   - src/is_intersect.hpp
   - src/cross_point.hpp
@@ -171,6 +178,7 @@ data:
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp
   - test/aoj-cgl/CGL_2_A.test.cpp
+  - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_7_A.test.cpp
   - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp

@@ -43,6 +43,9 @@ data:
       path: src/distance.hpp
       title: src/distance.hpp
     - icon: ':heavy_check_mark:'
+      path: src/inscribed_circle.hpp
+      title: src/inscribed_circle.hpp
+    - icon: ':heavy_check_mark:'
       path: src/intersect_cc.hpp
       title: src/intersect_cc.hpp
     - icon: ':heavy_check_mark:'
@@ -126,5 +129,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_A.test.cpp
       title: test/aoj-cgl/CGL_7_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_7_B.test.cpp
+      title: test/aoj-cgl/CGL_7_B.test.cpp
 layout: toppage
 ---

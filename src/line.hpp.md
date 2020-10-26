@@ -18,6 +18,9 @@ data:
     path: src/distance.hpp
     title: src/distance.hpp
   - icon: ':heavy_check_mark:'
+    path: src/inscribed_circle.hpp
+    title: src/inscribed_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/is_intersect.hpp
     title: src/is_intersect.hpp
   - icon: ':heavy_check_mark:'
@@ -57,6 +60,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_C.test.cpp
     title: test/aoj-cgl/CGL_4_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_B.test.cpp
+    title: test/aoj-cgl/CGL_7_B.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -98,12 +104,14 @@ data:
   - src/distance.hpp
   - src/projection.hpp
   - src/reflection.hpp
+  - src/inscribed_circle.hpp
   - src/is_intersect.hpp
   - src/cross_point.hpp
   timestamp: '2020-10-14 18:34:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_2_A.test.cpp
+  - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
   - test/aoj-cgl/CGL_1_A.test.cpp
   - test/aoj-cgl/CGL_1_B.test.cpp

@@ -23,6 +23,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/distance.hpp
     title: src/distance.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/inscribed_circle.hpp
+    title: src/inscribed_circle.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_2_B.test.cpp
@@ -30,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_2_D.test.cpp
     title: test/aoj-cgl/CGL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_B.test.cpp
+    title: test/aoj-cgl/CGL_7_B.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -91,9 +97,11 @@ data:
   path: src/is_intersect.hpp
   requiredBy:
   - src/distance.hpp
+  - src/inscribed_circle.hpp
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
 documentation_of: src/is_intersect.hpp

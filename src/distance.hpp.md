@@ -25,11 +25,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/segment.hpp
     title: src/segment.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/inscribed_circle.hpp
+    title: src/inscribed_circle.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_2_D.test.cpp
     title: test/aoj-cgl/CGL_2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_B.test.cpp
+    title: test/aoj-cgl/CGL_7_B.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -108,10 +114,12 @@ data:
   - src/is_intersect.hpp
   isVerificationFile: false
   path: src/distance.hpp
-  requiredBy: []
+  requiredBy:
+  - src/inscribed_circle.hpp
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
 documentation_of: src/distance.hpp
 layout: document
