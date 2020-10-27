@@ -13,7 +13,7 @@ using namespace std;
 #include "./cross_point_cl.hpp"
 
 namespace geometry {
-  real_number ca_cp_impl(circle c, point a, point b) {
+  real_number ca_cp_impl(const circle &c, const point &a, const point &b) {
     point va = c.p - a, vb = c.p - b;
     real_number f = cross(va, vb), res = 0;
 
