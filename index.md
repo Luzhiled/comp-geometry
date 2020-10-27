@@ -25,6 +25,9 @@ data:
       path: src/closest_pair.hpp
       title: src/closest_pair.hpp
     - icon: ':heavy_check_mark:'
+      path: src/common_area_cc.hpp
+      title: src/common_area_cc.hpp
+    - icon: ':heavy_check_mark:'
       path: src/compare.hpp
       title: src/compare.hpp
     - icon: ':heavy_check_mark:'
@@ -162,5 +165,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_G.test.cpp
       title: test/aoj-cgl/CGL_7_G.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_7_I.test.cpp
+      title: test/aoj-cgl/CGL_7_I.test.cpp
 layout: toppage
 ---

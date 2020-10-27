@@ -12,6 +12,9 @@ data:
     path: src/circumscribed_circle.hpp
     title: src/circumscribed_circle.hpp
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cc.hpp
+    title: src/common_area_cc.hpp
+  - icon: ':heavy_check_mark:'
     path: src/cross_point_cc.hpp
     title: src/cross_point_cc.hpp
   - icon: ':heavy_check_mark:'
@@ -51,6 +54,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_G.test.cpp
     title: test/aoj-cgl/CGL_7_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_I.test.cpp
+    title: test/aoj-cgl/CGL_7_I.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -85,6 +91,7 @@ data:
   isVerificationFile: false
   path: src/circle.hpp
   requiredBy:
+  - src/common_area_cc.hpp
   - src/tangent_cc.hpp
   - src/circumscribed_circle.hpp
   - src/cross_point_cl.hpp
@@ -98,6 +105,7 @@ data:
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_7_A.test.cpp
   - test/aoj-cgl/CGL_7_C.test.cpp
+  - test/aoj-cgl/CGL_7_I.test.cpp
   - test/aoj-cgl/CGL_7_G.test.cpp
   - test/aoj-cgl/CGL_7_F.test.cpp
   - test/aoj-cgl/CGL_7_E.test.cpp

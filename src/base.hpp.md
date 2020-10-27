@@ -21,6 +21,9 @@ data:
     path: src/closest_pair.hpp
     title: src/closest_pair.hpp
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cc.hpp
+    title: src/common_area_cc.hpp
+  - icon: ':heavy_check_mark:'
     path: src/compare.hpp
     title: src/compare.hpp
   - icon: ':heavy_check_mark:'
@@ -156,6 +159,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_G.test.cpp
     title: test/aoj-cgl/CGL_7_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_I.test.cpp
+    title: test/aoj-cgl/CGL_7_I.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -176,6 +182,7 @@ data:
   isVerificationFile: false
   path: src/base.hpp
   requiredBy:
+  - src/common_area_cc.hpp
   - src/tangent_cc.hpp
   - src/convex_cut.hpp
   - src/product.hpp
@@ -217,6 +224,7 @@ data:
   - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
+  - test/aoj-cgl/CGL_7_I.test.cpp
   - test/aoj-cgl/CGL_3_A.test.cpp
   - test/aoj-cgl/CGL_5_A.test.cpp
   - test/aoj-cgl/CGL_1_C.test.cpp
