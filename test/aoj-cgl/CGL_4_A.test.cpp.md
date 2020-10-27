@@ -61,19 +61,19 @@ data:
     \ dot(const point &a, const point &b) {\n        return a.real() * b.real() +\
     \ a.imag() * b.imag();\n    }\n}\n#line 10 \"src/convex_hull.hpp\"\n\n// convex_hull\n\
     namespace geometry {\n  polygon convex_hull(points poly) {\n    int n = poly.size(),\
-    \ k = 0;\n    if (n <= 2) return poly;\n    sort(poly.begin(), poly.end(), compare_x);\n\
-    \n    polygon res(2 * n);\n    for (int i = 0; i < n; res[k++] = poly[i++]) {\n\
-    \      while (k >= 2 && sign(cross(res[k - 1] - res[k - 2], poly[i] - res[k -\
-    \ 1])) == -1) {\n        --k;\n      }\n    }\n\n    for (int i = n - 2, t = k\
-    \ + 1; i >= 0; res[k++] = poly[i--]) {\n      while (k >= t && sign(cross(res[k\
-    \ - 1] - res[k - 2], poly[i] - res[k - 1])) == -1) {\n        --k;\n      }\n\
-    \    }\n\n    res.resize(k - 1);\n    return res;\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_4_A.test.cpp\"\
-    \n\nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  points\
-    \ pts(n);\n  for (auto &p: pts) {\n    cin >> p;\n  }\n\n  polygon poly = convex_hull(pts);\n\
-    \n  n = (int)poly.size();\n  cout << n << endl;\n\n  int idx = 0;\n  for (int\
-    \ i = 0; i < n; ++i) {\n    if (compare_y(poly[i], poly[idx])) {\n      idx =\
-    \ i;\n    }\n  }\n\n  cout << fixed << setprecision(0);\n  for (int i = 0; i <\
-    \ n; ++i) {\n    cout << poly[(i + idx) % n] << endl;\n  }\n}\n"
+    \ k = 0;\n    if (n <= 2) return poly;\n\n    sort(poly.begin(), poly.end(), compare_x);\n\
+    \    polygon res(2 * n);\n\n    auto check = [&](int i) {\n      return sign(cross(res[k\
+    \ - 1] - res[k - 2], poly[i] - res[k - 1])) == -1;\n    };\n\n    for (int i =\
+    \ 0; i < n; res[k++] = poly[i++]) {\n      while (k >= 2 and check(i)) --k;\n\
+    \    }\n\n    for (int i = n - 2, t = k + 1; i >= 0; res[k++] = poly[i--]) {\n\
+    \      while (k >= t and check(i)) --k;\n    }\n\n    res.resize(k - 1);\n   \
+    \ return res;\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_4_A.test.cpp\"\n\nusing namespace\
+    \ geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  points pts(n);\n  for (auto\
+    \ &p: pts) {\n    cin >> p;\n  }\n\n  polygon poly = convex_hull(pts);\n\n  n\
+    \ = (int)poly.size();\n  cout << n << endl;\n\n  int idx = 0;\n  for (int i =\
+    \ 0; i < n; ++i) {\n    if (compare_y(poly[i], poly[idx])) {\n      idx = i;\n\
+    \    }\n  }\n\n  cout << fixed << setprecision(0);\n  for (int i = 0; i < n; ++i)\
+    \ {\n    cout << poly[(i + idx) % n] << endl;\n  }\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../src/polygon.hpp\"\
     \n#include \"../../src/convex_hull.hpp\"\n\nusing namespace geometry;\nint main()\
@@ -93,7 +93,7 @@ data:
   isVerificationFile: true
   path: test/aoj-cgl/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 12:17:16+09:00'
+  timestamp: '2020-10-27 20:17:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_4_A.test.cpp

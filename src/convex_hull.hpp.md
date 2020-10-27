@@ -56,25 +56,23 @@ data:
     \ }\n\n    real_number dot(const point &a, const point &b) {\n        return a.real()\
     \ * b.real() + a.imag() * b.imag();\n    }\n}\n#line 10 \"src/convex_hull.hpp\"\
     \n\n// convex_hull\nnamespace geometry {\n  polygon convex_hull(points poly) {\n\
-    \    int n = poly.size(), k = 0;\n    if (n <= 2) return poly;\n    sort(poly.begin(),\
-    \ poly.end(), compare_x);\n\n    polygon res(2 * n);\n    for (int i = 0; i <\
-    \ n; res[k++] = poly[i++]) {\n      while (k >= 2 && sign(cross(res[k - 1] - res[k\
-    \ - 2], poly[i] - res[k - 1])) == -1) {\n        --k;\n      }\n    }\n\n    for\
-    \ (int i = n - 2, t = k + 1; i >= 0; res[k++] = poly[i--]) {\n      while (k >=\
-    \ t && sign(cross(res[k - 1] - res[k - 2], poly[i] - res[k - 1])) == -1) {\n \
-    \       --k;\n      }\n    }\n\n    res.resize(k - 1);\n    return res;\n  }\n\
-    }\n"
+    \    int n = poly.size(), k = 0;\n    if (n <= 2) return poly;\n\n    sort(poly.begin(),\
+    \ poly.end(), compare_x);\n    polygon res(2 * n);\n\n    auto check = [&](int\
+    \ i) {\n      return sign(cross(res[k - 1] - res[k - 2], poly[i] - res[k - 1]))\
+    \ == -1;\n    };\n\n    for (int i = 0; i < n; res[k++] = poly[i++]) {\n     \
+    \ while (k >= 2 and check(i)) --k;\n    }\n\n    for (int i = n - 2, t = k + 1;\
+    \ i >= 0; res[k++] = poly[i--]) {\n      while (k >= t and check(i)) --k;\n  \
+    \  }\n\n    res.resize(k - 1);\n    return res;\n  }\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"./point.hpp\"\n#include \"./polygon.hpp\"\n#include \"./compare.hpp\"\n#include\
     \ \"./product.hpp\"\n\n// convex_hull\nnamespace geometry {\n  polygon convex_hull(points\
-    \ poly) {\n    int n = poly.size(), k = 0;\n    if (n <= 2) return poly;\n   \
-    \ sort(poly.begin(), poly.end(), compare_x);\n\n    polygon res(2 * n);\n    for\
-    \ (int i = 0; i < n; res[k++] = poly[i++]) {\n      while (k >= 2 && sign(cross(res[k\
-    \ - 1] - res[k - 2], poly[i] - res[k - 1])) == -1) {\n        --k;\n      }\n\
-    \    }\n\n    for (int i = n - 2, t = k + 1; i >= 0; res[k++] = poly[i--]) {\n\
-    \      while (k >= t && sign(cross(res[k - 1] - res[k - 2], poly[i] - res[k -\
-    \ 1])) == -1) {\n        --k;\n      }\n    }\n\n    res.resize(k - 1);\n    return\
-    \ res;\n  }\n}\n"
+    \ poly) {\n    int n = poly.size(), k = 0;\n    if (n <= 2) return poly;\n\n \
+    \   sort(poly.begin(), poly.end(), compare_x);\n    polygon res(2 * n);\n\n  \
+    \  auto check = [&](int i) {\n      return sign(cross(res[k - 1] - res[k - 2],\
+    \ poly[i] - res[k - 1])) == -1;\n    };\n\n    for (int i = 0; i < n; res[k++]\
+    \ = poly[i++]) {\n      while (k >= 2 and check(i)) --k;\n    }\n\n    for (int\
+    \ i = n - 2, t = k + 1; i >= 0; res[k++] = poly[i--]) {\n      while (k >= t and\
+    \ check(i)) --k;\n    }\n\n    res.resize(k - 1);\n    return res;\n  }\n}\n"
   dependsOn:
   - src/point.hpp
   - src/base.hpp
@@ -84,7 +82,7 @@ data:
   isVerificationFile: false
   path: src/convex_hull.hpp
   requiredBy: []
-  timestamp: '2020-10-27 12:17:16+09:00'
+  timestamp: '2020-10-27 20:17:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp
