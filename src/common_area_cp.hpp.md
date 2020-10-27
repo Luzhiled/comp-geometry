@@ -114,30 +114,30 @@ data:
     \n    points pts;\n    point e = (l.b - l.a) / abs(l.b - l.a);\n    real_number\
     \ k = sqrt(norm(c.r) - norm(pr - c.p));\n    pts.emplace_back(pr + e * k);\n \
     \   pts.emplace_back(pr - e * k);\n    return pts;\n  }\n}\n#line 14 \"src/common_area_cp.hpp\"\
-    \n\nnamespace geometry {\n  real_number ca_cp_impl(circle c, point a, point b)\
+    \n\nnamespace geometry {\n  real_number ca_cp_impl(const circle &c, const point\
+    \ &a, const point &b) {\n    point va = c.p - a, vb = c.p - b;\n    real_number\
+    \ f = cross(va, vb), res = 0;\n\n    if (sign(f) == 0) return res;\n    if (sign(max(abs(va),\
+    \ abs(vb)) - c.r) <= 0) return f;\n\n    point d(dot(va, vb), cross(va, vb));\n\
+    \    if (sign(distance(segment(a, b), c.p) - c.r) >= 0) \n      return norm(c.r)\
+    \ * atan2(d.imag(), d.real());\n\n    points ps = cross_point_cl(c, segment(a,\
+    \ b));\n    if (ps.empty()) return res;\n    if (ps.size() == 2 and sign(dot(ps[1]\
+    \ - ps[0], a - ps[0])) >= 0)\n      swap(ps[0], ps[1]);\n\n    ps.emplace(ps.begin(),\
+    \ a);\n    ps.emplace_back(b);\n    for (int i = 1; i < (int)ps.size(); i++) \n\
+    \      res += ca_cp_impl(c, ps[i - 1], ps[i]);\n\n    return res;\n  }\n\n  real_number\
+    \ common_area_cp(const circle &c, const polygon &p) {\n    int n = p.size();\n\
+    \    if (n < 3) return 0;\n\n    real_number res = 0;\n    for (int i = 0; i <\
+    \ n; ++i) {\n      res += ca_cp_impl(c, p[i], p[(i + 1) % n]);\n    }\n    \n\
+    \    return res / 2;\n  };\n}\n"
+  code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
+    \ \"./base.hpp\"\n#include \"./point.hpp\"\n#include \"./circle.hpp\"\n#include\
+    \ \"./segment.hpp\"\n#include \"./polygon.hpp\"\n#include \"./product.hpp\"\n\
+    #include \"./distance.hpp\"\n#include \"./cross_point_cl.hpp\"\n\nnamespace geometry\
+    \ {\n  real_number ca_cp_impl(const circle &c, const point &a, const point &b)\
     \ {\n    point va = c.p - a, vb = c.p - b;\n    real_number f = cross(va, vb),\
     \ res = 0;\n\n    if (sign(f) == 0) return res;\n    if (sign(max(abs(va), abs(vb))\
     \ - c.r) <= 0) return f;\n\n    point d(dot(va, vb), cross(va, vb));\n    if (sign(distance(segment(a,\
     \ b), c.p) - c.r) >= 0) \n      return norm(c.r) * atan2(d.imag(), d.real());\n\
     \n    points ps = cross_point_cl(c, segment(a, b));\n    if (ps.empty()) return\
-    \ res;\n    if (ps.size() == 2 and sign(dot(ps[1] - ps[0], a - ps[0])) >= 0)\n\
-    \      swap(ps[0], ps[1]);\n\n    ps.emplace(ps.begin(), a);\n    ps.emplace_back(b);\n\
-    \    for (int i = 1; i < (int)ps.size(); i++) \n      res += ca_cp_impl(c, ps[i\
-    \ - 1], ps[i]);\n\n    return res;\n  }\n\n  real_number common_area_cp(const\
-    \ circle &c, const polygon &p) {\n    int n = p.size();\n    if (n < 3) return\
-    \ 0;\n\n    real_number res = 0;\n    for (int i = 0; i < n; ++i) {\n      res\
-    \ += ca_cp_impl(c, p[i], p[(i + 1) % n]);\n    }\n    \n    return res / 2;\n\
-    \  };\n}\n"
-  code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
-    \ \"./base.hpp\"\n#include \"./point.hpp\"\n#include \"./circle.hpp\"\n#include\
-    \ \"./segment.hpp\"\n#include \"./polygon.hpp\"\n#include \"./product.hpp\"\n\
-    #include \"./distance.hpp\"\n#include \"./cross_point_cl.hpp\"\n\nnamespace geometry\
-    \ {\n  real_number ca_cp_impl(circle c, point a, point b) {\n    point va = c.p\
-    \ - a, vb = c.p - b;\n    real_number f = cross(va, vb), res = 0;\n\n    if (sign(f)\
-    \ == 0) return res;\n    if (sign(max(abs(va), abs(vb)) - c.r) <= 0) return f;\n\
-    \n    point d(dot(va, vb), cross(va, vb));\n    if (sign(distance(segment(a, b),\
-    \ c.p) - c.r) >= 0) \n      return norm(c.r) * atan2(d.imag(), d.real());\n\n\
-    \    points ps = cross_point_cl(c, segment(a, b));\n    if (ps.empty()) return\
     \ res;\n    if (ps.size() == 2 and sign(dot(ps[1] - ps[0], a - ps[0])) >= 0)\n\
     \      swap(ps[0], ps[1]);\n\n    ps.emplace(ps.begin(), a);\n    ps.emplace_back(b);\n\
     \    for (int i = 1; i < (int)ps.size(); i++) \n      res += ca_cp_impl(c, ps[i\
@@ -162,7 +162,7 @@ data:
   isVerificationFile: false
   path: src/common_area_cp.hpp
   requiredBy: []
-  timestamp: '2020-10-27 20:01:29+09:00'
+  timestamp: '2020-10-27 20:05:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_7_H.test.cpp

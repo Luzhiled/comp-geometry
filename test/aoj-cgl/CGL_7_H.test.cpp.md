@@ -120,23 +120,24 @@ data:
     \n    points pts;\n    point e = (l.b - l.a) / abs(l.b - l.a);\n    real_number\
     \ k = sqrt(norm(c.r) - norm(pr - c.p));\n    pts.emplace_back(pr + e * k);\n \
     \   pts.emplace_back(pr - e * k);\n    return pts;\n  }\n}\n#line 14 \"src/common_area_cp.hpp\"\
-    \n\nnamespace geometry {\n  real_number ca_cp_impl(circle c, point a, point b)\
-    \ {\n    point va = c.p - a, vb = c.p - b;\n    real_number f = cross(va, vb),\
-    \ res = 0;\n\n    if (sign(f) == 0) return res;\n    if (sign(max(abs(va), abs(vb))\
-    \ - c.r) <= 0) return f;\n\n    point d(dot(va, vb), cross(va, vb));\n    if (sign(distance(segment(a,\
-    \ b), c.p) - c.r) >= 0) \n      return norm(c.r) * atan2(d.imag(), d.real());\n\
-    \n    points ps = cross_point_cl(c, segment(a, b));\n    if (ps.empty()) return\
-    \ res;\n    if (ps.size() == 2 and sign(dot(ps[1] - ps[0], a - ps[0])) >= 0)\n\
-    \      swap(ps[0], ps[1]);\n\n    ps.emplace(ps.begin(), a);\n    ps.emplace_back(b);\n\
-    \    for (int i = 1; i < (int)ps.size(); i++) \n      res += ca_cp_impl(c, ps[i\
-    \ - 1], ps[i]);\n\n    return res;\n  }\n\n  real_number common_area_cp(const\
-    \ circle &c, const polygon &p) {\n    int n = p.size();\n    if (n < 3) return\
-    \ 0;\n\n    real_number res = 0;\n    for (int i = 0; i < n; ++i) {\n      res\
-    \ += ca_cp_impl(c, p[i], p[(i + 1) % n]);\n    }\n    \n    return res / 2;\n\
-    \  };\n}\n#line 11 \"test/aoj-cgl/CGL_7_H.test.cpp\"\n\nusing namespace geometry;\n\
-    int main() {\n  circle c(point(0, 0), 0);\n  int n;\n  \n  cin >> n >> c.r;\n\n\
-    \  polygon poly(n);\n  for (auto &p : poly) cin >> p;\n\n  cout << fixed << setprecision(15);\n\
-    \  cout << common_area_cp(c, poly) << endl;\n}\n"
+    \n\nnamespace geometry {\n  real_number ca_cp_impl(const circle &c, const point\
+    \ &a, const point &b) {\n    point va = c.p - a, vb = c.p - b;\n    real_number\
+    \ f = cross(va, vb), res = 0;\n\n    if (sign(f) == 0) return res;\n    if (sign(max(abs(va),\
+    \ abs(vb)) - c.r) <= 0) return f;\n\n    point d(dot(va, vb), cross(va, vb));\n\
+    \    if (sign(distance(segment(a, b), c.p) - c.r) >= 0) \n      return norm(c.r)\
+    \ * atan2(d.imag(), d.real());\n\n    points ps = cross_point_cl(c, segment(a,\
+    \ b));\n    if (ps.empty()) return res;\n    if (ps.size() == 2 and sign(dot(ps[1]\
+    \ - ps[0], a - ps[0])) >= 0)\n      swap(ps[0], ps[1]);\n\n    ps.emplace(ps.begin(),\
+    \ a);\n    ps.emplace_back(b);\n    for (int i = 1; i < (int)ps.size(); i++) \n\
+    \      res += ca_cp_impl(c, ps[i - 1], ps[i]);\n\n    return res;\n  }\n\n  real_number\
+    \ common_area_cp(const circle &c, const polygon &p) {\n    int n = p.size();\n\
+    \    if (n < 3) return 0;\n\n    real_number res = 0;\n    for (int i = 0; i <\
+    \ n; ++i) {\n      res += ca_cp_impl(c, p[i], p[(i + 1) % n]);\n    }\n    \n\
+    \    return res / 2;\n  };\n}\n#line 11 \"test/aoj-cgl/CGL_7_H.test.cpp\"\n\n\
+    using namespace geometry;\nint main() {\n  circle c(point(0, 0), 0);\n  int n;\n\
+    \  \n  cin >> n >> c.r;\n\n  polygon poly(n);\n  for (auto &p : poly) cin >> p;\n\
+    \n  cout << fixed << setprecision(15);\n  cout << common_area_cp(c, poly) << endl;\n\
+    }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_H\n\
     // verification-helper: ERROR 0.000001\n\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n\n#include \"../../src/point.hpp\"\n#include \"../../src/circle.hpp\"\n\
@@ -162,7 +163,7 @@ data:
   isVerificationFile: true
   path: test/aoj-cgl/CGL_7_H.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 20:01:29+09:00'
+  timestamp: '2020-10-27 20:05:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_7_H.test.cpp
