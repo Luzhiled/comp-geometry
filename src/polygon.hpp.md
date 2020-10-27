@@ -12,6 +12,9 @@ data:
     path: src/area.hpp
     title: src/area.hpp
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cp.hpp
+    title: src/common_area_cp.hpp
+  - icon: ':heavy_check_mark:'
     path: src/contains.hpp
     title: src/contains.hpp
   - icon: ':heavy_check_mark:'
@@ -45,6 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_4_C.test.cpp
     title: test/aoj-cgl/CGL_4_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_H.test.cpp
+    title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -79,6 +85,7 @@ data:
   requiredBy:
   - src/convex_cut.hpp
   - src/area.hpp
+  - src/common_area_cp.hpp
   - src/convex_diameter.hpp
   - src/is_convex.hpp
   - src/convex_hull.hpp
@@ -90,6 +97,7 @@ data:
   - test/aoj-cgl/CGL_3_C.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_3_A.test.cpp
+  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
   - test/aoj-cgl/CGL_4_B.test.cpp
 documentation_of: src/polygon.hpp

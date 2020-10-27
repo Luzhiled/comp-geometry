@@ -15,6 +15,9 @@ data:
     path: src/common_area_cc.hpp
     title: src/common_area_cc.hpp
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cp.hpp
+    title: src/common_area_cp.hpp
+  - icon: ':heavy_check_mark:'
     path: src/cross_point_cc.hpp
     title: src/cross_point_cc.hpp
   - icon: ':heavy_check_mark:'
@@ -54,6 +57,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_G.test.cpp
     title: test/aoj-cgl/CGL_7_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_H.test.cpp
+    title: test/aoj-cgl/CGL_7_H.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_I.test.cpp
     title: test/aoj-cgl/CGL_7_I.test.cpp
@@ -95,6 +101,7 @@ data:
   - src/tangent_cc.hpp
   - src/circumscribed_circle.hpp
   - src/cross_point_cl.hpp
+  - src/common_area_cp.hpp
   - src/tangent_cp.hpp
   - src/inscribed_circle.hpp
   - src/cross_point_cc.hpp
@@ -106,6 +113,7 @@ data:
   - test/aoj-cgl/CGL_7_A.test.cpp
   - test/aoj-cgl/CGL_7_C.test.cpp
   - test/aoj-cgl/CGL_7_I.test.cpp
+  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_7_G.test.cpp
   - test/aoj-cgl/CGL_7_F.test.cpp
   - test/aoj-cgl/CGL_7_E.test.cpp

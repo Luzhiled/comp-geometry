@@ -19,11 +19,17 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/projection.hpp
     title: src/projection.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/common_area_cp.hpp
+    title: src/common_area_cp.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_D.test.cpp
     title: test/aoj-cgl/CGL_7_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_H.test.cpp
+    title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -84,10 +90,12 @@ data:
   - src/product.hpp
   isVerificationFile: false
   path: src/cross_point_cl.hpp
-  requiredBy: []
+  requiredBy:
+  - src/common_area_cp.hpp
   timestamp: '2020-10-27 08:08:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_7_D.test.cpp
 documentation_of: src/cross_point_cl.hpp
 layout: document

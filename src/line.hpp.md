@@ -12,6 +12,9 @@ data:
     path: src/circumscribed_circle.hpp
     title: src/circumscribed_circle.hpp
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cp.hpp
+    title: src/common_area_cp.hpp
+  - icon: ':heavy_check_mark:'
     path: src/convex_cut.hpp
     title: src/convex_cut.hpp
   - icon: ':heavy_check_mark:'
@@ -87,6 +90,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_G.test.cpp
     title: test/aoj-cgl/CGL_7_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_H.test.cpp
+    title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -129,6 +135,7 @@ data:
   - src/is_orthogonal.hpp
   - src/segment.hpp
   - src/distance.hpp
+  - src/common_area_cp.hpp
   - src/tangent_cp.hpp
   - src/projection.hpp
   - src/reflection.hpp
@@ -142,6 +149,7 @@ data:
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_7_C.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
+  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_1_A.test.cpp
   - test/aoj-cgl/CGL_1_B.test.cpp
   - test/aoj-cgl/CGL_7_G.test.cpp

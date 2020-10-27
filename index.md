@@ -28,6 +28,9 @@ data:
       path: src/common_area_cc.hpp
       title: src/common_area_cc.hpp
     - icon: ':heavy_check_mark:'
+      path: src/common_area_cp.hpp
+      title: src/common_area_cp.hpp
+    - icon: ':heavy_check_mark:'
       path: src/compare.hpp
       title: src/compare.hpp
     - icon: ':heavy_check_mark:'
@@ -165,6 +168,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_G.test.cpp
       title: test/aoj-cgl/CGL_7_G.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_7_H.test.cpp
+      title: test/aoj-cgl/CGL_7_H.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_I.test.cpp
       title: test/aoj-cgl/CGL_7_I.test.cpp

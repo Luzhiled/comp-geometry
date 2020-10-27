@@ -15,6 +15,9 @@ data:
     title: src/product.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cp.hpp
+    title: src/common_area_cp.hpp
+  - icon: ':heavy_check_mark:'
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
   - icon: ':heavy_check_mark:'
@@ -45,6 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_G.test.cpp
     title: test/aoj-cgl/CGL_7_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_H.test.cpp
+    title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -93,12 +99,14 @@ data:
   requiredBy:
   - src/cross_point_cl.hpp
   - src/distance.hpp
+  - src/common_area_cp.hpp
   - src/reflection.hpp
   - src/inscribed_circle.hpp
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_7_B.test.cpp
+  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_1_A.test.cpp
   - test/aoj-cgl/CGL_1_B.test.cpp
   - test/aoj-cgl/CGL_7_G.test.cpp

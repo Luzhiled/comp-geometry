@@ -9,6 +9,9 @@ data:
     title: src/product.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: src/common_area_cp.hpp
+    title: src/common_area_cp.hpp
+  - icon: ':heavy_check_mark:'
     path: src/distance.hpp
     title: src/distance.hpp
   - icon: ':heavy_check_mark:'
@@ -36,6 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_B.test.cpp
     title: test/aoj-cgl/CGL_7_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_H.test.cpp
+    title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -76,6 +82,7 @@ data:
   path: src/ccw.hpp
   requiredBy:
   - src/distance.hpp
+  - src/common_area_cp.hpp
   - src/is_convex.hpp
   - src/inscribed_circle.hpp
   - src/is_intersect.hpp
@@ -86,6 +93,7 @@ data:
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
   - test/aoj-cgl/CGL_1_C.test.cpp
+  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
 documentation_of: src/ccw.hpp
 layout: document
