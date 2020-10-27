@@ -56,9 +56,9 @@ data:
     #line 10 \"src/convex_cut.hpp\"\n\n// convex cut\nnamespace geometry {\n  polygon\
     \ convex_cut(const polygon &poly, const line &l) {\n    polygon res;\n    int\
     \ n = poly.size();\n    for (int i = 0; i < n; ++i) {\n      int j = (i + 1 ==\
-    \ n ? 0 : i + 1);\n\n      real_number ci = cross(l.a - poly[i], l.b - poly[i]);\n\
-    \      real_number cj = cross(l.a - poly[j], l.b - poly[j]);\n\n      if (sign(ci)\
-    \ >= 0) res.emplace_back(poly[i]);\n      if (sign(ci) * sign(cj) < 0) {\n   \
+    \ n ? 0 : i + 1);\n\n      real_number cf = cross(l.a - poly[i], l.b - poly[i]);\n\
+    \      real_number cs = cross(l.a - poly[j], l.b - poly[j]);\n\n      if (sign(cf)\
+    \ >= 0) res.emplace_back(poly[i]);\n      if (sign(cf) * sign(cs) < 0) {\n   \
     \     real_number s = cross(poly[j] - poly[i], l.a - l.b);\n        real_number\
     \ t = cross(l.a - poly[i], l.a - l.b);\n        res.emplace_back(poly[i] + t /\
     \ s * (poly[j] - poly[i]));\n      }\n    }\n\n    return res;\n  }\n}\n"
@@ -67,9 +67,9 @@ data:
     \ \"./product.hpp\"\n\n// convex cut\nnamespace geometry {\n  polygon convex_cut(const\
     \ polygon &poly, const line &l) {\n    polygon res;\n    int n = poly.size();\n\
     \    for (int i = 0; i < n; ++i) {\n      int j = (i + 1 == n ? 0 : i + 1);\n\n\
-    \      real_number ci = cross(l.a - poly[i], l.b - poly[i]);\n      real_number\
-    \ cj = cross(l.a - poly[j], l.b - poly[j]);\n\n      if (sign(ci) >= 0) res.emplace_back(poly[i]);\n\
-    \      if (sign(ci) * sign(cj) < 0) {\n        real_number s = cross(poly[j] -\
+    \      real_number cf = cross(l.a - poly[i], l.b - poly[i]);\n      real_number\
+    \ cs = cross(l.a - poly[j], l.b - poly[j]);\n\n      if (sign(cf) >= 0) res.emplace_back(poly[i]);\n\
+    \      if (sign(cf) * sign(cs) < 0) {\n        real_number s = cross(poly[j] -\
     \ poly[i], l.a - l.b);\n        real_number t = cross(l.a - poly[i], l.a - l.b);\n\
     \        res.emplace_back(poly[i] + t / s * (poly[j] - poly[i]));\n      }\n \
     \   }\n\n    return res;\n  }\n}\n"
@@ -82,7 +82,7 @@ data:
   isVerificationFile: false
   path: src/convex_cut.hpp
   requiredBy: []
-  timestamp: '2020-10-15 00:41:16+09:00'
+  timestamp: '2020-10-27 11:45:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_4_C.test.cpp
