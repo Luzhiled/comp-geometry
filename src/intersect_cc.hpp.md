@@ -43,20 +43,19 @@ data:
     namespace geometry {\n  constexpr int SEPERATE     = 4;\n  constexpr int CIRCUMSCRIBE\
     \ = 3;\n  constexpr int INTERSECT    = 2;\n  constexpr int INSCRIBE     = 1;\n\
     \  constexpr int CONTAIN      = 0;\n  int intersect_cc(circle c1, circle c2) {\n\
-    \    if (c1.r > c2.r) swap(c1, c2);\n\n    real_number d = abs(c1.p - c2.p);\n\
-    \    real_number r = c1.r + c2.r;\n\n    if (sign(d - r) > 0) return SEPERATE;\n\
-    \    if (is_equal(d, r)) return CIRCUMSCRIBE;\n    if (is_equal(d + c1.r, c2.r))\
-    \ return INSCRIBE;\n    if (d + c1.r < c2.r) return CONTAIN;\n    return INTERSECT;\n\
-    \  }\n}\n"
+    \    if (c1.r > c2.r) swap(c1, c2);\n    real_number d = abs(c1.p - c2.p), r =\
+    \ c1.r + c2.r;\n\n    if (sign(d - r) > 0) return SEPERATE;\n    if (d + c1.r\
+    \ < c2.r) return CONTAIN;\n    if (is_equal(d, r)) return CIRCUMSCRIBE;\n    if\
+    \ (is_equal(d + c1.r, c2.r)) return INSCRIBE;\n    return INTERSECT;\n  }\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"./base.hpp\"\n#include \"./circle.hpp\"\n\nnamespace geometry {\n  constexpr\
     \ int SEPERATE     = 4;\n  constexpr int CIRCUMSCRIBE = 3;\n  constexpr int INTERSECT\
     \    = 2;\n  constexpr int INSCRIBE     = 1;\n  constexpr int CONTAIN      = 0;\n\
     \  int intersect_cc(circle c1, circle c2) {\n    if (c1.r > c2.r) swap(c1, c2);\n\
-    \n    real_number d = abs(c1.p - c2.p);\n    real_number r = c1.r + c2.r;\n\n\
-    \    if (sign(d - r) > 0) return SEPERATE;\n    if (is_equal(d, r)) return CIRCUMSCRIBE;\n\
-    \    if (is_equal(d + c1.r, c2.r)) return INSCRIBE;\n    if (d + c1.r < c2.r)\
-    \ return CONTAIN;\n    return INTERSECT;\n  }\n}\n"
+    \    real_number d = abs(c1.p - c2.p), r = c1.r + c2.r;\n\n    if (sign(d - r)\
+    \ > 0) return SEPERATE;\n    if (d + c1.r < c2.r) return CONTAIN;\n    if (is_equal(d,\
+    \ r)) return CIRCUMSCRIBE;\n    if (is_equal(d + c1.r, c2.r)) return INSCRIBE;\n\
+    \    return INTERSECT;\n  }\n}\n"
   dependsOn:
   - src/base.hpp
   - src/circle.hpp
@@ -64,7 +63,7 @@ data:
   isVerificationFile: false
   path: src/intersect_cc.hpp
   requiredBy: []
-  timestamp: '2020-10-27 07:00:07+09:00'
+  timestamp: '2020-10-27 11:13:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_7_A.test.cpp

@@ -36,6 +36,9 @@ data:
     path: src/cross_point.hpp
     title: src/cross_point.hpp
   - icon: ':heavy_check_mark:'
+    path: src/cross_point_cc.hpp
+    title: src/cross_point_cc.hpp
+  - icon: ':heavy_check_mark:'
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
   - icon: ':heavy_check_mark:'
@@ -74,6 +77,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/segment.hpp
     title: src/segment.hpp
+  - icon: ':warning:'
+    path: src/tangent_cp.hpp
+    title: src/tangent_cp.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_1_A.test.cpp
@@ -129,6 +135,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_D.test.cpp
     title: test/aoj-cgl/CGL_7_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_E.test.cpp
+    title: test/aoj-cgl/CGL_7_E.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -176,6 +185,7 @@ data:
   - src/segment.hpp
   - src/distance.hpp
   - src/convex_diameter.hpp
+  - src/tangent_cp.hpp
   - src/projection.hpp
   - src/is_convex.hpp
   - src/convex_hull.hpp
@@ -183,6 +193,7 @@ data:
   - src/inscribed_circle.hpp
   - src/circle.hpp
   - src/is_intersect.hpp
+  - src/cross_point_cc.hpp
   - src/cross_point.hpp
   - src/contains.hpp
   - src/polygon.hpp
@@ -207,6 +218,7 @@ data:
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
   - test/aoj-cgl/CGL_4_B.test.cpp
+  - test/aoj-cgl/CGL_7_E.test.cpp
   - test/aoj-cgl/CGL_7_D.test.cpp
 documentation_of: src/point.hpp
 layout: document

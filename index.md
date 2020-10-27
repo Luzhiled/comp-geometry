@@ -43,6 +43,9 @@ data:
       path: src/cross_point.hpp
       title: src/cross_point.hpp
     - icon: ':heavy_check_mark:'
+      path: src/cross_point_cc.hpp
+      title: src/cross_point_cc.hpp
+    - icon: ':heavy_check_mark:'
       path: src/cross_point_cl.hpp
       title: src/cross_point_cl.hpp
     - icon: ':heavy_check_mark:'
@@ -87,6 +90,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/segment.hpp
       title: src/segment.hpp
+    - icon: ':warning:'
+      path: src/tangent_cp.hpp
+      title: src/tangent_cp.hpp
   verificationCategories:
   - name: test/aoj-cgl
     pages:
@@ -144,5 +150,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_D.test.cpp
       title: test/aoj-cgl/CGL_7_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_7_E.test.cpp
+      title: test/aoj-cgl/CGL_7_E.test.cpp
 layout: toppage
 ---

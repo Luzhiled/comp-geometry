@@ -44,6 +44,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/segment.hpp
     title: src/segment.hpp
+  - icon: ':warning:'
+    path: src/tangent_cp.hpp
+    title: src/tangent_cp.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_1_A.test.cpp
@@ -116,6 +119,7 @@ data:
   - src/is_orthogonal.hpp
   - src/segment.hpp
   - src/distance.hpp
+  - src/tangent_cp.hpp
   - src/projection.hpp
   - src/reflection.hpp
   - src/inscribed_circle.hpp
