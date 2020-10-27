@@ -45,24 +45,25 @@ data:
     \n#line 4 \"src/polygon.hpp\"\nusing namespace std;\n\n#line 7 \"src/polygon.hpp\"\
     \n\n// polygon\nnamespace geometry {\n  using polygon = vector< point >;\n  using\
     \ polygons = vector< polygon >;\n}\n#line 2 \"src/compare.hpp\"\n\n#line 4 \"\
-    src/compare.hpp\"\nusing namespace std;\n\n#line 7 \"src/compare.hpp\"\n\nnamespace\
-    \ geometry {\n  bool compare_x(const point &a, const point &b) {\n    return a.real()\
-    \ != b.real() ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
-    \ point &a, const point &b) {\n    return a.imag() != b.imag() ? a.imag() < b.imag()\
-    \ : a.real() < b.real();\n  }\n}\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\
-    \nusing namespace std;\n\n#line 7 \"src/product.hpp\"\n\n// product\nnamespace\
-    \ geometry {\n    real_number cross(const point &a, const point &b) {\n      \
-    \  return a.real() * b.imag() - a.imag() * b.real();\n    }\n\n    real_number\
-    \ dot(const point &a, const point &b) {\n        return a.real() * b.real() +\
-    \ a.imag() * b.imag();\n    }\n}\n#line 10 \"src/convex_hull.hpp\"\n\n// convex_hull\n\
-    namespace geometry {\n  polygon convex_hull(points poly) {\n    int n = poly.size(),\
-    \ k = 0;\n    if (n <= 2) return poly;\n    sort(poly.begin(), poly.end(), compare_x);\n\
-    \n    polygon res(2 * n);\n    for (int i = 0; i < n; res[k++] = poly[i++]) {\n\
-    \      while (k >= 2 && sign(cross(res[k - 1] - res[k - 2], poly[i] - res[k -\
-    \ 1])) == -1) {\n        --k;\n      }\n    }\n\n    for (int i = n - 2, t = k\
-    \ + 1; i >= 0; res[k++] = poly[i--]) {\n      while (k >= t && sign(cross(res[k\
-    \ - 1] - res[k - 2], poly[i] - res[k - 1])) == -1) {\n        --k;\n      }\n\
-    \    }\n\n    res.resize(k - 1);\n    return res;\n  }\n}\n"
+    src/compare.hpp\"\nusing namespace std;\n\n#line 8 \"src/compare.hpp\"\n\nnamespace\
+    \ geometry {\n  bool compare_x(const point &a, const point &b) {\n    return !is_equal(a.real(),\
+    \ b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
+    \ point &a, const point &b) {\n    return !is_equal(a.imag(), b.imag()) ? a.imag()\
+    \ < b.imag() : a.real() < b.real();\n  }\n}\n#line 2 \"src/product.hpp\"\n\n#line\
+    \ 4 \"src/product.hpp\"\nusing namespace std;\n\n#line 7 \"src/product.hpp\"\n\
+    \n// product\nnamespace geometry {\n    real_number cross(const point &a, const\
+    \ point &b) {\n        return a.real() * b.imag() - a.imag() * b.real();\n   \
+    \ }\n\n    real_number dot(const point &a, const point &b) {\n        return a.real()\
+    \ * b.real() + a.imag() * b.imag();\n    }\n}\n#line 10 \"src/convex_hull.hpp\"\
+    \n\n// convex_hull\nnamespace geometry {\n  polygon convex_hull(points poly) {\n\
+    \    int n = poly.size(), k = 0;\n    if (n <= 2) return poly;\n    sort(poly.begin(),\
+    \ poly.end(), compare_x);\n\n    polygon res(2 * n);\n    for (int i = 0; i <\
+    \ n; res[k++] = poly[i++]) {\n      while (k >= 2 && sign(cross(res[k - 1] - res[k\
+    \ - 2], poly[i] - res[k - 1])) == -1) {\n        --k;\n      }\n    }\n\n    for\
+    \ (int i = n - 2, t = k + 1; i >= 0; res[k++] = poly[i--]) {\n      while (k >=\
+    \ t && sign(cross(res[k - 1] - res[k - 2], poly[i] - res[k - 1])) == -1) {\n \
+    \       --k;\n      }\n    }\n\n    res.resize(k - 1);\n    return res;\n  }\n\
+    }\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"./point.hpp\"\n#include \"./polygon.hpp\"\n#include \"./compare.hpp\"\n#include\
     \ \"./product.hpp\"\n\n// convex_hull\nnamespace geometry {\n  polygon convex_hull(points\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: false
   path: src/convex_hull.hpp
   requiredBy: []
-  timestamp: '2020-10-15 00:41:16+09:00'
+  timestamp: '2020-10-27 12:17:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp

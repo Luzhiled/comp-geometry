@@ -56,20 +56,20 @@ data:
     \        return a.real() * b.imag() - a.imag() * b.real();\n    }\n\n    real_number\
     \ dot(const point &a, const point &b) {\n        return a.real() * b.real() +\
     \ a.imag() * b.imag();\n    }\n}\n#line 2 \"src/compare.hpp\"\n\n#line 4 \"src/compare.hpp\"\
-    \nusing namespace std;\n\n#line 7 \"src/compare.hpp\"\n\nnamespace geometry {\n\
-    \  bool compare_x(const point &a, const point &b) {\n    return a.real() != b.real()\
-    \ ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
-    \ point &a, const point &b) {\n    return a.imag() != b.imag() ? a.imag() < b.imag()\
-    \ : a.real() < b.real();\n  }\n}\n#line 10 \"src/convex_diameter.hpp\"\n\nnamespace\
-    \ geometry {\n  real_number convex_diameter(const polygon &p) {\n    int n = p.size();\n\
-    \    if (n == 2) return abs(p[0] - p[1]);\n\n    int i = 0, j = 0;\n    for (int\
-    \ k = 0; k < n; ++k) {\n      if ( compare_x(p[i], p[k])) i = k;\n      if (!compare_x(p[j],\
-    \ p[k])) j = k;\n    }\n\n    real_number res = 0;\n    int si = i, sj = j;\n\
-    \    while (i != sj || j != si) {\n      res = max(res, abs(p[i] - p[j]));\n \
-    \     if (sign(cross(p[(i + 1) % n] - p[i], p[(j + 1) % n] - p[j])) == -1) {\n\
-    \        i = (i + 1) % n;\n      } else {\n        j = (j + 1) % n;\n      }\n\
-    \    }\n\n    return res;\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_4_B.test.cpp\"\n\
-    \nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon\
+    \nusing namespace std;\n\n#line 8 \"src/compare.hpp\"\n\nnamespace geometry {\n\
+    \  bool compare_x(const point &a, const point &b) {\n    return !is_equal(a.real(),\
+    \ b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
+    \ point &a, const point &b) {\n    return !is_equal(a.imag(), b.imag()) ? a.imag()\
+    \ < b.imag() : a.real() < b.real();\n  }\n}\n#line 10 \"src/convex_diameter.hpp\"\
+    \n\nnamespace geometry {\n  real_number convex_diameter(const polygon &p) {\n\
+    \    int n = p.size();\n    if (n == 2) return abs(p[0] - p[1]);\n\n    int i\
+    \ = 0, j = 0;\n    for (int k = 0; k < n; ++k) {\n      if ( compare_x(p[i], p[k]))\
+    \ i = k;\n      if (!compare_x(p[j], p[k])) j = k;\n    }\n\n    real_number res\
+    \ = 0;\n    int si = i, sj = j;\n    while (i != sj || j != si) {\n      res =\
+    \ max(res, abs(p[i] - p[j]));\n      if (sign(cross(p[(i + 1) % n] - p[i], p[(j\
+    \ + 1) % n] - p[j])) == -1) {\n        i = (i + 1) % n;\n      } else {\n    \
+    \    j = (j + 1) % n;\n      }\n    }\n\n    return res;\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_4_B.test.cpp\"\
+    \n\nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon\
     \ poly(n);\n  for (auto &p: poly) cin >> p;\n\n  cout << fixed << setprecision(15);\n\
     \  cout << convex_diameter(poly) << endl;\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/4/CGL_4_B\n\
@@ -88,7 +88,7 @@ data:
   isVerificationFile: true
   path: test/aoj-cgl/CGL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 06:59:11+09:00'
+  timestamp: '2020-10-27 12:17:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_4_B.test.cpp

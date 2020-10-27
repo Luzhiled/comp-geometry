@@ -42,27 +42,27 @@ data:
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \      sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 2 \"src/compare.hpp\"\
-    \n\n#line 4 \"src/compare.hpp\"\nusing namespace std;\n\n#line 7 \"src/compare.hpp\"\
+    \n\n#line 4 \"src/compare.hpp\"\nusing namespace std;\n\n#line 8 \"src/compare.hpp\"\
     \n\nnamespace geometry {\n  bool compare_x(const point &a, const point &b) {\n\
-    \    return a.real() != b.real() ? a.real() < b.real() : a.imag() < b.imag();\n\
-    \  }\n\n  bool compare_y(const point &a, const point &b) {\n    return a.imag()\
-    \ != b.imag() ? a.imag() < b.imag() : a.real() < b.real();\n  }\n}\n#line 9 \"\
-    src/closest_pair.hpp\"\n\nnamespace geometry {\n  real_number impl_closest_pair(points\
-    \ &pts, int l, int r) {\n    if (r - l <= 1) return abs(pts[0] - pts[1]);\n  \
-    \  int m = (l + r) / 2;\n    real_number x = pts[m].real();\n    real_number d\
-    \ = min(impl_closest_pair(pts, l, m), impl_closest_pair(pts, m, r));\n    inplace_merge(pts.begin()\
-    \ + l, pts.begin() + m, pts.begin() + r, compare_y);\n\n    points ps;\n    for\
-    \ (int i = l; i < r; ++i) {\n      if (sign(abs(pts[i].real() - x) - d) >= 0)\
-    \ continue;\n      for (int j = 0; j < (int)ps.size(); ++j) {\n        real_number\
-    \ dy = pts[i].imag() - (*next(ps.rbegin(), j)).imag();\n        if (sign(dy -\
-    \ d) >= 0) break;\n        d = min(d, abs(pts[i] - *next(ps.rbegin(), j)));\n\
-    \      }\n\n      ps.emplace_back(pts[i]);\n    }\n\n    return d;\n  }\n\n  real_number\
-    \ closest_pair(points pts) {\n    const real_number INF = 1e18;\n    if (pts.size()\
-    \ <= 1) {\n      return INF;\n    }\n\n    sort(pts.begin(), pts.end(), compare_x);\n\
-    \n    return impl_closest_pair(pts, 0, pts.size());\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_5_A.test.cpp\"\
-    \n\nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  points\
-    \ pts(n);\n  for (auto &p: pts) cin >> p;\n\n  cout << fixed << setprecision(15);\n\
-    \  cout << closest_pair(pts) << endl;\n}\n"
+    \    return !is_equal(a.real(), b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n\
+    \  }\n\n  bool compare_y(const point &a, const point &b) {\n    return !is_equal(a.imag(),\
+    \ b.imag()) ? a.imag() < b.imag() : a.real() < b.real();\n  }\n}\n#line 9 \"src/closest_pair.hpp\"\
+    \n\nnamespace geometry {\n  real_number impl_closest_pair(points &pts, int l,\
+    \ int r) {\n    if (r - l <= 1) return abs(pts[0] - pts[1]);\n    int m = (l +\
+    \ r) / 2;\n    real_number x = pts[m].real();\n    real_number d = min(impl_closest_pair(pts,\
+    \ l, m), impl_closest_pair(pts, m, r));\n    inplace_merge(pts.begin() + l, pts.begin()\
+    \ + m, pts.begin() + r, compare_y);\n\n    points ps;\n    for (int i = l; i <\
+    \ r; ++i) {\n      if (sign(abs(pts[i].real() - x) - d) >= 0) continue;\n    \
+    \  for (int j = 0; j < (int)ps.size(); ++j) {\n        real_number dy = pts[i].imag()\
+    \ - (*next(ps.rbegin(), j)).imag();\n        if (sign(dy - d) >= 0) break;\n \
+    \       d = min(d, abs(pts[i] - *next(ps.rbegin(), j)));\n      }\n\n      ps.emplace_back(pts[i]);\n\
+    \    }\n\n    return d;\n  }\n\n  real_number closest_pair(points pts) {\n   \
+    \ const real_number INF = 1e18;\n    if (pts.size() <= 1) {\n      return INF;\n\
+    \    }\n\n    sort(pts.begin(), pts.end(), compare_x);\n\n    return impl_closest_pair(pts,\
+    \ 0, pts.size());\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_5_A.test.cpp\"\n\nusing\
+    \ namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  points pts(n);\n\
+    \  for (auto &p: pts) cin >> p;\n\n  cout << fixed << setprecision(15);\n  cout\
+    \ << closest_pair(pts) << endl;\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/5/CGL_5_A\
     \ \n// verification-helper: ERROR 0.000001\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n\n#include \"../../src/closest_pair.hpp\"\n\nusing namespace\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/aoj-cgl/CGL_5_A.test.cpp
   requiredBy: []
-  timestamp: '2020-10-24 20:51:47+09:00'
+  timestamp: '2020-10-27 12:17:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_5_A.test.cpp
