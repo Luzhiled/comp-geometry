@@ -14,14 +14,12 @@ namespace geometry {
   constexpr int CONTAIN      = 0;
   int intersect_cc(circle c1, circle c2) {
     if (c1.r > c2.r) swap(c1, c2);
-
-    real_number d = abs(c1.p - c2.p);
-    real_number r = c1.r + c2.r;
+    real_number d = abs(c1.p - c2.p), r = c1.r + c2.r;
 
     if (sign(d - r) > 0) return SEPERATE;
+    if (d + c1.r < c2.r) return CONTAIN;
     if (is_equal(d, r)) return CIRCUMSCRIBE;
     if (is_equal(d + c1.r, c2.r)) return INSCRIBE;
-    if (d + c1.r < c2.r) return CONTAIN;
     return INTERSECT;
   }
 }
