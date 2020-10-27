@@ -8,6 +8,9 @@ data:
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
+    path: src/compare.hpp
+    title: src/compare.hpp
+  - icon: ':heavy_check_mark:'
     path: src/cross_point_cc.hpp
     title: src/cross_point_cc.hpp
   - icon: ':heavy_check_mark:'
@@ -16,21 +19,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_F.test.cpp
-    title: test/aoj-cgl/CGL_7_F.test.cpp
-  _pathExtension: hpp
+    path: src/tangent_cp.hpp
+    title: src/tangent_cp.hpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    links: []
-  bundledCode: "#line 2 \"src/tangent_cp.hpp\"\n\n#include <bits/stdc++.h>\nusing\
-    \ namespace std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing\
-    \ namespace std;\n\n// base\nnamespace geometry {\n    using real_number = long\
-    \ double;\n\n    const real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\
-    \n    inline int sign(real_number r) {\n        if (r < -eps) return -1;\n   \
-    \     if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
+    ERROR: '0.00001'
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_F
+    links:
+    - https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_F
+  bundledCode: "#line 1 \"test/aoj-cgl/CGL_7_F.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_F\n// verification-helper:\
+    \ ERROR 0.00001\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"\
+    src/tangent_cp.hpp\"\n\n#line 4 \"src/tangent_cp.hpp\"\nusing namespace std;\n\
+    \n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing namespace std;\n\
+    \n// base\nnamespace geometry {\n    using real_number = long double;\n\n    const\
+    \ real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\n    inline\
+    \ int sign(real_number r) {\n        if (r < -eps) return -1;\n        if (r >\
+    \ +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
     \ r1, real_number r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n#line 2\
     \ \"src/circle.hpp\"\n\n#line 4 \"src/circle.hpp\"\nusing namespace std;\n\n#line\
     \ 2 \"src/point.hpp\"\n\n#line 4 \"src/point.hpp\"\nusing namespace std;\n\n#line\
@@ -60,29 +69,41 @@ data:
     \ {p};\n    return {p, q};\n  }\n}\n\n\n#line 11 \"src/tangent_cp.hpp\"\n\nnamespace\
     \ geometry {\n  points tangent_cp(const circle &c, const point &p) {\n    circle\
     \ t(p, sqrt(norm(c.p - p) - norm(c.r)));\n    return cross_point_cc(c, t);\n \
-    \ }\n}\n"
-  code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
-    \ \"./base.hpp\"\n#include \"./circle.hpp\"\n#include \"./line.hpp\"\n#include\
-    \ \"./point.hpp\"\n#include \"./cross_point_cc.hpp\"\n\nnamespace geometry {\n\
-    \  points tangent_cp(const circle &c, const point &p) {\n    circle t(p, sqrt(norm(c.p\
-    \ - p) - norm(c.r)));\n    return cross_point_cc(c, t);\n  }\n}\n"
+    \ }\n}\n#line 2 \"src/compare.hpp\"\n\n#line 4 \"src/compare.hpp\"\nusing namespace\
+    \ std;\n\n#line 8 \"src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const\
+    \ point &a, const point &b) {\n    return !is_equal(a.real(), b.real()) ? a.real()\
+    \ < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const\
+    \ point &b) {\n    return !is_equal(a.imag(), b.imag()) ? a.imag() < b.imag()\
+    \ : a.real() < b.real();\n  }\n}\n#line 10 \"test/aoj-cgl/CGL_7_F.test.cpp\"\n\
+    \nusing namespace geometry;\nint main() {\n  point p;\n  cin >> p;\n\n  circle\
+    \ c;\n  cin >> c.p >> c.r;\n\n  points pts = tangent_cp(c, p);\n  sort(pts.begin(),\
+    \ pts.end(), compare_x);\n\n  cout << fixed << setprecision(15);\n  for (auto\
+    \ &p : pts) cout << p << endl;\n}\n"
+  code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_F\n\
+    // verification-helper: ERROR 0.00001\n\n#include <bits/stdc++.h>\nusing namespace\
+    \ std;\n\n#include \"../../src/tangent_cp.hpp\"\n#include \"../../src/point.hpp\"\
+    \n#include \"../../src/compare.hpp\"\n\nusing namespace geometry;\nint main()\
+    \ {\n  point p;\n  cin >> p;\n\n  circle c;\n  cin >> c.p >> c.r;\n\n  points\
+    \ pts = tangent_cp(c, p);\n  sort(pts.begin(), pts.end(), compare_x);\n\n  cout\
+    \ << fixed << setprecision(15);\n  for (auto &p : pts) cout << p << endl;\n}\n"
   dependsOn:
+  - src/tangent_cp.hpp
   - src/base.hpp
   - src/circle.hpp
   - src/point.hpp
   - src/line.hpp
   - src/cross_point_cc.hpp
-  isVerificationFile: false
-  path: src/tangent_cp.hpp
+  - src/compare.hpp
+  isVerificationFile: true
+  path: test/aoj-cgl/CGL_7_F.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 11:40:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aoj-cgl/CGL_7_F.test.cpp
-documentation_of: src/tangent_cp.hpp
+  timestamp: '2020-10-27 12:21:00+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/aoj-cgl/CGL_7_F.test.cpp
 layout: document
 redirect_from:
-- /library/src/tangent_cp.hpp
-- /library/src/tangent_cp.hpp.html
-title: src/tangent_cp.hpp
+- /verify/test/aoj-cgl/CGL_7_F.test.cpp
+- /verify/test/aoj-cgl/CGL_7_F.test.cpp.html
+title: test/aoj-cgl/CGL_7_F.test.cpp
 ---

@@ -90,7 +90,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/segment.hpp
       title: src/segment.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/tangent_cp.hpp
       title: src/tangent_cp.hpp
   verificationCategories:
@@ -153,5 +153,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_E.test.cpp
       title: test/aoj-cgl/CGL_7_E.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-cgl/CGL_7_F.test.cpp
+      title: test/aoj-cgl/CGL_7_F.test.cpp
 layout: toppage
 ---

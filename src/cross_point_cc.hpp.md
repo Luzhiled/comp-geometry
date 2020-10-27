@@ -11,13 +11,16 @@ data:
     path: src/point.hpp
     title: src/point.hpp
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_E.test.cpp
     title: test/aoj-cgl/CGL_7_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_F.test.cpp
+    title: test/aoj-cgl/CGL_7_F.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -70,6 +73,7 @@ data:
   timestamp: '2020-10-27 11:14:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj-cgl/CGL_7_F.test.cpp
   - test/aoj-cgl/CGL_7_E.test.cpp
 documentation_of: src/cross_point_cc.hpp
 layout: document

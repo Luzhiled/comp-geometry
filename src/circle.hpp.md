@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/intersect_cc.hpp
     title: src/intersect_cc.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
   _extendedVerifiedWith:
@@ -42,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_E.test.cpp
     title: test/aoj-cgl/CGL_7_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_F.test.cpp
+    title: test/aoj-cgl/CGL_7_F.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -88,6 +91,7 @@ data:
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_7_A.test.cpp
   - test/aoj-cgl/CGL_7_C.test.cpp
+  - test/aoj-cgl/CGL_7_F.test.cpp
   - test/aoj-cgl/CGL_7_E.test.cpp
   - test/aoj-cgl/CGL_7_D.test.cpp
 documentation_of: src/circle.hpp
