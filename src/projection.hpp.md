@@ -42,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_D.test.cpp
     title: test/aoj-cgl/CGL_7_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_G.test.cpp
+    title: test/aoj-cgl/CGL_7_G.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -98,6 +101,7 @@ data:
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_1_A.test.cpp
   - test/aoj-cgl/CGL_1_B.test.cpp
+  - test/aoj-cgl/CGL_7_G.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_7_D.test.cpp
 documentation_of: src/projection.hpp

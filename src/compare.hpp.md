@@ -36,6 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_F.test.cpp
     title: test/aoj-cgl/CGL_7_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_G.test.cpp
+    title: test/aoj-cgl/CGL_7_G.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -81,6 +84,7 @@ data:
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp
   - test/aoj-cgl/CGL_5_A.test.cpp
+  - test/aoj-cgl/CGL_7_G.test.cpp
   - test/aoj-cgl/CGL_4_B.test.cpp
   - test/aoj-cgl/CGL_7_F.test.cpp
   - test/aoj-cgl/CGL_7_E.test.cpp

@@ -78,6 +78,9 @@ data:
     path: src/segment.hpp
     title: src/segment.hpp
   - icon: ':heavy_check_mark:'
+    path: src/tangent_cc.hpp
+    title: src/tangent_cc.hpp
+  - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
   _extendedVerifiedWith:
@@ -141,6 +144,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_F.test.cpp
     title: test/aoj-cgl/CGL_7_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_7_G.test.cpp
+    title: test/aoj-cgl/CGL_7_G.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -176,6 +182,7 @@ data:
   isVerificationFile: false
   path: src/point.hpp
   requiredBy:
+  - src/tangent_cc.hpp
   - src/convex_cut.hpp
   - src/compare.hpp
   - src/circumscribed_circle.hpp
@@ -217,6 +224,7 @@ data:
   - test/aoj-cgl/CGL_1_C.test.cpp
   - test/aoj-cgl/CGL_1_A.test.cpp
   - test/aoj-cgl/CGL_1_B.test.cpp
+  - test/aoj-cgl/CGL_7_G.test.cpp
   - test/aoj-cgl/CGL_2_C.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
   - test/aoj-cgl/CGL_4_C.test.cpp
