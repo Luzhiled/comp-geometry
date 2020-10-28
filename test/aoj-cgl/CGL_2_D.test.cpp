@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "../../src/distance.hpp"
+#include "../../src/distance_ss.hpp"
 
 using namespace geometry;
 int main() {

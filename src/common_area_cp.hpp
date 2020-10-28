@@ -9,7 +9,7 @@ using namespace std;
 #include "./segment.hpp"
 #include "./polygon.hpp"
 #include "./product.hpp"
-#include "./distance.hpp"
+#include "./distance_sp.hpp"
 #include "./cross_point_cl.hpp"
 
 namespace geometry {
@@ -21,7 +21,7 @@ namespace geometry {
     if (sign(max(abs(va), abs(vb)) - c.r) <= 0) return f;
 
     point d(dot(va, vb), cross(va, vb));
-    if (sign(distance(segment(a, b), c.p) - c.r) >= 0) 
+    if (sign(distance_sp(segment(a, b), c.p) - c.r) >= 0) 
       return norm(c.r) * atan2(d.imag(), d.real());
 
     points ps = cross_point_cl(c, segment(a, b));
