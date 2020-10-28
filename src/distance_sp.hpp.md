@@ -5,6 +5,9 @@ data:
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
+    path: src/ccw.hpp
+    title: src/ccw.hpp
+  - icon: ':heavy_check_mark:'
     path: src/line.hpp
     title: src/line.hpp
   - icon: ':heavy_check_mark:'
@@ -13,32 +16,23 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/product.hpp
     title: src/product.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/projection.hpp
+    title: src/projection.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/segment.hpp
+    title: src/segment.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/common_area_cp.hpp
     title: src/common_area_cp.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/cross_point_cl.hpp
-    title: src/cross_point_cl.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/distance_sp.hpp
-    title: src/distance_sp.hpp
   - icon: ':heavy_check_mark:'
     path: src/distance_ss.hpp
     title: src/distance_ss.hpp
   - icon: ':heavy_check_mark:'
     path: src/inscribed_circle.hpp
     title: src/inscribed_circle.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/reflection.hpp
-    title: src/reflection.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_1_A.test.cpp
-    title: test/aoj-cgl/CGL_1_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_1_B.test.cpp
-    title: test/aoj-cgl/CGL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_2_D.test.cpp
     title: test/aoj-cgl/CGL_2_D.test.cpp
@@ -46,28 +40,23 @@ data:
     path: test/aoj-cgl/CGL_7_B.test.cpp
     title: test/aoj-cgl/CGL_7_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_D.test.cpp
-    title: test/aoj-cgl/CGL_7_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_G.test.cpp
-    title: test/aoj-cgl/CGL_7_G.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_H.test.cpp
     title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/projection.hpp\"\n\n#include <bits/stdc++.h>\nusing\
+  bundledCode: "#line 2 \"src/distance_sp.hpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing\
     \ namespace std;\n\n// base\nnamespace geometry {\n    using real_number = long\
     \ double;\n\n    const real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\
     \n    inline int sign(real_number r) {\n        if (r < -eps) return -1;\n   \
     \     if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
     \ r1, real_number r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n#line 2\
-    \ \"src/point.hpp\"\n\n#line 4 \"src/point.hpp\"\nusing namespace std;\n\n#line\
-    \ 7 \"src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point = complex<\
-    \ real_number >;\n  using points = vector< point >;\n\n  istream &operator>>(istream\
+    \ \"src/projection.hpp\"\n\n#line 4 \"src/projection.hpp\"\nusing namespace std;\n\
+    \n#line 2 \"src/point.hpp\"\n\n#line 4 \"src/point.hpp\"\nusing namespace std;\n\
+    \n#line 7 \"src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point =\
+    \ complex< real_number >;\n  using points = vector< point >;\n\n  istream &operator>>(istream\
     \ &is, point &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x,\
     \ y);\n    return is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p)\
     \ {\n    return os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const\
@@ -86,40 +75,52 @@ data:
     \ a.imag() * b.imag();\n    }\n}\n#line 10 \"src/projection.hpp\"\n\n// projection\n\
     namespace geometry {\n  point projection(const line &l, const point &p) {\n  \
     \  real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a\
-    \ + (l.a - l.b) * t;\n  }\n}\n"
+    \ + (l.a - l.b) * t;\n  }\n}\n#line 2 \"src/segment.hpp\"\n\n#line 4 \"src/segment.hpp\"\
+    \nusing namespace std;\n\n#line 7 \"src/segment.hpp\"\n\n// segment\nnamespace\
+    \ geometry {\n    struct segment : line {\n        segment() = default;\n    \
+    \    using line::line;\n    };\n\n    using segments = vector< segment >;\n}\n\
+    #line 2 \"src/ccw.hpp\"\n\n#line 4 \"src/ccw.hpp\"\nusing namespace std;\n\n#line\
+    \ 7 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE\
+    \ = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK\
+    \       = +2; // c-a-b\n  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr\
+    \ int ON_SEGMENT        =  0; // a-c-b\n  int ccw(const point &a, point b, point\
+    \ c) {\n    b = b - a, c = c - a;\n    if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;\n\
+    \    if (sign(cross(b, c)) == -1) return CLOCKWISE;\n    if (sign(dot(b, c)) ==\
+    \ -1) return ONLINE_BACK;\n    if (norm(b) < norm(c)) return ONLINE_FRONT;\n \
+    \   return ON_SEGMENT;\n  }\n}\n#line 11 \"src/distance_sp.hpp\"\n\nnamespace\
+    \ geometry {\n  real_number distance_sp(const segment &s, const point &p) {\n\
+    \    point pr = projection(s, p);\n    if (ccw(s.a, s.b, pr) == 0) return abs(pr\
+    \ - p);\n    return min(abs(s.a - p), abs(s.b - p));\n  }\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
-    \ \"./base.hpp\"\n#include \"./point.hpp\"\n#include \"./line.hpp\"\n#include\
-    \ \"./product.hpp\"\n\n// projection\nnamespace geometry {\n  point projection(const\
-    \ line &l, const point &p) {\n    real_number t = dot(p - l.a, l.a - l.b) / norm(l.a\
-    \ - l.b);\n    return l.a + (l.a - l.b) * t;\n  }\n}\n"
+    \ \"./base.hpp\"\n#include \"./projection.hpp\"\n#include \"./segment.hpp\"\n\
+    #include \"./point.hpp\"\n#include \"./ccw.hpp\"\n\nnamespace geometry {\n  real_number\
+    \ distance_sp(const segment &s, const point &p) {\n    point pr = projection(s,\
+    \ p);\n    if (ccw(s.a, s.b, pr) == 0) return abs(pr - p);\n    return min(abs(s.a\
+    \ - p), abs(s.b - p));\n  }\n}\n"
   dependsOn:
   - src/base.hpp
+  - src/projection.hpp
   - src/point.hpp
   - src/line.hpp
   - src/product.hpp
+  - src/segment.hpp
+  - src/ccw.hpp
   isVerificationFile: false
-  path: src/projection.hpp
+  path: src/distance_sp.hpp
   requiredBy:
-  - src/cross_point_cl.hpp
   - src/distance_ss.hpp
   - src/common_area_cp.hpp
-  - src/distance_sp.hpp
-  - src/reflection.hpp
   - src/inscribed_circle.hpp
-  timestamp: '2020-10-15 00:41:16+09:00'
+  timestamp: '2020-10-28 18:45:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_7_H.test.cpp
-  - test/aoj-cgl/CGL_1_A.test.cpp
-  - test/aoj-cgl/CGL_1_B.test.cpp
-  - test/aoj-cgl/CGL_7_G.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
-  - test/aoj-cgl/CGL_7_D.test.cpp
-documentation_of: src/projection.hpp
+documentation_of: src/distance_sp.hpp
 layout: document
 redirect_from:
-- /library/src/projection.hpp
-- /library/src/projection.hpp.html
-title: src/projection.hpp
+- /library/src/distance_sp.hpp
+- /library/src/distance_sp.hpp.html
+title: src/distance_sp.hpp
 ---

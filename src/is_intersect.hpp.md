@@ -21,14 +21,8 @@ data:
     title: src/segment.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: src/common_area_cp.hpp
-    title: src/common_area_cp.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/distance.hpp
-    title: src/distance.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/inscribed_circle.hpp
-    title: src/inscribed_circle.hpp
+    path: src/distance_ss.hpp
+    title: src/distance_ss.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_2_B.test.cpp
@@ -36,12 +30,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_2_D.test.cpp
     title: test/aoj-cgl/CGL_2_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_B.test.cpp
-    title: test/aoj-cgl/CGL_7_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_H.test.cpp
-    title: test/aoj-cgl/CGL_7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -102,15 +90,11 @@ data:
   isVerificationFile: false
   path: src/is_intersect.hpp
   requiredBy:
-  - src/distance.hpp
-  - src/common_area_cp.hpp
-  - src/inscribed_circle.hpp
+  - src/distance_ss.hpp
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp
-  - test/aoj-cgl/CGL_7_H.test.cpp
   - test/aoj-cgl/CGL_2_D.test.cpp
 documentation_of: src/is_intersect.hpp
 layout: document

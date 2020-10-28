@@ -11,9 +11,6 @@ data:
     path: src/distance_sp.hpp
     title: src/distance_sp.hpp
   - icon: ':heavy_check_mark:'
-    path: src/distance_ss.hpp
-    title: src/distance_ss.hpp
-  - icon: ':heavy_check_mark:'
     path: src/is_intersect.hpp
     title: src/is_intersect.hpp
   - icon: ':heavy_check_mark:'
@@ -32,37 +29,34 @@ data:
     path: src/segment.hpp
     title: src/segment.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _pathExtension: cpp
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-cgl/CGL_2_D.test.cpp
+    title: test/aoj-cgl/CGL_2_D.test.cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    ERROR: '0.00000001'
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D
-    links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D
-  bundledCode: "#line 1 \"test/aoj-cgl/CGL_2_D.test.cpp\"\n// verification-helper:\
-    \ PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D\n//\
-    \ verification-helper: ERROR 0.00000001\n\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#line 2 \"src/distance_ss.hpp\"\n\n#line 4 \"src/distance_ss.hpp\"\n\
-    using namespace std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\n\
-    using namespace std;\n\n// base\nnamespace geometry {\n    using real_number =\
-    \ long double;\n\n    const real_number eps = 1e-8;\n    const real_number pi\
-    \ = acos(-1);\n\n    inline int sign(real_number r) {\n        if (r < -eps) return\
-    \ -1;\n        if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline\
-    \ bool is_equal(real_number r1, real_number r2) {\n        return sign(r1 - r2)\
-    \ == 0;\n    }\n}\n#line 2 \"src/segment.hpp\"\n\n#line 4 \"src/segment.hpp\"\n\
-    using namespace std;\n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\
-    using namespace std;\n\n#line 2 \"src/point.hpp\"\n\n#line 4 \"src/point.hpp\"\
-    \nusing namespace std;\n\n#line 7 \"src/point.hpp\"\n\n// point\nnamespace geometry\
-    \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
-    \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
-    \ >> x >> y;\n    p = point(x, y);\n    return is;\n  }\n\n  ostream &operator<<(ostream\
-    \ &os, const point &p) {\n    return os << p.real() << \" \" << p.imag();\n  }\n\
-    \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
-    \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
-    \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \      sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/line.hpp\"\
-    \n\n// line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
+    links: []
+  bundledCode: "#line 2 \"src/distance_ss.hpp\"\n\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing\
+    \ namespace std;\n\n// base\nnamespace geometry {\n    using real_number = long\
+    \ double;\n\n    const real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\
+    \n    inline int sign(real_number r) {\n        if (r < -eps) return -1;\n   \
+    \     if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
+    \ r1, real_number r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n#line 2\
+    \ \"src/segment.hpp\"\n\n#line 4 \"src/segment.hpp\"\nusing namespace std;\n\n\
+    #line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\nusing namespace std;\n\n\
+    #line 2 \"src/point.hpp\"\n\n#line 4 \"src/point.hpp\"\nusing namespace std;\n\
+    \n#line 7 \"src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point =\
+    \ complex< real_number >;\n  using points = vector< point >;\n\n  istream &operator>>(istream\
+    \ &is, point &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x,\
+    \ y);\n    return is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p)\
+    \ {\n    return os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const\
+    \ point &p, const real_number &k) {\n    return point(p.real() * k, p.imag() *\
+    \ k);\n  }\n\n  point rotate(const real_number &theta, const point &p) {\n   \
+    \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n        sin(theta)\
+    \ * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/line.hpp\"\n\n\
+    // line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
     \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
     \ = vector< line >;\n}\n#line 7 \"src/segment.hpp\"\n\n// segment\nnamespace geometry\
     \ {\n    struct segment : line {\n        segment() = default;\n        using\
@@ -98,18 +92,15 @@ data:
     \ &s2) {\n    if (is_intersect(s1, s2)) return 0;\n    real_number r1 = distance_sp(s1,\
     \ s2.a);\n    real_number r2 = distance_sp(s1, s2.b);\n    real_number r3 = distance_sp(s2,\
     \ s1.a);\n    real_number r4 = distance_sp(s2, s1.b);\n    return min({r1, r2,\
-    \ r3, r4});\n  }\n}\n#line 8 \"test/aoj-cgl/CGL_2_D.test.cpp\"\n\nusing namespace\
-    \ geometry;\nint main() {\n  int q;\n  cin >> q;\n\n  cout << fixed << setprecision(15);\n\
-    \  while (q--) {\n    segment s1, s2;\n    cin >> s1.a >> s1.b >> s2.a >> s2.b;\n\
-    \n    cout << distance(s1, s2) << endl;\n  }\n}\n"
-  code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_D\n\
-    // verification-helper: ERROR 0.00000001\n\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#include \"../../src/distance_ss.hpp\"\n\nusing namespace geometry;\n\
-    int main() {\n  int q;\n  cin >> q;\n\n  cout << fixed << setprecision(15);\n\
-    \  while (q--) {\n    segment s1, s2;\n    cin >> s1.a >> s1.b >> s2.a >> s2.b;\n\
-    \n    cout << distance(s1, s2) << endl;\n  }\n}\n"
+    \ r3, r4});\n  }\n}\n"
+  code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
+    \ \"./base.hpp\"\n#include \"./segment.hpp\"\n#include \"./is_intersect.hpp\"\n\
+    #include \"./distance_sp.hpp\"\n\n// distance\nnamespace geometry {\n  real_number\
+    \ distance(const segment &s1, const segment &s2) {\n    if (is_intersect(s1, s2))\
+    \ return 0;\n    real_number r1 = distance_sp(s1, s2.a);\n    real_number r2 =\
+    \ distance_sp(s1, s2.b);\n    real_number r3 = distance_sp(s2, s1.a);\n    real_number\
+    \ r4 = distance_sp(s2, s1.b);\n    return min({r1, r2, r3, r4});\n  }\n}\n"
   dependsOn:
-  - src/distance_ss.hpp
   - src/base.hpp
   - src/segment.hpp
   - src/line.hpp
@@ -119,16 +110,17 @@ data:
   - src/product.hpp
   - src/distance_sp.hpp
   - src/projection.hpp
-  isVerificationFile: true
-  path: test/aoj-cgl/CGL_2_D.test.cpp
+  isVerificationFile: false
+  path: src/distance_ss.hpp
   requiredBy: []
   timestamp: '2020-10-28 18:45:10+09:00'
-  verificationStatus: TEST_ACCEPTED
-  verifiedWith: []
-documentation_of: test/aoj-cgl/CGL_2_D.test.cpp
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj-cgl/CGL_2_D.test.cpp
+documentation_of: src/distance_ss.hpp
 layout: document
 redirect_from:
-- /verify/test/aoj-cgl/CGL_2_D.test.cpp
-- /verify/test/aoj-cgl/CGL_2_D.test.cpp.html
-title: test/aoj-cgl/CGL_2_D.test.cpp
+- /library/src/distance_ss.hpp
+- /library/src/distance_ss.hpp.html
+title: src/distance_ss.hpp
 ---

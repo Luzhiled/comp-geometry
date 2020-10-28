@@ -15,8 +15,11 @@ data:
     path: src/common_area_cp.hpp
     title: src/common_area_cp.hpp
   - icon: ':heavy_check_mark:'
-    path: src/distance.hpp
-    title: src/distance.hpp
+    path: src/distance_sp.hpp
+    title: src/distance_sp.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/distance_ss.hpp
+    title: src/distance_ss.hpp
   - icon: ':heavy_check_mark:'
     path: src/inscribed_circle.hpp
     title: src/inscribed_circle.hpp
@@ -77,8 +80,9 @@ data:
   isVerificationFile: false
   path: src/segment.hpp
   requiredBy:
-  - src/distance.hpp
+  - src/distance_ss.hpp
   - src/common_area_cp.hpp
+  - src/distance_sp.hpp
   - src/inscribed_circle.hpp
   - src/is_intersect.hpp
   timestamp: '2020-10-14 18:34:04+09:00'

@@ -12,8 +12,11 @@ data:
     path: src/common_area_cp.hpp
     title: src/common_area_cp.hpp
   - icon: ':heavy_check_mark:'
-    path: src/distance.hpp
-    title: src/distance.hpp
+    path: src/distance_sp.hpp
+    title: src/distance_sp.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/distance_ss.hpp
+    title: src/distance_ss.hpp
   - icon: ':heavy_check_mark:'
     path: src/inscribed_circle.hpp
     title: src/inscribed_circle.hpp
@@ -81,9 +84,10 @@ data:
   isVerificationFile: false
   path: src/ccw.hpp
   requiredBy:
-  - src/distance.hpp
+  - src/distance_ss.hpp
   - src/common_area_cp.hpp
   - src/is_convex.hpp
+  - src/distance_sp.hpp
   - src/inscribed_circle.hpp
   - src/is_intersect.hpp
   timestamp: '2020-10-15 00:41:16+09:00'

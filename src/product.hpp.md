@@ -36,8 +36,11 @@ data:
     path: src/cross_point_ll.hpp
     title: src/cross_point_ll.hpp
   - icon: ':heavy_check_mark:'
-    path: src/distance.hpp
-    title: src/distance.hpp
+    path: src/distance_sp.hpp
+    title: src/distance_sp.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/distance_ss.hpp
+    title: src/distance_ss.hpp
   - icon: ':heavy_check_mark:'
     path: src/inscribed_circle.hpp
     title: src/inscribed_circle.hpp
@@ -147,11 +150,12 @@ data:
   - src/is_orthogonal.hpp
   - src/cross_point_ll.hpp
   - src/area.hpp
-  - src/distance.hpp
+  - src/distance_ss.hpp
   - src/common_area_cp.hpp
   - src/convex_diameter.hpp
   - src/projection.hpp
   - src/is_convex.hpp
+  - src/distance_sp.hpp
   - src/convex_hull.hpp
   - src/reflection.hpp
   - src/inscribed_circle.hpp
