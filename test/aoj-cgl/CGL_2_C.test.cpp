@@ -5,7 +5,7 @@
 using namespace std;
 
 #include "../../src/segment.hpp"
-#include "../../src/cross_point.hpp"
+#include "../../src/cross_point_ll.hpp"
 
 using namespace geometry;
 int main() {
@@ -17,6 +17,6 @@ int main() {
     segment s1, s2;
     cin >> s1.a >> s1.b >> s2.a >> s2.b;
 
-    cout << cross_point(s1, s2) << endl;
+    cout << cross_point_ll(s1, s2) << endl;
   }
 }
