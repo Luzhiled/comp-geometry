@@ -8,8 +8,8 @@ data:
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
-    path: src/cross_point.hpp
-    title: src/cross_point.hpp
+    path: src/cross_point_ll.hpp
+    title: src/cross_point_ll.hpp
   - icon: ':heavy_check_mark:'
     path: src/line.hpp
     title: src/line.hpp
@@ -52,42 +52,42 @@ data:
     \ \"src/line.hpp\"\nusing namespace std;\n\n#line 7 \"src/line.hpp\"\n\n// line\
     \ \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n\
     \    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line\
-    \ >;\n}\n#line 2 \"src/cross_point.hpp\"\n\n#line 4 \"src/cross_point.hpp\"\n\
-    using namespace std;\n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\
+    \ >;\n}\n#line 2 \"src/cross_point_ll.hpp\"\n\n#line 4 \"src/cross_point_ll.hpp\"\
+    \nusing namespace std;\n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\
     \nusing namespace std;\n\n#line 7 \"src/product.hpp\"\n\n// product\nnamespace\
     \ geometry {\n    real_number cross(const point &a, const point &b) {\n      \
     \  return a.real() * b.imag() - a.imag() * b.real();\n    }\n\n    real_number\
     \ dot(const point &a, const point &b) {\n        return a.real() * b.real() +\
-    \ a.imag() * b.imag();\n    }\n}\n#line 9 \"src/cross_point.hpp\"\n\n// cross\
-    \ point\nnamespace geometry {\n  point cross_point(const line &s1, const line\
-    \ &s2) {\n    real_number a = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number\
-    \ b = cross(s1.b - s1.a, s1.b - s2.a);\n    if (is_equal(a, 0) && is_equal(b,\
-    \ 0)) return s2.a;\n    return s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n#line 11\
+    \ a.imag() * b.imag();\n    }\n}\n#line 9 \"src/cross_point_ll.hpp\"\n\n// cross\
+    \ point\nnamespace geometry {\n  point cross_point_ll(const line &l1, const line\
+    \ &l2) {\n    real_number a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number\
+    \ b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (is_equal(a, 0) && is_equal(b,\
+    \ 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n#line 11\
     \ \"src/circumscribed_circle.hpp\"\n\nnamespace geometry {\n  circle circumscribed_circle(const\
     \ point &a, const point &b, const point &c) {\n    point m1((a + b) / real_number(2)),\
     \ m2((b + c) / real_number(2));\n    point v((b - a).imag(), (a - b).real()),\
     \ w((b - c).imag(), (c - b).real());\n    line s(m1, point(m1 + v)), t(m2, point(m2\
-    \ + w));\n\n    point p = cross_point(s, t);\n    return circle(p, abs(a - p));\n\
-    \  }\n}\n"
+    \ + w));\n\n    point p = cross_point_ll(s, t);\n    return circle(p, abs(a -\
+    \ p));\n  }\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"./base.hpp\"\n#include \"./circle.hpp\"\n#include \"./point.hpp\"\n#include\
-    \ \"./line.hpp\"\n#include \"./cross_point.hpp\"\n\nnamespace geometry {\n  circle\
-    \ circumscribed_circle(const point &a, const point &b, const point &c) {\n   \
-    \ point m1((a + b) / real_number(2)), m2((b + c) / real_number(2));\n    point\
-    \ v((b - a).imag(), (a - b).real()), w((b - c).imag(), (c - b).real());\n    line\
-    \ s(m1, point(m1 + v)), t(m2, point(m2 + w));\n\n    point p = cross_point(s,\
+    \ \"./line.hpp\"\n#include \"./cross_point_ll.hpp\"\n\nnamespace geometry {\n\
+    \  circle circumscribed_circle(const point &a, const point &b, const point &c)\
+    \ {\n    point m1((a + b) / real_number(2)), m2((b + c) / real_number(2));\n \
+    \   point v((b - a).imag(), (a - b).real()), w((b - c).imag(), (c - b).real());\n\
+    \    line s(m1, point(m1 + v)), t(m2, point(m2 + w));\n\n    point p = cross_point_ll(s,\
     \ t);\n    return circle(p, abs(a - p));\n  }\n}\n"
   dependsOn:
   - src/base.hpp
   - src/circle.hpp
   - src/point.hpp
   - src/line.hpp
-  - src/cross_point.hpp
+  - src/cross_point_ll.hpp
   - src/product.hpp
   isVerificationFile: false
   path: src/circumscribed_circle.hpp
   requiredBy: []
-  timestamp: '2020-10-27 07:42:23+09:00'
+  timestamp: '2020-10-28 18:31:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_7_C.test.cpp

@@ -5,8 +5,8 @@ data:
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
-    path: src/cross_point.hpp
-    title: src/cross_point.hpp
+    path: src/cross_point_ll.hpp
+    title: src/cross_point_ll.hpp
   - icon: ':heavy_check_mark:'
     path: src/line.hpp
     title: src/line.hpp
@@ -54,39 +54,39 @@ data:
     \ = vector< line >;\n}\n#line 7 \"src/segment.hpp\"\n\n// segment\nnamespace geometry\
     \ {\n    struct segment : line {\n        segment() = default;\n        using\
     \ line::line;\n    };\n\n    using segments = vector< segment >;\n}\n#line 2 \"\
-    src/cross_point.hpp\"\n\n#line 4 \"src/cross_point.hpp\"\nusing namespace std;\n\
-    \n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\nusing namespace\
+    src/cross_point_ll.hpp\"\n\n#line 4 \"src/cross_point_ll.hpp\"\nusing namespace\
+    \ std;\n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\nusing namespace\
     \ std;\n\n#line 7 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  \
     \  real_number cross(const point &a, const point &b) {\n        return a.real()\
     \ * b.imag() - a.imag() * b.real();\n    }\n\n    real_number dot(const point\
     \ &a, const point &b) {\n        return a.real() * b.real() + a.imag() * b.imag();\n\
-    \    }\n}\n#line 9 \"src/cross_point.hpp\"\n\n// cross point\nnamespace geometry\
-    \ {\n  point cross_point(const line &s1, const line &s2) {\n    real_number a\
-    \ = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number b = cross(s1.b - s1.a, s1.b\
-    \ - s2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return s2.a;\n    return\
-    \ s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n#line 9 \"test/aoj-cgl/CGL_2_C.test.cpp\"\
+    \    }\n}\n#line 9 \"src/cross_point_ll.hpp\"\n\n// cross point\nnamespace geometry\
+    \ {\n  point cross_point_ll(const line &l1, const line &l2) {\n    real_number\
+    \ a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number b = cross(l1.b - l1.a,\
+    \ l1.b - l2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return l2.a;\n    return\
+    \ l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n#line 9 \"test/aoj-cgl/CGL_2_C.test.cpp\"\
     \n\nusing namespace geometry;\nint main() {\n  int q;\n  cin >> q;\n\n  cout <<\
     \ fixed << setprecision(15);\n  while (q--) {\n    segment s1, s2;\n    cin >>\
-    \ s1.a >> s1.b >> s2.a >> s2.b;\n\n    cout << cross_point(s1, s2) << endl;\n\
+    \ s1.a >> s1.b >> s2.a >> s2.b;\n\n    cout << cross_point_ll(s1, s2) << endl;\n\
     \  }\n}\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C\n\
     // verification-helper: ERROR 0.00000001\n\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#include \"../../src/segment.hpp\"\n#include \"../../src/cross_point.hpp\"\
+    \ std;\n\n#include \"../../src/segment.hpp\"\n#include \"../../src/cross_point_ll.hpp\"\
     \n\nusing namespace geometry;\nint main() {\n  int q;\n  cin >> q;\n\n  cout <<\
     \ fixed << setprecision(15);\n  while (q--) {\n    segment s1, s2;\n    cin >>\
-    \ s1.a >> s1.b >> s2.a >> s2.b;\n\n    cout << cross_point(s1, s2) << endl;\n\
+    \ s1.a >> s1.b >> s2.a >> s2.b;\n\n    cout << cross_point_ll(s1, s2) << endl;\n\
     \  }\n}\n"
   dependsOn:
   - src/segment.hpp
   - src/line.hpp
   - src/point.hpp
   - src/base.hpp
-  - src/cross_point.hpp
+  - src/cross_point_ll.hpp
   - src/product.hpp
   isVerificationFile: true
   path: test/aoj-cgl/CGL_2_C.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 07:41:31+09:00'
+  timestamp: '2020-10-28 18:31:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_2_C.test.cpp

@@ -28,7 +28,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/cross_point.hpp\"\n\n#include <bits/stdc++.h>\nusing\
+  bundledCode: "#line 2 \"src/cross_point_ll.hpp\"\n\n#include <bits/stdc++.h>\nusing\
     \ namespace std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing\
     \ namespace std;\n\n// base\nnamespace geometry {\n    using real_number = long\
     \ double;\n\n    const real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\
@@ -53,35 +53,35 @@ data:
     \ geometry {\n    real_number cross(const point &a, const point &b) {\n      \
     \  return a.real() * b.imag() - a.imag() * b.real();\n    }\n\n    real_number\
     \ dot(const point &a, const point &b) {\n        return a.real() * b.real() +\
-    \ a.imag() * b.imag();\n    }\n}\n#line 9 \"src/cross_point.hpp\"\n\n// cross\
-    \ point\nnamespace geometry {\n  point cross_point(const line &s1, const line\
-    \ &s2) {\n    real_number a = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number\
-    \ b = cross(s1.b - s1.a, s1.b - s2.a);\n    if (is_equal(a, 0) && is_equal(b,\
-    \ 0)) return s2.a;\n    return s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n"
+    \ a.imag() * b.imag();\n    }\n}\n#line 9 \"src/cross_point_ll.hpp\"\n\n// cross\
+    \ point\nnamespace geometry {\n  point cross_point_ll(const line &l1, const line\
+    \ &l2) {\n    real_number a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number\
+    \ b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (is_equal(a, 0) && is_equal(b,\
+    \ 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n"
   code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include\
     \ \"./base.hpp\"\n#include \"./line.hpp\"\n#include \"./product.hpp\"\n\n// cross\
-    \ point\nnamespace geometry {\n  point cross_point(const line &s1, const line\
-    \ &s2) {\n    real_number a = cross(s1.b - s1.a, s2.b - s2.a);\n    real_number\
-    \ b = cross(s1.b - s1.a, s1.b - s2.a);\n    if (is_equal(a, 0) && is_equal(b,\
-    \ 0)) return s2.a;\n    return s2.a + (s2.b - s2.a) * b / a;\n  }\n}\n"
+    \ point\nnamespace geometry {\n  point cross_point_ll(const line &l1, const line\
+    \ &l2) {\n    real_number a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number\
+    \ b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (is_equal(a, 0) && is_equal(b,\
+    \ 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n"
   dependsOn:
   - src/base.hpp
   - src/line.hpp
   - src/point.hpp
   - src/product.hpp
   isVerificationFile: false
-  path: src/cross_point.hpp
+  path: src/cross_point_ll.hpp
   requiredBy:
   - src/circumscribed_circle.hpp
-  timestamp: '2020-10-27 07:41:31+09:00'
+  timestamp: '2020-10-28 18:31:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_7_C.test.cpp
   - test/aoj-cgl/CGL_2_C.test.cpp
-documentation_of: src/cross_point.hpp
+documentation_of: src/cross_point_ll.hpp
 layout: document
 redirect_from:
-- /library/src/cross_point.hpp
-- /library/src/cross_point.hpp.html
-title: src/cross_point.hpp
+- /library/src/cross_point_ll.hpp
+- /library/src/cross_point_ll.hpp.html
+title: src/cross_point_ll.hpp
 ---

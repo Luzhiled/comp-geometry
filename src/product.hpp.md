@@ -30,11 +30,11 @@ data:
     path: src/convex_hull.hpp
     title: src/convex_hull.hpp
   - icon: ':heavy_check_mark:'
-    path: src/cross_point.hpp
-    title: src/cross_point.hpp
-  - icon: ':heavy_check_mark:'
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/cross_point_ll.hpp
+    title: src/cross_point_ll.hpp
   - icon: ':heavy_check_mark:'
     path: src/distance.hpp
     title: src/distance.hpp
@@ -145,6 +145,7 @@ data:
   - src/ccw.hpp
   - src/cross_point_cl.hpp
   - src/is_orthogonal.hpp
+  - src/cross_point_ll.hpp
   - src/area.hpp
   - src/distance.hpp
   - src/common_area_cp.hpp
@@ -155,7 +156,6 @@ data:
   - src/reflection.hpp
   - src/inscribed_circle.hpp
   - src/is_intersect.hpp
-  - src/cross_point.hpp
   - src/contains.hpp
   timestamp: '2020-10-15 00:41:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
