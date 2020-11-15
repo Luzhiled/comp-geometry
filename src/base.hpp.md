@@ -175,15 +175,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/base.hpp\"\n\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n// base\nnamespace geometry {\n    using real_number = long double;\n\
-    \n    const real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\n\
-    \    inline int sign(real_number r) {\n        if (r < -eps) return -1;\n    \
-    \    if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
+  bundledCode: "#line 2 \"src/base.hpp\"\n\n#include <cmath>\nusing namespace std;\n\
+    \n// base\nnamespace geometry {\n    using real_number = long double;\n\n    const\
+    \ real_number eps = 1e-9;\n    const real_number pi = acos(-1);\n\n    inline\
+    \ int sign(real_number r) {\n        if (r < -eps) return -1;\n        if (r >\
+    \ +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
     \ r1, real_number r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n"
-  code: "#pragma once\n\n#include <bits/stdc++.h>\nusing namespace std;\n\n// base\n\
-    namespace geometry {\n    using real_number = long double;\n\n    const real_number\
-    \ eps = 1e-8;\n    const real_number pi = acos(-1);\n\n    inline int sign(real_number\
+  code: "#pragma once\n\n#include <cmath>\nusing namespace std;\n\n// base\nnamespace\
+    \ geometry {\n    using real_number = long double;\n\n    const real_number eps\
+    \ = 1e-9;\n    const real_number pi = acos(-1);\n\n    inline int sign(real_number\
     \ r) {\n        if (r < -eps) return -1;\n        if (r > +eps) return +1;\n \
     \       return 0;\n    }\n\n    inline bool is_equal(real_number r1, real_number\
     \ r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n"
@@ -224,7 +224,7 @@ data:
   - src/contains.hpp
   - src/polygon.hpp
   - src/intersect_cc.hpp
-  timestamp: '2020-10-14 18:34:04+09:00'
+  timestamp: '2020-11-16 02:22:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-cgl/CGL_4_A.test.cpp

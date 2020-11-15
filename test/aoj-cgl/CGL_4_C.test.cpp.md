@@ -22,6 +22,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/product.hpp
     title: src/product.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/util/io_set.hpp
+    title: src/util/io_set.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -33,60 +36,64 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/4/CGL_4_C
   bundledCode: "#line 1 \"test/aoj-cgl/CGL_4_C.test.cpp\"\n// verification-helper:\
     \ PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/4/CGL_4_C\n//\
-    \ verification-helper: ERROR 0.00001\n\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\nusing namespace\
-    \ std;\n\n#line 2 \"src/point.hpp\"\n\n#line 4 \"src/point.hpp\"\nusing namespace\
-    \ std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing namespace\
-    \ std;\n\n// base\nnamespace geometry {\n    using real_number = long double;\n\
-    \n    const real_number eps = 1e-8;\n    const real_number pi = acos(-1);\n\n\
-    \    inline int sign(real_number r) {\n        if (r < -eps) return -1;\n    \
-    \    if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
-    \ r1, real_number r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n#line 7\
-    \ \"src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point = complex<\
-    \ real_number >;\n  using points = vector< point >;\n\n  istream &operator>>(istream\
-    \ &is, point &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x,\
-    \ y);\n    return is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p)\
-    \ {\n    return os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const\
-    \ point &p, const real_number &k) {\n    return point(p.real() * k, p.imag() *\
-    \ k);\n  }\n\n  point rotate(const real_number &theta, const point &p) {\n   \
-    \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n        sin(theta)\
-    \ * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/line.hpp\"\n\n\
-    // line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
-    \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
-    \ = vector< line >;\n}\n#line 2 \"src/area.hpp\"\n\n#line 4 \"src/area.hpp\"\n\
-    using namespace std;\n\n#line 2 \"src/polygon.hpp\"\n\n#line 4 \"src/polygon.hpp\"\
-    \nusing namespace std;\n\n#line 7 \"src/polygon.hpp\"\n\n// polygon\nnamespace\
-    \ geometry {\n  using polygon = vector< point >;\n  using polygons = vector< polygon\
-    \ >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\nusing namespace\
-    \ std;\n\n#line 7 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  \
+    \ verification-helper: ERROR 0.00001\n\n#include <iostream>\nusing namespace std;\n\
+    \n#line 2 \"src/line.hpp\"\n\n#include <vector>\nusing namespace std;\n\n#line\
+    \ 2 \"src/point.hpp\"\n\n#include <complex>\n#line 5 \"src/point.hpp\"\n#include\
+    \ <cmath>\n#include <istream>\n#include <ostream>\nusing namespace std;\n\n#line\
+    \ 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing namespace std;\n\n// base\n\
+    namespace geometry {\n    using real_number = long double;\n\n    const real_number\
+    \ eps = 1e-9;\n    const real_number pi = acos(-1);\n\n    inline int sign(real_number\
+    \ r) {\n        if (r < -eps) return -1;\n        if (r > +eps) return +1;\n \
+    \       return 0;\n    }\n\n    inline bool is_equal(real_number r1, real_number\
+    \ r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n#line 11 \"src/point.hpp\"\
+    \n\n// point\nnamespace geometry {\n  using point = complex< real_number >;\n\
+    \  using points = vector< point >;\n\n  istream &operator>>(istream &is, point\
+    \ &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x, y);\n    return\
+    \ is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p) {\n    return\
+    \ os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const point &p,\
+    \ const real_number &k) {\n    return point(p.real() * k, p.imag() * k);\n  }\n\
+    \n  point rotate(const real_number &theta, const point &p) {\n    return point(cos(theta)\
+    \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
+    \ + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/line.hpp\"\n\n// line \nnamespace\
+    \ geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n    line(point\
+    \ a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line\
+    \ 2 \"src/area.hpp\"\n\nusing namespace std;\n\n#line 2 \"src/polygon.hpp\"\n\n\
+    #line 4 \"src/polygon.hpp\"\nusing namespace std;\n\n#line 7 \"src/polygon.hpp\"\
+    \n\n// polygon\nnamespace geometry {\n  using polygon = vector< point >;\n  using\
+    \ polygons = vector< polygon >;\n}\n#line 2 \"src/product.hpp\"\n\nusing namespace\
+    \ std;\n\n#line 6 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  \
     \  real_number cross(const point &a, const point &b) {\n        return a.real()\
     \ * b.imag() - a.imag() * b.real();\n    }\n\n    real_number dot(const point\
     \ &a, const point &b) {\n        return a.real() * b.real() + a.imag() * b.imag();\n\
-    \    }\n}\n#line 9 \"src/area.hpp\"\n\n// area\nnamespace geometry {\n  real_number\
+    \    }\n}\n#line 8 \"src/area.hpp\"\n\n// area\nnamespace geometry {\n  real_number\
     \ area(const polygon &poly) {\n    int n = poly.size();\n    real_number res =\
     \ 0;\n    for (int i = 0; i < n; ++i) {\n      res += cross(poly[i], poly[(i +\
     \ 1) % n]);\n    }\n    return res / 2;\n  }\n}\n#line 2 \"src/convex_cut.hpp\"\
-    \n\n#line 4 \"src/convex_cut.hpp\"\nusing namespace std;\n\n#line 10 \"src/convex_cut.hpp\"\
-    \n\n// convex cut\nnamespace geometry {\n  polygon convex_cut(const polygon &poly,\
-    \ const line &l) {\n    polygon res;\n    int n = poly.size();\n    for (int i\
-    \ = 0; i < n; ++i) {\n      int j = (i + 1 == n ? 0 : i + 1);\n\n      real_number\
-    \ cf = cross(l.a - poly[i], l.b - poly[i]);\n      real_number cs = cross(l.a\
-    \ - poly[j], l.b - poly[j]);\n\n      if (sign(cf) >= 0) res.emplace_back(poly[i]);\n\
-    \      if (sign(cf) * sign(cs) < 0) {\n        real_number s = cross(poly[j] -\
-    \ poly[i], l.a - l.b);\n        real_number t = cross(l.a - poly[i], l.a - l.b);\n\
-    \        res.emplace_back(poly[i] + t / s * (poly[j] - poly[i]));\n      }\n \
-    \   }\n\n    return res;\n  }\n}\n#line 10 \"test/aoj-cgl/CGL_4_C.test.cpp\"\n\
-    \nusing namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon\
-    \ poly(n);\n  for (auto &p: poly) {\n    cin >> p;\n  }\n\n  int q;\n  cin >>\
-    \ q;\n\n  cout << fixed << setprecision(15);\n  while (q--) {\n    line l;\n \
+    \n\nusing namespace std;\n\n#line 9 \"src/convex_cut.hpp\"\n\n// convex cut\n\
+    namespace geometry {\n  polygon convex_cut(const polygon &poly, const line &l)\
+    \ {\n    polygon res;\n    int n = poly.size();\n    for (int i = 0; i < n; ++i)\
+    \ {\n      int j = (i + 1 == n ? 0 : i + 1);\n\n      real_number cf = cross(l.a\
+    \ - poly[i], l.b - poly[i]);\n      real_number cs = cross(l.a - poly[j], l.b\
+    \ - poly[j]);\n\n      if (sign(cf) >= 0) res.emplace_back(poly[i]);\n      if\
+    \ (sign(cf) * sign(cs) < 0) {\n        real_number s = cross(poly[j] - poly[i],\
+    \ l.a - l.b);\n        real_number t = cross(l.a - poly[i], l.a - l.b);\n    \
+    \    res.emplace_back(poly[i] + t / s * (poly[j] - poly[i]));\n      }\n    }\n\
+    \n    return res;\n  }\n}\n#line 1 \"src/util/io_set.hpp\"\n#include <iomanip>\n\
+    \nclass IoSetup {\n  using u32 = unsigned int;\n\n  void set(ostream &os, u32\
+    \ precision) {\n    os << fixed << setprecision(precision);\n  }\n\npublic:\n\
+    \  IoSetup(u32 precision = 15) {\n    cin.tie(0);\n    ios::sync_with_stdio(0);\n\
+    \n    set(cout, precision);\n    set(cerr, precision);\n  }\n} iosetup;\n#line\
+    \ 11 \"test/aoj-cgl/CGL_4_C.test.cpp\"\n\nusing namespace geometry;\nint main()\
+    \ {\n  int n;\n  cin >> n;\n\n  polygon poly(n);\n  for (auto &p: poly) {\n  \
+    \  cin >> p;\n  }\n\n  int q;\n  cin >> q;\n\n  while (q--) {\n    line l;\n \
     \   cin >> l.a >> l.b;\n\n    cout << area(convex_cut(poly, l)) << endl;\n  }\n\
     }\n"
   code: "// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/4/CGL_4_C\n\
-    // verification-helper: ERROR 0.00001\n\n#include <bits/stdc++.h>\nusing namespace\
+    // verification-helper: ERROR 0.00001\n\n#include <iostream>\nusing namespace\
     \ std;\n\n#include \"../../src/line.hpp\"\n#include \"../../src/area.hpp\"\n#include\
-    \ \"../../src/convex_cut.hpp\"\n\nusing namespace geometry;\nint main() {\n  int\
-    \ n;\n  cin >> n;\n\n  polygon poly(n);\n  for (auto &p: poly) {\n    cin >> p;\n\
-    \  }\n\n  int q;\n  cin >> q;\n\n  cout << fixed << setprecision(15);\n  while\
+    \ \"../../src/convex_cut.hpp\"\n#include \"../../src/util/io_set.hpp\"\n\nusing\
+    \ namespace geometry;\nint main() {\n  int n;\n  cin >> n;\n\n  polygon poly(n);\n\
+    \  for (auto &p: poly) {\n    cin >> p;\n  }\n\n  int q;\n  cin >> q;\n\n  while\
     \ (q--) {\n    line l;\n    cin >> l.a >> l.b;\n\n    cout << area(convex_cut(poly,\
     \ l)) << endl;\n  }\n}\n"
   dependsOn:
@@ -97,10 +104,11 @@ data:
   - src/polygon.hpp
   - src/product.hpp
   - src/convex_cut.hpp
+  - src/util/io_set.hpp
   isVerificationFile: true
   path: test/aoj-cgl/CGL_4_C.test.cpp
   requiredBy: []
-  timestamp: '2020-10-27 11:45:12+09:00'
+  timestamp: '2020-11-16 02:22:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_4_C.test.cpp

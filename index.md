@@ -105,6 +105,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/tangent_cp.hpp
       title: src/tangent_cp.hpp
+  - name: src/util
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/util/io_set.hpp
+      title: src/util/io_set.hpp
   verificationCategories:
   - name: test/aoj-cgl
     pages:
