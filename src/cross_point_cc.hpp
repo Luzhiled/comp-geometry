@@ -10,7 +10,7 @@ using namespace std;
 namespace geometry {
   points cross_point_cc(const circle &c1, const circle &c2) {
     real_number d = abs(c1.p - c2.p), r = c1.r + c2.r;
-    if (sign(d - r) > 0 or d + c1.r < c2.r) return {};
+    if (sign(d - r) > 0 or sign(d + c1.r - c2.r) < 0) return {};
     
     real_number a = acos((norm(c1.r) - norm(c2.r) + norm(d)) / (2 * c1.r * d));
     real_number t = arg(c2.p - c1.p);
