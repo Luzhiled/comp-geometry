@@ -45,6 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-cgl/CGL_7_H.test.cpp
     title: test/aoj-cgl/CGL_7_H.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-icpc/2003.test.cpp
+    title: test/aoj-icpc/2003.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -92,6 +95,7 @@ data:
   timestamp: '2020-11-16 02:22:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj-icpc/2003.test.cpp
   - test/aoj-cgl/CGL_7_B.test.cpp
   - test/aoj-cgl/CGL_3_B.test.cpp
   - test/aoj-cgl/CGL_2_B.test.cpp

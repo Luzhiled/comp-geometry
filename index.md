@@ -182,5 +182,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-cgl/CGL_7_I.test.cpp
       title: test/aoj-cgl/CGL_7_I.test.cpp
+  - name: test/aoj-icpc
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-icpc/2003.test.cpp
+      title: test/aoj-icpc/2003.test.cpp
 layout: toppage
 ---
