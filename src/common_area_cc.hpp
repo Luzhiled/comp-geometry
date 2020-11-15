@@ -16,7 +16,7 @@ namespace geometry {
 
     if (sign(a.r + b.r - d) <= 0) return 0;
     if (sign(d - (b.r - a.r)) <= 0) {
-      return norm(a.r) * pi;
+      return norm(a.r) * PI;
     }
 
     real_number res = 0;
