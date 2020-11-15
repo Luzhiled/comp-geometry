@@ -17,7 +17,7 @@ namespace geometry {
     real_number d = abs(c1.p - c2.p), r = c1.r + c2.r;
 
     if (sign(d - r) > 0) return SEPERATE;
-    if (d + c1.r < c2.r) return CONTAIN;
+    if (sign(d + c1.r - c2.r) < 0) return CONTAIN;
     if (is_equal(d, r)) return CIRCUMSCRIBE;
     if (is_equal(d + c1.r, c2.r)) return INSCRIBE;
     return INTERSECT;
