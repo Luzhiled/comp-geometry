@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_C
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/point.hpp"

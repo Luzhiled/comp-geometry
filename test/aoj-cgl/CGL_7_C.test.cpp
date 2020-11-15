@@ -1,10 +1,11 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_C
 // verification-helper: ERROR 0.000001 
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/circumscribed_circle.hpp"
+#include "../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {
@@ -13,6 +14,5 @@ int main() {
 
   circle cir = circumscribed_circle(a, b, c);
   
-  cout << fixed << setprecision(15);
   cout << cir.p << " " << cir.r << endl;
 }

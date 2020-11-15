@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_A
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/is_parallel.hpp"

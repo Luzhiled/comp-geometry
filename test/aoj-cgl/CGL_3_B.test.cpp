@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_B
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/is_convex.hpp"

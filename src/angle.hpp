@@ -1,6 +1,7 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <cmath>
+#include <algorithm>
 using namespace std;
 
 #include "./base.hpp"

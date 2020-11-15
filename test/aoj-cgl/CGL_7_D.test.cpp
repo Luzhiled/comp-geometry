@@ -1,11 +1,13 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_D
 // verification-helper: ERROR 0.000001
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 #include "../../src/cross_point_cl.hpp"
 #include "../../src/compare.hpp"
+#include "../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {
@@ -15,7 +17,6 @@ int main() {
   int q;
   cin >> q;
 
-  cout << fixed << setprecision(15);
   while (q--) {
     line l;
     cin >> l.a >> l.b;

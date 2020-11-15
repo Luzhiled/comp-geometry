@@ -1,6 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/CGL_7_A
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/intersect_cc.hpp"

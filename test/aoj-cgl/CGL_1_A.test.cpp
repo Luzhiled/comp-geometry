@@ -1,10 +1,11 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_A
 // verification-helper: ERROR 0.00000001
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/projection.hpp"
+#include "../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {
@@ -16,7 +17,6 @@ int main() {
   int q;
   cin >> q;
 
-  cout << fixed << setprecision(15);
   while (q--) {
     point p;
     cin >> p;

@@ -1,9 +1,10 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_A
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/area.hpp"
+#include "../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {
@@ -15,6 +16,6 @@ int main() {
     cin >> p;
   }
 
-  cout << fixed << setprecision(1);
+  IoSetup(1);
   cout << area(poly) << endl;
 }

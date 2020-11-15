@@ -1,6 +1,6 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <complex>
 using namespace std;
 
 #include "./base.hpp"

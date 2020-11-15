@@ -1,6 +1,7 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <complex>
+#include <cmath>
 using namespace std;
 
 #include "./base.hpp"

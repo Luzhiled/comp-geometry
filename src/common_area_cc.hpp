@@ -1,6 +1,8 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <complex>
+#include <algorithm>
+#include <cmath>
 using namespace std;
 
 #include "./base.hpp"
@@ -23,11 +25,10 @@ namespace geometry {
       real_number s = alpha * norm(b.r);
       real_number t = norm(b.r) * sin(alpha) * cos(alpha);
       res += s - t;
-      std::swap(a, b);
+      swap(a, b);
     }
 
     return res;
   }
-
 }
 

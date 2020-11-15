@@ -1,6 +1,10 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <complex>
+#include <vector>
+#include <cmath>
+#include <istream>
+#include <ostream>
 using namespace std;
 
 #include "./base.hpp"
@@ -27,6 +31,6 @@ namespace geometry {
 
   point rotate(const real_number &theta, const point &p) {
     return point(cos(theta) * p.real() + sin(-theta) * p.imag(),
-        sin(theta) * p.real() + cos(-theta) * p.imag());
+                 sin(theta) * p.real() + cos(-theta) * p.imag());
   }
 }

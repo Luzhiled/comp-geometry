@@ -1,10 +1,11 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/4/CGL_4_B
 // verification-helper: ERROR 0.000001
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #include "../../src/convex_diameter.hpp"
+#include "../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {
@@ -14,6 +15,5 @@ int main() {
   polygon poly(n);
   for (auto &p: poly) cin >> p;
 
-  cout << fixed << setprecision(15);
   cout << convex_diameter(poly) << endl;
 }
