@@ -34,26 +34,28 @@ data:
     \ namespace std;\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#line 5 \"\
     src/point.hpp\"\n#include <cmath>\n#include <istream>\n#include <ostream>\nusing\
     \ namespace std;\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing\
-    \ namespace std;\n\n// base\nnamespace geometry {\n    using real_number = long\
-    \ double;\n\n    const real_number eps = 1e-9;\n    const real_number pi = acos(-1);\n\
-    \n    inline int sign(real_number r) {\n        if (r < -eps) return -1;\n   \
-    \     if (r > +eps) return +1;\n        return 0;\n    }\n\n    inline bool is_equal(real_number\
-    \ r1, real_number r2) {\n        return sign(r1 - r2) == 0;\n    }\n}\n#line 11\
-    \ \"src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point = complex<\
-    \ real_number >;\n  using points = vector< point >;\n\n  istream &operator>>(istream\
-    \ &is, point &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x,\
-    \ y);\n    return is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p)\
-    \ {\n    return os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const\
-    \ point &p, const real_number &k) {\n    return point(p.real() * k, p.imag() *\
-    \ k);\n  }\n\n  point rotate(const real_number &theta, const point &p) {\n   \
-    \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n             \
-    \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/polygon.hpp\"\
-    \n\n// polygon\nnamespace geometry {\n  using polygon = vector< point >;\n  using\
-    \ polygons = vector< polygon >;\n}\n#line 2 \"src/ccw.hpp\"\n\nusing namespace\
-    \ std;\n\n#line 2 \"src/product.hpp\"\n\nusing namespace std;\n\n#line 6 \"src/product.hpp\"\
-    \n\n// product\nnamespace geometry {\n    real_number cross(const point &a, const\
-    \ point &b) {\n        return a.real() * b.imag() - a.imag() * b.real();\n   \
-    \ }\n\n    real_number dot(const point &a, const point &b) {\n        return a.real()\
+    \ namespace std;\n\n// base\nnamespace geometry {\n  using real_number = long\
+    \ double;\n\n  const real_number PI = acos(-1);\n\n  inline static real_number\
+    \ &eps() {\n    static real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static\
+    \ void set_eps(real_number EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number\
+    \ r) {\n    set_eps(1e-10);\n    if (r < -eps()) return -1;\n    if (r > +eps())\
+    \ return +1;\n    return 0;\n  }\n\n  inline bool is_equal(real_number r1, real_number\
+    \ r2) {\n    return sign(r1 - r2) == 0;\n  }\n}\n#line 11 \"src/point.hpp\"\n\n\
+    // point\nnamespace geometry {\n  using point = complex< real_number >;\n  using\
+    \ points = vector< point >;\n\n  istream &operator>>(istream &is, point &p) {\n\
+    \    real_number x, y;\n    is >> x >> y;\n    p = point(x, y);\n    return is;\n\
+    \  }\n\n  ostream &operator<<(ostream &os, const point &p) {\n    return os <<\
+    \ p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const point &p, const\
+    \ real_number &k) {\n    return point(p.real() * k, p.imag() * k);\n  }\n\n  point\
+    \ rotate(const real_number &theta, const point &p) {\n    return point(cos(theta)\
+    \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
+    \ + cos(-theta) * p.imag());\n  }\n}\n#line 7 \"src/polygon.hpp\"\n\n// polygon\n\
+    namespace geometry {\n  using polygon = vector< point >;\n  using polygons = vector<\
+    \ polygon >;\n}\n#line 2 \"src/ccw.hpp\"\n\nusing namespace std;\n\n#line 2 \"\
+    src/product.hpp\"\n\nusing namespace std;\n\n#line 6 \"src/product.hpp\"\n\n//\
+    \ product\nnamespace geometry {\n    real_number cross(const point &a, const point\
+    \ &b) {\n        return a.real() * b.imag() - a.imag() * b.real();\n    }\n\n\
+    \    real_number dot(const point &a, const point &b) {\n        return a.real()\
     \ * b.real() + a.imag() * b.imag();\n    }\n}\n#line 6 \"src/ccw.hpp\"\n\n// ccw\n\
     namespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int\
     \ CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
@@ -85,7 +87,7 @@ data:
   isVerificationFile: true
   path: test/aoj-cgl/CGL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2020-11-16 02:22:57+09:00'
+  timestamp: '2020-11-16 08:02:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj-cgl/CGL_3_B.test.cpp
