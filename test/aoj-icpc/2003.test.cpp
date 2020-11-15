@@ -13,6 +13,8 @@ using namespace std;
 using namespace geometry;
 
 void solve() {
+  set_eps(1e-9);
+
   segment s;
   cin >> s.a >> s.b;
 
