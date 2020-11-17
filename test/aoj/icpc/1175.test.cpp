@@ -11,16 +11,20 @@ using namespace geometry;
 
 using CI = pair< circle, int >;
 vector< int > dp;
+vector< int > mask;
 
-bool can_remove(int idx, int bit, const vector< CI > &cs) {
-  for (int i = 0; i < idx; i++) {
-    if (bit & (1 << i)) continue;
-    if (intersect_cc(cs[i].first, cs[idx].first) >= 3) continue;
-
-    return false;
+void precalc(const vector< CI > &cs) {
+  int n = cs.size();
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < i; j++) {
+      if (intersect_cc(cs[i].first, cs[j].first) >= 3) continue;
+      mask[i] |= (1 << j);
+    }
   }
+}
 
-  return true;
+bool can_remove(int idx, int bit) {
+  return (mask[idx] & bit) == mask[idx];
 }
 
 int calc(int bit, int cnt, const vector< CI > &cs) {
@@ -32,13 +36,13 @@ int calc(int bit, int cnt, const vector< CI > &cs) {
 
   for (int i = 0; i < n; i++) {
     if (bit & (1 << i)) continue;
-    if (can_remove(i, bit, cs) == false) continue;
+    if (can_remove(i, bit) == false) continue;
 
 
     for (int j = i + 1; j < n; j++) {
       if (bit & (1 << j)) continue;
       if (cs[i].second != cs[j].second) continue;
-      if (can_remove(j, bit, cs) == false) continue;
+      if (can_remove(j, bit) == false) continue;
 
       res = max(res, calc(bit | (1 << i) | (1 << j), cnt + 2, cs));
     }
@@ -50,6 +54,8 @@ int calc(int bit, int cnt, const vector< CI > &cs) {
 void solve(int n) {
   vector< CI > cs; 
 
+  dp = vector< int >(1 << n, -1);
+  mask = vector< int >(n);
   for (int i = 0; i < n; i++) {
     circle cir;
     int c;
@@ -58,6 +64,7 @@ void solve(int n) {
     cs.emplace_back(cir, c);
   }
 
+  precalc(cs);
   cout << calc(0, 0, cs) << endl;
 }
 
@@ -65,7 +72,6 @@ int main() {
   int n;
 
   while (cin >> n, n) {
-    dp = vector< int >(1 << n, -1);
     solve(n);
   }
 }
