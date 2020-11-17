@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/distance_ss.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/distance_ss.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

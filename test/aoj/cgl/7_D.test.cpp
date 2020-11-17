@@ -5,9 +5,9 @@
 #include <algorithm>
 using namespace std;
 
-#include "../../src/cross_point_cl.hpp"
-#include "../../src/compare.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/cross_point_cl.hpp"
+#include "../../../src/compare.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

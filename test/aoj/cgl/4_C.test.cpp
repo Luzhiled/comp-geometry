@@ -4,10 +4,10 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/line.hpp"
-#include "../../src/area.hpp"
-#include "../../src/convex_cut.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/line.hpp"
+#include "../../../src/area.hpp"
+#include "../../../src/convex_cut.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

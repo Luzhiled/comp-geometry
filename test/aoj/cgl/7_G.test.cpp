@@ -5,10 +5,10 @@
 #include <algorithm>
 using namespace std;
 
-#include "../../src/tangent_cc.hpp"
-#include "../../src/projection.hpp"
-#include "../../src/compare.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/tangent_cc.hpp"
+#include "../../../src/projection.hpp"
+#include "../../../src/compare.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

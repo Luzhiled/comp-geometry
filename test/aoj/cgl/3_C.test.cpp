@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/polygon.hpp"
-#include "../../src/contains.hpp"
+#include "../../../src/polygon.hpp"
+#include "../../../src/contains.hpp"
 
 using namespace geometry;
 int main() {

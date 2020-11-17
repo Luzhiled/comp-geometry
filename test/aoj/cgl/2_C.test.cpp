@@ -4,9 +4,9 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/segment.hpp"
-#include "../../src/cross_point_ll.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/segment.hpp"
+#include "../../../src/cross_point_ll.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

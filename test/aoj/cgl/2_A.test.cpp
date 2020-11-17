@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/is_parallel.hpp"
-#include "../../src/is_orthogonal.hpp"
+#include "../../../src/is_parallel.hpp"
+#include "../../../src/is_orthogonal.hpp"
 
 using namespace geometry;
 int main() {

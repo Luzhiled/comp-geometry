@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/point.hpp"
-#include "../../src/ccw.hpp"
+#include "../../../src/point.hpp"
+#include "../../../src/ccw.hpp"
 
 using namespace geometry;
 int main() {

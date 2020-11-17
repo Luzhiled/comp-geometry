@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/segment.hpp"
-#include "../../src/is_intersect.hpp"
+#include "../../../src/segment.hpp"
+#include "../../../src/is_intersect.hpp"
 
 using namespace geometry;
 int main() {

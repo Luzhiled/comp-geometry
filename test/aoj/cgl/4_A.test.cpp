@@ -3,9 +3,9 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/polygon.hpp"
-#include "../../src/convex_hull.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/polygon.hpp"
+#include "../../../src/convex_hull.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

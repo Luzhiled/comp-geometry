@@ -4,11 +4,11 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/point.hpp"
-#include "../../src/circle.hpp"
-#include "../../src/polygon.hpp"
-#include "../../src/common_area_cp.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/point.hpp"
+#include "../../../src/circle.hpp"
+#include "../../../src/polygon.hpp"
+#include "../../../src/common_area_cp.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

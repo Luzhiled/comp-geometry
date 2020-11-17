@@ -4,9 +4,9 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/circle.hpp"
-#include "../../src/common_area_cc.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/circle.hpp"
+#include "../../../src/common_area_cc.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {

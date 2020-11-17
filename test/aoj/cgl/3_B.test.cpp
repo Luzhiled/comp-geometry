@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/is_convex.hpp"
+#include "../../../src/is_convex.hpp"
 
 using namespace geometry;
 int main() {

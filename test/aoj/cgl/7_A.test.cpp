@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../../src/intersect_cc.hpp"
+#include "../../../src/intersect_cc.hpp"
 
 using namespace geometry;
 int main() {

@@ -5,10 +5,10 @@
 #include <algorithm>
 using namespace std;
 
-#include "../../src/is_intersect.hpp"
-#include "../../src/compare.hpp"
-#include "../../src/distance_sp.hpp"
-#include "../../src/cross_point_ll.hpp"
+#include "../../../src/is_intersect.hpp"
+#include "../../../src/compare.hpp"
+#include "../../../src/distance_sp.hpp"
+#include "../../../src/cross_point_ll.hpp"
 
 using namespace geometry;
 

@@ -1,11 +1,11 @@
-// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_B
+// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_A
 // verification-helper: ERROR 0.00000001
 
 #include <iostream>
 using namespace std;
 
-#include "../../src/reflection.hpp"
-#include "../../src/util/io_set.hpp"
+#include "../../../src/projection.hpp"
+#include "../../../src/util/io_set.hpp"
 
 using namespace geometry;
 int main() {
@@ -21,6 +21,6 @@ int main() {
     point p;
     cin >> p;
 
-    cout << reflection(l, p) << endl;
+    cout << projection(l, p) << endl;
   }
 }
