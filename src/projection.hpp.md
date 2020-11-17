@@ -34,29 +34,29 @@ data:
     title: src/reflection.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_1_A.test.cpp
-    title: test/aoj-cgl/CGL_1_A.test.cpp
+    path: test/aoj/cgl/1_A.test.cpp
+    title: test/aoj/cgl/1_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_1_B.test.cpp
-    title: test/aoj-cgl/CGL_1_B.test.cpp
+    path: test/aoj/cgl/1_B.test.cpp
+    title: test/aoj/cgl/1_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_2_D.test.cpp
-    title: test/aoj-cgl/CGL_2_D.test.cpp
+    path: test/aoj/cgl/2_D.test.cpp
+    title: test/aoj/cgl/2_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_B.test.cpp
-    title: test/aoj-cgl/CGL_7_B.test.cpp
+    path: test/aoj/cgl/7_B.test.cpp
+    title: test/aoj/cgl/7_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_D.test.cpp
-    title: test/aoj-cgl/CGL_7_D.test.cpp
+    path: test/aoj/cgl/7_D.test.cpp
+    title: test/aoj/cgl/7_D.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_G.test.cpp
-    title: test/aoj-cgl/CGL_7_G.test.cpp
+    path: test/aoj/cgl/7_G.test.cpp
+    title: test/aoj/cgl/7_G.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_H.test.cpp
-    title: test/aoj-cgl/CGL_7_H.test.cpp
+    path: test/aoj/cgl/7_H.test.cpp
+    title: test/aoj/cgl/7_H.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-icpc/2003.test.cpp
-    title: test/aoj-icpc/2003.test.cpp
+    path: test/aoj/icpc/2003.test.cpp
+    title: test/aoj/icpc/2003.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -114,14 +114,14 @@ data:
   timestamp: '2020-11-16 08:02:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-icpc/2003.test.cpp
-  - test/aoj-cgl/CGL_7_B.test.cpp
-  - test/aoj-cgl/CGL_7_H.test.cpp
-  - test/aoj-cgl/CGL_1_A.test.cpp
-  - test/aoj-cgl/CGL_1_B.test.cpp
-  - test/aoj-cgl/CGL_7_G.test.cpp
-  - test/aoj-cgl/CGL_2_D.test.cpp
-  - test/aoj-cgl/CGL_7_D.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/1_A.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/1_B.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2003.test.cpp
 documentation_of: src/projection.hpp
 layout: document
 redirect_from:

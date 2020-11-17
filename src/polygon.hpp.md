@@ -31,26 +31,26 @@ data:
     title: src/is_convex.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_3_A.test.cpp
-    title: test/aoj-cgl/CGL_3_A.test.cpp
+    path: test/aoj/cgl/3_A.test.cpp
+    title: test/aoj/cgl/3_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_3_B.test.cpp
-    title: test/aoj-cgl/CGL_3_B.test.cpp
+    path: test/aoj/cgl/3_B.test.cpp
+    title: test/aoj/cgl/3_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_3_C.test.cpp
-    title: test/aoj-cgl/CGL_3_C.test.cpp
+    path: test/aoj/cgl/3_C.test.cpp
+    title: test/aoj/cgl/3_C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_4_A.test.cpp
-    title: test/aoj-cgl/CGL_4_A.test.cpp
+    path: test/aoj/cgl/4_A.test.cpp
+    title: test/aoj/cgl/4_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_4_B.test.cpp
-    title: test/aoj-cgl/CGL_4_B.test.cpp
+    path: test/aoj/cgl/4_B.test.cpp
+    title: test/aoj/cgl/4_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_4_C.test.cpp
-    title: test/aoj-cgl/CGL_4_C.test.cpp
+    path: test/aoj/cgl/4_C.test.cpp
+    title: test/aoj/cgl/4_C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_7_H.test.cpp
-    title: test/aoj-cgl/CGL_7_H.test.cpp
+    path: test/aoj/cgl/7_H.test.cpp
+    title: test/aoj/cgl/7_H.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -95,13 +95,13 @@ data:
   timestamp: '2020-11-16 08:02:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_4_A.test.cpp
-  - test/aoj-cgl/CGL_3_C.test.cpp
-  - test/aoj-cgl/CGL_3_B.test.cpp
-  - test/aoj-cgl/CGL_3_A.test.cpp
-  - test/aoj-cgl/CGL_7_H.test.cpp
-  - test/aoj-cgl/CGL_4_C.test.cpp
-  - test/aoj-cgl/CGL_4_B.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
 documentation_of: src/polygon.hpp
 layout: document
 redirect_from:

@@ -31,8 +31,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj-cgl/CGL_2_D.test.cpp
-    title: test/aoj-cgl/CGL_2_D.test.cpp
+    path: test/aoj/cgl/2_D.test.cpp
+    title: test/aoj/cgl/2_D.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -117,7 +117,7 @@ data:
   timestamp: '2020-11-16 08:02:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-cgl/CGL_2_D.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
 documentation_of: src/distance_ss.hpp
 layout: document
 redirect_from:
