@@ -89,14 +89,14 @@ data:
     \ distance_sp(const segment &s, const point &p) {\n    point pr = projection(s,\
     \ p);\n    if (ccw(s.a, s.b, pr) == 0) return abs(pr - p);\n    return min(abs(s.a\
     \ - p), abs(s.b - p));\n  }\n}\n#line 10 \"src/distance_ss.hpp\"\n\n// distance\n\
-    namespace geometry {\n  real_number distance(const segment &s1, const segment\
+    namespace geometry {\n  real_number distance_ss(const segment &s1, const segment\
     \ &s2) {\n    if (is_intersect(s1, s2)) return 0;\n    real_number r1 = distance_sp(s1,\
     \ s2.a);\n    real_number r2 = distance_sp(s1, s2.b);\n    real_number r3 = distance_sp(s2,\
     \ s1.a);\n    real_number r4 = distance_sp(s2, s1.b);\n    return min({r1, r2,\
     \ r3, r4});\n  }\n}\n"
   code: "#pragma once\n\n#include <algorithm>\nusing namespace std;\n\n#include \"\
     ./base.hpp\"\n#include \"./segment.hpp\"\n#include \"./is_intersect.hpp\"\n#include\
-    \ \"./distance_sp.hpp\"\n\n// distance\nnamespace geometry {\n  real_number distance(const\
+    \ \"./distance_sp.hpp\"\n\n// distance\nnamespace geometry {\n  real_number distance_ss(const\
     \ segment &s1, const segment &s2) {\n    if (is_intersect(s1, s2)) return 0;\n\
     \    real_number r1 = distance_sp(s1, s2.a);\n    real_number r2 = distance_sp(s1,\
     \ s2.b);\n    real_number r3 = distance_sp(s2, s1.a);\n    real_number r4 = distance_sp(s2,\
@@ -114,7 +114,7 @@ data:
   isVerificationFile: false
   path: src/distance_ss.hpp
   requiredBy: []
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-18 08:53:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/2_D.test.cpp
