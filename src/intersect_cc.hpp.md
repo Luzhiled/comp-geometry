@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/7_A.test.cpp
     title: test/aoj/cgl/7_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/1175.test.cpp
+    title: test/aoj/icpc/1175.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -70,6 +73,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_A.test.cpp
+  - test/aoj/icpc/1175.test.cpp
 documentation_of: src/intersect_cc.hpp
 layout: document
 redirect_from:

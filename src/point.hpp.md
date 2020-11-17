@@ -163,6 +163,9 @@ data:
     path: test/aoj/cgl/7_I.test.cpp
     title: test/aoj/cgl/7_I.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/1175.test.cpp
+    title: test/aoj/icpc/1175.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2003.test.cpp
     title: test/aoj/icpc/2003.test.cpp
   _pathExtension: hpp
@@ -258,6 +261,7 @@ data:
   - test/aoj/cgl/1_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/7_I.test.cpp
+  - test/aoj/icpc/1175.test.cpp
   - test/aoj/icpc/2003.test.cpp
 documentation_of: src/point.hpp
 layout: document
