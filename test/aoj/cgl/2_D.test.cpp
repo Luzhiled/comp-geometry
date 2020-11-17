@@ -16,6 +16,6 @@ int main() {
     segment s1, s2;
     cin >> s1.a >> s1.b >> s2.a >> s2.b;
 
-    cout << distance(s1, s2) << endl;
+    cout << distance_ss(s1, s2) << endl;
   }
 }

@@ -10,7 +10,7 @@ using namespace std;
 
 // distance
 namespace geometry {
-  real_number distance(const segment &s1, const segment &s2) {
+  real_number distance_ss(const segment &s1, const segment &s2) {
     if (is_intersect(s1, s2)) return 0;
     real_number r1 = distance_sp(s1, s2.a);
     real_number r2 = distance_sp(s1, s2.b);
