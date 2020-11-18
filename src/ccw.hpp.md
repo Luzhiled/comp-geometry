@@ -51,6 +51,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2402.test.cpp
     title: test/aoj/icpc/2402.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2862.test.cpp
+    title: test/aoj/icpc/2862.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -106,6 +109,7 @@ data:
   - test/aoj/cgl/2_D.test.cpp
   - test/aoj/cgl/1_C.test.cpp
   - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp
   - test/aoj/icpc/2003.test.cpp
 documentation_of: src/ccw.hpp
