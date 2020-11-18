@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/2_A.test.cpp
     title: test/aoj/cgl/2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2442.test.cpp
+    title: test/aoj/icpc/2442.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -68,6 +71,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/2_A.test.cpp
+  - test/aoj/icpc/2442.test.cpp
 documentation_of: src/is_parallel.hpp
 layout: document
 redirect_from:

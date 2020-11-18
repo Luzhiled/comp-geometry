@@ -194,6 +194,9 @@ data:
       path: test/aoj/icpc/2402.test.cpp
       title: test/aoj/icpc/2402.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj/icpc/2442.test.cpp
+      title: test/aoj/icpc/2442.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj/icpc/2862.test.cpp
       title: test/aoj/icpc/2862.test.cpp
 layout: toppage
