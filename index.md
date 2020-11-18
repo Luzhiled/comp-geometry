@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: src
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/angle.hpp
       title: src/angle.hpp
     - icon: ':heavy_check_mark:'
@@ -190,5 +190,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/icpc/2003.test.cpp
       title: test/aoj/icpc/2003.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/icpc/2402.test.cpp
+      title: test/aoj/icpc/2402.test.cpp
 layout: toppage
 ---

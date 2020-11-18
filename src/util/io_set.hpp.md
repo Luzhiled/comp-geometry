@@ -54,6 +54,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/7_I.test.cpp
     title: test/aoj/cgl/7_I.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2402.test.cpp
+    title: test/aoj/icpc/2402.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -91,6 +94,7 @@ data:
   - test/aoj/cgl/1_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/7_I.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/util/io_set.hpp
 layout: document
 redirect_from:

@@ -33,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/2_D.test.cpp
     title: test/aoj/cgl/2_D.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2402.test.cpp
+    title: test/aoj/icpc/2402.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -118,6 +121,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/distance_ss.hpp
 layout: document
 redirect_from:
