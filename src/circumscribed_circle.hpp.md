@@ -35,7 +35,7 @@ data:
     \ EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number EPS)\
     \ {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
-    \  }\n\n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
+    \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n#line 2 \"src/circle.hpp\"\n\n#include <vector>\nusing\
     \ namespace std;\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#line 6 \"\
     src/point.hpp\"\n#include <istream>\n#include <ostream>\nusing namespace std;\n\
@@ -62,14 +62,14 @@ data:
     \ * b.real() + a.imag() * b.imag();\n    }\n}\n#line 8 \"src/cross_point_ll.hpp\"\
     \n\n// cross point\nnamespace geometry {\n  point cross_point_ll(const line &l1,\
     \ const line &l2) {\n    real_number a = cross(l1.b - l1.a, l2.b - l2.a);\n  \
-    \  real_number b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (is_equal(a, 0) &&\
-    \ is_equal(b, 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n\
-    }\n#line 10 \"src/circumscribed_circle.hpp\"\n\nnamespace geometry {\n  circle\
-    \ circumscribed_circle(const point &a, const point &b, const point &c) {\n   \
-    \ point m1((a + b) / real_number(2)), m2((b + c) / real_number(2));\n    point\
-    \ v((b - a).imag(), (a - b).real()), w((b - c).imag(), (c - b).real());\n    line\
-    \ s(m1, point(m1 + v)), t(m2, point(m2 + w));\n\n    point p = cross_point_ll(s,\
-    \ t);\n    return circle(p, abs(a - p));\n  }\n}\n"
+    \  real_number b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (equals(a, 0) && equals(b,\
+    \ 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n#line 10\
+    \ \"src/circumscribed_circle.hpp\"\n\nnamespace geometry {\n  circle circumscribed_circle(const\
+    \ point &a, const point &b, const point &c) {\n    point m1((a + b) / real_number(2)),\
+    \ m2((b + c) / real_number(2));\n    point v((b - a).imag(), (a - b).real()),\
+    \ w((b - c).imag(), (c - b).real());\n    line s(m1, point(m1 + v)), t(m2, point(m2\
+    \ + w));\n\n    point p = cross_point_ll(s, t);\n    return circle(p, abs(a -\
+    \ p));\n  }\n}\n"
   code: "#pragma once\n\nusing namespace std;\n\n#include \"./base.hpp\"\n#include\
     \ \"./circle.hpp\"\n#include \"./point.hpp\"\n#include \"./line.hpp\"\n#include\
     \ \"./cross_point_ll.hpp\"\n\nnamespace geometry {\n  circle circumscribed_circle(const\
@@ -88,7 +88,7 @@ data:
   isVerificationFile: false
   path: src/circumscribed_circle.hpp
   requiredBy: []
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_C.test.cpp

@@ -68,7 +68,7 @@ data:
     \ real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
     \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
-    \  }\n\n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
+    \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n#line 11 \"src/point.hpp\"\n\n// point\nnamespace geometry\
     \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
     \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
@@ -95,23 +95,23 @@ data:
   isVerificationFile: false
   path: src/segment.hpp
   requiredBy:
-  - src/distance_ss.hpp
-  - src/common_area_cp.hpp
   - src/distance_sp.hpp
   - src/inscribed_circle.hpp
+  - src/distance_ss.hpp
   - src/is_intersect.hpp
-  timestamp: '2020-11-16 08:02:06+09:00'
+  - src/common_area_cp.hpp
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2402.test.cpp
   - test/aoj/icpc/2442.test.cpp
   - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
 documentation_of: src/segment.hpp
 layout: document
 redirect_from:

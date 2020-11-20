@@ -47,7 +47,7 @@ data:
     \ real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
     \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
-    \  }\n\n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
+    \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n#line 2 \"src/segment.hpp\"\n\n#include <vector>\nusing\
     \ namespace std;\n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\nusing\
     \ namespace std;\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#line 6 \"\
@@ -117,11 +117,11 @@ data:
   isVerificationFile: false
   path: src/distance_ss.hpp
   requiredBy: []
-  timestamp: '2020-11-18 08:53:20+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
 documentation_of: src/distance_ss.hpp
 layout: document
 redirect_from:

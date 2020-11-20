@@ -32,7 +32,7 @@ data:
     \ &eps() {\n    static real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static\
     \ void set_eps(real_number EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number\
     \ r) {\n    set_eps(1e-10);\n    if (r < -eps()) return -1;\n    if (r > +eps())\
-    \ return +1;\n    return 0;\n  }\n\n  inline bool is_equal(real_number r1, real_number\
+    \ return +1;\n    return 0;\n  }\n\n  inline bool equals(real_number r1, real_number\
     \ r2) {\n    return sign(r1 - r2) == 0;\n  }\n}\n#line 2 \"src/circle.hpp\"\n\n\
     #include <vector>\nusing namespace std;\n\n#line 2 \"src/point.hpp\"\n\n#line\
     \ 6 \"src/point.hpp\"\n#include <istream>\n#include <ostream>\nusing namespace\
@@ -58,7 +58,7 @@ data:
     \ - r) > 0 or sign(d + c1.r - c2.r) < 0) return {};\n    \n    real_number a =\
     \ acos((norm(c1.r) - norm(c2.r) + norm(d)) / (2 * c1.r * d));\n    real_number\
     \ t = arg(c2.p - c1.p);\n    point p = c1.p + polar(c1.r, t + a);\n    point q\
-    \ = c1.p + polar(c1.r, t - a);\n    if (is_equal(p.real(), q.real()) and is_equal(p.imag(),\
+    \ = c1.p + polar(c1.r, t - a);\n    if (equals(p.real(), q.real()) and equals(p.imag(),\
     \ q.imag())) return {p};\n    return {p, q};\n  }\n}\n\n\n#line 12 \"src/tangent_cp.hpp\"\
     \n\nnamespace geometry {\n  points tangent_cp(const circle &c, const point &p)\
     \ {\n    circle t(p, sqrt(norm(c.p - p) - norm(c.r)));\n    return cross_point_cc(c,\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: src/tangent_cp.hpp
   requiredBy: []
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_F.test.cpp

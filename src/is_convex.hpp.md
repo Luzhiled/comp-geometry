@@ -35,8 +35,8 @@ data:
     \    return EPS;\n  }\n\n  static void set_eps(real_number EPS) {\n    eps() =\
     \ EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n    if\
     \ (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n  }\n\
-    \n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
-    \ - r2) == 0;\n  }\n}\n#line 11 \"src/point.hpp\"\n\n// point\nnamespace geometry\
+    \n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1 -\
+    \ r2) == 0;\n  }\n}\n#line 11 \"src/point.hpp\"\n\n// point\nnamespace geometry\
     \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
     \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
     \ >> x >> y;\n    p = point(x, y);\n    return is;\n  }\n\n  ostream &operator<<(ostream\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: false
   path: src/is_convex.hpp
   requiredBy: []
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/3_B.test.cpp

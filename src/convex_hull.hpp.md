@@ -34,7 +34,7 @@ data:
     \ real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
     \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
-    \  }\n\n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
+    \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n#line 11 \"src/point.hpp\"\n\n// point\nnamespace geometry\
     \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
     \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
@@ -48,9 +48,9 @@ data:
     \n#line 7 \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon\
     \ = vector< point >;\n  using polygons = vector< polygon >;\n}\n#line 2 \"src/compare.hpp\"\
     \n\nusing namespace std;\n\n#line 7 \"src/compare.hpp\"\n\nnamespace geometry\
-    \ {\n  bool compare_x(const point &a, const point &b) {\n    return !is_equal(a.real(),\
+    \ {\n  bool compare_x(const point &a, const point &b) {\n    return !equals(a.real(),\
     \ b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
-    \ point &a, const point &b) {\n    return !is_equal(a.imag(), b.imag()) ? a.imag()\
+    \ point &a, const point &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag()\
     \ < b.imag() : a.real() < b.real();\n  }\n}\n#line 2 \"src/product.hpp\"\n\nusing\
     \ namespace std;\n\n#line 6 \"src/product.hpp\"\n\n// product\nnamespace geometry\
     \ {\n    real_number cross(const point &a, const point &b) {\n        return a.real()\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: src/convex_hull.hpp
   requiredBy: []
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/4_A.test.cpp

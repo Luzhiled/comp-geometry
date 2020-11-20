@@ -41,7 +41,7 @@ data:
     \    static real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
     \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
-    \  }\n\n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
+    \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#include\
     \ <vector>\n#line 6 \"src/point.hpp\"\n#include <istream>\n#include <ostream>\n\
     using namespace std;\n\n#line 11 \"src/point.hpp\"\n\n// point\nnamespace geometry\
@@ -71,14 +71,14 @@ data:
     \  real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a\
     \ + (l.a - l.b) * t;\n  }\n}\n#line 11 \"src/cross_point_cl.hpp\"\n\nnamespace\
     \ geometry {\n  points cross_point_cl(const circle &c, const line &l) {\n    point\
-    \ pr = projection(l, c.p);\n\n    if (is_equal(abs(pr - c.p), c.r)) {\n      return\
+    \ pr = projection(l, c.p);\n\n    if (equals(abs(pr - c.p), c.r)) {\n      return\
     \ {pr};\n    }\n\n    points pts;\n    point e = (l.b - l.a) / abs(l.b - l.a);\n\
     \    real_number k = sqrt(norm(c.r) - norm(pr - c.p));\n    pts.emplace_back(pr\
     \ + e * k);\n    pts.emplace_back(pr - e * k);\n    return pts;\n  }\n}\n"
   code: "#pragma once\n\n#include <cmath>\nusing namespace std;\n\n#include \"./base.hpp\"\
     \n#include \"./point.hpp\"\n#include \"./circle.hpp\"\n#include \"./line.hpp\"\
     \n#include \"./projection.hpp\"\n\nnamespace geometry {\n  points cross_point_cl(const\
-    \ circle &c, const line &l) {\n    point pr = projection(l, c.p);\n\n    if (is_equal(abs(pr\
+    \ circle &c, const line &l) {\n    point pr = projection(l, c.p);\n\n    if (equals(abs(pr\
     \ - c.p), c.r)) {\n      return {pr};\n    }\n\n    points pts;\n    point e =\
     \ (l.b - l.a) / abs(l.b - l.a);\n    real_number k = sqrt(norm(c.r) - norm(pr\
     \ - c.p));\n    pts.emplace_back(pr + e * k);\n    pts.emplace_back(pr - e * k);\n\
@@ -94,11 +94,11 @@ data:
   path: src/cross_point_cl.hpp
   requiredBy:
   - src/common_area_cp.hpp
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_D.test.cpp
   - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
 documentation_of: src/cross_point_cl.hpp
 layout: document
 redirect_from:

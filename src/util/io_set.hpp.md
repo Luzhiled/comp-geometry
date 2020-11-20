@@ -77,24 +77,24 @@ data:
   timestamp: '2020-11-16 02:22:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/7_E.test.cpp
-  - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/icpc/2402.test.cpp
+  - test/aoj/cgl/1_B.test.cpp
   - test/aoj/cgl/5_A.test.cpp
-  - test/aoj/cgl/7_C.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
-  - test/aoj/cgl/4_A.test.cpp
-  - test/aoj/cgl/7_F.test.cpp
-  - test/aoj/cgl/1_A.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/7_E.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
   - test/aoj/cgl/2_D.test.cpp
   - test/aoj/cgl/3_A.test.cpp
-  - test/aoj/cgl/7_D.test.cpp
-  - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/1_A.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/cgl/7_F.test.cpp
   - test/aoj/cgl/7_I.test.cpp
-  - test/aoj/icpc/2402.test.cpp
+  - test/aoj/cgl/7_G.test.cpp
 documentation_of: src/util/io_set.hpp
 layout: document
 redirect_from:

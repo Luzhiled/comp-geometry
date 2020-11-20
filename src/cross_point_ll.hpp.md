@@ -38,8 +38,8 @@ data:
     \    return EPS;\n  }\n\n  static void set_eps(real_number EPS) {\n    eps() =\
     \ EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n    if\
     \ (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n  }\n\
-    \n  inline bool is_equal(real_number r1, real_number r2) {\n    return sign(r1\
-    \ - r2) == 0;\n  }\n}\n#line 2 \"src/line.hpp\"\n\n#include <vector>\nusing namespace\
+    \n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1 -\
+    \ r2) == 0;\n  }\n}\n#line 2 \"src/line.hpp\"\n\n#include <vector>\nusing namespace\
     \ std;\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#line 6 \"src/point.hpp\"\
     \n#include <istream>\n#include <ostream>\nusing namespace std;\n\n#line 11 \"\
     src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point = complex< real_number\
@@ -61,13 +61,13 @@ data:
     #line 8 \"src/cross_point_ll.hpp\"\n\n// cross point\nnamespace geometry {\n \
     \ point cross_point_ll(const line &l1, const line &l2) {\n    real_number a =\
     \ cross(l1.b - l1.a, l2.b - l2.a);\n    real_number b = cross(l1.b - l1.a, l1.b\
-    \ - l2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return l2.a;\n    return\
-    \ l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n"
+    \ - l2.a);\n    if (equals(a, 0) && equals(b, 0)) return l2.a;\n    return l2.a\
+    \ + (l2.b - l2.a) * b / a;\n  }\n}\n"
   code: "#pragma once\n\nusing namespace std;\n\n#include \"./base.hpp\"\n#include\
     \ \"./line.hpp\"\n#include \"./product.hpp\"\n\n// cross point\nnamespace geometry\
     \ {\n  point cross_point_ll(const line &l1, const line &l2) {\n    real_number\
     \ a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number b = cross(l1.b - l1.a,\
-    \ l1.b - l2.a);\n    if (is_equal(a, 0) && is_equal(b, 0)) return l2.a;\n    return\
+    \ l1.b - l2.a);\n    if (equals(a, 0) && equals(b, 0)) return l2.a;\n    return\
     \ l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n"
   dependsOn:
   - src/base.hpp
@@ -78,12 +78,12 @@ data:
   path: src/cross_point_ll.hpp
   requiredBy:
   - src/circumscribed_circle.hpp
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_C.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
   - test/aoj/icpc/2003.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
 documentation_of: src/cross_point_ll.hpp
 layout: document
 redirect_from:

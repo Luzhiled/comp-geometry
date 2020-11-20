@@ -32,7 +32,7 @@ data:
     \ &eps() {\n    static real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static\
     \ void set_eps(real_number EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number\
     \ r) {\n    set_eps(1e-10);\n    if (r < -eps()) return -1;\n    if (r > +eps())\
-    \ return +1;\n    return 0;\n  }\n\n  inline bool is_equal(real_number r1, real_number\
+    \ return +1;\n    return 0;\n  }\n\n  inline bool equals(real_number r1, real_number\
     \ r2) {\n    return sign(r1 - r2) == 0;\n  }\n}\n#line 2 \"src/polygon.hpp\"\n\
     \n#include <vector>\nusing namespace std;\n\n#line 2 \"src/point.hpp\"\n\n#line\
     \ 6 \"src/point.hpp\"\n#include <istream>\n#include <ostream>\nusing namespace\
@@ -53,10 +53,10 @@ data:
     \ dot(const point &a, const point &b) {\n        return a.real() * b.real() +\
     \ a.imag() * b.imag();\n    }\n}\n#line 2 \"src/compare.hpp\"\n\nusing namespace\
     \ std;\n\n#line 7 \"src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const\
-    \ point &a, const point &b) {\n    return !is_equal(a.real(), b.real()) ? a.real()\
+    \ point &a, const point &b) {\n    return !equals(a.real(), b.real()) ? a.real()\
     \ < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const\
-    \ point &b) {\n    return !is_equal(a.imag(), b.imag()) ? a.imag() < b.imag()\
-    \ : a.real() < b.real();\n  }\n}\n#line 11 \"src/convex_diameter.hpp\"\n\nnamespace\
+    \ point &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag() < b.imag() :\
+    \ a.real() < b.real();\n  }\n}\n#line 11 \"src/convex_diameter.hpp\"\n\nnamespace\
     \ geometry {\n  real_number convex_diameter(const polygon &p) {\n    int n = p.size();\n\
     \    if (n == 2) return abs(p[0] - p[1]);\n\n    int i = 0, j = 0;\n    for (int\
     \ k = 0; k < n; ++k) {\n      if ( compare_x(p[i], p[k])) i = k;\n      if (!compare_x(p[j],\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: false
   path: src/convex_diameter.hpp
   requiredBy: []
-  timestamp: '2020-11-16 08:02:06+09:00'
+  timestamp: '2020-11-20 11:43:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/4_B.test.cpp
