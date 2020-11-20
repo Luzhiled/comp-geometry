@@ -19,8 +19,8 @@ namespace geometry {
 
     if (sign(d - r) > 0) return SEPERATE;
     if (sign(d + c1.r - c2.r) < 0) return CONTAIN;
-    if (is_equal(d, r)) return CIRCUMSCRIBE;
-    if (is_equal(d + c1.r, c2.r)) return INSCRIBE;
+    if (equals(d, r)) return CIRCUMSCRIBE;
+    if (equals(d + c1.r, c2.r)) return INSCRIBE;
     return INTERSECT;
   }
 }

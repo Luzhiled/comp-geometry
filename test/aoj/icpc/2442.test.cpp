@@ -38,7 +38,7 @@ int main() {
       drop();
     }
 
-    if (is_equal(abs(ss[i].a - ss[i].b), abs(ss[j].a - ss[j].b)) == false) {
+    if (equals(abs(ss[i].a - ss[i].b), abs(ss[j].a - ss[j].b)) == false) {
       drop();
     }
   }

@@ -13,7 +13,7 @@ namespace geometry {
   points cross_point_cl(const circle &c, const line &l) {
     point pr = projection(l, c.p);
 
-    if (is_equal(abs(pr - c.p), c.r)) {
+    if (equals(abs(pr - c.p), c.r)) {
       return {pr};
     }
 

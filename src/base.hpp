@@ -25,7 +25,7 @@ namespace geometry {
     return 0;
   }
 
-  inline bool is_equal(real_number r1, real_number r2) {
+  inline bool equals(real_number r1, real_number r2) {
     return sign(r1 - r2) == 0;
   }
 }

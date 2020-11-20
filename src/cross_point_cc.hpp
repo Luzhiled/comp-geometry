@@ -16,7 +16,7 @@ namespace geometry {
     real_number t = arg(c2.p - c1.p);
     point p = c1.p + polar(c1.r, t + a);
     point q = c1.p + polar(c1.r, t - a);
-    if (is_equal(p.real(), q.real()) and is_equal(p.imag(), q.imag())) return {p};
+    if (equals(p.real(), q.real()) and equals(p.imag(), q.imag())) return {p};
     return {p, q};
   }
 }
