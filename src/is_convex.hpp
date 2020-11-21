@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 #include "./polygon.hpp"
 #include "./ccw.hpp"
 

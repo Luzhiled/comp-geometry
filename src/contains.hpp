@@ -1,7 +1,6 @@
 #pragma once
 
 #include <algorithm>
-using namespace std;
 
 #include "./base.hpp"
 #include "./product.hpp"

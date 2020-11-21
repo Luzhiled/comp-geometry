@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
 
 #include "../../../src/is_intersect.hpp"
 #include "../../../src/compare.hpp"
@@ -16,19 +15,19 @@ void solve() {
   set_eps(1e-9);
 
   segment s;
-  cin >> s.a >> s.b;
+  std::cin >> s.a >> s.b;
 
   int n;
-  cin >> n;
+  std::cin >> n;
 
   segments rs(n);
-  vector< int > os(n), ls(n);
+  std::vector< int > os(n), ls(n);
   for (int i = 0; i < n; i++) {
-    cin >> rs[i].a >> rs[i].b >> os[i] >> ls[i];
+    std::cin >> rs[i].a >> rs[i].b >> os[i] >> ls[i];
   }
 
-  using T = pair< point, bool >;
-  vector< T > pts;
+  using T = std::pair< point, bool >;
+  std::vector< T > pts;
   for (int i = 0; i < n; i++) {
     if (!is_intersect(s, rs[i])) continue;
 
@@ -41,19 +40,19 @@ void solve() {
   }
 
   auto comp = [](const T &a, const T &b) { return compare_x(a.first, b.first); };
-  sort(pts.begin(), pts.end(), comp);
+  std::sort(pts.begin(), pts.end(), comp);
 
   int ans = 0;
   for (int i = 1; i < (int)pts.size(); i++) {
     if (pts[i].second != pts[i - 1].second) ans += 1;
   }
 
-  cout << ans << endl;
+  std::cout << ans << std::endl;
 }
 
 int main() {
   int T;
-  cin >> T;
+  std::cin >> T;
 
   while (T--) {
     solve();

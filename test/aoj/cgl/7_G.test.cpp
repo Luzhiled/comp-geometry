@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <algorithm>
-using namespace std;
 
 #include "../../../src/tangent_cc.hpp"
 #include "../../../src/projection.hpp"
@@ -13,13 +12,13 @@ using namespace std;
 using namespace geometry;
 int main() {
   circle c1, c2;
-  cin >> c1.p >> c1.r;
-  cin >> c2.p >> c2.r;
+  std::cin >> c1.p >> c1.r;
+  std::cin >> c2.p >> c2.r;
 
   lines ls = tangent_cc(c1, c2);
   points ps;
   for (auto &l : ls) ps.emplace_back(projection(l, c1.p));
   sort(ps.begin(), ps.end(), compare_x);
 
-  for (auto &p : ps) cout << p << endl;
+  for (auto &p : ps) std::cout << p << std::endl;
 }

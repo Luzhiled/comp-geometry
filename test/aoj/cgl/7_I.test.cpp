@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.000001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/circle.hpp"
 #include "../../../src/common_area_cc.hpp"
@@ -11,8 +10,8 @@ using namespace std;
 using namespace geometry;
 int main() {
   circle c1, c2;
-  cin >> c1.p >> c1.r;
-  cin >> c2.p >> c2.r;
+  std::cin >> c1.p >> c1.r;
+  std::cin >> c2.p >> c2.r;
 
-  cout << common_area_cc(c1, c2) << endl;
+  std::cout << common_area_cc(c1, c2) << std::endl;
 }

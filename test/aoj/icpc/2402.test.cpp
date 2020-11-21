@@ -2,7 +2,7 @@
 // verification-helper: ERROR 0.000001
 
 #include <iostream>
-using namespace std;
+#include <algorithm>
 
 #include "../../../src/point.hpp"
 #include "../../../src/distance_ss.hpp"
@@ -12,28 +12,28 @@ using namespace std;
 using namespace geometry;
 
 const real_number inf = 1e8;
-real_number star_distance(int a, int b, const vector< segments > &stars) {
+real_number star_distance(int a, int b, const std::vector< segments > &stars) {
   real_number res = inf;
 
   for (auto &seg_a : stars[a]) {
     for (auto &seg_b : stars[b]) {
-      res = min(res, distance_ss(seg_a, seg_b));
+      res = std::min(res, distance_ss(seg_a, seg_b));
     }
   }
 
   return res;
 }
 
-using Graph = vector< vector< real_number > >;
+using Graph = std::vector< std::vector< real_number > >;
 
 void solve(int n, int m, int l) {
-  vector< segments > stars(n);
-  Graph G(n, vector< real_number >(n));
+  std::vector< segments > stars(n);
+  Graph G(n, std::vector< real_number >(n));
 
   for (auto &star : stars) {
     point p;
     real_number a, r;
-    cin >> p >> a >> r;
+    std::cin >> p >> a >> r;
 
     point v(0, r);
     points ps;
@@ -62,7 +62,7 @@ void solve(int n, int m, int l) {
   for (int k = 0; k < n; k++) {
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
-        G[i][j] = min(G[i][j], G[i][k] + G[k][j]);
+        G[i][j] = std::min(G[i][j], G[i][k] + G[k][j]);
       }
     }
   }
@@ -74,7 +74,7 @@ int main() {
   IoSetup(20);
   int n, m, l;
 
-  while (cin >> n >> m >> l, n) {
+  while (std::cin >> n >> m >> l, n) {
     solve(n, m - 1, l - 1);
   }
 }

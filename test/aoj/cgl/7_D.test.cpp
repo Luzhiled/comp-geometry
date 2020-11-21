@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <algorithm>
-using namespace std;
 
 #include "../../../src/cross_point_cl.hpp"
 #include "../../../src/compare.hpp"
@@ -12,14 +11,14 @@ using namespace std;
 using namespace geometry;
 int main() {
   circle c;
-  cin >> c.p >> c.r;
+  std::cin >> c.p >> c.r;
 
   int q;
-  cin >> q;
+  std::cin >> q;
 
   while (q--) {
     line l;
-    cin >> l.a >> l.b;
+    std::cin >> l.a >> l.b;
 
     points pts = cross_point_cl(c, l);
     if (pts.size() == 1) {
@@ -28,6 +27,6 @@ int main() {
 
     if (!compare_x(pts[0], pts[1])) swap(pts[0], pts[1]);
 
-    cout << pts[0] << " " << pts[1] << endl;
+    std::cout << pts[0] << " " << pts[1] << std::endl;
   }
 }

@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <complex>
 #include <cmath>
-using namespace std;
 
 #include "./base.hpp"
 #include "./point.hpp"

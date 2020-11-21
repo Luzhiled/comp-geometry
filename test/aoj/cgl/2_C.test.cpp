@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.00000001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/segment.hpp"
 #include "../../../src/cross_point_ll.hpp"
@@ -11,12 +10,12 @@ using namespace std;
 using namespace geometry;
 int main() {
   int q;
-  cin >> q;
+  std::cin >> q;
 
   while (q--) {
     segment s1, s2;
-    cin >> s1.a >> s1.b >> s2.a >> s2.b;
+    std::cin >> s1.a >> s1.b >> s2.a >> s2.b;
 
-    cout << cross_point_ll(s1, s2) << endl;
+    std::cout << cross_point_ll(s1, s2) << std::endl;
   }
 }

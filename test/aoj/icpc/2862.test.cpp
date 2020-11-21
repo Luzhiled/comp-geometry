@@ -2,15 +2,14 @@
 
 #include <iostream>
 #include <bitset>
-using namespace std;
 
 #include "../../../src/circle.hpp"
 #include "../../../src/distance_sp.hpp"
 
 using namespace geometry;
 
-vector< int > dp;
-vector< real_number > rs;
+std::vector< int > dp;
+std::vector< real_number > rs;
 segments ss;
 
 bool can_move(int idx, int bit) {
@@ -37,7 +36,7 @@ int calc(int bit) {
   for (int i = 0; i < n; i++) {
     if (bit & (1 << i)) continue;
     if (!can_move(i, bit)) continue;
-    res = max(res, calc(bit | (1 << i)) + 1);
+    res = std::max(res, calc(bit | (1 << i)) + 1);
   }
 
   return res;
@@ -45,15 +44,15 @@ int calc(int bit) {
 
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   dp.assign(1 << n, -1);
   rs.resize(n);
   ss.resize(n);
 
   for (int i = 0; i < n; i++) {
-    cin >> rs[i] >> ss[i].a >> ss[i].b;
+    std::cin >> rs[i] >> ss[i].a >> ss[i].b;
   }
 
-  cout << calc(0) << endl;
+  std::cout << calc(0) << std::endl;
 }

@@ -2,7 +2,6 @@
 
 #include <complex>
 #include <algorithm>
-using namespace std;
 
 #include "./base.hpp"
 #include "./projection.hpp"

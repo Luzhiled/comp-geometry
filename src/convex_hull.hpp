@@ -1,7 +1,6 @@
 #pragma once
 
 #include <algorithm>
-using namespace std;
 
 #include "./point.hpp"
 #include "./polygon.hpp"

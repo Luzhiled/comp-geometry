@@ -4,7 +4,6 @@
 #include <complex>
 #include <algorithm>
 #include <iterator>
-using namespace std;
 
 #include "./base.hpp"
 #include "./point.hpp"

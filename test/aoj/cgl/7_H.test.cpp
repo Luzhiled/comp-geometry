@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.000001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/point.hpp"
 #include "../../../src/circle.hpp"
@@ -15,10 +14,10 @@ int main() {
   circle c(point(0, 0), 0);
   int n;
   
-  cin >> n >> c.r;
+  std::cin >> n >> c.r;
 
   polygon poly(n);
-  for (auto &p : poly) cin >> p;
+  for (auto &p : poly) std::cin >> p;
 
-  cout << common_area_cp(c, poly) << endl;
+  std::cout << common_area_cp(c, poly) << std::endl;
 }

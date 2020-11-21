@@ -1,10 +1,10 @@
 #pragma once
 
 #include <cmath>
-using namespace std;
 
 // base
 namespace geometry {
+  using namespace std;
   using real_number = long double;
 
   const real_number PI = acos(-1);

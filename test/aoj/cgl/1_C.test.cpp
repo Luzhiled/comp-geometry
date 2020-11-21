@@ -1,7 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_1_C
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/point.hpp"
 #include "../../../src/ccw.hpp"
@@ -9,34 +8,34 @@ using namespace std;
 using namespace geometry;
 int main() {
   point p0, p1;
-  cin >> p0 >> p1;
+  std::cin >> p0 >> p1;
 
   int q;
-  cin >> q;
+  std::cin >> q;
 
   while (q--) {
     point p2;
-    cin >> p2;
+    std::cin >> p2;
 
     switch (ccw(p0, p1, p2)) {
       case COUNTER_CLOCKWISE:
-        cout << "COUNTER_CLOCKWISE" << endl;
+        std::cout << "COUNTER_CLOCKWISE" << std::endl;
         break;
       
       case CLOCKWISE:
-        cout << "CLOCKWISE" << endl;
+        std::cout << "CLOCKWISE" << std::endl;
         break;
 
       case ONLINE_BACK:
-        cout << "ONLINE_BACK" << endl;
+        std::cout << "ONLINE_BACK" << std::endl;
         break;
 
       case ONLINE_FRONT:
-        cout << "ONLINE_FRONT" << endl;
+        std::cout << "ONLINE_FRONT" << std::endl;
         break;
 
       case ON_SEGMENT:
-        cout << "ON_SEGMENT" << endl;
+        std::cout << "ON_SEGMENT" << std::endl;
         break;
     }
   }

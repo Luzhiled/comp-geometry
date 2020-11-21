@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.00000001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/reflection.hpp"
 #include "../../../src/util/io_set.hpp"
@@ -10,17 +9,17 @@ using namespace std;
 using namespace geometry;
 int main() {
   point p1, p2;
-  cin >> p1 >> p2;
+  std::cin >> p1 >> p2;
 
   line l(p1, p2);
 
   int q;
-  cin >> q;
+  std::cin >> q;
 
   while (q--) {
     point p;
-    cin >> p;
+    std::cin >> p;
 
-    cout << reflection(l, p) << endl;
+    std::cout << reflection(l, p) << std::endl;
   }
 }

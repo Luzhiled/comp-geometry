@@ -1,7 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/polygon.hpp"
 #include "../../../src/convex_hull.hpp"
@@ -10,17 +9,17 @@ using namespace std;
 using namespace geometry;
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   points pts(n);
   for (auto &p: pts) {
-    cin >> p;
+    std::cin >> p;
   }
 
   polygon poly = convex_hull(pts);
 
   n = (int)poly.size();
-  cout << n << endl;
+  std::cout << n << std::endl;
 
   int idx = 0;
   for (int i = 0; i < n; ++i) {
@@ -31,6 +30,6 @@ int main() {
 
   IoSetup(0);
   for (int i = 0; i < n; ++i) {
-    cout << poly[(i + idx) % n] << endl;
+    std::cout << poly[(i + idx) % n] << std::endl;
   }
 }

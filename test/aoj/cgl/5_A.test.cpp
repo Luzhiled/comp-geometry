@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.000001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/closest_pair.hpp"
 #include "../../../src/util/io_set.hpp"
@@ -10,10 +9,10 @@ using namespace std;
 using namespace geometry;
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   points pts(n);
-  for (auto &p: pts) cin >> p;
+  for (auto &p: pts) std::cin >> p;
 
-  cout << closest_pair(pts) << endl;
+  std::cout << closest_pair(pts) << std::endl;
 }

@@ -2,7 +2,6 @@
 
 #include <complex>
 #include <cmath>
-using namespace std;
 
 #include "./base.hpp"
 #include "./circle.hpp"

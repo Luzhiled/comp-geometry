@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 #include "./base.hpp"
 #include "./line.hpp"
 #include "./product.hpp"

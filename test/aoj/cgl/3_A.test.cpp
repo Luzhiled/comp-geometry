@@ -1,7 +1,6 @@
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/3/CGL_3_A
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/area.hpp"
 #include "../../../src/util/io_set.hpp"
@@ -9,13 +8,13 @@ using namespace std;
 using namespace geometry;
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   polygon poly(n);
   for (auto &p: poly) {
-    cin >> p;
+    std::cin >> p;
   }
 
   IoSetup(1);
-  cout << area(poly) << endl;
+  std::cout << area(poly) << std::endl;
 }

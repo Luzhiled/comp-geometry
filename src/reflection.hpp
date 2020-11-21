@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 #include "./projection.hpp"
 #include "./line.hpp"
 #include "./point.hpp"

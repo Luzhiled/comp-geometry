@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.000001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/convex_diameter.hpp"
 #include "../../../src/util/io_set.hpp"
@@ -10,10 +9,10 @@ using namespace std;
 using namespace geometry;
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   polygon poly(n);
-  for (auto &p: poly) cin >> p;
+  for (auto &p: poly) std::cin >> p;
 
-  cout << convex_diameter(poly) << endl;
+  std::cout << convex_diameter(poly) << std::endl;
 }

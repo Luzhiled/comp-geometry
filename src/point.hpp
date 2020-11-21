@@ -5,7 +5,6 @@
 #include <cmath>
 #include <istream>
 #include <ostream>
-using namespace std;
 
 #include "./base.hpp"
 

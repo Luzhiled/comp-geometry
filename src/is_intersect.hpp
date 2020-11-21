@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 #include "./segment.hpp"
 #include "./ccw.hpp"
 

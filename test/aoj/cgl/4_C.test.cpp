@@ -2,7 +2,6 @@
 // verification-helper: ERROR 0.00001
 
 #include <iostream>
-using namespace std;
 
 #include "../../../src/line.hpp"
 #include "../../../src/area.hpp"
@@ -12,20 +11,20 @@ using namespace std;
 using namespace geometry;
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   polygon poly(n);
   for (auto &p: poly) {
-    cin >> p;
+    std::cin >> p;
   }
 
   int q;
-  cin >> q;
+  std::cin >> q;
 
   while (q--) {
     line l;
-    cin >> l.a >> l.b;
+    std::cin >> l.a >> l.b;
 
-    cout << area(convex_cut(poly, l)) << endl;
+    std::cout << area(convex_cut(poly, l)) << std::endl;
   }
 }

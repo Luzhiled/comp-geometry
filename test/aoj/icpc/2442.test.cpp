@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <cstdlib>
-using namespace std;
 
 #include "../../../src/point.hpp"
 #include "../../../src/segment.hpp"
@@ -12,19 +11,19 @@ using namespace std;
 using namespace geometry;
 
 void drop() {
-  cout << "NA" << endl;
+  std::cout << "NA" << endl;
   exit(0);
 }
 
 int main() {
   int n;
-  cin >> n;
+  std::cin >> n;
 
   if (n & 1) drop();
 
   points ps(n);
   for (auto &p : ps) {
-    cin >> p;
+    std::cin >> p;
   }
 
   segments ss;
@@ -43,5 +42,5 @@ int main() {
     }
   }
 
-  cout << (ps[0] + ps[(n / 2) % n]) * (1.0 / 2.0) << endl;
+  std::cout << (ps[0] + ps[(n / 2) % n]) * (1.0 / 2.0) << std::endl;
 }
