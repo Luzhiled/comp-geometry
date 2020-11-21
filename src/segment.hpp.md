@@ -58,18 +58,17 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/segment.hpp\"\n\n#include <vector>\nusing namespace\
-    \ std;\n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\nusing namespace\
-    \ std;\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#line 5 \"src/point.hpp\"\
-    \n#include <cmath>\n#include <istream>\n#include <ostream>\nusing namespace std;\n\
-    \n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\nusing namespace std;\n\
-    \n// base\nnamespace geometry {\n  using real_number = long double;\n\n  const\
-    \ real_number PI = acos(-1);\n\n  inline static real_number &eps() {\n    static\
-    \ real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
-    \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
+  bundledCode: "#line 2 \"src/segment.hpp\"\n\n#include <vector>\n\n#line 2 \"src/line.hpp\"\
+    \n\n#line 4 \"src/line.hpp\"\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n\
+    #line 5 \"src/point.hpp\"\n#include <cmath>\n#include <istream>\n#include <ostream>\n\
+    \n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\n\n// base\nnamespace geometry\
+    \ {\n  using namespace std;\n  using real_number = long double;\n\n  const real_number\
+    \ PI = acos(-1);\n\n  inline static real_number &eps() {\n    static real_number\
+    \ EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number EPS)\
+    \ {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
     \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
-    \ - r2) == 0;\n  }\n}\n#line 11 \"src/point.hpp\"\n\n// point\nnamespace geometry\
+    \ - r2) == 0;\n  }\n}\n#line 10 \"src/point.hpp\"\n\n// point\nnamespace geometry\
     \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
     \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
     \ >> x >> y;\n    p = point(x, y);\n    return is;\n  }\n\n  ostream &operator<<(ostream\
@@ -78,16 +77,14 @@ data:
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 7 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
+    \ 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
     \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
-    \  };\n\n  using lines = vector< line >;\n}\n#line 7 \"src/segment.hpp\"\n\n//\
-    \ segment\nnamespace geometry {\n    struct segment : line {\n        segment()\
-    \ = default;\n        using line::line;\n    };\n\n    using segments = vector<\
-    \ segment >;\n}\n"
-  code: "#pragma once\n\n#include <vector>\nusing namespace std;\n\n#include \"./line.hpp\"\
-    \n\n// segment\nnamespace geometry {\n    struct segment : line {\n        segment()\
-    \ = default;\n        using line::line;\n    };\n\n    using segments = vector<\
-    \ segment >;\n}\n"
+    \  };\n\n  using lines = vector< line >;\n}\n#line 6 \"src/segment.hpp\"\n\n//\
+    \ segment\nnamespace geometry {\n  struct segment : line {\n    segment() = default;\n\
+    \    using line::line;\n  };\n\n  using segments = vector< segment >;\n}\n"
+  code: "#pragma once\n\n#include <vector>\n\n#include \"./line.hpp\"\n\n// segment\n\
+    namespace geometry {\n  struct segment : line {\n    segment() = default;\n  \
+    \  using line::line;\n  };\n\n  using segments = vector< segment >;\n}\n"
   dependsOn:
   - src/line.hpp
   - src/point.hpp
@@ -100,7 +97,7 @@ data:
   - src/distance_ss.hpp
   - src/is_intersect.hpp
   - src/common_area_cp.hpp
-  timestamp: '2020-11-20 11:43:04+09:00'
+  timestamp: '2020-11-21 21:36:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/icpc/2003.test.cpp

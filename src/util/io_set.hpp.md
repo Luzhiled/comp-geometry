@@ -61,20 +61,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"src/util/io_set.hpp\"\n#include <iomanip>\n\nclass IoSetup\
-    \ {\n  using u32 = unsigned int;\n\n  void set(ostream &os, u32 precision) {\n\
-    \    os << fixed << setprecision(precision);\n  }\n\npublic:\n  IoSetup(u32 precision\
-    \ = 15) {\n    cin.tie(0);\n    ios::sync_with_stdio(0);\n\n    set(cout, precision);\n\
-    \    set(cerr, precision);\n  }\n} iosetup;\n"
-  code: "#include <iomanip>\n\nclass IoSetup {\n  using u32 = unsigned int;\n\n  void\
-    \ set(ostream &os, u32 precision) {\n    os << fixed << setprecision(precision);\n\
-    \  }\n\npublic:\n  IoSetup(u32 precision = 15) {\n    cin.tie(0);\n    ios::sync_with_stdio(0);\n\
-    \n    set(cout, precision);\n    set(cerr, precision);\n  }\n} iosetup;\n"
+  bundledCode: "#line 1 \"src/util/io_set.hpp\"\n#include <iomanip>\n\nnamespace geometry\
+    \ {\n  using namespace std;\n  class IoSetup {\n    using u32 = unsigned int;\n\
+    \n    void set(ostream &os, u32 precision) {\n      os << fixed << setprecision(precision);\n\
+    \    }\n\n    public:\n    IoSetup(u32 precision = 15) {\n      cin.tie(0);\n\
+    \      ios::sync_with_stdio(0);\n\n      set(cout, precision);\n      set(cerr,\
+    \ precision);\n    }\n  } iosetup;\n}\n"
+  code: "#include <iomanip>\n\nnamespace geometry {\n  using namespace std;\n  class\
+    \ IoSetup {\n    using u32 = unsigned int;\n\n    void set(ostream &os, u32 precision)\
+    \ {\n      os << fixed << setprecision(precision);\n    }\n\n    public:\n   \
+    \ IoSetup(u32 precision = 15) {\n      cin.tie(0);\n      ios::sync_with_stdio(0);\n\
+    \n      set(cout, precision);\n      set(cerr, precision);\n    }\n  } iosetup;\n\
+    }\n"
   dependsOn: []
   isVerificationFile: false
   path: src/util/io_set.hpp
   requiredBy: []
-  timestamp: '2020-11-16 02:22:06+09:00'
+  timestamp: '2020-11-21 21:36:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/icpc/2402.test.cpp

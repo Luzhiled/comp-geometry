@@ -190,22 +190,22 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/base.hpp\"\n\n#include <cmath>\nusing namespace std;\n\
-    \n// base\nnamespace geometry {\n  using real_number = long double;\n\n  const\
-    \ real_number PI = acos(-1);\n\n  inline static real_number &eps() {\n    static\
-    \ real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
+  bundledCode: "#line 2 \"src/base.hpp\"\n\n#include <cmath>\n\n// base\nnamespace\
+    \ geometry {\n  using namespace std;\n  using real_number = long double;\n\n \
+    \ const real_number PI = acos(-1);\n\n  inline static real_number &eps() {\n \
+    \   static real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
     \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
     \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n"
-  code: "#pragma once\n\n#include <cmath>\nusing namespace std;\n\n// base\nnamespace\
-    \ geometry {\n  using real_number = long double;\n\n  const real_number PI = acos(-1);\n\
-    \n  inline static real_number &eps() {\n    static real_number EPS = 1e-10;\n\
-    \    return EPS;\n  }\n\n  static void set_eps(real_number EPS) {\n    eps() =\
-    \ EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n    if\
-    \ (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n  }\n\
-    \n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1 -\
-    \ r2) == 0;\n  }\n}\n"
+  code: "#pragma once\n\n#include <cmath>\n\n// base\nnamespace geometry {\n  using\
+    \ namespace std;\n  using real_number = long double;\n\n  const real_number PI\
+    \ = acos(-1);\n\n  inline static real_number &eps() {\n    static real_number\
+    \ EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number EPS)\
+    \ {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
+    \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
+    \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
+    \ - r2) == 0;\n  }\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: src/base.hpp
@@ -243,7 +243,7 @@ data:
   - src/tangent_cp.hpp
   - src/common_area_cp.hpp
   - src/ccw.hpp
-  timestamp: '2020-11-20 11:43:04+09:00'
+  timestamp: '2020-11-21 21:36:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/icpc/2003.test.cpp
