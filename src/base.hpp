@@ -7,7 +7,7 @@ namespace geometry {
   using namespace std;
   using real_number = long double;
 
-  const real_number PI = acos(-1);
+  const real_number PI = acosl(-1);
 
   inline static real_number &eps() {
     static real_number EPS = 1e-10;
