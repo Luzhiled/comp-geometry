@@ -69,8 +69,8 @@ data:
   timestamp: '2020-11-23 23:19:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/3_A.test.cpp
   - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
 documentation_of: src/area.hpp
 layout: document
 redirect_from:

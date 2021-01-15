@@ -94,21 +94,21 @@ data:
   requiredBy:
   - src/distance_sp.hpp
   - src/inscribed_circle.hpp
+  - src/common_area_cp.hpp
   - src/distance_ss.hpp
   - src/is_intersect.hpp
-  - src/common_area_cp.hpp
   timestamp: '2020-11-23 23:19:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/2442.test.cpp
-  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/2_D.test.cpp
   - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/icpc/2442.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/segment.hpp
 layout: document
 redirect_from:
