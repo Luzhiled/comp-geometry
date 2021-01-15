@@ -42,6 +42,9 @@ data:
     path: src/is_parallel.hpp
     title: src/is_parallel.hpp
   - icon: ':heavy_check_mark:'
+    path: src/minimum_covering_circle.hpp
+    title: src/minimum_covering_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/projection.hpp
     title: src/projection.hpp
   - icon: ':heavy_check_mark:'
@@ -56,6 +59,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
+  - icon: ':warning:'
+    path: test/atcoder/abc151-f.cpp
+    title: test/atcoder/abc151-f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/1_A.test.cpp
@@ -108,6 +114,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2862.test.cpp
     title: test/aoj/icpc/2862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/3034.test.cpp
+    title: test/aoj/icpc/3034.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -147,6 +156,7 @@ data:
   - src/segment.hpp
   - src/reflection.hpp
   - src/distance_sp.hpp
+  - src/minimum_covering_circle.hpp
   - src/tangent_cc.hpp
   - src/projection.hpp
   - src/inscribed_circle.hpp
@@ -159,6 +169,7 @@ data:
   - src/tangent_cp.hpp
   - src/is_intersect.hpp
   - src/is_orthogonal.hpp
+  - test/atcoder/abc151-f.cpp
   timestamp: '2020-11-23 23:19:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -175,6 +186,7 @@ data:
   - test/aoj/cgl/2_C.test.cpp
   - test/aoj/cgl/2_A.test.cpp
   - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2442.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2003.test.cpp

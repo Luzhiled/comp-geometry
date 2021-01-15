@@ -24,17 +24,26 @@ data:
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
   - icon: ':heavy_check_mark:'
+    path: src/in_circle.hpp
+    title: src/in_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/inscribed_circle.hpp
     title: src/inscribed_circle.hpp
   - icon: ':heavy_check_mark:'
     path: src/intersect_cc.hpp
     title: src/intersect_cc.hpp
   - icon: ':heavy_check_mark:'
+    path: src/minimum_covering_circle.hpp
+    title: src/minimum_covering_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/tangent_cc.hpp
     title: src/tangent_cc.hpp
   - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
+  - icon: ':warning:'
+    path: test/atcoder/abc151-f.cpp
+    title: test/atcoder/abc151-f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/7_A.test.cpp
@@ -69,6 +78,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2862.test.cpp
     title: test/aoj/icpc/2862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/3034.test.cpp
+    title: test/aoj/icpc/3034.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -107,6 +119,8 @@ data:
   requiredBy:
   - src/intersect_cc.hpp
   - src/cross_point_cc.hpp
+  - src/in_circle.hpp
+  - src/minimum_covering_circle.hpp
   - src/tangent_cc.hpp
   - src/inscribed_circle.hpp
   - src/common_area_cp.hpp
@@ -114,6 +128,7 @@ data:
   - src/common_area_cc.hpp
   - src/circumscribed_circle.hpp
   - src/tangent_cp.hpp
+  - test/atcoder/abc151-f.cpp
   timestamp: '2020-11-23 23:19:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -126,6 +141,7 @@ data:
   - test/aoj/cgl/7_C.test.cpp
   - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/1175.test.cpp
 documentation_of: src/circle.hpp

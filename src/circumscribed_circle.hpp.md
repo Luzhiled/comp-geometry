@@ -19,11 +19,20 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/product.hpp
     title: src/product.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: src/minimum_covering_circle.hpp
+    title: src/minimum_covering_circle.hpp
+  - icon: ':warning:'
+    path: test/atcoder/abc151-f.cpp
+    title: test/atcoder/abc151-f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/7_C.test.cpp
     title: test/aoj/cgl/7_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/3034.test.cpp
+    title: test/aoj/icpc/3034.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -86,11 +95,14 @@ data:
   - src/product.hpp
   isVerificationFile: false
   path: src/circumscribed_circle.hpp
-  requiredBy: []
+  requiredBy:
+  - src/minimum_covering_circle.hpp
+  - test/atcoder/abc151-f.cpp
   timestamp: '2020-11-23 23:19:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/icpc/3034.test.cpp
 documentation_of: src/circumscribed_circle.hpp
 layout: document
 redirect_from:

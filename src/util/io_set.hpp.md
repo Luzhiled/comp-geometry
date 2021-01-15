@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/atcoder/abc151-f.cpp
+    title: test/atcoder/abc151-f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/1_A.test.cpp
@@ -57,6 +60,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2402.test.cpp
     title: test/aoj/icpc/2402.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/3034.test.cpp
+    title: test/aoj/icpc/3034.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -76,7 +82,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/util/io_set.hpp
-  requiredBy: []
+  requiredBy:
+  - test/atcoder/abc151-f.cpp
   timestamp: '2020-11-21 21:36:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -97,6 +104,7 @@ data:
   - test/aoj/cgl/5_A.test.cpp
   - test/aoj/cgl/2_C.test.cpp
   - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2402.test.cpp
 documentation_of: src/util/io_set.hpp
 layout: document

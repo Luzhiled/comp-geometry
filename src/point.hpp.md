@@ -54,6 +54,9 @@ data:
     path: src/distance_ss.hpp
     title: src/distance_ss.hpp
   - icon: ':heavy_check_mark:'
+    path: src/in_circle.hpp
+    title: src/in_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/inscribed_circle.hpp
     title: src/inscribed_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -75,6 +78,9 @@ data:
     path: src/line.hpp
     title: src/line.hpp
   - icon: ':heavy_check_mark:'
+    path: src/minimum_covering_circle.hpp
+    title: src/minimum_covering_circle.hpp
+  - icon: ':heavy_check_mark:'
     path: src/polygon.hpp
     title: src/polygon.hpp
   - icon: ':heavy_check_mark:'
@@ -92,6 +98,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
+  - icon: ':warning:'
+    path: test/atcoder/abc151-f.cpp
+    title: test/atcoder/abc151-f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/1_A.test.cpp
@@ -177,6 +186,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2862.test.cpp
     title: test/aoj/icpc/2862.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/3034.test.cpp
+    title: test/aoj/icpc/3034.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -221,9 +233,11 @@ data:
   - src/line.hpp
   - src/contains.hpp
   - src/segment.hpp
+  - src/in_circle.hpp
   - src/reflection.hpp
   - src/distance_sp.hpp
   - src/area.hpp
+  - src/minimum_covering_circle.hpp
   - src/tangent_cc.hpp
   - src/projection.hpp
   - src/inscribed_circle.hpp
@@ -244,6 +258,7 @@ data:
   - src/closest_pair.hpp
   - src/is_intersect.hpp
   - src/is_orthogonal.hpp
+  - test/atcoder/abc151-f.cpp
   timestamp: '2020-11-23 23:19:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -270,6 +285,7 @@ data:
   - test/aoj/cgl/2_A.test.cpp
   - test/aoj/cgl/4_B.test.cpp
   - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2442.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/1175.test.cpp
