@@ -40,17 +40,18 @@ data:
     \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
-    \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
-    \  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/product.hpp\"\n\n#line\
-    \ 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number cross(const\
-    \ point &a, const point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n\
-    \  }\n\n  real_number dot(const point &a, const point &b) {\n    return a.real()\
-    \ * b.real() + a.imag() * b.imag();\n  }\n}\n#line 6 \"src/is_orthogonal.hpp\"\
-    \n\n// orthogonal\nnamespace geometry {\n  bool is_orthogonal(const line &l1,\
-    \ const line &l2) {\n    return equals(dot(l1.a - l1.b, l2.a - l2.b), 0);\n  }\n\
-    }\n"
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/line.hpp\"\n\n// line\
+    \ \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n\
+    \    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line\
+    \ >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n// product\n\
+    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
+    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
+    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
+    \  }\n}\n#line 6 \"src/is_orthogonal.hpp\"\n\n// orthogonal\nnamespace geometry\
+    \ {\n  bool is_orthogonal(const line &l1, const line &l2) {\n    return equals(dot(l1.a\
+    \ - l1.b, l2.a - l2.b), 0);\n  }\n}\n"
   code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./line.hpp\"\n#include\
     \ \"./product.hpp\"\n\n// orthogonal\nnamespace geometry {\n  bool is_orthogonal(const\
     \ line &l1, const line &l2) {\n    return equals(dot(l1.a - l1.b, l2.a - l2.b),\
@@ -63,7 +64,7 @@ data:
   isVerificationFile: false
   path: src/is_orthogonal.hpp
   requiredBy: []
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/2_A.test.cpp

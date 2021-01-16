@@ -43,12 +43,14 @@ data:
     \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry {\n  struct circle {\n\
-    \    point p;\n    real_number r;\n    circle() {}\n    circle(point p, real_number\
-    \ r) : p(p), r(r) {}\n  };\n\n  using circles = vector< circle >;\n}\n#line 5\
-    \ \"src/in_circle.hpp\"\n\nnamespace geometry {\n  bool in_circle(const circle\
-    \ &c, const point &p) {\n    return sign(abs(c.p - p) - c.r) == -1;\n  }\n}\n"
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/circle.hpp\"\n\n// circle\n\
+    namespace geometry {\n  struct circle {\n    point p;\n    real_number r;\n  \
+    \  circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n \
+    \ using circles = vector< circle >;\n}\n#line 5 \"src/in_circle.hpp\"\n\nnamespace\
+    \ geometry {\n  bool in_circle(const circle &c, const point &p) {\n    return\
+    \ sign(abs(c.p - p) - c.r) == -1;\n  }\n}\n"
   code: "#pragma once\n\n#include \"./circle.hpp\"\n#include \"./point.hpp\"\n\nnamespace\
     \ geometry {\n  bool in_circle(const circle &c, const point &p) {\n    return\
     \ sign(abs(c.p - p) - c.r) == -1;\n  }\n}\n"
@@ -60,7 +62,7 @@ data:
   path: src/in_circle.hpp
   requiredBy:
   - src/minimum_covering_circle.hpp
-  timestamp: '2021-01-16 04:19:10+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/icpc/3034.test.cpp

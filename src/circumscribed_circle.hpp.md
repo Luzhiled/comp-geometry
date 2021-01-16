@@ -56,28 +56,29 @@ data:
     \ &k) {\n    return point(p.real() * k, p.imag() * k);\n  }\n\n  point rotate(const\
     \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
     \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
-    \ * p.imag());\n  }\n}\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry\
-    \ {\n  struct circle {\n    point p;\n    real_number r;\n    circle() {}\n  \
-    \  circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles = vector<\
-    \ circle >;\n}\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line\
-    \ 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
-    \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
-    \  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/cross_point_ll.hpp\"\
-    \n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n// product\n\
-    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
-    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
-    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
-    \  }\n}\n#line 6 \"src/cross_point_ll.hpp\"\n\n// cross point\nnamespace geometry\
-    \ {\n  point cross_point_ll(const line &l1, const line &l2) {\n    real_number\
-    \ a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number b = cross(l1.b - l1.a,\
-    \ l1.b - l2.a);\n    if (equals(a, 0) && equals(b, 0)) return l2.a;\n    return\
-    \ l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n#line 8 \"src/circumscribed_circle.hpp\"\
-    \n\nnamespace geometry {\n  circle circumscribed_circle(const point &a, const\
-    \ point &b, const point &c) {\n    point m1((a + b) / real_number(2)), m2((b +\
-    \ c) / real_number(2));\n    point v((b - a).imag(), (a - b).real()), w((b - c).imag(),\
-    \ (c - b).real());\n    line s(m1, point(m1 + v)), t(m2, point(m2 + w));\n\n \
-    \   point p = cross_point_ll(s, t);\n    return circle(p, abs(a - p));\n  }\n\
-    }\n"
+    \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
+    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n#line 6\
+    \ \"src/circle.hpp\"\n\n// circle\nnamespace geometry {\n  struct circle {\n \
+    \   point p;\n    real_number r;\n    circle() {}\n    circle(point p, real_number\
+    \ r) : p(p), r(r) {}\n  };\n\n  using circles = vector< circle >;\n}\n#line 2\
+    \ \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\n\n\
+    // line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
+    \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
+    \ = vector< line >;\n}\n#line 2 \"src/cross_point_ll.hpp\"\n\n#line 2 \"src/product.hpp\"\
+    \n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
+    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
+    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
+    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 6 \"src/cross_point_ll.hpp\"\
+    \n\n// cross point\nnamespace geometry {\n  point cross_point_ll(const line &l1,\
+    \ const line &l2) {\n    real_number a = cross(l1.b - l1.a, l2.b - l2.a);\n  \
+    \  real_number b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (equals(a, 0) && equals(b,\
+    \ 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n#line 8\
+    \ \"src/circumscribed_circle.hpp\"\n\nnamespace geometry {\n  circle circumscribed_circle(const\
+    \ point &a, const point &b, const point &c) {\n    point m1((a + b) / real_number(2)),\
+    \ m2((b + c) / real_number(2));\n    point v((b - a).imag(), (a - b).real()),\
+    \ w((b - c).imag(), (c - b).real());\n    line s(m1, point(m1 + v)), t(m2, point(m2\
+    \ + w));\n\n    point p = cross_point_ll(s, t);\n    return circle(p, abs(a -\
+    \ p));\n  }\n}\n"
   code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./circle.hpp\"\n#include\
     \ \"./point.hpp\"\n#include \"./line.hpp\"\n#include \"./cross_point_ll.hpp\"\n\
     \nnamespace geometry {\n  circle circumscribed_circle(const point &a, const point\
@@ -97,7 +98,7 @@ data:
   path: src/circumscribed_circle.hpp
   requiredBy:
   - src/minimum_covering_circle.hpp
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/cgl/7_C.test.cpp

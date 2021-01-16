@@ -43,26 +43,27 @@ data:
     \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 6 \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon =\
-    \ vector< point >;\n  using polygons = vector< polygon >;\n}\n#line 2 \"src/product.hpp\"\
-    \n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
-    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
-    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
-    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 2 \"src/compare.hpp\"\
-    \n\n#line 5 \"src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const\
-    \ point &a, const point &b) {\n    return !equals(a.real(), b.real()) ? a.real()\
-    \ < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const\
-    \ point &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag() < b.imag() :\
-    \ a.real() < b.real();\n  }\n}\n#line 10 \"src/convex_diameter.hpp\"\n\nnamespace\
-    \ geometry {\n  real_number convex_diameter(const polygon &p) {\n    int n = p.size();\n\
-    \    if (n == 2) return abs(p[0] - p[1]);\n\n    int i = 0, j = 0;\n    for (int\
-    \ k = 0; k < n; ++k) {\n      if ( compare_x(p[i], p[k])) i = k;\n      if (!compare_x(p[j],\
-    \ p[k])) j = k;\n    }\n\n    real_number res = 0;\n    int si = i, sj = j;\n\
-    \    while (i != sj || j != si) {\n      res = max(res, abs(p[i] - p[j]));\n \
-    \     if (sign(cross(p[(i + 1) % n] - p[i], p[(j + 1) % n] - p[j])) == -1) {\n\
-    \        i = (i + 1) % n;\n      } else {\n        j = (j + 1) % n;\n      }\n\
-    \    }\n\n    return res;\n  }\n}\n"
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/polygon.hpp\"\n\n// polygon\n\
+    namespace geometry {\n  using polygon = vector< point >;\n  using polygons = vector<\
+    \ polygon >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n\
+    // product\nnamespace geometry {\n  real_number cross(const point &a, const point\
+    \ &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number\
+    \ dot(const point &a, const point &b) {\n    return a.real() * b.real() + a.imag()\
+    \ * b.imag();\n  }\n}\n#line 2 \"src/compare.hpp\"\n\n#line 5 \"src/compare.hpp\"\
+    \n\nnamespace geometry {\n  bool compare_x(const point &a, const point &b) {\n\
+    \    return !equals(a.real(), b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n\
+    \  }\n\n  bool compare_y(const point &a, const point &b) {\n    return !equals(a.imag(),\
+    \ b.imag()) ? a.imag() < b.imag() : a.real() < b.real();\n  }\n}\n#line 10 \"\
+    src/convex_diameter.hpp\"\n\nnamespace geometry {\n  real_number convex_diameter(const\
+    \ polygon &p) {\n    int n = p.size();\n    if (n == 2) return abs(p[0] - p[1]);\n\
+    \n    int i = 0, j = 0;\n    for (int k = 0; k < n; ++k) {\n      if ( compare_x(p[i],\
+    \ p[k])) i = k;\n      if (!compare_x(p[j], p[k])) j = k;\n    }\n\n    real_number\
+    \ res = 0;\n    int si = i, sj = j;\n    while (i != sj || j != si) {\n      res\
+    \ = max(res, abs(p[i] - p[j]));\n      if (sign(cross(p[(i + 1) % n] - p[i], p[(j\
+    \ + 1) % n] - p[j])) == -1) {\n        i = (i + 1) % n;\n      } else {\n    \
+    \    j = (j + 1) % n;\n      }\n    }\n\n    return res;\n  }\n}\n"
   code: "#pragma once\n\n#include <complex>\n#include <algorithm>\n\n#include \"./base.hpp\"\
     \n#include \"./polygon.hpp\"\n#include \"./product.hpp\"\n#include \"./compare.hpp\"\
     \n\nnamespace geometry {\n  real_number convex_diameter(const polygon &p) {\n\
@@ -82,7 +83,7 @@ data:
   isVerificationFile: false
   path: src/convex_diameter.hpp
   requiredBy: []
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/4_B.test.cpp

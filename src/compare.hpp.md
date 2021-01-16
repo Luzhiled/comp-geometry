@@ -63,12 +63,13 @@ data:
     \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 5 \"src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const point\
-    \ &a, const point &b) {\n    return !equals(a.real(), b.real()) ? a.real() < b.real()\
-    \ : a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const point\
-    \ &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag() < b.imag() : a.real()\
-    \ < b.real();\n  }\n}\n"
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 5 \"src/compare.hpp\"\n\nnamespace\
+    \ geometry {\n  bool compare_x(const point &a, const point &b) {\n    return !equals(a.real(),\
+    \ b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
+    \ point &a, const point &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag()\
+    \ < b.imag() : a.real() < b.real();\n  }\n}\n"
   code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./point.hpp\"\n\nnamespace\
     \ geometry {\n  bool compare_x(const point &a, const point &b) {\n    return !equals(a.real(),\
     \ b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const\
@@ -83,7 +84,7 @@ data:
   - src/convex_hull.hpp
   - src/convex_diameter.hpp
   - src/closest_pair.hpp
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/4_A.test.cpp

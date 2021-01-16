@@ -38,25 +38,26 @@ data:
     \ point &p, const real_number &k) {\n    return point(p.real() * k, p.imag() *\
     \ k);\n  }\n\n  point rotate(const real_number &theta, const point &p) {\n   \
     \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n             \
-    \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line 2 \"src/compare.hpp\"\
-    \n\n#line 5 \"src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const\
-    \ point &a, const point &b) {\n    return !equals(a.real(), b.real()) ? a.real()\
-    \ < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const\
-    \ point &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag() < b.imag() :\
-    \ a.real() < b.real();\n  }\n}\n#line 11 \"src/closest_pair.hpp\"\n\nnamespace\
-    \ geometry {\n  real_number impl_closest_pair(points &pts, int l, int r) {\n \
-    \   if (r - l <= 1) return abs(pts[0] - pts[1]);\n    int m = (l + r) / 2;\n \
-    \   real_number x = pts[m].real();\n    real_number d = min(impl_closest_pair(pts,\
-    \ l, m), impl_closest_pair(pts, m, r));\n    inplace_merge(pts.begin() + l, pts.begin()\
-    \ + m, pts.begin() + r, compare_y);\n\n    points ps;\n    for (int i = l; i <\
-    \ r; ++i) {\n      if (sign(abs(pts[i].real() - x) - d) >= 0) continue;\n    \
-    \  for (int j = 0; j < (int)ps.size(); ++j) {\n        real_number dy = pts[i].imag()\
-    \ - (*next(ps.rbegin(), j)).imag();\n        if (sign(dy - d) >= 0) break;\n \
-    \       d = min(d, abs(pts[i] - *next(ps.rbegin(), j)));\n      }\n\n      ps.emplace_back(pts[i]);\n\
-    \    }\n\n    return d;\n  }\n\n  real_number closest_pair(points pts) {\n   \
-    \ const real_number INF = 1e18;\n    if (pts.size() <= 1) {\n      return INF;\n\
-    \    }\n\n    sort(pts.begin(), pts.end(), compare_x);\n\n    return impl_closest_pair(pts,\
-    \ 0, pts.size());\n  }\n}\n"
+    \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool equals(const\
+    \ point &a, const point &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(),\
+    \ b.imag());\n  }\n}\n#line 2 \"src/compare.hpp\"\n\n#line 5 \"src/compare.hpp\"\
+    \n\nnamespace geometry {\n  bool compare_x(const point &a, const point &b) {\n\
+    \    return !equals(a.real(), b.real()) ? a.real() < b.real() : a.imag() < b.imag();\n\
+    \  }\n\n  bool compare_y(const point &a, const point &b) {\n    return !equals(a.imag(),\
+    \ b.imag()) ? a.imag() < b.imag() : a.real() < b.real();\n  }\n}\n#line 11 \"\
+    src/closest_pair.hpp\"\n\nnamespace geometry {\n  real_number impl_closest_pair(points\
+    \ &pts, int l, int r) {\n    if (r - l <= 1) return abs(pts[0] - pts[1]);\n  \
+    \  int m = (l + r) / 2;\n    real_number x = pts[m].real();\n    real_number d\
+    \ = min(impl_closest_pair(pts, l, m), impl_closest_pair(pts, m, r));\n    inplace_merge(pts.begin()\
+    \ + l, pts.begin() + m, pts.begin() + r, compare_y);\n\n    points ps;\n    for\
+    \ (int i = l; i < r; ++i) {\n      if (sign(abs(pts[i].real() - x) - d) >= 0)\
+    \ continue;\n      for (int j = 0; j < (int)ps.size(); ++j) {\n        real_number\
+    \ dy = pts[i].imag() - (*next(ps.rbegin(), j)).imag();\n        if (sign(dy -\
+    \ d) >= 0) break;\n        d = min(d, abs(pts[i] - *next(ps.rbegin(), j)));\n\
+    \      }\n\n      ps.emplace_back(pts[i]);\n    }\n\n    return d;\n  }\n\n  real_number\
+    \ closest_pair(points pts) {\n    const real_number INF = 1e18;\n    if (pts.size()\
+    \ <= 1) {\n      return INF;\n    }\n\n    sort(pts.begin(), pts.end(), compare_x);\n\
+    \n    return impl_closest_pair(pts, 0, pts.size());\n  }\n}\n"
   code: "#pragma once\n\n#include <cmath>\n#include <complex>\n#include <algorithm>\n\
     #include <iterator>\n\n#include \"./base.hpp\"\n#include \"./point.hpp\"\n#include\
     \ \"./compare.hpp\"\n\nnamespace geometry {\n  real_number impl_closest_pair(points\
@@ -79,7 +80,7 @@ data:
   isVerificationFile: false
   path: src/closest_pair.hpp
   requiredBy: []
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/5_A.test.cpp

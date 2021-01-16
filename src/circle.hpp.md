@@ -103,10 +103,12 @@ data:
     \ real_number &k) {\n    return point(p.real() * k, p.imag() * k);\n  }\n\n  point\
     \ rotate(const real_number &theta, const point &p) {\n    return point(cos(theta)\
     \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
-    \ + cos(-theta) * p.imag());\n  }\n}\n#line 6 \"src/circle.hpp\"\n\n// circle\n\
-    namespace geometry {\n  struct circle {\n    point p;\n    real_number r;\n  \
-    \  circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n \
-    \ using circles = vector< circle >;\n}\n"
+    \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
+    \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
+    \  }\n}\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry {\n  struct\
+    \ circle {\n    point p;\n    real_number r;\n    circle() {}\n    circle(point\
+    \ p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles = vector< circle\
+    \ >;\n}\n"
   code: "#pragma once\n\n#include <vector>\n\n#include \"./point.hpp\"\n\n// circle\n\
     namespace geometry {\n  struct circle {\n    point p;\n    real_number r;\n  \
     \  circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n \
@@ -128,7 +130,7 @@ data:
   - src/common_area_cc.hpp
   - src/circumscribed_circle.hpp
   - src/tangent_cp.hpp
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/cgl/7_E.test.cpp

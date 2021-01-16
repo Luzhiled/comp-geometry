@@ -76,12 +76,14 @@ data:
     \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
-    \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
-    \  };\n\n  using lines = vector< line >;\n}\n#line 6 \"src/segment.hpp\"\n\n//\
-    \ segment\nnamespace geometry {\n  struct segment : line {\n    segment() = default;\n\
-    \    using line::line;\n  };\n\n  using segments = vector< segment >;\n}\n"
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/line.hpp\"\n\n// line\
+    \ \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n\
+    \    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line\
+    \ >;\n}\n#line 6 \"src/segment.hpp\"\n\n// segment\nnamespace geometry {\n  struct\
+    \ segment : line {\n    segment() = default;\n    using line::line;\n  };\n\n\
+    \  using segments = vector< segment >;\n}\n"
   code: "#pragma once\n\n#include <vector>\n\n#include \"./line.hpp\"\n\n// segment\n\
     namespace geometry {\n  struct segment : line {\n    segment() = default;\n  \
     \  using line::line;\n  };\n\n  using segments = vector< segment >;\n}\n"
@@ -97,7 +99,7 @@ data:
   - src/common_area_cp.hpp
   - src/distance_ss.hpp
   - src/is_intersect.hpp
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_B.test.cpp

@@ -40,18 +40,20 @@ data:
     \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
     \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
-    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n}\n#line\
-    \ 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry {\n  struct circle {\n\
-    \    point p;\n    real_number r;\n    circle() {}\n    circle(point p, real_number\
-    \ r) : p(p), r(r) {}\n  };\n\n  using circles = vector< circle >;\n}\n#line 8\
-    \ \"src/intersect_cc.hpp\"\n\nnamespace geometry {\n  constexpr int SEPERATE \
-    \    = 4;\n  constexpr int CIRCUMSCRIBE = 3;\n  constexpr int INTERSECT    = 2;\n\
-    \  constexpr int INSCRIBE     = 1;\n  constexpr int CONTAIN      = 0;\n  int intersect_cc(circle\
-    \ c1, circle c2) {\n    if (c1.r > c2.r) swap(c1, c2);\n    real_number d = abs(c1.p\
-    \ - c2.p), r = c1.r + c2.r;\n\n    if (sign(d - r) > 0) return SEPERATE;\n   \
-    \ if (sign(d + c1.r - c2.r) < 0) return CONTAIN;\n    if (equals(d, r)) return\
-    \ CIRCUMSCRIBE;\n    if (equals(d + c1.r, c2.r)) return INSCRIBE;\n    return\
-    \ INTERSECT;\n  }\n}\n"
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/circle.hpp\"\n\n// circle\n\
+    namespace geometry {\n  struct circle {\n    point p;\n    real_number r;\n  \
+    \  circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n \
+    \ using circles = vector< circle >;\n}\n#line 8 \"src/intersect_cc.hpp\"\n\nnamespace\
+    \ geometry {\n  constexpr int SEPERATE     = 4;\n  constexpr int CIRCUMSCRIBE\
+    \ = 3;\n  constexpr int INTERSECT    = 2;\n  constexpr int INSCRIBE     = 1;\n\
+    \  constexpr int CONTAIN      = 0;\n  int intersect_cc(circle c1, circle c2) {\n\
+    \    if (c1.r > c2.r) swap(c1, c2);\n    real_number d = abs(c1.p - c2.p), r =\
+    \ c1.r + c2.r;\n\n    if (sign(d - r) > 0) return SEPERATE;\n    if (sign(d +\
+    \ c1.r - c2.r) < 0) return CONTAIN;\n    if (equals(d, r)) return CIRCUMSCRIBE;\n\
+    \    if (equals(d + c1.r, c2.r)) return INSCRIBE;\n    return INTERSECT;\n  }\n\
+    }\n"
   code: "#pragma once\n\n#include <complex>\n#include <algorithm>\n\n#include \"./base.hpp\"\
     \n#include \"./circle.hpp\"\n\nnamespace geometry {\n  constexpr int SEPERATE\
     \     = 4;\n  constexpr int CIRCUMSCRIBE = 3;\n  constexpr int INTERSECT    =\
@@ -68,7 +70,7 @@ data:
   isVerificationFile: false
   path: src/intersect_cc.hpp
   requiredBy: []
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_A.test.cpp
