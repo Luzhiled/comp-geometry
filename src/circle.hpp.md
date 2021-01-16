@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/circumscribed_circle.hpp
     title: src/circumscribed_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -23,7 +23,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/in_circle.hpp
     title: src/in_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -32,7 +32,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/intersect_cc.hpp
     title: src/intersect_cc.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/minimum_covering_circle.hpp
     title: src/minimum_covering_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -78,11 +78,8 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
-  - icon: ':x:'
-    path: test/atcoder/abc151-f.test.cpp
-    title: test/atcoder/abc151-f.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/circle.hpp\"\n\n#include <vector>\n\n#line 2 \"src/point.hpp\"\
@@ -131,7 +128,7 @@ data:
   - src/circumscribed_circle.hpp
   - src/tangent_cp.hpp
   timestamp: '2021-01-16 13:51:53+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_E.test.cpp
   - test/aoj/cgl/7_A.test.cpp
@@ -145,7 +142,6 @@ data:
   - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/1175.test.cpp
-  - test/atcoder/abc151-f.test.cpp
 documentation_of: src/circle.hpp
 layout: document
 redirect_from:

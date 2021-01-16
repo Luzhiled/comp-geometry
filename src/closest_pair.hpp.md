@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
     path: src/compare.hpp
     title: src/compare.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
   _extendedRequiredBy: []

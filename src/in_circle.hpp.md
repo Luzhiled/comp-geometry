@@ -1,28 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/circle.hpp
     title: src/circle.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/minimum_covering_circle.hpp
     title: src/minimum_covering_circle.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
-  - icon: ':x:'
-    path: test/atcoder/abc151-f.test.cpp
-    title: test/atcoder/abc151-f.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/in_circle.hpp\"\n\n#line 2 \"src/circle.hpp\"\n\n#include\
@@ -63,10 +60,9 @@ data:
   requiredBy:
   - src/minimum_covering_circle.hpp
   timestamp: '2021-01-16 13:51:53+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/icpc/3034.test.cpp
-  - test/atcoder/abc151-f.test.cpp
 documentation_of: src/in_circle.hpp
 layout: document
 redirect_from:

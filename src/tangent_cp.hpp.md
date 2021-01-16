@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
     path: src/cross_point_cc.hpp
     title: src/cross_point_cc.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/line.hpp
     title: src/line.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: src/point.hpp
     title: src/point.hpp
   _extendedRequiredBy: []
