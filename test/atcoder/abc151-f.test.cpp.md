@@ -1,54 +1,54 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/base.hpp
     title: src/base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/circle.hpp
     title: src/circle.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/circumscribed_circle.hpp
     title: src/circumscribed_circle.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cross_point_ll.hpp
     title: src/cross_point_ll.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/in_circle.hpp
     title: src/in_circle.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/line.hpp
     title: src/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/minimum_covering_circle.hpp
     title: src/minimum_covering_circle.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/point.hpp
     title: src/point.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/product.hpp
     title: src/product.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/util/io_set.hpp
     title: src/util/io_set.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     ERROR: 1e-6
     PROBLEM: https://atcoder.jp/contests/abc151/tasks/abc151_f
     links:
     - https://atcoder.jp/contests/abc151/tasks/abc151_f
-  bundledCode: "#line 1 \"test/atcoder/abc151-f.cpp\"\n// verification-helper: PROBLEM\
-    \ https://atcoder.jp/contests/abc151/tasks/abc151_f\n// verification-helper: ERROR\
-    \ 1e-6\n//\n#include <iostream>\n\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n\
-    #include <vector>\n#include <cmath>\n#include <istream>\n#include <ostream>\n\n\
-    #line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\n\n// base\nnamespace geometry\
-    \ {\n  using namespace std;\n  using real_number = long double;\n\n  const real_number\
-    \ PI = acosl(-1);\n\n  inline static real_number &eps() {\n    static real_number\
-    \ EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number EPS)\
-    \ {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
+  bundledCode: "#line 1 \"test/atcoder/abc151-f.test.cpp\"\n// verification-helper:\
+    \ PROBLEM https://atcoder.jp/contests/abc151/tasks/abc151_f\n// verification-helper:\
+    \ ERROR 1e-6\n//\n#include <iostream>\n\n#line 2 \"src/point.hpp\"\n\n#include\
+    \ <complex>\n#include <vector>\n#include <cmath>\n#include <istream>\n#include\
+    \ <ostream>\n\n#line 2 \"src/base.hpp\"\n\n#line 4 \"src/base.hpp\"\n\n// base\n\
+    namespace geometry {\n  using namespace std;\n  using real_number = long double;\n\
+    \n  const real_number PI = acosl(-1);\n\n  inline static real_number &eps() {\n\
+    \    static real_number EPS = 1e-10;\n    return EPS;\n  }\n\n  static void set_eps(real_number\
+    \ EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
     \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
     \ - r2) == 0;\n  }\n}\n#line 10 \"src/point.hpp\"\n\n// point\nnamespace geometry\
@@ -101,8 +101,8 @@ data:
     \ set(ostream &os, u32 precision) {\n      os << fixed << setprecision(precision);\n\
     \    }\n\n    public:\n    IoSetup(u32 precision = 15) {\n      cin.tie(0);\n\
     \      ios::sync_with_stdio(0);\n\n      set(cout, precision);\n      set(cerr,\
-    \ precision);\n    }\n  } iosetup;\n}\n#line 9 \"test/atcoder/abc151-f.cpp\"\n\
-    \nusing namespace geometry;\n\nint main() {\n  IoSetup(20);\n  int n;\n  std::cin\
+    \ precision);\n    }\n  } iosetup;\n}\n#line 9 \"test/atcoder/abc151-f.test.cpp\"\
+    \n\nusing namespace geometry;\n\nint main() {\n  IoSetup(20);\n  int n;\n  std::cin\
     \ >> n;\n\n  points pts(n);\n  for (auto &p : pts) std::cin >> p;\n\n  cout <<\
     \ minimum_covering_circle(pts, 1333333333).r << std::endl;\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc151/tasks/abc151_f\n\
@@ -122,16 +122,16 @@ data:
   - src/cross_point_ll.hpp
   - src/product.hpp
   - src/util/io_set.hpp
-  isVerificationFile: false
-  path: test/atcoder/abc151-f.cpp
+  isVerificationFile: true
+  path: test/atcoder/abc151-f.test.cpp
   requiredBy: []
-  timestamp: '2021-01-16 04:19:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-01-16 13:13:59+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/atcoder/abc151-f.cpp
+documentation_of: test/atcoder/abc151-f.test.cpp
 layout: document
 redirect_from:
-- /library/test/atcoder/abc151-f.cpp
-- /library/test/atcoder/abc151-f.cpp.html
-title: test/atcoder/abc151-f.cpp
+- /verify/test/atcoder/abc151-f.test.cpp
+- /verify/test/atcoder/abc151-f.test.cpp.html
+title: test/atcoder/abc151-f.test.cpp
 ---

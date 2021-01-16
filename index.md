@@ -9,16 +9,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/area.hpp
       title: src/area.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/base.hpp
       title: src/base.hpp
     - icon: ':heavy_check_mark:'
       path: src/ccw.hpp
       title: src/ccw.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/circle.hpp
       title: src/circle.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/circumscribed_circle.hpp
       title: src/circumscribed_circle.hpp
     - icon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/cross_point_cl.hpp
       title: src/cross_point_cl.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/cross_point_ll.hpp
       title: src/cross_point_ll.hpp
     - icon: ':heavy_check_mark:'
@@ -60,7 +60,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/distance_ss.hpp
       title: src/distance_ss.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/in_circle.hpp
       title: src/in_circle.hpp
     - icon: ':heavy_check_mark:'
@@ -81,19 +81,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/is_parallel.hpp
       title: src/is_parallel.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/line.hpp
       title: src/line.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/minimum_covering_circle.hpp
       title: src/minimum_covering_circle.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/point.hpp
       title: src/point.hpp
     - icon: ':heavy_check_mark:'
       path: src/polygon.hpp
       title: src/polygon.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/product.hpp
       title: src/product.hpp
     - icon: ':heavy_check_mark:'
@@ -113,14 +113,9 @@ data:
       title: src/tangent_cp.hpp
   - name: src/util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: src/util/io_set.hpp
       title: src/util/io_set.hpp
-  - name: test/atcoder
-    pages:
-    - icon: ':warning:'
-      path: test/atcoder/abc151-f.cpp
-      title: test/atcoder/abc151-f.cpp
   verificationCategories:
   - name: test/aoj/cgl
     pages:
@@ -213,5 +208,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/icpc/3034.test.cpp
       title: test/aoj/icpc/3034.test.cpp
+  - name: test/atcoder
+    pages:
+    - icon: ':x:'
+      path: test/atcoder/abc151-f.test.cpp
+      title: test/atcoder/abc151-f.test.cpp
 layout: toppage
 ---

@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/atcoder/abc151-f.cpp
-    title: test/atcoder/abc151-f.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/1_A.test.cpp
@@ -63,8 +60,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
+  - icon: ':x:'
+    path: test/atcoder/abc151-f.test.cpp
+    title: test/atcoder/abc151-f.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"src/util/io_set.hpp\"\n#include <iomanip>\n\nnamespace geometry\
@@ -82,10 +82,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: src/util/io_set.hpp
-  requiredBy:
-  - test/atcoder/abc151-f.cpp
+  requiredBy: []
   timestamp: '2020-11-21 21:36:53+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/cgl/4_A.test.cpp
   - test/aoj/cgl/4_C.test.cpp
@@ -106,6 +105,7 @@ data:
   - test/aoj/cgl/4_B.test.cpp
   - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/atcoder/abc151-f.test.cpp
 documentation_of: src/util/io_set.hpp
 layout: document
 redirect_from:

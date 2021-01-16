@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/base.hpp
     title: src/base.hpp
   - icon: ':heavy_check_mark:'
     path: src/ccw.hpp
     title: src/ccw.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
@@ -16,16 +16,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/distance_sp.hpp
     title: src/distance_sp.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/line.hpp
     title: src/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/point.hpp
     title: src/point.hpp
   - icon: ':heavy_check_mark:'
     path: src/polygon.hpp
     title: src/polygon.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/product.hpp
     title: src/product.hpp
   - icon: ':heavy_check_mark:'

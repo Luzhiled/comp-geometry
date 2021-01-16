@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/base.hpp
     title: src/base.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/area.hpp
     title: src/area.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/circle.hpp
     title: src/circle.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/circumscribed_circle.hpp
     title: src/circumscribed_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -44,7 +44,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/cross_point_ll.hpp
     title: src/cross_point_ll.hpp
   - icon: ':heavy_check_mark:'
@@ -53,7 +53,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/distance_ss.hpp
     title: src/distance_ss.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/in_circle.hpp
     title: src/in_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -74,10 +74,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/is_parallel.hpp
     title: src/is_parallel.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/line.hpp
     title: src/line.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: src/minimum_covering_circle.hpp
     title: src/minimum_covering_circle.hpp
   - icon: ':heavy_check_mark:'
@@ -98,9 +98,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/tangent_cp.hpp
     title: src/tangent_cp.hpp
-  - icon: ':warning:'
-    path: test/atcoder/abc151-f.cpp
-    title: test/atcoder/abc151-f.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/1_A.test.cpp
@@ -189,8 +186,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
+  - icon: ':x:'
+    path: test/atcoder/abc151-f.test.cpp
+    title: test/atcoder/abc151-f.test.cpp
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/point.hpp\"\n\n#include <complex>\n#include <vector>\n\
@@ -258,9 +258,8 @@ data:
   - src/closest_pair.hpp
   - src/is_intersect.hpp
   - src/is_orthogonal.hpp
-  - test/atcoder/abc151-f.cpp
   timestamp: '2020-11-23 23:19:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj/cgl/4_A.test.cpp
   - test/aoj/cgl/4_C.test.cpp
@@ -291,6 +290,7 @@ data:
   - test/aoj/icpc/1175.test.cpp
   - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/atcoder/abc151-f.test.cpp
 documentation_of: src/point.hpp
 layout: document
 redirect_from:
