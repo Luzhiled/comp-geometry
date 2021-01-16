@@ -18,7 +18,7 @@ namespace geometry {
     if (n == 1) return circle(pts[0], 0);
     mt19937 engine(seed);
     shuffle(pts.begin(), pts.end(), engine);
-    circle res(point(), -1e10);
+    circle res(point(), -1);
 
     for (int i = 0; i < n; i++) {
       if (in_circle(res, pts[i])) continue;
