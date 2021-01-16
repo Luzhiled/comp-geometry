@@ -13,26 +13,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/product.hpp
     title: src/product.hpp
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: src/circumscribed_circle.hpp
-    title: src/circumscribed_circle.hpp
-  - icon: ':heavy_check_mark:'
-    path: src/minimum_covering_circle.hpp
-    title: src/minimum_covering_circle.hpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/2_C.test.cpp
     title: test/aoj/cgl/2_C.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/cgl/7_C.test.cpp
-    title: test/aoj/cgl/7_C.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2003.test.cpp
     title: test/aoj/icpc/2003.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj/icpc/3034.test.cpp
-    title: test/aoj/icpc/3034.test.cpp
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -82,15 +70,11 @@ data:
   - src/product.hpp
   isVerificationFile: false
   path: src/cross_point_ll.hpp
-  requiredBy:
-  - src/minimum_covering_circle.hpp
-  - src/circumscribed_circle.hpp
+  requiredBy: []
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_C.test.cpp
   - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2003.test.cpp
 documentation_of: src/cross_point_ll.hpp
 layout: document

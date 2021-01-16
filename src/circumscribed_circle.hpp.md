@@ -8,9 +8,6 @@ data:
     path: src/circle.hpp
     title: src/circle.hpp
   - icon: ':heavy_check_mark:'
-    path: src/cross_point_ll.hpp
-    title: src/cross_point_ll.hpp
-  - icon: ':heavy_check_mark:'
     path: src/line.hpp
     title: src/line.hpp
   - icon: ':heavy_check_mark:'
@@ -61,41 +58,34 @@ data:
     \ \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\n\n\
     // line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
     \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
-    \ = vector< line >;\n}\n#line 2 \"src/cross_point_ll.hpp\"\n\n#line 2 \"src/product.hpp\"\
-    \n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
-    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
-    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
-    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 6 \"src/cross_point_ll.hpp\"\
-    \n\n// cross point\nnamespace geometry {\n  point cross_point_ll(const line &l1,\
-    \ const line &l2) {\n    real_number a = cross(l1.b - l1.a, l2.b - l2.a);\n  \
-    \  real_number b = cross(l1.b - l1.a, l1.b - l2.a);\n    if (equals(a, 0) && equals(b,\
-    \ 0)) return l2.a;\n    return l2.a + (l2.b - l2.a) * b / a;\n  }\n}\n#line 8\
-    \ \"src/circumscribed_circle.hpp\"\n\nnamespace geometry {\n  circle circumscribed_circle(const\
-    \ point &a, const point &b, const point &c) {\n    point m1((a + b) / real_number(2)),\
-    \ m2((b + c) / real_number(2));\n    point v((b - a).imag(), (a - b).real()),\
-    \ w((b - c).imag(), (c - b).real());\n    line s(m1, point(m1 + v)), t(m2, point(m2\
-    \ + w));\n\n    point p = cross_point_ll(s, t);\n    return circle(p, abs(a -\
-    \ p));\n  }\n}\n"
+    \ = vector< line >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\
+    \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
+    \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
+    \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
+    \ + a.imag() * b.imag();\n  }\n}\n#line 8 \"src/circumscribed_circle.hpp\"\n\n\
+    namespace geometry {\n  circle circumscribed_circle(const point &a, const point\
+    \ &b, const point &c) {\n    real_number A = norm(b - c), B = norm(c - a), C =\
+    \ norm(a - b);\n    real_number S = norm(cross(b - a, c - a)), T = A + B + C;\n\
+    \    point p = (A*(T - 2*A) * a + B*(T - 2*B) * b + C*(T - 2*C) * c) / (4 * S);\n\
+    \    return circle(p, abs(p - a));\n  }\n}\n"
   code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./circle.hpp\"\n#include\
-    \ \"./point.hpp\"\n#include \"./line.hpp\"\n#include \"./cross_point_ll.hpp\"\n\
-    \nnamespace geometry {\n  circle circumscribed_circle(const point &a, const point\
-    \ &b, const point &c) {\n    point m1((a + b) / real_number(2)), m2((b + c) /\
-    \ real_number(2));\n    point v((b - a).imag(), (a - b).real()), w((b - c).imag(),\
-    \ (c - b).real());\n    line s(m1, point(m1 + v)), t(m2, point(m2 + w));\n\n \
-    \   point p = cross_point_ll(s, t);\n    return circle(p, abs(a - p));\n  }\n\
-    }\n"
+    \ \"./point.hpp\"\n#include \"./line.hpp\"\n#include \"./product.hpp\"\n\nnamespace\
+    \ geometry {\n  circle circumscribed_circle(const point &a, const point &b, const\
+    \ point &c) {\n    real_number A = norm(b - c), B = norm(c - a), C = norm(a -\
+    \ b);\n    real_number S = norm(cross(b - a, c - a)), T = A + B + C;\n    point\
+    \ p = (A*(T - 2*A) * a + B*(T - 2*B) * b + C*(T - 2*C) * c) / (4 * S);\n    return\
+    \ circle(p, abs(p - a));\n  }\n}\n"
   dependsOn:
   - src/base.hpp
   - src/circle.hpp
   - src/point.hpp
   - src/line.hpp
-  - src/cross_point_ll.hpp
   - src/product.hpp
   isVerificationFile: false
   path: src/circumscribed_circle.hpp
   requiredBy:
   - src/minimum_covering_circle.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-01-16 18:41:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_C.test.cpp
