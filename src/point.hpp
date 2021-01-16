@@ -32,4 +32,8 @@ namespace geometry {
     return point(cos(theta) * p.real() + sin(-theta) * p.imag(),
                  sin(theta) * p.real() + cos(-theta) * p.imag());
   }
+
+  bool equals(const point &a, const point &b) {
+    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());
+  }
 }
