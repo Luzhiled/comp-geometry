@@ -21,6 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/3_B.test.cpp
     title: test/aoj/cgl/3_B.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -51,7 +52,7 @@ data:
     \ 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number cross(const\
     \ point &a, const point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n\
     \  }\n\n  real_number dot(const point &a, const point &b) {\n    return a.real()\
-    \ * b.real() + a.imag() * b.imag();\n  }\n}\n#line 4 \"src/ccw.hpp\"\n\n// ccw\n\
+    \ * b.real() + a.imag() * b.imag();\n  }\n}\n#line 5 \"src/ccw.hpp\"\n\n// ccw\n\
     namespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int\
     \ CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
     \  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr int ON_SEGMENT\
@@ -78,7 +79,7 @@ data:
   isVerificationFile: false
   path: src/is_convex.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-03-31 06:55:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/3_B.test.cpp

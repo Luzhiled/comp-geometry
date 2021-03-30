@@ -51,6 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2862.test.cpp
     title: test/aoj/icpc/2862.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -90,7 +91,7 @@ data:
     \ 4 \"src/segment.hpp\"\n\n#line 6 \"src/segment.hpp\"\n\n// segment\nnamespace\
     \ geometry {\n  struct segment : line {\n    segment() = default;\n    using line::line;\n\
     \  };\n\n  using segments = vector< segment >;\n}\n#line 2 \"src/ccw.hpp\"\n\n\
-    #line 4 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE\
+    #line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE\
     \ = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK\
     \       = +2; // c-a-b\n  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr\
     \ int ON_SEGMENT        =  0; // a-c-b\n  int ccw(const point &a, point b, point\
@@ -119,17 +120,17 @@ data:
   path: src/distance_sp.hpp
   requiredBy:
   - src/inscribed_circle.hpp
-  - src/common_area_cp.hpp
   - src/distance_ss.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  - src/common_area_cp.hpp
+  timestamp: '2021-03-31 06:55:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2402.test.cpp
   - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/distance_sp.hpp
 layout: document
 redirect_from:

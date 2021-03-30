@@ -33,6 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/7_B.test.cpp
     title: test/aoj/cgl/7_B.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -76,7 +77,7 @@ data:
     \  }\n}\n#line 9 \"src/projection.hpp\"\n\n// projection\nnamespace geometry {\n\
     \  point projection(const line &l, const point &p) {\n    real_number t = dot(p\
     \ - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a + (l.a - l.b) * t;\n  }\n\
-    }\n#line 2 \"src/ccw.hpp\"\n\n#line 4 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry\
+    }\n#line 2 \"src/ccw.hpp\"\n\n#line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry\
     \ {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE      \
     \   = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n  constexpr int ONLINE_FRONT\
     \      = -2; // a-b-c\n  constexpr int ON_SEGMENT        =  0; // a-c-b\n  int\
@@ -112,7 +113,7 @@ data:
   isVerificationFile: false
   path: src/inscribed_circle.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-03-31 06:55:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_B.test.cpp

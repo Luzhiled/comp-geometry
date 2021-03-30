@@ -36,6 +36,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2402.test.cpp
     title: test/aoj/icpc/2402.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -71,7 +72,7 @@ data:
     \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
     \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
     \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
-    \ + a.imag() * b.imag();\n  }\n}\n#line 4 \"src/ccw.hpp\"\n\n// ccw\nnamespace\
+    \ + a.imag() * b.imag();\n  }\n}\n#line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace\
     \ geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE\
     \         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n  constexpr\
     \ int ONLINE_FRONT      = -2; // a-b-c\n  constexpr int ON_SEGMENT        =  0;\
@@ -115,11 +116,11 @@ data:
   isVerificationFile: false
   path: src/distance_ss.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-03-31 06:55:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
 documentation_of: src/distance_ss.hpp
 layout: document
 redirect_from:

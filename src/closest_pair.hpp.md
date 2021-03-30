@@ -15,6 +15,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/5_A.test.cpp
     title: test/aoj/cgl/5_A.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

@@ -21,6 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2442.test.cpp
     title: test/aoj/icpc/2442.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -69,8 +70,8 @@ data:
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_A.test.cpp
   - test/aoj/icpc/2442.test.cpp
+  - test/aoj/cgl/2_A.test.cpp
 documentation_of: src/is_parallel.hpp
 layout: document
 redirect_from:

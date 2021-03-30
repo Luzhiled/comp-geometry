@@ -42,6 +42,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2003.test.cpp
     title: test/aoj/icpc/2003.test.cpp
+  _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -81,20 +82,20 @@ data:
   isVerificationFile: false
   path: src/compare.hpp
   requiredBy:
-  - src/convex_hull.hpp
   - src/convex_diameter.hpp
+  - src/convex_hull.hpp
   - src/closest_pair.hpp
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/icpc/2003.test.cpp
   - test/aoj/cgl/7_E.test.cpp
-  - test/aoj/cgl/7_F.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
   - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/7_F.test.cpp
   - test/aoj/cgl/7_G.test.cpp
   - test/aoj/cgl/5_A.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/cgl/4_A.test.cpp
 documentation_of: src/compare.hpp
 layout: document
 redirect_from:
