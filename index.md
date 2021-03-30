@@ -213,4 +213,4 @@ data:
       title: test/aoj/icpc/3034.test.cpp
 layout: toppage
 ---
-ICPC のための幾何ライブラリ
+競技プログラミング用の幾何ライブラリ
