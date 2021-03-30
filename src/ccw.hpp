@@ -1,6 +1,7 @@
 #pragma once
 
 #include "./product.hpp"
+#include "./point.hpp"
 
 // ccw
 namespace geometry {
