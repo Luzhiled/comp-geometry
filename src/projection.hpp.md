@@ -20,6 +20,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/cross_point_cl.hpp
     title: src/cross_point_cl.hpp
+  - icon: ':warning:'
+    path: src/distance_lp.hpp
+    title: src/distance_lp.hpp
   - icon: ':heavy_check_mark:'
     path: src/distance_sp.hpp
     title: src/distance_sp.hpp
@@ -112,25 +115,26 @@ data:
   isVerificationFile: false
   path: src/projection.hpp
   requiredBy:
-  - src/inscribed_circle.hpp
-  - src/distance_ss.hpp
-  - src/common_area_cp.hpp
   - src/reflection.hpp
+  - src/common_area_cp.hpp
+  - src/distance_lp.hpp
   - src/distance_sp.hpp
+  - src/distance_ss.hpp
   - src/cross_point_cl.hpp
+  - src/inscribed_circle.hpp
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
-  - test/aoj/cgl/1_A.test.cpp
-  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/icpc/2003.test.cpp
   - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/1_A.test.cpp
   - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
 documentation_of: src/projection.hpp
 layout: document
 redirect_from:

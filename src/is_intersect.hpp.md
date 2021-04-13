@@ -103,8 +103,8 @@ data:
   timestamp: '2021-03-31 06:55:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/aoj/icpc/2003.test.cpp
   - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/2_D.test.cpp
 documentation_of: src/is_intersect.hpp

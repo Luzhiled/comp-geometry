@@ -54,6 +54,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/cross_point_ll.hpp
       title: src/cross_point_ll.hpp
+    - icon: ':warning:'
+      path: src/distance_lp.hpp
+      title: src/distance_lp.hpp
     - icon: ':heavy_check_mark:'
       path: src/distance_sp.hpp
       title: src/distance_sp.hpp
