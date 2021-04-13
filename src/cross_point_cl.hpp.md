@@ -72,7 +72,8 @@ data:
     \ - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a + (l.a - l.b) * t;\n  }\n\
     }\n#line 10 \"src/cross_point_cl.hpp\"\n\nnamespace geometry {\n  points cross_point_cl(const\
     \ circle &c, const line &l) {\n    point pr = projection(l, c.p);\n\n    if (equals(abs(pr\
-    \ - c.p), c.r)) {\n      return {pr};\n    }\n\n    points pts;\n    point e =\
+    \ - c.p), c.r)) {\n      return {pr};\n    }\n\n    if (sign(norm(c.r) - norm(pr\
+    \ - c.p)) == -1) {\n      return {};\n    }\n\n    points pts;\n    point e =\
     \ (l.b - l.a) / abs(l.b - l.a);\n    real_number k = sqrt(norm(c.r) - norm(pr\
     \ - c.p));\n    pts.emplace_back(pr + e * k);\n    pts.emplace_back(pr - e * k);\n\
     \    return pts;\n  }\n}\n"
@@ -80,7 +81,8 @@ data:
     ./point.hpp\"\n#include \"./circle.hpp\"\n#include \"./line.hpp\"\n#include \"\
     ./projection.hpp\"\n\nnamespace geometry {\n  points cross_point_cl(const circle\
     \ &c, const line &l) {\n    point pr = projection(l, c.p);\n\n    if (equals(abs(pr\
-    \ - c.p), c.r)) {\n      return {pr};\n    }\n\n    points pts;\n    point e =\
+    \ - c.p), c.r)) {\n      return {pr};\n    }\n\n    if (sign(norm(c.r) - norm(pr\
+    \ - c.p)) == -1) {\n      return {};\n    }\n\n    points pts;\n    point e =\
     \ (l.b - l.a) / abs(l.b - l.a);\n    real_number k = sqrt(norm(c.r) - norm(pr\
     \ - c.p));\n    pts.emplace_back(pr + e * k);\n    pts.emplace_back(pr - e * k);\n\
     \    return pts;\n  }\n}\n"
@@ -95,7 +97,7 @@ data:
   path: src/cross_point_cl.hpp
   requiredBy:
   - src/common_area_cp.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-04-13 11:39:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_D.test.cpp

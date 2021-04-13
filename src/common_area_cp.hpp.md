@@ -101,9 +101,10 @@ data:
     \n\n#line 4 \"src/cross_point_cl.hpp\"\n\n#line 10 \"src/cross_point_cl.hpp\"\n\
     \nnamespace geometry {\n  points cross_point_cl(const circle &c, const line &l)\
     \ {\n    point pr = projection(l, c.p);\n\n    if (equals(abs(pr - c.p), c.r))\
-    \ {\n      return {pr};\n    }\n\n    points pts;\n    point e = (l.b - l.a) /\
-    \ abs(l.b - l.a);\n    real_number k = sqrt(norm(c.r) - norm(pr - c.p));\n   \
-    \ pts.emplace_back(pr + e * k);\n    pts.emplace_back(pr - e * k);\n    return\
+    \ {\n      return {pr};\n    }\n\n    if (sign(norm(c.r) - norm(pr - c.p)) ==\
+    \ -1) {\n      return {};\n    }\n\n    points pts;\n    point e = (l.b - l.a)\
+    \ / abs(l.b - l.a);\n    real_number k = sqrt(norm(c.r) - norm(pr - c.p));\n \
+    \   pts.emplace_back(pr + e * k);\n    pts.emplace_back(pr - e * k);\n    return\
     \ pts;\n  }\n}\n#line 15 \"src/common_area_cp.hpp\"\n\nnamespace geometry {\n\
     \  real_number ca_cp_impl(const circle &c, const point &a, const point &b) {\n\
     \    point va = c.p - a, vb = c.p - b;\n    real_number f = cross(va, vb), res\
@@ -152,7 +153,7 @@ data:
   isVerificationFile: false
   path: src/common_area_cp.hpp
   requiredBy: []
-  timestamp: '2021-03-31 06:55:37+09:00'
+  timestamp: '2021-04-13 11:39:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_H.test.cpp
