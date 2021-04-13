@@ -16,6 +16,10 @@ namespace geometry {
       return {pr};
     }
 
+    if (sign(norm(c.r) - norm(pr - c.p)) == -1) {
+      return {};
+    }
+
     points pts;
     point e = (l.b - l.a) / abs(l.b - l.a);
     real_number k = sqrt(norm(c.r) - norm(pr - c.p));
