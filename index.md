@@ -54,7 +54,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/cross_point_ll.hpp
       title: src/cross_point_ll.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: src/distance_lp.hpp
       title: src/distance_lp.hpp
     - icon: ':heavy_check_mark:'
@@ -214,6 +214,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/icpc/3034.test.cpp
       title: test/aoj/icpc/3034.test.cpp
+  - name: test/atcoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc181_f.test.cpp
+      title: test/atcoder/abc181_f.test.cpp
 layout: toppage
 ---
 競技プログラミング用の幾何ライブラリ

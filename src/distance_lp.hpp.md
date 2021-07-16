@@ -17,10 +17,13 @@ data:
     path: src/projection.hpp
     title: src/projection.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc181_f.test.cpp
+    title: test/atcoder/abc181_f.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/base.hpp\"\n\n#include <cmath>\n\n// base\nnamespace\
@@ -70,8 +73,9 @@ data:
   path: src/distance_lp.hpp
   requiredBy: []
   timestamp: '2021-04-13 11:19:49+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/atcoder/abc181_f.test.cpp
 documentation_of: src/distance_lp.hpp
 layout: document
 redirect_from:

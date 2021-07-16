@@ -95,23 +95,23 @@ data:
   isVerificationFile: false
   path: src/segment.hpp
   requiredBy:
-  - src/is_intersect.hpp
   - src/common_area_cp.hpp
-  - src/distance_sp.hpp
-  - src/distance_ss.hpp
   - src/inscribed_circle.hpp
+  - src/distance_sp.hpp
+  - src/is_intersect.hpp
+  - src/distance_ss.hpp
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2442.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/icpc/2442.test.cpp
 documentation_of: src/segment.hpp
 layout: document
 redirect_from:

@@ -75,8 +75,8 @@ data:
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2003.test.cpp
   - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/icpc/2003.test.cpp
 documentation_of: src/cross_point_ll.hpp
 layout: document
 redirect_from:
