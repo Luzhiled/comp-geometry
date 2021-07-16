@@ -217,6 +217,9 @@ data:
   - name: test/atcoder
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/atcoder/abc151_f.test.cpp
+      title: test/atcoder/abc151_f.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/atcoder/abc181_f.test.cpp
       title: test/atcoder/abc181_f.test.cpp
 layout: toppage

@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc151_f.test.cpp
+    title: test/atcoder/abc151_f.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -63,6 +66,7 @@ data:
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc151_f.test.cpp
   - test/aoj/icpc/3034.test.cpp
 documentation_of: src/in_circle.hpp
 layout: document

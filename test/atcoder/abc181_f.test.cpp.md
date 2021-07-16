@@ -76,7 +76,7 @@ data:
     \    return l.a + (l.a - l.b) * t;\n  }\n}\n#line 5 \"src/distance_lp.hpp\"\n\n\
     namespace geometry {\n  real_number distance_lp(const line &l, const point &p)\
     \ {\n    point pr = projection(l, p);\n    return abs(pr - p);\n  }\n}\n#line\
-    \ 50 \"test/atcoder/abc181_f.test.cpp\"\nusing namespace geometry;\n\nvoid solve()\
+    \ 50 \"test/atcoder/abc181_f.test.cpp\"\nusing namespace geometry;\n\nint main()\
     \ {\n  line t(point(0,  100), point(1,  100));\n  line b(point(0, -100), point(1,\
     \ -100));\n\n  int n;\n  cin >> n;\n\n  points pts(n);\n  for (auto &p : pts)\
     \ cin >> p;\n\n  real_number ng = 200, ok = 0;\n  for (int lb = 0; lb < 100; lb++)\
@@ -87,7 +87,7 @@ data:
     \      for (int j = 0; j < i; j++) {\n        point p = pts[i], q = pts[j];\n\
     \        if (sign(abs(p - q) - mid) < 0) uf.unite(i, j);\n      }\n    }\n\n \
     \   if (uf.is_same(T, B)) {\n      ng = mid;\n    } else {\n      ok = mid;\n\
-    \    }\n  }\n\n  cout << ok / 2 << endl;\n}\n\nsigned main() {\n  solve();\n}\n"
+    \    }\n  }\n\n  cout << ok / 2 << endl;\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc181/tasks/abc181_f\n\
     // verification-helper: ERROR 1e-4\n\n#include <iostream>\n#include <vector>\n\
     using namespace std;\n\n// union find {{{\nclass union_find {\n\n    using data_type\
@@ -102,7 +102,7 @@ data:
     \ y);\n        data_[x] += data_[y];\n        data_[y] = x;\n    }\n\n    data_type\
     \ element_count(data_type x) {\n        return -data_[get_root(x)];\n    }\n};\n\
     // }}}\n\n#include \"src/point.hpp\"\n#include \"src/distance_lp.hpp\"\nusing\
-    \ namespace geometry;\n\nvoid solve() {\n  line t(point(0,  100), point(1,  100));\n\
+    \ namespace geometry;\n\nint main() {\n  line t(point(0,  100), point(1,  100));\n\
     \  line b(point(0, -100), point(1, -100));\n\n  int n;\n  cin >> n;\n\n  points\
     \ pts(n);\n  for (auto &p : pts) cin >> p;\n\n  real_number ng = 200, ok = 0;\n\
     \  for (int lb = 0; lb < 100; lb++) {\n    real_number mid = (ok + ng) / 2;\n\n\
@@ -113,7 +113,7 @@ data:
     \ j++) {\n        point p = pts[i], q = pts[j];\n        if (sign(abs(p - q) -\
     \ mid) < 0) uf.unite(i, j);\n      }\n    }\n\n    if (uf.is_same(T, B)) {\n \
     \     ng = mid;\n    } else {\n      ok = mid;\n    }\n  }\n\n  cout << ok / 2\
-    \ << endl;\n}\n\nsigned main() {\n  solve();\n}\n"
+    \ << endl;\n}\n"
   dependsOn:
   - src/point.hpp
   - src/base.hpp
@@ -124,7 +124,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc181_f.test.cpp
   requiredBy: []
-  timestamp: '2021-07-17 04:07:16+09:00'
+  timestamp: '2021-07-17 08:06:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc181_f.test.cpp

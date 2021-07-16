@@ -60,6 +60,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/atcoder/abc151_f.test.cpp
+    title: test/atcoder/abc151_f.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -84,6 +87,7 @@ data:
   timestamp: '2020-11-21 21:36:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/atcoder/abc151_f.test.cpp
   - test/aoj/cgl/3_A.test.cpp
   - test/aoj/cgl/4_B.test.cpp
   - test/aoj/cgl/7_C.test.cpp
