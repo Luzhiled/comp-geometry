@@ -49,7 +49,7 @@ class union_find {
 #include "src/distance_lp.hpp"
 using namespace geometry;
 
-void solve() {
+int main() {
   line t(point(0,  100), point(1,  100));
   line b(point(0, -100), point(1, -100));
 
@@ -86,8 +86,4 @@ void solve() {
   }
 
   cout << ok / 2 << endl;
-}
-
-signed main() {
-  solve();
 }
