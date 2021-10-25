@@ -1,6 +1,7 @@
 #pragma once
 
 #include "./base.hpp"
+#include "./point.hpp"
 
 // product
 namespace geometry {
