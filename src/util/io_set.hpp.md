@@ -58,6 +58,9 @@ data:
     path: test/aoj/icpc/2402.test.cpp
     title: test/aoj/icpc/2402.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2950.test.cpp
+    title: test/aoj/icpc/2950.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/3034.test.cpp
     title: test/aoj/icpc/3034.test.cpp
   - icon: ':heavy_check_mark:'
@@ -107,6 +110,7 @@ data:
   - test/aoj/cgl/7_B.test.cpp
   - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/aoj/icpc/2950.test.cpp
 documentation_of: src/util/io_set.hpp
 layout: document
 redirect_from:

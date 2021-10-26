@@ -42,6 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/icpc/2003.test.cpp
     title: test/aoj/icpc/2003.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2950.test.cpp
+    title: test/aoj/icpc/2950.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -96,6 +99,7 @@ data:
   - test/aoj/cgl/7_G.test.cpp
   - test/aoj/cgl/4_B.test.cpp
   - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2950.test.cpp
 documentation_of: src/compare.hpp
 layout: document
 redirect_from:

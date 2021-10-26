@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/cgl/3_C.test.cpp
     title: test/aoj/cgl/3_C.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/icpc/2950.test.cpp
+    title: test/aoj/icpc/2950.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -83,6 +86,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/3_C.test.cpp
+  - test/aoj/icpc/2950.test.cpp
 documentation_of: src/contains.hpp
 layout: document
 redirect_from:
