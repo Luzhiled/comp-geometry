@@ -70,7 +70,7 @@ data:
     \ = default;\n    using line::line;\n  };\n\n  using segments = vector< segment\
     \ >;\n}\n#line 2 \"src/distance_sp.hpp\"\n\n#line 4 \"src/distance_sp.hpp\"\n\
     #include <algorithm>\n\n#line 2 \"src/projection.hpp\"\n\n#line 4 \"src/projection.hpp\"\
-    \n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n// product\n\
+    \n\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\n\
     namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
     \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
     \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
@@ -113,7 +113,7 @@ data:
   isVerificationFile: false
   path: src/inscribed_circle.hpp
   requiredBy: []
-  timestamp: '2021-03-31 06:55:37+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_B.test.cpp

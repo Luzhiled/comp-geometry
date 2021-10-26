@@ -49,7 +49,7 @@ data:
     \ \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
     \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
     \  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/projection.hpp\"\n\n\
-    #line 4 \"src/projection.hpp\"\n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\
+    #line 4 \"src/projection.hpp\"\n\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\
     \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
     \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
     \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: src/distance_lp.hpp
   requiredBy: []
-  timestamp: '2021-04-13 11:19:49+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc181_f.test.cpp

@@ -93,6 +93,9 @@ data:
     path: src/polygon.hpp
     title: src/polygon.hpp
   - icon: ':heavy_check_mark:'
+    path: src/product.hpp
+    title: src/product.hpp
+  - icon: ':heavy_check_mark:'
     path: src/projection.hpp
     title: src/projection.hpp
   - icon: ':heavy_check_mark:'
@@ -243,73 +246,74 @@ data:
   isVerificationFile: false
   path: src/point.hpp
   requiredBy:
-  - src/polygon.hpp
-  - src/common_area_cp.hpp
-  - src/tangent_cc.hpp
-  - src/area.hpp
-  - src/minimum_covering_circle.hpp
-  - src/is_orthogonal.hpp
-  - src/common_area_cc.hpp
-  - src/cross_point_cc.hpp
-  - src/cross_point_cl.hpp
-  - src/circumscribed_circle.hpp
-  - src/closest_pair.hpp
-  - src/convex_hull.hpp
-  - src/ccw.hpp
-  - src/angle.hpp
   - src/cross_point_ll.hpp
-  - src/reflection.hpp
-  - src/line.hpp
+  - src/convex_hull.hpp
   - src/intersect_cc.hpp
-  - src/convex_cut.hpp
-  - src/is_convex.hpp
-  - src/inscribed_circle.hpp
-  - src/convex_diameter.hpp
-  - src/tangent_cp.hpp
+  - src/line.hpp
+  - src/reflection.hpp
+  - src/closest_pair.hpp
+  - src/projection.hpp
+  - src/common_area_cp.hpp
   - src/distance_sp.hpp
-  - src/compare.hpp
+  - src/tangent_cc.hpp
+  - src/circle.hpp
+  - src/tangent_cp.hpp
   - src/is_parallel.hpp
+  - src/cross_point_cc.hpp
+  - src/circumscribed_circle.hpp
+  - src/angle.hpp
+  - src/distance_lp.hpp
+  - src/minimum_covering_circle.hpp
+  - src/in_circle.hpp
+  - src/area.hpp
+  - src/convex_diameter.hpp
+  - src/inscribed_circle.hpp
+  - src/is_convex.hpp
+  - src/ccw.hpp
+  - src/is_orthogonal.hpp
+  - src/cross_point_cl.hpp
+  - src/common_area_cc.hpp
+  - src/product.hpp
+  - src/compare.hpp
+  - src/distance_ss.hpp
   - src/segment.hpp
   - src/is_intersect.hpp
-  - src/projection.hpp
-  - src/distance_lp.hpp
-  - src/distance_ss.hpp
+  - src/polygon.hpp
+  - src/convex_cut.hpp
   - src/contains.hpp
-  - src/in_circle.hpp
-  - src/circle.hpp
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc151_f.test.cpp
   - test/atcoder/abc181_f.test.cpp
-  - test/aoj/cgl/3_C.test.cpp
-  - test/aoj/cgl/3_A.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/7_C.test.cpp
-  - test/aoj/cgl/7_A.test.cpp
-  - test/aoj/cgl/7_E.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/cgl/1_C.test.cpp
-  - test/aoj/cgl/7_I.test.cpp
+  - test/atcoder/abc151_f.test.cpp
   - test/aoj/cgl/2_A.test.cpp
+  - test/aoj/cgl/7_A.test.cpp
+  - test/aoj/cgl/7_F.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
-  - test/aoj/cgl/5_A.test.cpp
   - test/aoj/cgl/4_A.test.cpp
   - test/aoj/cgl/1_A.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/cgl/5_A.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
+  - test/aoj/cgl/7_I.test.cpp
   - test/aoj/cgl/3_B.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
-  - test/aoj/cgl/7_F.test.cpp
+  - test/aoj/cgl/1_C.test.cpp
   - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/7_E.test.cpp
   - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2402.test.cpp
   - test/aoj/icpc/1175.test.cpp
   - test/aoj/icpc/3034.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2402.test.cpp
   - test/aoj/icpc/2442.test.cpp
 documentation_of: src/point.hpp
 layout: document

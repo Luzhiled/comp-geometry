@@ -68,7 +68,7 @@ data:
     \ >;\n}\n#line 6 \"src/segment.hpp\"\n\n// segment\nnamespace geometry {\n  struct\
     \ segment : line {\n    segment() = default;\n    using line::line;\n  };\n\n\
     \  using segments = vector< segment >;\n}\n#line 2 \"src/ccw.hpp\"\n\n#line 2\
-    \ \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace\
+    \ \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace\
     \ geometry {\n  real_number cross(const point &a, const point &b) {\n    return\
     \ a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point\
     \ &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
@@ -100,11 +100,11 @@ data:
   path: src/is_intersect.hpp
   requiredBy:
   - src/distance_ss.hpp
-  timestamp: '2021-03-31 06:55:37+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2402.test.cpp
 documentation_of: src/is_intersect.hpp

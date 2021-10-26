@@ -63,7 +63,7 @@ data:
     // line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
     \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
     \ = vector< line >;\n}\n#line 2 \"src/projection.hpp\"\n\n#line 4 \"src/projection.hpp\"\
-    \n\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n// product\n\
+    \n\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\n\
     namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
     \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
     \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
@@ -97,11 +97,11 @@ data:
   path: src/cross_point_cl.hpp
   requiredBy:
   - src/common_area_cp.hpp
-  timestamp: '2021-04-13 11:39:37+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
 documentation_of: src/cross_point_cl.hpp
 layout: document
 redirect_from:

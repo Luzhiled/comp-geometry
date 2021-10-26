@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: src/_draft
+    pages:
+    - icon: ':warning:'
+      path: src/_draft/mat.h
+      title: src/_draft/mat.h
   - name: src
     pages:
     - icon: ':heavy_check_mark:'

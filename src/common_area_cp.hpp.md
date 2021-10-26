@@ -78,7 +78,7 @@ data:
     \ >;\n}\n#line 2 \"src/polygon.hpp\"\n\n#line 4 \"src/polygon.hpp\"\n\n#line 6\
     \ \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon = vector<\
     \ point >;\n  using polygons = vector< polygon >;\n}\n#line 2 \"src/product.hpp\"\
-    \n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
+    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
     \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
     \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
     \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 2 \"src/distance_sp.hpp\"\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: false
   path: src/common_area_cp.hpp
   requiredBy: []
-  timestamp: '2021-04-13 11:39:37+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_H.test.cpp

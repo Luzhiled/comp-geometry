@@ -48,7 +48,7 @@ data:
     \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
     \  }\n}\n#line 6 \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using\
     \ polygon = vector< point >;\n  using polygons = vector< polygon >;\n}\n#line\
-    \ 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace\
+    \ 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace\
     \ geometry {\n  real_number cross(const point &a, const point &b) {\n    return\
     \ a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point\
     \ &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: src/area.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/3_A.test.cpp

@@ -98,7 +98,7 @@ data:
     #line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n\
     \    point a, b;\n\n    line() = default;\n    line(point a, point b) : a(a),\
     \ b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/product.hpp\"\
-    \n\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
+    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
     \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
     \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
     \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 9 \"src/projection.hpp\"\
@@ -118,24 +118,24 @@ data:
   isVerificationFile: false
   path: src/projection.hpp
   requiredBy:
-  - src/common_area_cp.hpp
-  - src/cross_point_cl.hpp
   - src/reflection.hpp
-  - src/inscribed_circle.hpp
+  - src/common_area_cp.hpp
   - src/distance_sp.hpp
   - src/distance_lp.hpp
+  - src/inscribed_circle.hpp
+  - src/cross_point_cl.hpp
   - src/distance_ss.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc181_f.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/1_A.test.cpp
   - test/aoj/cgl/7_D.test.cpp
   - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp

@@ -31,23 +31,23 @@ data:
     \ EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n    if\
     \ (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n  }\n\
     \n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1 -\
-    \ r2) == 0;\n  }\n}\n#line 2 \"src/product.hpp\"\n\n#line 4 \"src/product.hpp\"\
-    \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
-    \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
-    \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
-    \ + a.imag() * b.imag();\n  }\n}\n#line 2 \"src/polygon.hpp\"\n\n#include <vector>\n\
-    \n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#line 6 \"src/point.hpp\"\n\
-    #include <istream>\n#include <ostream>\n\n#line 10 \"src/point.hpp\"\n\n// point\n\
-    namespace geometry {\n  using point = complex< real_number >;\n  using points\
-    \ = vector< point >;\n\n  istream &operator>>(istream &is, point &p) {\n    real_number\
-    \ x, y;\n    is >> x >> y;\n    p = point(x, y);\n    return is;\n  }\n\n  ostream\
-    \ &operator<<(ostream &os, const point &p) {\n    return os << p.real() << \"\
-    \ \" << p.imag();\n  }\n\n  point operator*(const point &p, const real_number\
-    \ &k) {\n    return point(p.real() * k, p.imag() * k);\n  }\n\n  point rotate(const\
-    \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
-    \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
-    \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
-    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n#line 6\
+    \ r2) == 0;\n  }\n}\n#line 2 \"src/product.hpp\"\n\n#line 2 \"src/point.hpp\"\n\
+    \n#include <complex>\n#include <vector>\n#line 6 \"src/point.hpp\"\n#include <istream>\n\
+    #include <ostream>\n\n#line 10 \"src/point.hpp\"\n\n// point\nnamespace geometry\
+    \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
+    \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
+    \ >> x >> y;\n    p = point(x, y);\n    return is;\n  }\n\n  ostream &operator<<(ostream\
+    \ &os, const point &p) {\n    return os << p.real() << \" \" << p.imag();\n  }\n\
+    \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
+    \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
+    \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 5 \"src/product.hpp\"\n\n// product\n\
+    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
+    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
+    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
+    \  }\n}\n#line 2 \"src/polygon.hpp\"\n\n#line 4 \"src/polygon.hpp\"\n\n#line 6\
     \ \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon = vector<\
     \ point >;\n  using polygons = vector< polygon >;\n}\n#line 9 \"src/contains.hpp\"\
     \n\nnamespace geometry {\n  /// O(N)\n  /// 0 : point out the polygon\n  /// 1\
@@ -74,12 +74,12 @@ data:
   dependsOn:
   - src/base.hpp
   - src/product.hpp
-  - src/polygon.hpp
   - src/point.hpp
+  - src/polygon.hpp
   isVerificationFile: false
   path: src/contains.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/3_C.test.cpp

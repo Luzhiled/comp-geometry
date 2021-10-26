@@ -4,6 +4,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: src/base.hpp
     title: src/base.hpp
+  - icon: ':heavy_check_mark:'
+    path: src/point.hpp
+    title: src/point.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: src/area.hpp
@@ -156,69 +159,82 @@ data:
     \ void set_eps(real_number EPS) {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number\
     \ r) {\n    set_eps(1e-10);\n    if (r < -eps()) return -1;\n    if (r > +eps())\
     \ return +1;\n    return 0;\n  }\n\n  inline bool equals(real_number r1, real_number\
-    \ r2) {\n    return sign(r1 - r2) == 0;\n  }\n}\n#line 4 \"src/product.hpp\"\n\
-    \n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
-    \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
-    \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
-    \ + a.imag() * b.imag();\n  }\n}\n"
-  code: "#pragma once\n\n#include \"./base.hpp\"\n\n// product\nnamespace geometry\
-    \ {\n  real_number cross(const point &a, const point &b) {\n    return a.real()\
-    \ * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point &a,\
-    \ const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n \
-    \ }\n}\n"
+    \ r2) {\n    return sign(r1 - r2) == 0;\n  }\n}\n#line 2 \"src/point.hpp\"\n\n\
+    #include <complex>\n#include <vector>\n#line 6 \"src/point.hpp\"\n#include <istream>\n\
+    #include <ostream>\n\n#line 10 \"src/point.hpp\"\n\n// point\nnamespace geometry\
+    \ {\n  using point = complex< real_number >;\n  using points = vector< point >;\n\
+    \n  istream &operator>>(istream &is, point &p) {\n    real_number x, y;\n    is\
+    \ >> x >> y;\n    p = point(x, y);\n    return is;\n  }\n\n  ostream &operator<<(ostream\
+    \ &os, const point &p) {\n    return os << p.real() << \" \" << p.imag();\n  }\n\
+    \n  point operator*(const point &p, const real_number &k) {\n    return point(p.real()\
+    \ * k, p.imag() * k);\n  }\n\n  point rotate(const real_number &theta, const point\
+    \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
+    \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
+    \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 5 \"src/product.hpp\"\n\n// product\n\
+    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
+    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
+    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
+    \  }\n}\n"
+  code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./point.hpp\"\n\n// product\n\
+    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
+    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
+    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
+    \  }\n}\n"
   dependsOn:
   - src/base.hpp
+  - src/point.hpp
   isVerificationFile: false
   path: src/product.hpp
   requiredBy:
-  - src/common_area_cp.hpp
-  - src/area.hpp
-  - src/minimum_covering_circle.hpp
-  - src/is_orthogonal.hpp
-  - src/cross_point_cl.hpp
-  - src/circumscribed_circle.hpp
-  - src/convex_hull.hpp
-  - src/ccw.hpp
   - src/cross_point_ll.hpp
+  - src/convex_hull.hpp
   - src/reflection.hpp
-  - src/convex_cut.hpp
-  - src/is_convex.hpp
-  - src/inscribed_circle.hpp
-  - src/convex_diameter.hpp
+  - src/projection.hpp
+  - src/common_area_cp.hpp
   - src/distance_sp.hpp
   - src/is_parallel.hpp
-  - src/is_intersect.hpp
-  - src/projection.hpp
+  - src/circumscribed_circle.hpp
   - src/distance_lp.hpp
+  - src/minimum_covering_circle.hpp
+  - src/area.hpp
+  - src/convex_diameter.hpp
+  - src/inscribed_circle.hpp
+  - src/is_convex.hpp
+  - src/ccw.hpp
+  - src/is_orthogonal.hpp
+  - src/cross_point_cl.hpp
   - src/distance_ss.hpp
+  - src/is_intersect.hpp
+  - src/convex_cut.hpp
   - src/contains.hpp
-  timestamp: '2020-11-23 23:19:27+09:00'
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc151_f.test.cpp
   - test/atcoder/abc181_f.test.cpp
-  - test/aoj/cgl/3_C.test.cpp
-  - test/aoj/cgl/3_A.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/7_C.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/cgl/1_C.test.cpp
+  - test/atcoder/abc151_f.test.cpp
   - test/aoj/cgl/2_A.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/4_A.test.cpp
   - test/aoj/cgl/1_A.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
   - test/aoj/cgl/3_B.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/1_C.test.cpp
   - test/aoj/cgl/7_D.test.cpp
   - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/3034.test.cpp
   - test/aoj/icpc/2442.test.cpp
 documentation_of: src/product.hpp
 layout: document

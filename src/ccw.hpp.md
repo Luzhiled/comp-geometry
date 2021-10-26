@@ -70,24 +70,24 @@ data:
     \ {\n    eps() = EPS;\n  }\n\n  inline int sign(real_number r) {\n    set_eps(1e-10);\n\
     \    if (r < -eps()) return -1;\n    if (r > +eps()) return +1;\n    return 0;\n\
     \  }\n\n  inline bool equals(real_number r1, real_number r2) {\n    return sign(r1\
-    \ - r2) == 0;\n  }\n}\n#line 4 \"src/product.hpp\"\n\n// product\nnamespace geometry\
+    \ - r2) == 0;\n  }\n}\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#include\
+    \ <vector>\n#line 6 \"src/point.hpp\"\n#include <istream>\n#include <ostream>\n\
+    \n#line 10 \"src/point.hpp\"\n\n// point\nnamespace geometry {\n  using point\
+    \ = complex< real_number >;\n  using points = vector< point >;\n\n  istream &operator>>(istream\
+    \ &is, point &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x,\
+    \ y);\n    return is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p)\
+    \ {\n    return os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const\
+    \ point &p, const real_number &k) {\n    return point(p.real() * k, p.imag() *\
+    \ k);\n  }\n\n  point rotate(const real_number &theta, const point &p) {\n   \
+    \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n             \
+    \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool equals(const\
+    \ point &a, const point &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(),\
+    \ b.imag());\n  }\n}\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry\
     \ {\n  real_number cross(const point &a, const point &b) {\n    return a.real()\
     \ * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point &a,\
     \ const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n \
-    \ }\n}\n#line 2 \"src/point.hpp\"\n\n#include <complex>\n#include <vector>\n#line\
-    \ 6 \"src/point.hpp\"\n#include <istream>\n#include <ostream>\n\n#line 10 \"src/point.hpp\"\
-    \n\n// point\nnamespace geometry {\n  using point = complex< real_number >;\n\
-    \  using points = vector< point >;\n\n  istream &operator>>(istream &is, point\
-    \ &p) {\n    real_number x, y;\n    is >> x >> y;\n    p = point(x, y);\n    return\
-    \ is;\n  }\n\n  ostream &operator<<(ostream &os, const point &p) {\n    return\
-    \ os << p.real() << \" \" << p.imag();\n  }\n\n  point operator*(const point &p,\
-    \ const real_number &k) {\n    return point(p.real() * k, p.imag() * k);\n  }\n\
-    \n  point rotate(const real_number &theta, const point &p) {\n    return point(cos(theta)\
-    \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
-    \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
-    \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
-    \  }\n}\n#line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr\
-    \ int COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr\
+    \ }\n}\n#line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int\
+    \ COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr\
     \ int ONLINE_BACK       = +2; // c-a-b\n  constexpr int ONLINE_FRONT      = -2;\
     \ // a-b-c\n  constexpr int ON_SEGMENT        =  0; // a-c-b\n  int ccw(const\
     \ point &a, point b, point c) {\n    b = b - a, c = c - a;\n    if (sign(cross(b,\
@@ -111,20 +111,20 @@ data:
   path: src/ccw.hpp
   requiredBy:
   - src/common_area_cp.hpp
-  - src/is_convex.hpp
-  - src/inscribed_circle.hpp
   - src/distance_sp.hpp
-  - src/is_intersect.hpp
+  - src/inscribed_circle.hpp
+  - src/is_convex.hpp
   - src/distance_ss.hpp
-  timestamp: '2021-03-31 06:55:37+09:00'
+  - src/is_intersect.hpp
+  timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/1_C.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/1_C.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp
