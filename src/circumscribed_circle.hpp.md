@@ -92,9 +92,9 @@ data:
   timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc151_f.test.cpp
-  - test/aoj/cgl/7_C.test.cpp
   - test/aoj/icpc/3034.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
+  - test/atcoder/abc151_f.test.cpp
 documentation_of: src/circumscribed_circle.hpp
 layout: document
 redirect_from:

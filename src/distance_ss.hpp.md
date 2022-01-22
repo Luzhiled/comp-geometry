@@ -119,8 +119,8 @@ data:
   timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
 documentation_of: src/distance_ss.hpp
 layout: document
 redirect_from:

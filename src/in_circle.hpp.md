@@ -66,8 +66,8 @@ data:
   timestamp: '2021-01-16 13:51:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/atcoder/abc151_f.test.cpp
   - test/aoj/icpc/3034.test.cpp
+  - test/atcoder/abc151_f.test.cpp
 documentation_of: src/in_circle.hpp
 layout: document
 redirect_from:

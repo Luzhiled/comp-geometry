@@ -70,8 +70,8 @@ data:
   timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_A.test.cpp
   - test/aoj/icpc/2442.test.cpp
+  - test/aoj/cgl/2_A.test.cpp
 documentation_of: src/is_parallel.hpp
 layout: document
 redirect_from:

@@ -119,18 +119,18 @@ data:
   isVerificationFile: false
   path: src/distance_sp.hpp
   requiredBy:
+  - src/distance_ss.hpp
   - src/common_area_cp.hpp
   - src/inscribed_circle.hpp
-  - src/distance_ss.hpp
   timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_H.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/icpc/2003.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2402.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
 documentation_of: src/distance_sp.hpp
 layout: document
 redirect_from:

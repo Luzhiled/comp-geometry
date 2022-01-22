@@ -85,8 +85,8 @@ data:
   timestamp: '2021-10-26 04:41:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/3_C.test.cpp
   - test/aoj/icpc/2950.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
 documentation_of: src/contains.hpp
 layout: document
 redirect_from:
