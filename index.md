@@ -121,23 +121,9 @@ data:
       title: src/tangent_cp.hpp
   - name: src/util
     pages:
-    - icon: ':warning:'
-      path: src/util/impl_kth_select.hpp
-      title: src/util/impl_kth_select.hpp
     - icon: ':heavy_check_mark:'
       path: src/util/io_set.hpp
       title: src/util/io_set.hpp
-    - icon: ':warning:'
-      path: src/util/kth_select.hpp
-      title: src/util/kth_select.hpp
-    - icon: ':warning:'
-      path: src/util/median_value.hpp
-      title: src/util/median_value.hpp
-  - name: test/unittest/util
-    pages:
-    - icon: ':warning:'
-      path: test/unittest/util/kth_select.cpp
-      title: test/unittest/util/kth_select.cpp
   verificationCategories:
   - name: test/aoj/cgl
     pages:
