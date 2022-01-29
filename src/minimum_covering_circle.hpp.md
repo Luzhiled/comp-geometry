@@ -55,15 +55,16 @@ data:
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
     \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
-    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 2 \"src/circle.hpp\"\n\n#line\
-    \ 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry\
-    \ {\n  struct circle {\n    point p;\n    real_number r;\n    circle() {}\n  \
-    \  circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles = vector<\
-    \ circle >;\n}\n#line 2 \"src/in_circle.hpp\"\n\n#line 5 \"src/in_circle.hpp\"\
-    \n\nnamespace geometry {\n  bool in_circle(const circle &c, const point &p) {\n\
-    \    return sign(abs(c.p - p) - c.r) == -1;\n  }\n}\n#line 2 \"src/circumscribed_circle.hpp\"\
-    \n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\
-    \n\n// line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing\
+    \ geometry::operator<<;\n#line 2 \"src/circle.hpp\"\n\n#line 4 \"src/circle.hpp\"\
+    \n\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry {\n  struct circle\
+    \ {\n    point p;\n    real_number r;\n    circle() {}\n    circle(point p, real_number\
+    \ r) : p(p), r(r) {}\n  };\n\n  using circles = vector< circle >;\n}\n#line 2\
+    \ \"src/in_circle.hpp\"\n\n#line 5 \"src/in_circle.hpp\"\n\nnamespace geometry\
+    \ {\n  bool in_circle(const circle &c, const point &p) {\n    return sign(abs(c.p\
+    \ - p) - c.r) == -1;\n  }\n}\n#line 2 \"src/circumscribed_circle.hpp\"\n\n#line\
+    \ 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\n\
+    \n// line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
     \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
     \ = vector< line >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\
     \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
@@ -110,11 +111,11 @@ data:
   isVerificationFile: false
   path: src/minimum_covering_circle.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/3034.test.cpp
   - test/atcoder/abc151_f.test.cpp
+  - test/aoj/icpc/3034.test.cpp
 documentation_of: src/minimum_covering_circle.hpp
 layout: document
 redirect_from:

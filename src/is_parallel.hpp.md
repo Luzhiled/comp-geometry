@@ -46,14 +46,15 @@ data:
     \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
     \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
     \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
-    \  }\n}\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct\
-    \ line {\n    point a, b;\n\n    line() = default;\n    line(point a, point b)\
-    \ : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/product.hpp\"\
-    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
-    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
-    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
-    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 6 \"src/is_parallel.hpp\"\
-    \n\n// parallel\nnamespace geometry {\n  bool is_parallel(const line &l1, const\
+    \  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n#line 6 \"\
+    src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point a,\
+    \ b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\
+    \n  using lines = vector< line >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"\
+    src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number cross(const\
+    \ point &a, const point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n\
+    \  }\n\n  real_number dot(const point &a, const point &b) {\n    return a.real()\
+    \ * b.real() + a.imag() * b.imag();\n  }\n}\n#line 6 \"src/is_parallel.hpp\"\n\
+    \n// parallel\nnamespace geometry {\n  bool is_parallel(const line &l1, const\
     \ line &l2) {\n    return equals(cross(l1.b - l1.a, l2.b - l2.a), 0);\n  }\n}\n"
   code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./line.hpp\"\n#include\
     \ \"./product.hpp\"\n\n// parallel\nnamespace geometry {\n  bool is_parallel(const\
@@ -67,11 +68,11 @@ data:
   isVerificationFile: false
   path: src/is_parallel.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2442.test.cpp
   - test/aoj/cgl/2_A.test.cpp
+  - test/aoj/icpc/2442.test.cpp
 documentation_of: src/is_parallel.hpp
 layout: document
 redirect_from:

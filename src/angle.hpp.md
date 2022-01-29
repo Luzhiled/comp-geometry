@@ -37,19 +37,19 @@ data:
     \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n             \
     \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool equals(const\
     \ point &a, const point &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(),\
-    \ b.imag());\n  }\n}\n#line 8 \"src/angle.hpp\"\n\n// angle\nnamespace geometry\
-    \ {\n  real_number radian_to_degree(real_number theta) {\n    return theta * 180.0\
-    \ / PI;\n  }\n\n  real_number degree_to_radian(const real_number deg) {\n    return\
-    \ deg * PI / 180.0;\n  }\n\n  real_number get_angle(const point &a, const point\
-    \ &b, const point &c) {\n    const point u(a - b), v(c - b);\n    auto fix = [](real_number\
-    \ theta) {\n      if (theta < 0) theta += 2 * PI;\n      return theta;\n    };\n\
-    \    real_number alpha = fix(atan2(u.imag(), u.real()));\n    real_number beta\
-    \  = fix(atan2(v.imag(), v.real()));\n    return fix(beta - alpha);\n  }\n\n \
-    \ real_number get_smaller_angle(const point &a, const point &b, const point &c)\
-    \ {\n    const point v(b - a), w(c - b);\n    real_number alpha = atan2(v.imag(),\
-    \ v.real());\n    real_number beta = atan2(w.imag(), w.real());\n    if (alpha\
-    \ > beta) swap(alpha, beta);\n    real_number theta = beta - alpha;\n    return\
-    \ min(theta, 2 * PI - theta);\n  }\n}\n"
+    \ b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n\
+    #line 8 \"src/angle.hpp\"\n\n// angle\nnamespace geometry {\n  real_number radian_to_degree(real_number\
+    \ theta) {\n    return theta * 180.0 / PI;\n  }\n\n  real_number degree_to_radian(const\
+    \ real_number deg) {\n    return deg * PI / 180.0;\n  }\n\n  real_number get_angle(const\
+    \ point &a, const point &b, const point &c) {\n    const point u(a - b), v(c -\
+    \ b);\n    auto fix = [](real_number theta) {\n      if (theta < 0) theta += 2\
+    \ * PI;\n      return theta;\n    };\n    real_number alpha = fix(atan2(u.imag(),\
+    \ u.real()));\n    real_number beta  = fix(atan2(v.imag(), v.real()));\n    return\
+    \ fix(beta - alpha);\n  }\n\n  real_number get_smaller_angle(const point &a, const\
+    \ point &b, const point &c) {\n    const point v(b - a), w(c - b);\n    real_number\
+    \ alpha = atan2(v.imag(), v.real());\n    real_number beta = atan2(w.imag(), w.real());\n\
+    \    if (alpha > beta) swap(alpha, beta);\n    real_number theta = beta - alpha;\n\
+    \    return min(theta, 2 * PI - theta);\n  }\n}\n"
   code: "#pragma once\n\n#include <cmath>\n#include <algorithm>\n\n#include \"./base.hpp\"\
     \n#include \"./point.hpp\"\n\n// angle\nnamespace geometry {\n  real_number radian_to_degree(real_number\
     \ theta) {\n    return theta * 180.0 / PI;\n  }\n\n  real_number degree_to_radian(const\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: src/angle.hpp
   requiredBy: []
-  timestamp: '2021-03-31 06:55:23+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/icpc/2402.test.cpp

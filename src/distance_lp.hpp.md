@@ -45,20 +45,21 @@ data:
     \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
     \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
     \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
-    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n#line 6\
-    \ \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
-    \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
-    \  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/projection.hpp\"\n\n\
-    #line 4 \"src/projection.hpp\"\n\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\
-    \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
-    \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
-    \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
-    \ + a.imag() * b.imag();\n  }\n}\n#line 9 \"src/projection.hpp\"\n\n// projection\n\
-    namespace geometry {\n  point projection(const line &l, const point &p) {\n  \
-    \  real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a\
-    \ + (l.a - l.b) * t;\n  }\n}\n#line 5 \"src/distance_lp.hpp\"\n\nnamespace geometry\
-    \ {\n  real_number distance_lp(const line &l, const point &p) {\n    point pr\
-    \ = projection(l, p);\n    return abs(pr - p);\n  }\n}\n"
+    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n\nusing\
+    \ geometry::operator>>;\nusing geometry::operator<<;\n#line 6 \"src/line.hpp\"\
+    \n\n// line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
+    \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
+    \ = vector< line >;\n}\n#line 2 \"src/projection.hpp\"\n\n#line 4 \"src/projection.hpp\"\
+    \n\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\n\
+    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
+    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
+    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
+    \  }\n}\n#line 9 \"src/projection.hpp\"\n\n// projection\nnamespace geometry {\n\
+    \  point projection(const line &l, const point &p) {\n    real_number t = dot(p\
+    \ - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a + (l.a - l.b) * t;\n  }\n\
+    }\n#line 5 \"src/distance_lp.hpp\"\n\nnamespace geometry {\n  real_number distance_lp(const\
+    \ line &l, const point &p) {\n    point pr = projection(l, p);\n    return abs(pr\
+    \ - p);\n  }\n}\n"
   code: "#include \"./base.hpp\"\n#include \"./line.hpp\"\n#include \"./point.hpp\"\
     \n#include \"./projection.hpp\"\n\nnamespace geometry {\n  real_number distance_lp(const\
     \ line &l, const point &p) {\n    point pr = projection(l, p);\n    return abs(pr\
@@ -72,7 +73,7 @@ data:
   isVerificationFile: false
   path: src/distance_lp.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/atcoder/abc181_f.test.cpp

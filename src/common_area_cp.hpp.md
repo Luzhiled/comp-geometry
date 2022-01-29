@@ -64,34 +64,34 @@ data:
     \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
     \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
     \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
-    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n#line 2\
-    \ \"src/circle.hpp\"\n\n#line 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\
-    \n\n// circle\nnamespace geometry {\n  struct circle {\n    point p;\n    real_number\
-    \ r;\n    circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\
-    \n  using circles = vector< circle >;\n}\n#line 2 \"src/segment.hpp\"\n\n#line\
-    \ 4 \"src/segment.hpp\"\n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\
-    \n\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line\
-    \ {\n    point a, b;\n\n    line() = default;\n    line(point a, point b) : a(a),\
-    \ b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line 6 \"src/segment.hpp\"\
-    \n\n// segment\nnamespace geometry {\n  struct segment : line {\n    segment()\
-    \ = default;\n    using line::line;\n  };\n\n  using segments = vector< segment\
-    \ >;\n}\n#line 2 \"src/polygon.hpp\"\n\n#line 4 \"src/polygon.hpp\"\n\n#line 6\
-    \ \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon = vector<\
-    \ point >;\n  using polygons = vector< polygon >;\n}\n#line 2 \"src/product.hpp\"\
-    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
-    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
-    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
-    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 2 \"src/distance_sp.hpp\"\
-    \n\n#line 5 \"src/distance_sp.hpp\"\n\n#line 2 \"src/projection.hpp\"\n\n#line\
-    \ 4 \"src/projection.hpp\"\n\n#line 9 \"src/projection.hpp\"\n\n// projection\n\
-    namespace geometry {\n  point projection(const line &l, const point &p) {\n  \
-    \  real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a\
-    \ + (l.a - l.b) * t;\n  }\n}\n#line 2 \"src/ccw.hpp\"\n\n#line 5 \"src/ccw.hpp\"\
-    \n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr\
-    \ int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
-    \  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr int ON_SEGMENT\
-    \        =  0; // a-c-b\n  int ccw(const point &a, point b, point c) {\n    b\
-    \ = b - a, c = c - a;\n    if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;\n\
+    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n\nusing\
+    \ geometry::operator>>;\nusing geometry::operator<<;\n#line 2 \"src/circle.hpp\"\
+    \n\n#line 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace\
+    \ geometry {\n  struct circle {\n    point p;\n    real_number r;\n    circle()\
+    \ {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles\
+    \ = vector< circle >;\n}\n#line 2 \"src/segment.hpp\"\n\n#line 4 \"src/segment.hpp\"\
+    \n\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\
+    \n\n// line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
+    \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
+    \ = vector< line >;\n}\n#line 6 \"src/segment.hpp\"\n\n// segment\nnamespace geometry\
+    \ {\n  struct segment : line {\n    segment() = default;\n    using line::line;\n\
+    \  };\n\n  using segments = vector< segment >;\n}\n#line 2 \"src/polygon.hpp\"\
+    \n\n#line 4 \"src/polygon.hpp\"\n\n#line 6 \"src/polygon.hpp\"\n\n// polygon\n\
+    namespace geometry {\n  using polygon = vector< point >;\n  using polygons = vector<\
+    \ polygon >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n\
+    // product\nnamespace geometry {\n  real_number cross(const point &a, const point\
+    \ &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number\
+    \ dot(const point &a, const point &b) {\n    return a.real() * b.real() + a.imag()\
+    \ * b.imag();\n  }\n}\n#line 2 \"src/distance_sp.hpp\"\n\n#line 5 \"src/distance_sp.hpp\"\
+    \n\n#line 2 \"src/projection.hpp\"\n\n#line 4 \"src/projection.hpp\"\n\n#line\
+    \ 9 \"src/projection.hpp\"\n\n// projection\nnamespace geometry {\n  point projection(const\
+    \ line &l, const point &p) {\n    real_number t = dot(p - l.a, l.a - l.b) / norm(l.a\
+    \ - l.b);\n    return l.a + (l.a - l.b) * t;\n  }\n}\n#line 2 \"src/ccw.hpp\"\n\
+    \n#line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE\
+    \ = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK\
+    \       = +2; // c-a-b\n  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr\
+    \ int ON_SEGMENT        =  0; // a-c-b\n  int ccw(const point &a, point b, point\
+    \ c) {\n    b = b - a, c = c - a;\n    if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;\n\
     \    if (sign(cross(b, c)) == -1) return CLOCKWISE;\n    if (sign(dot(b, c)) ==\
     \ -1) return ONLINE_BACK;\n    if (norm(b) < norm(c)) return ONLINE_FRONT;\n \
     \   return ON_SEGMENT;\n  }\n}\n#line 11 \"src/distance_sp.hpp\"\n\nnamespace\
@@ -153,7 +153,7 @@ data:
   isVerificationFile: false
   path: src/common_area_cp.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_H.test.cpp

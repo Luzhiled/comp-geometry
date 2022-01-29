@@ -46,19 +46,20 @@ data:
     \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n             \
     \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool equals(const\
     \ point &a, const point &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(),\
-    \ b.imag());\n  }\n}\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n\
-    #line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n\
-    \    point a, b;\n\n    line() = default;\n    line(point a, point b) : a(a),\
-    \ b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/product.hpp\"\
-    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
-    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
-    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
-    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 9 \"src/projection.hpp\"\
-    \n\n// projection\nnamespace geometry {\n  point projection(const line &l, const\
-    \ point &p) {\n    real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n\
-    \    return l.a + (l.a - l.b) * t;\n  }\n}\n#line 6 \"src/reflection.hpp\"\n\n\
-    namespace geometry {\n  point reflection(const line &l, const point &p) {\n  \
-    \  return p + (projection(l, p) - p) * 2;\n  }\n}\n"
+    \ b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n\
+    #line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\
+    \n\n// line \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line()\
+    \ = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines\
+    \ = vector< line >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\
+    \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
+    \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
+    \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
+    \ + a.imag() * b.imag();\n  }\n}\n#line 9 \"src/projection.hpp\"\n\n// projection\n\
+    namespace geometry {\n  point projection(const line &l, const point &p) {\n  \
+    \  real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n    return l.a\
+    \ + (l.a - l.b) * t;\n  }\n}\n#line 6 \"src/reflection.hpp\"\n\nnamespace geometry\
+    \ {\n  point reflection(const line &l, const point &p) {\n    return p + (projection(l,\
+    \ p) - p) * 2;\n  }\n}\n"
   code: "#pragma once\n\n#include \"./projection.hpp\"\n#include \"./line.hpp\"\n\
     #include \"./point.hpp\"\n\nnamespace geometry {\n  point reflection(const line\
     \ &l, const point &p) {\n    return p + (projection(l, p) - p) * 2;\n  }\n}\n"
@@ -71,7 +72,7 @@ data:
   isVerificationFile: false
   path: src/reflection.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/1_B.test.cpp

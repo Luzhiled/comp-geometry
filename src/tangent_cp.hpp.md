@@ -46,24 +46,25 @@ data:
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
     \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
-    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/circle.hpp\"\n\n// circle\n\
-    namespace geometry {\n  struct circle {\n    point p;\n    real_number r;\n  \
-    \  circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n \
-    \ using circles = vector< circle >;\n}\n#line 2 \"src/line.hpp\"\n\n#line 4 \"\
-    src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n\
-    \  struct line {\n    point a, b;\n\n    line() = default;\n    line(point a,\
-    \ point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line\
-    \ 2 \"src/cross_point_cc.hpp\"\n\n#line 4 \"src/cross_point_cc.hpp\"\n\n#line\
-    \ 8 \"src/cross_point_cc.hpp\"\n\nnamespace geometry {\n  points cross_point_cc(const\
-    \ circle &c1, const circle &c2) {\n    real_number d = abs(c1.p - c2.p), r = c1.r\
-    \ + c2.r;\n    if (sign(d - r) > 0 or sign(d + c1.r - c2.r) < 0) return {};\n\
-    \    \n    real_number a = acos((norm(c1.r) - norm(c2.r) + norm(d)) / (2 * c1.r\
-    \ * d));\n    real_number t = arg(c2.p - c1.p);\n    point p = c1.p + polar(c1.r,\
-    \ t + a);\n    point q = c1.p + polar(c1.r, t - a);\n    if (equals(p.real(),\
-    \ q.real()) and equals(p.imag(), q.imag())) return {p};\n    return {p, q};\n\
-    \  }\n}\n\n\n#line 11 \"src/tangent_cp.hpp\"\n\nnamespace geometry {\n  points\
-    \ tangent_cp(const circle &c, const point &p) {\n    circle t(p, sqrt(norm(c.p\
-    \ - p) - norm(c.r)));\n    return cross_point_cc(c, t);\n  }\n}\n"
+    \ and equals(a.imag(), b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing\
+    \ geometry::operator<<;\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace geometry\
+    \ {\n  struct circle {\n    point p;\n    real_number r;\n    circle() {}\n  \
+    \  circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles = vector<\
+    \ circle >;\n}\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\n#line\
+    \ 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point\
+    \ a, b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n\
+    \  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/cross_point_cc.hpp\"\
+    \n\n#line 4 \"src/cross_point_cc.hpp\"\n\n#line 8 \"src/cross_point_cc.hpp\"\n\
+    \nnamespace geometry {\n  points cross_point_cc(const circle &c1, const circle\
+    \ &c2) {\n    real_number d = abs(c1.p - c2.p), r = c1.r + c2.r;\n    if (sign(d\
+    \ - r) > 0 or sign(d + c1.r - c2.r) < 0) return {};\n    \n    real_number a =\
+    \ acos((norm(c1.r) - norm(c2.r) + norm(d)) / (2 * c1.r * d));\n    real_number\
+    \ t = arg(c2.p - c1.p);\n    point p = c1.p + polar(c1.r, t + a);\n    point q\
+    \ = c1.p + polar(c1.r, t - a);\n    if (equals(p.real(), q.real()) and equals(p.imag(),\
+    \ q.imag())) return {p};\n    return {p, q};\n  }\n}\n\n\n#line 11 \"src/tangent_cp.hpp\"\
+    \n\nnamespace geometry {\n  points tangent_cp(const circle &c, const point &p)\
+    \ {\n    circle t(p, sqrt(norm(c.p - p) - norm(c.r)));\n    return cross_point_cc(c,\
+    \ t);\n  }\n}\n"
   code: "#pragma once\n\n#include <complex>\n#include <cmath>\n\n#include \"./base.hpp\"\
     \n#include \"./circle.hpp\"\n#include \"./line.hpp\"\n#include \"./point.hpp\"\
     \n#include \"./cross_point_cc.hpp\"\n\nnamespace geometry {\n  points tangent_cp(const\
@@ -78,7 +79,7 @@ data:
   isVerificationFile: false
   path: src/tangent_cp.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_F.test.cpp

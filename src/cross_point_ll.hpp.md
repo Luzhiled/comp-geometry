@@ -46,13 +46,14 @@ data:
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
     \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
-    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/line.hpp\"\n\n// line\
-    \ \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n\
-    \    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line\
-    \ >;\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\n\
-    namespace geometry {\n  real_number cross(const point &a, const point &b) {\n\
-    \    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const\
-    \ point &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
+    \ and equals(a.imag(), b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing\
+    \ geometry::operator<<;\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry\
+    \ {\n  struct line {\n    point a, b;\n\n    line() = default;\n    line(point\
+    \ a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line\
+    \ 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace\
+    \ geometry {\n  real_number cross(const point &a, const point &b) {\n    return\
+    \ a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point\
+    \ &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
     \  }\n}\n#line 6 \"src/cross_point_ll.hpp\"\n\n// cross point\nnamespace geometry\
     \ {\n  point cross_point_ll(const line &l1, const line &l2) {\n    real_number\
     \ a = cross(l1.b - l1.a, l2.b - l2.a);\n    real_number b = cross(l1.b - l1.a,\
@@ -72,11 +73,11 @@ data:
   isVerificationFile: false
   path: src/cross_point_ll.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2003.test.cpp
   - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/icpc/2003.test.cpp
 documentation_of: src/cross_point_ll.hpp
 layout: document
 redirect_from:

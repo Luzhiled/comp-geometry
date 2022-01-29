@@ -231,7 +231,8 @@ data:
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
     \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
-    \ and equals(a.imag(), b.imag());\n  }\n}\n"
+    \ and equals(a.imag(), b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing\
+    \ geometry::operator<<;\n"
   code: "#pragma once\n\n#include <complex>\n#include <vector>\n#include <cmath>\n\
     #include <istream>\n#include <ostream>\n\n#include \"./base.hpp\"\n\n// point\n\
     namespace geometry {\n  using point = complex< real_number >;\n  using points\
@@ -243,82 +244,83 @@ data:
     \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
     \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
     \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
-    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n"
+    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n\nusing\
+    \ geometry::operator>>;\nusing geometry::operator<<;\n"
   dependsOn:
   - src/base.hpp
   isVerificationFile: false
   path: src/point.hpp
   requiredBy:
-  - src/is_orthogonal.hpp
-  - src/cross_point_ll.hpp
-  - src/product.hpp
-  - src/line.hpp
-  - src/reflection.hpp
-  - src/ccw.hpp
-  - src/tangent_cp.hpp
-  - src/cross_point_cl.hpp
-  - src/convex_diameter.hpp
-  - src/contains.hpp
-  - src/closest_pair.hpp
-  - src/distance_ss.hpp
-  - src/segment.hpp
-  - src/is_convex.hpp
-  - src/convex_cut.hpp
-  - src/circumscribed_circle.hpp
-  - src/circle.hpp
-  - src/tangent_cc.hpp
-  - src/polygon.hpp
-  - src/common_area_cp.hpp
   - src/is_intersect.hpp
-  - src/distance_lp.hpp
-  - src/minimum_covering_circle.hpp
-  - src/is_parallel.hpp
+  - src/closest_pair.hpp
+  - src/convex_diameter.hpp
+  - src/tangent_cp.hpp
+  - src/polygon.hpp
+  - src/compare.hpp
+  - src/product.hpp
+  - src/is_orthogonal.hpp
+  - src/reflection.hpp
+  - src/circle.hpp
+  - src/segment.hpp
+  - src/line.hpp
+  - src/convex_cut.hpp
   - src/angle.hpp
-  - src/inscribed_circle.hpp
+  - src/is_parallel.hpp
+  - src/cross_point_ll.hpp
+  - src/common_area_cp.hpp
+  - src/cross_point_cl.hpp
+  - src/distance_ss.hpp
+  - src/distance_sp.hpp
+  - src/circumscribed_circle.hpp
+  - src/common_area_cc.hpp
+  - src/contains.hpp
+  - src/distance_lp.hpp
+  - src/intersect_cc.hpp
+  - src/is_convex.hpp
+  - src/area.hpp
+  - src/tangent_cc.hpp
   - src/cross_point_cc.hpp
   - src/projection.hpp
-  - src/common_area_cc.hpp
-  - src/convex_hull.hpp
-  - src/area.hpp
-  - src/intersect_cc.hpp
-  - src/compare.hpp
   - src/in_circle.hpp
-  - src/distance_sp.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  - src/minimum_covering_circle.hpp
+  - src/inscribed_circle.hpp
+  - src/ccw.hpp
+  - src/convex_hull.hpp
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
-  - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/3034.test.cpp
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/1175.test.cpp
-  - test/aoj/icpc/2442.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
-  - test/aoj/cgl/1_C.test.cpp
-  - test/aoj/cgl/5_A.test.cpp
-  - test/aoj/cgl/3_A.test.cpp
-  - test/aoj/cgl/7_E.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
-  - test/aoj/cgl/7_G.test.cpp
-  - test/aoj/cgl/7_C.test.cpp
-  - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/7_I.test.cpp
-  - test/aoj/cgl/7_D.test.cpp
-  - test/aoj/cgl/1_A.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/7_A.test.cpp
-  - test/aoj/cgl/3_C.test.cpp
-  - test/aoj/cgl/7_F.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/2_A.test.cpp
-  - test/aoj/cgl/2_C.test.cpp
-  - test/aoj/cgl/3_B.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
-  - test/aoj/cgl/4_A.test.cpp
-  - test/atcoder/abc151_f.test.cpp
   - test/atcoder/abc181_f.test.cpp
+  - test/atcoder/abc151_f.test.cpp
+  - test/aoj/cgl/7_E.test.cpp
+  - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/1_B.test.cpp
+  - test/aoj/cgl/2_A.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/cgl/7_A.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/5_A.test.cpp
+  - test/aoj/cgl/1_A.test.cpp
+  - test/aoj/cgl/1_C.test.cpp
+  - test/aoj/cgl/7_I.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/7_F.test.cpp
+  - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
+  - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2442.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/3034.test.cpp
+  - test/aoj/icpc/2950.test.cpp
+  - test/aoj/icpc/1175.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/point.hpp
 layout: document
 redirect_from:

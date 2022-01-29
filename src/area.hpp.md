@@ -46,16 +46,17 @@ data:
     \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
     \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
     \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
-    \  }\n}\n#line 6 \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using\
-    \ polygon = vector< point >;\n  using polygons = vector< polygon >;\n}\n#line\
-    \ 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace\
-    \ geometry {\n  real_number cross(const point &a, const point &b) {\n    return\
-    \ a.real() * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point\
-    \ &a, const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n\
-    \  }\n}\n#line 6 \"src/area.hpp\"\n\n// area\nnamespace geometry {\n  real_number\
-    \ area(const polygon &poly) {\n    int n = poly.size();\n    real_number res =\
-    \ 0;\n    for (int i = 0; i < n; ++i) {\n      res += cross(poly[i], poly[(i +\
-    \ 1) % n]);\n    }\n    return res / 2;\n  }\n}\n"
+    \  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n#line 6 \"\
+    src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon = vector<\
+    \ point >;\n  using polygons = vector< polygon >;\n}\n#line 2 \"src/product.hpp\"\
+    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
+    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
+    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
+    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 6 \"src/area.hpp\"\
+    \n\n// area\nnamespace geometry {\n  real_number area(const polygon &poly) {\n\
+    \    int n = poly.size();\n    real_number res = 0;\n    for (int i = 0; i < n;\
+    \ ++i) {\n      res += cross(poly[i], poly[(i + 1) % n]);\n    }\n    return res\
+    \ / 2;\n  }\n}\n"
   code: "#pragma once\n\n#include \"./base.hpp\"\n#include \"./polygon.hpp\"\n#include\
     \ \"./product.hpp\"\n\n// area\nnamespace geometry {\n  real_number area(const\
     \ polygon &poly) {\n    int n = poly.size();\n    real_number res = 0;\n    for\
@@ -69,11 +70,11 @@ data:
   isVerificationFile: false
   path: src/area.hpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/3_A.test.cpp
   - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
 documentation_of: src/area.hpp
 layout: document
 redirect_from:

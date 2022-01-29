@@ -151,9 +151,10 @@ data:
     \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
     \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
     \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
-    \  }\n}\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct\
-    \ line {\n    point a, b;\n\n    line() = default;\n    line(point a, point b)\
-    \ : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n"
+    \  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n#line 6 \"\
+    src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n    point a,\
+    \ b;\n\n    line() = default;\n    line(point a, point b) : a(a), b(b) {}\n  };\n\
+    \n  using lines = vector< line >;\n}\n"
   code: "#pragma once\n\n#include <vector>\n\n#include \"./point.hpp\"\n\n// line\
     \ \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n\
     \    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line\
@@ -164,48 +165,48 @@ data:
   isVerificationFile: false
   path: src/line.hpp
   requiredBy:
-  - src/is_orthogonal.hpp
-  - src/cross_point_ll.hpp
-  - src/reflection.hpp
+  - src/is_intersect.hpp
   - src/tangent_cp.hpp
-  - src/cross_point_cl.hpp
-  - src/distance_ss.hpp
+  - src/is_orthogonal.hpp
+  - src/reflection.hpp
   - src/segment.hpp
   - src/convex_cut.hpp
-  - src/circumscribed_circle.hpp
-  - src/tangent_cc.hpp
-  - src/common_area_cp.hpp
-  - src/is_intersect.hpp
-  - src/distance_lp.hpp
-  - src/minimum_covering_circle.hpp
   - src/is_parallel.hpp
-  - src/inscribed_circle.hpp
-  - src/projection.hpp
+  - src/cross_point_ll.hpp
+  - src/common_area_cp.hpp
+  - src/cross_point_cl.hpp
+  - src/distance_ss.hpp
   - src/distance_sp.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  - src/circumscribed_circle.hpp
+  - src/distance_lp.hpp
+  - src/tangent_cc.hpp
+  - src/projection.hpp
+  - src/minimum_covering_circle.hpp
+  - src/inscribed_circle.hpp
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
-  - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/3034.test.cpp
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/2442.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
+  - test/atcoder/abc181_f.test.cpp
+  - test/atcoder/abc151_f.test.cpp
   - test/aoj/cgl/7_G.test.cpp
-  - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
   - test/aoj/cgl/1_B.test.cpp
-  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/2_A.test.cpp
+  - test/aoj/cgl/7_C.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/cgl/1_A.test.cpp
   - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/7_F.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/2_A.test.cpp
   - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
-  - test/atcoder/abc151_f.test.cpp
-  - test/atcoder/abc181_f.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2442.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/3034.test.cpp
+  - test/aoj/icpc/2950.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/line.hpp
 layout: document
 redirect_from:

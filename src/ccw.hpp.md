@@ -85,18 +85,19 @@ data:
     \ return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n             \
     \    sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool equals(const\
     \ point &a, const point &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(),\
-    \ b.imag());\n  }\n}\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry\
-    \ {\n  real_number cross(const point &a, const point &b) {\n    return a.real()\
-    \ * b.imag() - a.imag() * b.real();\n  }\n\n  real_number dot(const point &a,\
-    \ const point &b) {\n    return a.real() * b.real() + a.imag() * b.imag();\n \
-    \ }\n}\n#line 5 \"src/ccw.hpp\"\n\n// ccw\nnamespace geometry {\n  constexpr int\
-    \ COUNTER_CLOCKWISE = +1;\n  constexpr int CLOCKWISE         = -1;\n  constexpr\
-    \ int ONLINE_BACK       = +2; // c-a-b\n  constexpr int ONLINE_FRONT      = -2;\
-    \ // a-b-c\n  constexpr int ON_SEGMENT        =  0; // a-c-b\n  int ccw(const\
-    \ point &a, point b, point c) {\n    b = b - a, c = c - a;\n    if (sign(cross(b,\
-    \ c)) == +1) return COUNTER_CLOCKWISE;\n    if (sign(cross(b, c)) == -1) return\
-    \ CLOCKWISE;\n    if (sign(dot(b, c)) == -1) return ONLINE_BACK;\n    if (norm(b)\
-    \ < norm(c)) return ONLINE_FRONT;\n    return ON_SEGMENT;\n  }\n}\n"
+    \ b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n\
+    #line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
+    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
+    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
+    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 5 \"src/ccw.hpp\"\
+    \n\n// ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr\
+    \ int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
+    \  constexpr int ONLINE_FRONT      = -2; // a-b-c\n  constexpr int ON_SEGMENT\
+    \        =  0; // a-c-b\n  int ccw(const point &a, point b, point c) {\n    b\
+    \ = b - a, c = c - a;\n    if (sign(cross(b, c)) == +1) return COUNTER_CLOCKWISE;\n\
+    \    if (sign(cross(b, c)) == -1) return CLOCKWISE;\n    if (sign(dot(b, c)) ==\
+    \ -1) return ONLINE_BACK;\n    if (norm(b) < norm(c)) return ONLINE_FRONT;\n \
+    \   return ON_SEGMENT;\n  }\n}\n"
   code: "#pragma once\n\n#include \"./product.hpp\"\n#include \"./point.hpp\"\n\n\
     // ccw\nnamespace geometry {\n  constexpr int COUNTER_CLOCKWISE = +1;\n  constexpr\
     \ int CLOCKWISE         = -1;\n  constexpr int ONLINE_BACK       = +2; // c-a-b\n\
@@ -113,25 +114,25 @@ data:
   isVerificationFile: false
   path: src/ccw.hpp
   requiredBy:
-  - src/distance_ss.hpp
-  - src/is_convex.hpp
-  - src/common_area_cp.hpp
   - src/is_intersect.hpp
-  - src/inscribed_circle.hpp
+  - src/common_area_cp.hpp
+  - src/distance_ss.hpp
   - src/distance_sp.hpp
-  timestamp: '2021-10-26 04:41:24+09:00'
+  - src/is_convex.hpp
+  - src/inscribed_circle.hpp
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
-  - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
   - test/aoj/cgl/1_C.test.cpp
   - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2950.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/ccw.hpp
 layout: document
 redirect_from:

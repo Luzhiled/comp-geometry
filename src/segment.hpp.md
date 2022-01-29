@@ -82,12 +82,13 @@ data:
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
     \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
-    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 6 \"src/line.hpp\"\n\n// line\
-    \ \nnamespace geometry {\n  struct line {\n    point a, b;\n\n    line() = default;\n\
-    \    line(point a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line\
-    \ >;\n}\n#line 6 \"src/segment.hpp\"\n\n// segment\nnamespace geometry {\n  struct\
-    \ segment : line {\n    segment() = default;\n    using line::line;\n  };\n\n\
-    \  using segments = vector< segment >;\n}\n"
+    \ and equals(a.imag(), b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing\
+    \ geometry::operator<<;\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry\
+    \ {\n  struct line {\n    point a, b;\n\n    line() = default;\n    line(point\
+    \ a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line\
+    \ 6 \"src/segment.hpp\"\n\n// segment\nnamespace geometry {\n  struct segment\
+    \ : line {\n    segment() = default;\n    using line::line;\n  };\n\n  using segments\
+    \ = vector< segment >;\n}\n"
   code: "#pragma once\n\n#include <vector>\n\n#include \"./line.hpp\"\n\n// segment\n\
     namespace geometry {\n  struct segment : line {\n    segment() = default;\n  \
     \  using line::line;\n  };\n\n  using segments = vector< segment >;\n}\n"
@@ -98,24 +99,24 @@ data:
   isVerificationFile: false
   path: src/segment.hpp
   requiredBy:
-  - src/distance_ss.hpp
-  - src/common_area_cp.hpp
   - src/is_intersect.hpp
-  - src/inscribed_circle.hpp
+  - src/common_area_cp.hpp
+  - src/distance_ss.hpp
   - src/distance_sp.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  - src/inscribed_circle.hpp
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
-  - test/aoj/icpc/2862.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/2442.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
   - test/aoj/cgl/2_C.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
   - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2862.test.cpp
+  - test/aoj/icpc/2442.test.cpp
+  - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2950.test.cpp
+  - test/aoj/icpc/2402.test.cpp
 documentation_of: src/segment.hpp
 layout: document
 redirect_from:

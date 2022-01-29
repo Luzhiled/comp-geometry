@@ -50,14 +50,15 @@ data:
     \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
     \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
     \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
-    \  }\n}\n#line 2 \"src/polygon.hpp\"\n\n#line 4 \"src/polygon.hpp\"\n\n#line 6\
-    \ \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon = vector<\
-    \ point >;\n  using polygons = vector< polygon >;\n}\n#line 2 \"src/compare.hpp\"\
-    \n\n#line 5 \"src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const\
-    \ point &a, const point &b) {\n    return !equals(a.real(), b.real()) ? a.real()\
-    \ < b.real() : a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const\
-    \ point &b) {\n    return !equals(a.imag(), b.imag()) ? a.imag() < b.imag() :\
-    \ a.real() < b.real();\n  }\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\
+    \  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n#line 2 \"\
+    src/polygon.hpp\"\n\n#line 4 \"src/polygon.hpp\"\n\n#line 6 \"src/polygon.hpp\"\
+    \n\n// polygon\nnamespace geometry {\n  using polygon = vector< point >;\n  using\
+    \ polygons = vector< polygon >;\n}\n#line 2 \"src/compare.hpp\"\n\n#line 5 \"\
+    src/compare.hpp\"\n\nnamespace geometry {\n  bool compare_x(const point &a, const\
+    \ point &b) {\n    return !equals(a.real(), b.real()) ? a.real() < b.real() :\
+    \ a.imag() < b.imag();\n  }\n\n  bool compare_y(const point &a, const point &b)\
+    \ {\n    return !equals(a.imag(), b.imag()) ? a.imag() < b.imag() : a.real() <\
+    \ b.real();\n  }\n}\n#line 2 \"src/product.hpp\"\n\n#line 5 \"src/product.hpp\"\
     \n\n// product\nnamespace geometry {\n  real_number cross(const point &a, const\
     \ point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n  }\n\n\
     \  real_number dot(const point &a, const point &b) {\n    return a.real() * b.real()\
@@ -118,11 +119,11 @@ data:
   isVerificationFile: false
   path: src/convex_hull.hpp
   requiredBy: []
-  timestamp: '2021-10-26 13:24:47+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
   - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/icpc/2950.test.cpp
 documentation_of: src/convex_hull.hpp
 layout: document
 redirect_from:

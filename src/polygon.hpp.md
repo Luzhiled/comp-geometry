@@ -79,8 +79,9 @@ data:
     \ * p.real() + sin(-theta) * p.imag(),\n                 sin(theta) * p.real()\
     \ + cos(-theta) * p.imag());\n  }\n\n  bool equals(const point &a, const point\
     \ &b) {\n    return equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n\
-    \  }\n}\n#line 6 \"src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using\
-    \ polygon = vector< point >;\n  using polygons = vector< polygon >;\n}\n"
+    \  }\n}\n\nusing geometry::operator>>;\nusing geometry::operator<<;\n#line 6 \"\
+    src/polygon.hpp\"\n\n// polygon\nnamespace geometry {\n  using polygon = vector<\
+    \ point >;\n  using polygons = vector< polygon >;\n}\n"
   code: "#pragma once\n\n#include <vector>\n\n#include \"./point.hpp\"\n\n// polygon\n\
     namespace geometry {\n  using polygon = vector< point >;\n  using polygons = vector<\
     \ polygon >;\n}\n"
@@ -91,23 +92,23 @@ data:
   path: src/polygon.hpp
   requiredBy:
   - src/convex_diameter.hpp
-  - src/contains.hpp
-  - src/is_convex.hpp
   - src/convex_cut.hpp
   - src/common_area_cp.hpp
-  - src/convex_hull.hpp
+  - src/contains.hpp
+  - src/is_convex.hpp
   - src/area.hpp
-  timestamp: '2021-01-16 13:51:53+09:00'
+  - src/convex_hull.hpp
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
-  - test/aoj/cgl/3_A.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
-  - test/aoj/cgl/3_C.test.cpp
   - test/aoj/cgl/3_B.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
   - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2950.test.cpp
 documentation_of: src/polygon.hpp
 layout: document
 redirect_from:

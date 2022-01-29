@@ -40,19 +40,19 @@ data:
     \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
     \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
     \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
-    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n#line 2\
-    \ \"src/circle.hpp\"\n\n#line 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\
-    \n\n// circle\nnamespace geometry {\n  struct circle {\n    point p;\n    real_number\
-    \ r;\n    circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\
-    \n  using circles = vector< circle >;\n}\n#line 10 \"src/common_area_cc.hpp\"\n\
-    \nnamespace geometry {\n  real_number common_area_cc(circle a, circle b) {\n \
-    \   real_number d = abs(a.p - b.p);\n    if (a.r > b.r) swap(a, b);\n\n    if\
-    \ (sign(a.r + b.r - d) <= 0) return 0;\n    if (sign(d - (b.r - a.r)) <= 0) {\n\
-    \      return norm(a.r) * PI;\n    }\n\n    real_number res = 0;\n    for (int\
-    \ i = 0; i < 2; ++i) {\n      real_number alpha = acos((norm(b.r) + norm(d) -\
-    \ norm(a.r)) / (2 * b.r * d));\n      real_number s = alpha * norm(b.r);\n   \
-    \   real_number t = norm(b.r) * sin(alpha) * cos(alpha);\n      res += s - t;\n\
-    \      swap(a, b);\n    }\n\n    return res;\n  }\n}\n\n"
+    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n\nusing\
+    \ geometry::operator>>;\nusing geometry::operator<<;\n#line 2 \"src/circle.hpp\"\
+    \n\n#line 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace\
+    \ geometry {\n  struct circle {\n    point p;\n    real_number r;\n    circle()\
+    \ {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles\
+    \ = vector< circle >;\n}\n#line 10 \"src/common_area_cc.hpp\"\n\nnamespace geometry\
+    \ {\n  real_number common_area_cc(circle a, circle b) {\n    real_number d = abs(a.p\
+    \ - b.p);\n    if (a.r > b.r) swap(a, b);\n\n    if (sign(a.r + b.r - d) <= 0)\
+    \ return 0;\n    if (sign(d - (b.r - a.r)) <= 0) {\n      return norm(a.r) * PI;\n\
+    \    }\n\n    real_number res = 0;\n    for (int i = 0; i < 2; ++i) {\n      real_number\
+    \ alpha = acos((norm(b.r) + norm(d) - norm(a.r)) / (2 * b.r * d));\n      real_number\
+    \ s = alpha * norm(b.r);\n      real_number t = norm(b.r) * sin(alpha) * cos(alpha);\n\
+    \      res += s - t;\n      swap(a, b);\n    }\n\n    return res;\n  }\n}\n\n"
   code: "#pragma once\n\n#include <complex>\n#include <algorithm>\n#include <cmath>\n\
     \n#include \"./base.hpp\"\n#include \"./point.hpp\"\n#include \"./circle.hpp\"\
     \n\nnamespace geometry {\n  real_number common_area_cc(circle a, circle b) {\n\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: false
   path: src/common_area_cc.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_I.test.cpp

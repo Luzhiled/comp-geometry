@@ -43,25 +43,26 @@ data:
     \ real_number &theta, const point &p) {\n    return point(cos(theta) * p.real()\
     \ + sin(-theta) * p.imag(),\n                 sin(theta) * p.real() + cos(-theta)\
     \ * p.imag());\n  }\n\n  bool equals(const point &a, const point &b) {\n    return\
-    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n#line 2\
-    \ \"src/circle.hpp\"\n\n#line 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\
-    \n\n// circle\nnamespace geometry {\n  struct circle {\n    point p;\n    real_number\
-    \ r;\n    circle() {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\
-    \n  using circles = vector< circle >;\n}\n#line 2 \"src/line.hpp\"\n\n#line 4\
-    \ \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry\
-    \ {\n  struct line {\n    point a, b;\n\n    line() = default;\n    line(point\
-    \ a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line\
-    \ 11 \"src/tangent_cc.hpp\"\n\nnamespace geometry {\n  lines tangent_cc(circle\
-    \ c1, circle c2) {\n    lines ls;\n    if (c1.r > c2.r) swap(c1, c2);\n\n    real_number\
-    \ g = norm(c1.p - c2.p);\n    if (sign(g) == 0) return ls;\n\n    point u = (c1.p\
-    \ - c2.p) / sqrt(g);\n    point v(-u.imag(), u.real());\n\n    for (int s = 1;\
-    \ s >= -1; s -= 2) {\n      real_number h = (c1.r * s + c2.r) / sqrt(g);\n   \
-    \   if (sign(1 - norm(h)) == 0) {\n        ls.emplace_back(c2.p + u * c2.r, c2.p\
-    \ + (u + v) * c2.r);\n      } else if (sign(1 - norm(h)) > 0) {\n        point\
-    \ uu = u * h;\n        point vv = v * sqrt(1 - norm(h));\n        ls.emplace_back(c2.p\
-    \ + (uu + vv) * c2.r, c1.p - (uu + vv) * c1.r * s);\n        ls.emplace_back(c2.p\
-    \ + (uu - vv) * c2.r, c1.p - (uu - vv) * c1.r * s);\n      }\n    }\n\n    return\
-    \ ls;\n  }\n}\n"
+    \ equals(a.real(), b.real()) and equals(a.imag(), b.imag());\n  }\n}\n\nusing\
+    \ geometry::operator>>;\nusing geometry::operator<<;\n#line 2 \"src/circle.hpp\"\
+    \n\n#line 4 \"src/circle.hpp\"\n\n#line 6 \"src/circle.hpp\"\n\n// circle\nnamespace\
+    \ geometry {\n  struct circle {\n    point p;\n    real_number r;\n    circle()\
+    \ {}\n    circle(point p, real_number r) : p(p), r(r) {}\n  };\n\n  using circles\
+    \ = vector< circle >;\n}\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\
+    \n\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line\
+    \ {\n    point a, b;\n\n    line() = default;\n    line(point a, point b) : a(a),\
+    \ b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line 11 \"src/tangent_cc.hpp\"\
+    \n\nnamespace geometry {\n  lines tangent_cc(circle c1, circle c2) {\n    lines\
+    \ ls;\n    if (c1.r > c2.r) swap(c1, c2);\n\n    real_number g = norm(c1.p - c2.p);\n\
+    \    if (sign(g) == 0) return ls;\n\n    point u = (c1.p - c2.p) / sqrt(g);\n\
+    \    point v(-u.imag(), u.real());\n\n    for (int s = 1; s >= -1; s -= 2) {\n\
+    \      real_number h = (c1.r * s + c2.r) / sqrt(g);\n      if (sign(1 - norm(h))\
+    \ == 0) {\n        ls.emplace_back(c2.p + u * c2.r, c2.p + (u + v) * c2.r);\n\
+    \      } else if (sign(1 - norm(h)) > 0) {\n        point uu = u * h;\n      \
+    \  point vv = v * sqrt(1 - norm(h));\n        ls.emplace_back(c2.p + (uu + vv)\
+    \ * c2.r, c1.p - (uu + vv) * c1.r * s);\n        ls.emplace_back(c2.p + (uu -\
+    \ vv) * c2.r, c1.p - (uu - vv) * c1.r * s);\n      }\n    }\n\n    return ls;\n\
+    \  }\n}\n"
   code: "#pragma once\n\n#include <algorithm>\n#include <cmath>\n#include <complex>\n\
     \n#include \"./base.hpp\"\n#include \"./point.hpp\"\n#include \"./circle.hpp\"\
     \n#include \"./line.hpp\"\n\nnamespace geometry {\n  lines tangent_cc(circle c1,\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: false
   path: src/tangent_cc.hpp
   requiredBy: []
-  timestamp: '2021-01-16 13:51:53+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/cgl/7_G.test.cpp

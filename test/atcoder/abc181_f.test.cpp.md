@@ -62,32 +62,33 @@ data:
     \ &p) {\n    return point(cos(theta) * p.real() + sin(-theta) * p.imag(),\n  \
     \               sin(theta) * p.real() + cos(-theta) * p.imag());\n  }\n\n  bool\
     \ equals(const point &a, const point &b) {\n    return equals(a.real(), b.real())\
-    \ and equals(a.imag(), b.imag());\n  }\n}\n#line 2 \"src/line.hpp\"\n\n#line 4\
-    \ \"src/line.hpp\"\n\n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry\
-    \ {\n  struct line {\n    point a, b;\n\n    line() = default;\n    line(point\
-    \ a, point b) : a(a), b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line\
-    \ 2 \"src/projection.hpp\"\n\n#line 4 \"src/projection.hpp\"\n\n#line 2 \"src/product.hpp\"\
-    \n\n#line 5 \"src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number\
-    \ cross(const point &a, const point &b) {\n    return a.real() * b.imag() - a.imag()\
-    \ * b.real();\n  }\n\n  real_number dot(const point &a, const point &b) {\n  \
-    \  return a.real() * b.real() + a.imag() * b.imag();\n  }\n}\n#line 9 \"src/projection.hpp\"\
-    \n\n// projection\nnamespace geometry {\n  point projection(const line &l, const\
-    \ point &p) {\n    real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n\
-    \    return l.a + (l.a - l.b) * t;\n  }\n}\n#line 5 \"src/distance_lp.hpp\"\n\n\
-    namespace geometry {\n  real_number distance_lp(const line &l, const point &p)\
-    \ {\n    point pr = projection(l, p);\n    return abs(pr - p);\n  }\n}\n#line\
-    \ 50 \"test/atcoder/abc181_f.test.cpp\"\nusing namespace geometry;\n\nint main()\
-    \ {\n  line t(point(0,  100), point(1,  100));\n  line b(point(0, -100), point(1,\
-    \ -100));\n\n  int n;\n  cin >> n;\n\n  points pts(n);\n  for (auto &p : pts)\
-    \ cin >> p;\n\n  real_number ng = 200, ok = 0;\n  for (int lb = 0; lb < 100; lb++)\
-    \ {\n    real_number mid = (ok + ng) / 2;\n\n    union_find uf(n + 2);\n    int\
-    \ T = n, B = n + 1;\n    for (int i = 0; i < n; i++) {\n      point p = pts[i];\n\
-    \      if (sign(distance_lp(t, p) - mid) < 0) uf.unite(T, i);\n      if (sign(distance_lp(b,\
-    \ p) - mid) < 0) uf.unite(B, i);\n    }\n\n    for (int i = 0; i < n; i++) {\n\
-    \      for (int j = 0; j < i; j++) {\n        point p = pts[i], q = pts[j];\n\
-    \        if (sign(abs(p - q) - mid) < 0) uf.unite(i, j);\n      }\n    }\n\n \
-    \   if (uf.is_same(T, B)) {\n      ng = mid;\n    } else {\n      ok = mid;\n\
-    \    }\n  }\n\n  cout << ok / 2 << endl;\n}\n"
+    \ and equals(a.imag(), b.imag());\n  }\n}\n\nusing geometry::operator>>;\nusing\
+    \ geometry::operator<<;\n#line 2 \"src/line.hpp\"\n\n#line 4 \"src/line.hpp\"\n\
+    \n#line 6 \"src/line.hpp\"\n\n// line \nnamespace geometry {\n  struct line {\n\
+    \    point a, b;\n\n    line() = default;\n    line(point a, point b) : a(a),\
+    \ b(b) {}\n  };\n\n  using lines = vector< line >;\n}\n#line 2 \"src/projection.hpp\"\
+    \n\n#line 4 \"src/projection.hpp\"\n\n#line 2 \"src/product.hpp\"\n\n#line 5 \"\
+    src/product.hpp\"\n\n// product\nnamespace geometry {\n  real_number cross(const\
+    \ point &a, const point &b) {\n    return a.real() * b.imag() - a.imag() * b.real();\n\
+    \  }\n\n  real_number dot(const point &a, const point &b) {\n    return a.real()\
+    \ * b.real() + a.imag() * b.imag();\n  }\n}\n#line 9 \"src/projection.hpp\"\n\n\
+    // projection\nnamespace geometry {\n  point projection(const line &l, const point\
+    \ &p) {\n    real_number t = dot(p - l.a, l.a - l.b) / norm(l.a - l.b);\n    return\
+    \ l.a + (l.a - l.b) * t;\n  }\n}\n#line 5 \"src/distance_lp.hpp\"\n\nnamespace\
+    \ geometry {\n  real_number distance_lp(const line &l, const point &p) {\n   \
+    \ point pr = projection(l, p);\n    return abs(pr - p);\n  }\n}\n#line 50 \"test/atcoder/abc181_f.test.cpp\"\
+    \nusing namespace geometry;\n\nint main() {\n  line t(point(0,  100), point(1,\
+    \  100));\n  line b(point(0, -100), point(1, -100));\n\n  int n;\n  cin >> n;\n\
+    \n  points pts(n);\n  for (auto &p : pts) cin >> p;\n\n  real_number ng = 200,\
+    \ ok = 0;\n  for (int lb = 0; lb < 100; lb++) {\n    real_number mid = (ok + ng)\
+    \ / 2;\n\n    union_find uf(n + 2);\n    int T = n, B = n + 1;\n    for (int i\
+    \ = 0; i < n; i++) {\n      point p = pts[i];\n      if (sign(distance_lp(t, p)\
+    \ - mid) < 0) uf.unite(T, i);\n      if (sign(distance_lp(b, p) - mid) < 0) uf.unite(B,\
+    \ i);\n    }\n\n    for (int i = 0; i < n; i++) {\n      for (int j = 0; j < i;\
+    \ j++) {\n        point p = pts[i], q = pts[j];\n        if (sign(abs(p - q) -\
+    \ mid) < 0) uf.unite(i, j);\n      }\n    }\n\n    if (uf.is_same(T, B)) {\n \
+    \     ng = mid;\n    } else {\n      ok = mid;\n    }\n  }\n\n  cout << ok / 2\
+    \ << endl;\n}\n"
   code: "// verification-helper: PROBLEM https://atcoder.jp/contests/abc181/tasks/abc181_f\n\
     // verification-helper: ERROR 1e-4\n\n#include <iostream>\n#include <vector>\n\
     using namespace std;\n\n// union find {{{\nclass union_find {\n\n    using data_type\
@@ -124,7 +125,7 @@ data:
   isVerificationFile: true
   path: test/atcoder/abc181_f.test.cpp
   requiredBy: []
-  timestamp: '2021-10-26 04:41:24+09:00'
+  timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/atcoder/abc181_f.test.cpp
