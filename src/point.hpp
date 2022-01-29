@@ -37,3 +37,6 @@ namespace geometry {
     return equals(a.real(), b.real()) and equals(a.imag(), b.imag());
   }
 }
+
+using geometry::operator>>;
+using geometry::operator<<;
