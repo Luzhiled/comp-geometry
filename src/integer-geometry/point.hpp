@@ -21,7 +21,7 @@ namespace intgeometry2d {
     lattice_point operator+(lattice_point p) { return lattice_point(x_ + p.x_, y_ + p.y_); }
     lattice_point operator-(lattice_point p) { return lattice_point(x_ - p.x_, y_ - p.y_); }
 
-    Z norm() { return x_ * x_ + y_ * y_; }
+    Z norm() const { return x_ * x_ + y_ * y_; }
   };
 
 } // intgeometry2d
