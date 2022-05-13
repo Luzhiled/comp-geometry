@@ -140,6 +140,9 @@ data:
       path: src/integer-geometry/point.hpp
       title: src/integer-geometry/point.hpp
     - icon: ':warning:'
+      path: src/integer-geometry/points.hpp
+      title: src/integer-geometry/points.hpp
+    - icon: ':warning:'
       path: src/integer-geometry/polygon.hpp
       title: src/integer-geometry/polygon.hpp
     - icon: ':warning:'

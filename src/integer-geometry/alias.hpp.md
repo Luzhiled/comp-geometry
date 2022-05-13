@@ -18,6 +18,9 @@ data:
     path: src/integer-geometry/point.hpp
     title: src/integer-geometry/point.hpp
   - icon: ':warning:'
+    path: src/integer-geometry/points.hpp
+    title: src/integer-geometry/points.hpp
+  - icon: ':warning:'
     path: src/integer-geometry/polygon.hpp
     title: src/integer-geometry/polygon.hpp
   - icon: ':warning:'
@@ -68,6 +71,7 @@ data:
   - src/integer-geometry/argcmp.hpp
   - src/integer-geometry/det.hpp
   - src/integer-geometry/nidx.hpp
+  - src/integer-geometry/points.hpp
   - src/integer-geometry/dot.hpp
   timestamp: '2022-05-14 03:05:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
