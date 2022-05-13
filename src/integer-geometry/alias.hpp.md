@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/integer-geometry/argcmp.hpp
+    title: src/integer-geometry/argcmp.hpp
+  - icon: ':warning:'
     path: src/integer-geometry/det.hpp
     title: src/integer-geometry/det.hpp
   - icon: ':warning:'
@@ -11,6 +14,12 @@ data:
   - icon: ':warning:'
     path: src/integer-geometry/point.hpp
     title: src/integer-geometry/point.hpp
+  - icon: ':warning:'
+    path: src/integer-geometry/unit-test/unit-test-argcmp.cpp
+    title: src/integer-geometry/unit-test/unit-test-argcmp.cpp
+  - icon: ':warning:'
+    path: src/integer-geometry/unit-test/unit-test-argcmp.cpp
+    title: src/integer-geometry/unit-test/unit-test-argcmp.cpp
   - icon: ':warning:'
     path: src/integer-geometry/unit-test/unit-test-det.cpp
     title: src/integer-geometry/unit-test/unit-test-det.cpp
@@ -39,9 +48,12 @@ data:
   path: src/integer-geometry/alias.hpp
   requiredBy:
   - src/integer-geometry/unit-test/unit-test-det.cpp
+  - src/integer-geometry/unit-test/unit-test-argcmp.cpp
+  - src/integer-geometry/unit-test/unit-test-argcmp.cpp
   - src/integer-geometry/unit-test/unit-test-point.cpp
   - src/integer-geometry/unit-test/unit-test-dot.cpp
   - src/integer-geometry/point.hpp
+  - src/integer-geometry/argcmp.hpp
   - src/integer-geometry/det.hpp
   - src/integer-geometry/dot.hpp
   timestamp: '2022-05-14 01:00:16+09:00'

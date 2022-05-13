@@ -125,6 +125,9 @@ data:
       path: src/integer-geometry/alias.hpp
       title: src/integer-geometry/alias.hpp
     - icon: ':warning:'
+      path: src/integer-geometry/argcmp.hpp
+      title: src/integer-geometry/argcmp.hpp
+    - icon: ':warning:'
       path: src/integer-geometry/det.hpp
       title: src/integer-geometry/det.hpp
     - icon: ':warning:'
@@ -135,6 +138,9 @@ data:
       title: src/integer-geometry/point.hpp
   - name: src/integer-geometry/unit-test
     pages:
+    - icon: ':warning:'
+      path: src/integer-geometry/unit-test/unit-test-argcmp.cpp
+      title: src/integer-geometry/unit-test/unit-test-argcmp.cpp
     - icon: ':warning:'
       path: src/integer-geometry/unit-test/unit-test-det.cpp
       title: src/integer-geometry/unit-test/unit-test-det.cpp
