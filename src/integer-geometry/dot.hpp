@@ -1,3 +1,5 @@
+#pragma once
+
 #include "point.hpp"
 
 namespace intgeometry2d {
