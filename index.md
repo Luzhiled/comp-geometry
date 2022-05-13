@@ -119,6 +119,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: src/tangent_cp.hpp
       title: src/tangent_cp.hpp
+  - name: src/integer-geometry
+    pages:
+    - icon: ':warning:'
+      path: src/integer-geometry/alias.hpp
+      title: src/integer-geometry/alias.hpp
+    - icon: ':warning:'
+      path: src/integer-geometry/point.hpp
+      title: src/integer-geometry/point.hpp
+  - name: src/integer-geometry/unit-test
+    pages:
+    - icon: ':warning:'
+      path: src/integer-geometry/unit-test/unit-test-point.cpp
+      title: src/integer-geometry/unit-test/unit-test-point.cpp
   - name: src/util
     pages:
     - icon: ':heavy_check_mark:'

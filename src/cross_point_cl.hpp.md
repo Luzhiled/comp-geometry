@@ -101,8 +101,8 @@ data:
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_H.test.cpp
   - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
 documentation_of: src/cross_point_cl.hpp
 layout: document
 redirect_from:

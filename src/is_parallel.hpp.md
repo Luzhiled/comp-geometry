@@ -71,8 +71,8 @@ data:
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/2_A.test.cpp
   - test/aoj/icpc/2442.test.cpp
+  - test/aoj/cgl/2_A.test.cpp
 documentation_of: src/is_parallel.hpp
 layout: document
 redirect_from:
