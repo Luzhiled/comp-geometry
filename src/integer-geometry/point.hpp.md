@@ -15,6 +15,12 @@ data:
     path: src/integer-geometry/dot.hpp
     title: src/integer-geometry/dot.hpp
   - icon: ':warning:'
+    path: src/integer-geometry/polygon.hpp
+    title: src/integer-geometry/polygon.hpp
+  - icon: ':warning:'
+    path: src/integer-geometry/twice_area.hpp
+    title: src/integer-geometry/twice_area.hpp
+  - icon: ':warning:'
     path: src/integer-geometry/unit-test/unit-test-argcmp.cpp
     title: src/integer-geometry/unit-test/unit-test-argcmp.cpp
   - icon: ':warning:'
@@ -26,14 +32,17 @@ data:
   - icon: ':warning:'
     path: src/integer-geometry/unit-test/unit-test-point.cpp
     title: src/integer-geometry/unit-test/unit-test-point.cpp
+  - icon: ':warning:'
+    path: src/integer-geometry/unit-test/unit-test-twice_area.cpp
+    title: src/integer-geometry/unit-test/unit-test-twice_area.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/integer-geometry/point.hpp\"\n\n#line 1 \"src/integer-geometry/alias.hpp\"\
-    \n#include <cstddef>\n#include <cstdint>\n\nnamespace intgeometry2d {\n  using\
+  bundledCode: "#line 2 \"src/integer-geometry/point.hpp\"\n\n#line 2 \"src/integer-geometry/alias.hpp\"\
+    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace intgeometry2d {\n  using\
     \ isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int_fast32_t;\n\
     \  using i64 = std::int_fast64_t;\n  using u32 = std::uint_fast32_t;\n  using\
     \ u64 = std::uint_fast64_t;\n} // intgeometry2d\n#line 4 \"src/integer-geometry/point.hpp\"\
@@ -61,14 +70,17 @@ data:
   isVerificationFile: false
   path: src/integer-geometry/point.hpp
   requiredBy:
+  - src/integer-geometry/twice_area.hpp
   - src/integer-geometry/unit-test/unit-test-det.cpp
   - src/integer-geometry/unit-test/unit-test-argcmp.cpp
+  - src/integer-geometry/unit-test/unit-test-twice_area.cpp
   - src/integer-geometry/unit-test/unit-test-point.cpp
   - src/integer-geometry/unit-test/unit-test-dot.cpp
+  - src/integer-geometry/polygon.hpp
   - src/integer-geometry/argcmp.hpp
   - src/integer-geometry/det.hpp
   - src/integer-geometry/dot.hpp
-  timestamp: '2022-05-14 02:43:12+09:00'
+  timestamp: '2022-05-14 03:05:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/integer-geometry/point.hpp

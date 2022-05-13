@@ -15,8 +15,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 1 \"src/integer-geometry/unit-test/unit-test-point.cpp\"\n#include\
-    \ <cassert>\n\n#line 2 \"src/integer-geometry/point.hpp\"\n\n#line 1 \"src/integer-geometry/alias.hpp\"\
-    \n#include <cstddef>\n#include <cstdint>\n\nnamespace intgeometry2d {\n  using\
+    \ <cassert>\n\n#line 2 \"src/integer-geometry/point.hpp\"\n\n#line 2 \"src/integer-geometry/alias.hpp\"\
+    \n\n#include <cstddef>\n#include <cstdint>\n\nnamespace intgeometry2d {\n  using\
     \ isize = std::ptrdiff_t;\n  using usize = std::size_t;\n\n  using i32 = std::int_fast32_t;\n\
     \  using i64 = std::int_fast64_t;\n  using u32 = std::uint_fast32_t;\n  using\
     \ u64 = std::uint_fast64_t;\n} // intgeometry2d\n#line 4 \"src/integer-geometry/point.hpp\"\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: false
   path: src/integer-geometry/unit-test/unit-test-point.cpp
   requiredBy: []
-  timestamp: '2022-05-14 02:43:12+09:00'
+  timestamp: '2022-05-14 03:05:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: src/integer-geometry/unit-test/unit-test-point.cpp

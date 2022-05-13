@@ -134,8 +134,17 @@ data:
       path: src/integer-geometry/dot.hpp
       title: src/integer-geometry/dot.hpp
     - icon: ':warning:'
+      path: src/integer-geometry/nidx.hpp
+      title: src/integer-geometry/nidx.hpp
+    - icon: ':warning:'
       path: src/integer-geometry/point.hpp
       title: src/integer-geometry/point.hpp
+    - icon: ':warning:'
+      path: src/integer-geometry/polygon.hpp
+      title: src/integer-geometry/polygon.hpp
+    - icon: ':warning:'
+      path: src/integer-geometry/twice_area.hpp
+      title: src/integer-geometry/twice_area.hpp
   - name: src/integer-geometry/unit-test
     pages:
     - icon: ':warning:'
@@ -150,6 +159,9 @@ data:
     - icon: ':warning:'
       path: src/integer-geometry/unit-test/unit-test-point.cpp
       title: src/integer-geometry/unit-test/unit-test-point.cpp
+    - icon: ':warning:'
+      path: src/integer-geometry/unit-test/unit-test-twice_area.cpp
+      title: src/integer-geometry/unit-test/unit-test-twice_area.cpp
   - name: src/util
     pages:
     - icon: ':heavy_check_mark:'
