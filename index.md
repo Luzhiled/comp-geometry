@@ -125,10 +125,22 @@ data:
       path: src/integer-geometry/alias.hpp
       title: src/integer-geometry/alias.hpp
     - icon: ':warning:'
+      path: src/integer-geometry/det.hpp
+      title: src/integer-geometry/det.hpp
+    - icon: ':warning:'
+      path: src/integer-geometry/dot.hpp
+      title: src/integer-geometry/dot.hpp
+    - icon: ':warning:'
       path: src/integer-geometry/point.hpp
       title: src/integer-geometry/point.hpp
   - name: src/integer-geometry/unit-test
     pages:
+    - icon: ':warning:'
+      path: src/integer-geometry/unit-test/unit-test-det.cpp
+      title: src/integer-geometry/unit-test/unit-test-det.cpp
+    - icon: ':warning:'
+      path: src/integer-geometry/unit-test/unit-test-dot.cpp
+      title: src/integer-geometry/unit-test/unit-test-dot.cpp
     - icon: ':warning:'
       path: src/integer-geometry/unit-test/unit-test-point.cpp
       title: src/integer-geometry/unit-test/unit-test-point.cpp

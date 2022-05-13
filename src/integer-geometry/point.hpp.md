@@ -6,6 +6,18 @@ data:
     title: src/integer-geometry/alias.hpp
   _extendedRequiredBy:
   - icon: ':warning:'
+    path: src/integer-geometry/det.hpp
+    title: src/integer-geometry/det.hpp
+  - icon: ':warning:'
+    path: src/integer-geometry/dot.hpp
+    title: src/integer-geometry/dot.hpp
+  - icon: ':warning:'
+    path: src/integer-geometry/unit-test/unit-test-det.cpp
+    title: src/integer-geometry/unit-test/unit-test-det.cpp
+  - icon: ':warning:'
+    path: src/integer-geometry/unit-test/unit-test-dot.cpp
+    title: src/integer-geometry/unit-test/unit-test-dot.cpp
+  - icon: ':warning:'
     path: src/integer-geometry/unit-test/unit-test-point.cpp
     title: src/integer-geometry/unit-test/unit-test-point.cpp
   _extendedVerifiedWith: []
@@ -41,7 +53,11 @@ data:
   isVerificationFile: false
   path: src/integer-geometry/point.hpp
   requiredBy:
+  - src/integer-geometry/unit-test/unit-test-det.cpp
   - src/integer-geometry/unit-test/unit-test-point.cpp
+  - src/integer-geometry/unit-test/unit-test-dot.cpp
+  - src/integer-geometry/det.hpp
+  - src/integer-geometry/dot.hpp
   timestamp: '2022-05-14 01:40:05+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
