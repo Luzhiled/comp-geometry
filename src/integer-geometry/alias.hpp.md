@@ -15,6 +15,9 @@ data:
     path: src/integer-geometry/nidx.hpp
     title: src/integer-geometry/nidx.hpp
   - icon: ':warning:'
+    path: src/integer-geometry/ntimes_centroid.hpp
+    title: src/integer-geometry/ntimes_centroid.hpp
+  - icon: ':warning:'
     path: src/integer-geometry/point.hpp
     title: src/integer-geometry/point.hpp
   - icon: ':warning:'
@@ -35,6 +38,9 @@ data:
   - icon: ':warning:'
     path: src/integer-geometry/unit-test/unit-test-dot.cpp
     title: src/integer-geometry/unit-test/unit-test-dot.cpp
+  - icon: ':warning:'
+    path: src/integer-geometry/unit-test/unit-test-ntimes_centroid.cpp
+    title: src/integer-geometry/unit-test/unit-test-ntimes_centroid.cpp
   - icon: ':warning:'
     path: src/integer-geometry/unit-test/unit-test-point.cpp
     title: src/integer-geometry/unit-test/unit-test-point.cpp
@@ -64,6 +70,7 @@ data:
   - src/integer-geometry/unit-test/unit-test-det.cpp
   - src/integer-geometry/unit-test/unit-test-argcmp.cpp
   - src/integer-geometry/unit-test/unit-test-twice_area.cpp
+  - src/integer-geometry/unit-test/unit-test-ntimes_centroid.cpp
   - src/integer-geometry/unit-test/unit-test-point.cpp
   - src/integer-geometry/unit-test/unit-test-dot.cpp
   - src/integer-geometry/point.hpp
@@ -73,6 +80,7 @@ data:
   - src/integer-geometry/nidx.hpp
   - src/integer-geometry/points.hpp
   - src/integer-geometry/dot.hpp
+  - src/integer-geometry/ntimes_centroid.hpp
   timestamp: '2022-05-14 03:05:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
