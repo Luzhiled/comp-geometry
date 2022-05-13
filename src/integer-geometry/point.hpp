@@ -1,8 +1,10 @@
+#pragma once
+
 #include "alias.hpp"
 
 namespace intgeometry2d {
 
-  template< typename Z>
+  template< typename Z >
   class lattice_point {
     Z x_, y_;
 
