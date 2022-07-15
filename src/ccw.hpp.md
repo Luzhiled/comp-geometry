@@ -115,24 +115,24 @@ data:
   path: src/ccw.hpp
   requiredBy:
   - src/is_convex.hpp
-  - src/common_area_cp.hpp
   - src/is_intersect.hpp
-  - src/distance_ss.hpp
-  - src/distance_sp.hpp
   - src/inscribed_circle.hpp
+  - src/distance_ss.hpp
+  - src/common_area_cp.hpp
+  - src/distance_sp.hpp
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/cgl/1_C.test.cpp
+  - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/7_B.test.cpp
+  - test/aoj/cgl/2_D.test.cpp
+  - test/aoj/cgl/2_B.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
+  - test/aoj/icpc/2402.test.cpp
   - test/aoj/icpc/2862.test.cpp
   - test/aoj/icpc/2950.test.cpp
   - test/aoj/icpc/2003.test.cpp
-  - test/aoj/icpc/2402.test.cpp
-  - test/aoj/cgl/7_B.test.cpp
-  - test/aoj/cgl/3_B.test.cpp
-  - test/aoj/cgl/2_D.test.cpp
-  - test/aoj/cgl/2_B.test.cpp
-  - test/aoj/cgl/1_C.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
 documentation_of: src/ccw.hpp
 layout: document
 redirect_from:

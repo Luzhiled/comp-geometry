@@ -128,6 +128,9 @@ data:
       path: src/integer-geometry/argcmp.hpp
       title: src/integer-geometry/argcmp.hpp
     - icon: ':warning:'
+      path: src/integer-geometry/circle.hpp
+      title: src/integer-geometry/circle.hpp
+    - icon: ':warning:'
       path: src/integer-geometry/det.hpp
       title: src/integer-geometry/det.hpp
     - icon: ':warning:'

@@ -122,8 +122,8 @@ data:
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/icpc/2950.test.cpp
   - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/icpc/2950.test.cpp
 documentation_of: src/convex_hull.hpp
 layout: document
 redirect_from:

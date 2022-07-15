@@ -56,8 +56,8 @@ data:
   path: src/integer-geometry/det.hpp
   requiredBy:
   - src/integer-geometry/twice_area.hpp
-  - src/integer-geometry/unit-test/unit-test-det.cpp
   - src/integer-geometry/unit-test/unit-test-argcmp.cpp
+  - src/integer-geometry/unit-test/unit-test-det.cpp
   - src/integer-geometry/unit-test/unit-test-twice_area.cpp
   - src/integer-geometry/argcmp.hpp
   timestamp: '2022-05-14 03:05:02+09:00'
