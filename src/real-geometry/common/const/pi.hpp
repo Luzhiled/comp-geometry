@@ -6,6 +6,9 @@
 
 namespace geometry {
 
-  const f80 PI = std::acosl(-1);
+  static f80 pi() {
+    const f80 PI = std::acosl(-1);
+    return PI;
+  }
 
 }

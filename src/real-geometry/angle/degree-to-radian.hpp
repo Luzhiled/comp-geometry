@@ -5,8 +5,8 @@
 namespace geometry {
 
   template< typename R >
-  R radian_to_degree(R theta) {
-    return theta * 180.0 / pi();
+  R degree_to_radian(R deg) {
+    return deg * pi() / 180.0;
   }
 
 }
