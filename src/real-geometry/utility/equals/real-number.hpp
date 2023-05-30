@@ -1,12 +1,12 @@
 #pragma once
 
-#include "src/real-geometry/numbers/sign.hpp"
+#include "src/real-geometry/utility/sign.hpp"
 
 namespace geometry {
 
   template< typename R >
   bool equals(R a, R b) {
-    return sign(r1 - r2) == 0;
+    return sign(a - b) == 0;
   }
 
 }

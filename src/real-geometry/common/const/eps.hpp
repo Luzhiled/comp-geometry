@@ -1,15 +1,15 @@
 #pragma once
 
+#include "src/real-geometry/common/float-alias.hpp"
+
 namespace geometry {
 
-  template< typename R >
-  inline static R &eps() {
-    static R EPS = 1e-10;
+  inline static f80 &eps() {
+    static f80 EPS = 1e-10;
     return EPS;
   }
 
-  template< typename R >
-  void set_eps(R EPS) {
+  void set_eps(f80 EPS) {
     eps() = EPS;
   }
 

@@ -10,17 +10,19 @@ namespace geometry {
 
   template< typename R >
   class line {
+    using P = point<R>;
+
    public:
-    point a, b;
+    P a, b;
 
     line() = default;
-    line(point a, point b) : a(a), b(b) {
+    line(P a, P b) : a(a), b(b) {
       assert(not equals(a, b));
     }
 
   };
 
   template< typename R >
-  using lines = std::vector< line >;
+  using lines = std::vector< line<R> >;
 
 }

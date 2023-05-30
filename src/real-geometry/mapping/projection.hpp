@@ -10,7 +10,7 @@ namespace geometry {
 
   template< typename R >
   point<R> projection(const line<R> &l, const point<R> &p) {
-    R t = inner_product(p - l.a, l.a - l.b) / std::norm(l.a - l.b);
+    R t = inner_product<R>(p - l.a, l.a - l.b) / std::norm(l.a - l.b);
     return l.a + (l.a - l.b) * t;
   }
 

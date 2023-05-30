@@ -12,6 +12,8 @@ namespace geometry {
    public:
     using complex::complex;
 
+    vec2d(const complex &c): complex::complex(c) {}
+
     const R x() const { return this->real(); }
     const R y() const { return this->imag(); }
 
