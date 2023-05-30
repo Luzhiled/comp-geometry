@@ -91,24 +91,24 @@ data:
   isVerificationFile: false
   path: src/polygon.hpp
   requiredBy:
-  - src/is_convex.hpp
   - src/contains.hpp
   - src/convex_cut.hpp
+  - src/is_convex.hpp
   - src/convex_hull.hpp
   - src/convex_diameter.hpp
-  - src/area.hpp
   - src/common_area_cp.hpp
+  - src/area.hpp
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/4_A.test.cpp
-  - test/aoj/cgl/3_C.test.cpp
-  - test/aoj/cgl/4_C.test.cpp
-  - test/aoj/cgl/3_B.test.cpp
-  - test/aoj/cgl/3_A.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/7_H.test.cpp
   - test/aoj/icpc/2950.test.cpp
+  - test/aoj/cgl/3_B.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/4_A.test.cpp
+  - test/aoj/cgl/4_C.test.cpp
+  - test/aoj/cgl/3_C.test.cpp
+  - test/aoj/cgl/3_A.test.cpp
+  - test/aoj/cgl/7_H.test.cpp
 documentation_of: src/polygon.hpp
 layout: document
 redirect_from:

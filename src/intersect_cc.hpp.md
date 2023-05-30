@@ -74,8 +74,8 @@ data:
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/7_A.test.cpp
   - test/aoj/icpc/1175.test.cpp
+  - test/aoj/cgl/7_A.test.cpp
 documentation_of: src/intersect_cc.hpp
 layout: document
 redirect_from:

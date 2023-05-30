@@ -46,8 +46,8 @@ data:
   isVerificationFile: false
   path: src/integer-geometry/polygon.hpp
   requiredBy:
-  - src/integer-geometry/twice_area.hpp
   - src/integer-geometry/unit-test/unit-test-twice_area.cpp
+  - src/integer-geometry/twice_area.hpp
   timestamp: '2022-05-14 03:06:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

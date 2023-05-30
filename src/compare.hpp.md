@@ -87,20 +87,20 @@ data:
   path: src/compare.hpp
   requiredBy:
   - src/convex_hull.hpp
-  - src/convex_diameter.hpp
   - src/closest_pair.hpp
+  - src/convex_diameter.hpp
   timestamp: '2022-01-29 19:05:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/cgl/4_A.test.cpp
-  - test/aoj/cgl/7_F.test.cpp
-  - test/aoj/cgl/7_E.test.cpp
-  - test/aoj/cgl/5_A.test.cpp
-  - test/aoj/cgl/7_G.test.cpp
-  - test/aoj/cgl/4_B.test.cpp
-  - test/aoj/cgl/7_D.test.cpp
-  - test/aoj/icpc/2950.test.cpp
   - test/aoj/icpc/2003.test.cpp
+  - test/aoj/icpc/2950.test.cpp
+  - test/aoj/cgl/7_F.test.cpp
+  - test/aoj/cgl/7_D.test.cpp
+  - test/aoj/cgl/7_E.test.cpp
+  - test/aoj/cgl/4_B.test.cpp
+  - test/aoj/cgl/7_G.test.cpp
+  - test/aoj/cgl/5_A.test.cpp
+  - test/aoj/cgl/4_A.test.cpp
 documentation_of: src/compare.hpp
 layout: document
 redirect_from:
