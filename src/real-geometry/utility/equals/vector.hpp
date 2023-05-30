@@ -1,5 +1,6 @@
 #pragma once
 
+#include "src/real-geometry/class/vector.hpp"
 #include "src/real-geometry/utility/equals/real-number.hpp"
 
 namespace geometry {
