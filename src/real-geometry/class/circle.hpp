@@ -9,14 +9,14 @@ namespace geometry {
 
   template< typename R >
   class circle {
-    point o;
+    point<R> o;
     R r;
 
    public:
     circle() = default;
-    circle(point o, R r) : o(o), r(r) {}
+    circle(point<R> o, R r) : o(o), r(r) {}
 
-    const point center() const {
+    const point<R> center() const {
       return o;
     }
 

@@ -1,30 +1,31 @@
 #pragma once
 
-#include <cmath>
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/class/line.hpp"
+#include "src/real-geometry/mapping/projection.hpp"
 
-#include "./base.hpp"
-#include "./point.hpp"
-#include "./circle.hpp"
-#include "./line.hpp"
-#include "./projection.hpp"
+#include <cmath>
+#include <complex>
 
 namespace geometry {
-  points cross_point_cl(const circle &c, const line &l) {
-    point pr = projection(l, c.p);
 
-    if (equals(abs(pr - c.p), c.r)) {
+  template< typename R >
+  points<R> cross_point_cl(const circle<R> &c, const line<R> &l) {
+    point<R> pr = projection(l, c.center());
+
+    R d = std::norm(c.radius()) - std::norm(pr - c.center());
+
+    if (sign(d) == -1) {
+      return {};
+    }
+    if (sign(d) == 0) {
       return {pr};
     }
 
-    if (sign(norm(c.r) - norm(pr - c.p)) == -1) {
-      return {};
-    }
-
-    points pts;
-    point e = (l.b - l.a) / abs(l.b - l.a);
-    real_number k = sqrt(norm(c.r) - norm(pr - c.p));
-    pts.emplace_back(pr + e * k);
-    pts.emplace_back(pr - e * k);
-    return pts;
+    point<R> e = (l.b - l.a) / std::abs(l.b - l.a);
+    R k = std::sqrt(d);
+    return {pr + e * k, pr - e * k};
   }
+
 }
