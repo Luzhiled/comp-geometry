@@ -1,11 +1,15 @@
 #pragma once
 
+#include "src/real-geometry/class/point.hpp"
+
 #include <vector>
 
-#include "./point.hpp"
-
-// polygon
 namespace geometry {
-  using polygon = vector< point >;
-  using polygons = vector< polygon >;
+
+  template< typename R >
+  using polygon = std::vector< point<R> >;
+
+  template< typename R >
+  using polygons = std::vector< polygon<R> >;
+
 }

@@ -1,17 +1,22 @@
 #pragma once
 
+#include "src/real-geometry/class/point.hpp"
+
 #include <vector>
 
-#include "./point.hpp"
-
-// line 
 namespace geometry {
-  struct line {
+
+  template< typename R >
+  class line {
+   public:
     point a, b;
 
     line() = default;
     line(point a, point b) : a(a), b(b) {}
+
   };
 
-  using lines = vector< line >;
+  template< typename R >
+  using lines = std::vector< line >;
+
 }

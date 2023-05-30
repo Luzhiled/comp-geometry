@@ -1,17 +1,32 @@
 #pragma once
 
-#include <vector>
+#include "src/real-geometry/class/point.hpp"
 
-#include "./point.hpp"
+#include <vector>
 
 // circle
 namespace geometry {
-  struct circle {
-    point p;
-    real_number r;
-    circle() {}
-    circle(point p, real_number r) : p(p), r(r) {}
+
+  template< typename R >
+  class circle {
+    point o;
+    R r;
+
+   public:
+    circle() = default;
+    circle(point o, R r) : o(o), r(r) {}
+
+    const point center() const {
+      return o;
+    }
+
+    const R radius() const {
+      return r;
+    }
   };
 
-  using circles = vector< circle >;
+
+  template< typename R >
+  using circles = std::vector< circle<R> >;
+
 }

@@ -1,15 +1,22 @@
 #pragma once
 
+#include "src/real-geometry/class/point.hpp"
+
 #include <vector>
 
-#include "./line.hpp"
-
-// segment
 namespace geometry {
-  struct segment : line {
+
+  template< typename R >
+  class segment {
+   public:
+    point a, b;
+
     segment() = default;
-    using line::line;
+    segment(point a, point b) : a(a), b(b) {}
+
   };
 
-  using segments = vector< segment >;
+  template< typename R >
+  using segments = std::vector< segment >;
+
 }
