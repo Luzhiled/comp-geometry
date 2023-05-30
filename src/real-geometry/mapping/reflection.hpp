@@ -8,7 +8,7 @@ namespace geometry {
 
   template< typename R >
   point<R> reflection(const line<R> &l, const point<R> &p) {
-    return p + (projection(l, p) - p) * 2;
+    return 2 * projection(l, p) - p;
   }
 
 }

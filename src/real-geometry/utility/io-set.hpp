@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iomanip>
 
 namespace geometry {
