@@ -5,6 +5,8 @@
 
 namespace geometry {
 
+  using namespace geometry::number::sign;
+
   template< typename R >
   inline int sign(R r) {
     if (r < -eps()) return MINUS;
