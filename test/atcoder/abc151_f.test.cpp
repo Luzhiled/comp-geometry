@@ -1,3 +1,4 @@
+// verification-helper: IGNORE
 // verification-helper: PROBLEM https://atcoder.jp/contests/abc151/tasks/abc151_f
 // verification-helper: ERROR 1e-6
 

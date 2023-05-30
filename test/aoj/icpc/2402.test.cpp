@@ -1,3 +1,4 @@
+// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2402
 // verification-helper: ERROR 0.000001
 

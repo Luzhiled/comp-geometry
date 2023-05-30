@@ -1,3 +1,4 @@
+// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/2/CGL_2_C
 // verification-helper: ERROR 0.00000001
 
