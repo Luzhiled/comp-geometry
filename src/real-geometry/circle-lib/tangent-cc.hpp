@@ -1,37 +1,46 @@
 #pragma once
 
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/class/line.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/utility/sign.hpp"
+
 #include <algorithm>
 #include <cmath>
 #include <complex>
 
-#include "./base.hpp"
-#include "./point.hpp"
-#include "./circle.hpp"
-#include "./line.hpp"
-
 namespace geometry {
-  lines tangent_cc(circle c1, circle c2) {
-    lines ls;
-    if (c1.r > c2.r) swap(c1, c2);
 
-    real_number g = norm(c1.p - c2.p);
+  template< typename R >
+  lines<R> tangent_cc(circle<R> a, circle<R> b) {
+    lines<R> ls;
+    if (a.r > b.r) std::swap(a, b);
+
+    auto d = a.o - b.o;
+    R g = norm(d);
+
     if (sign(g) == 0) return ls;
 
-    point u = (c1.p - c2.p) / sqrt(g);
-    point v(-u.imag(), u.real());
+    point<R> u = d / std::sqrt(g);
+    point<R> v(-u.y(), u.x());
 
     for (int s = 1; s >= -1; s -= 2) {
-      real_number h = (c1.r * s + c2.r) / sqrt(g);
-      if (sign(1 - norm(h)) == 0) {
-        ls.emplace_back(c2.p + u * c2.r, c2.p + (u + v) * c2.r);
-      } else if (sign(1 - norm(h)) > 0) {
-        point uu = u * h;
-        point vv = v * sqrt(1 - norm(h));
-        ls.emplace_back(c2.p + (uu + vv) * c2.r, c1.p - (uu + vv) * c1.r * s);
-        ls.emplace_back(c2.p + (uu - vv) * c2.r, c1.p - (uu - vv) * c1.r * s);
+      R h = (a.r * s + b.r) / std::sqrt(g);
+
+      auto dh = 1 - std::norm(h);
+      if (sign(dh) == 0) {
+        ls.emplace_back(b.o + u * b.r, b.o + (u + v) * b.r);
+      }
+      
+      else if (sign(dh) > 0) {
+        auto uu = u * h;
+        auto vv = v * std::sqrt(dh);
+        ls.emplace_back(b.o + (uu + vv) * b.r, a.o - (uu + vv) * a.r * (R)s);
+        ls.emplace_back(b.o + (uu - vv) * b.r, a.o - (uu - vv) * a.r * (R)s);
       }
     }
 
     return ls;
   }
+
 }
