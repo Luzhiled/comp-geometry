@@ -1,19 +1,22 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/5/CGL_5_A 
 // verification-helper: ERROR 0.000001
 
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/point-cloud/closest-pair.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
+
 #include <iostream>
+#include <complex>
 
-#include "../../../src/closest_pair.hpp"
-#include "../../../src/util/io_set.hpp"
-
-using namespace geometry;
 int main() {
+  using R = long double;
+
   int n;
   std::cin >> n;
 
-  points pts(n);
+  geometry::points<R> pts(n);
   for (auto &p: pts) std::cin >> p;
 
-  std::cout << closest_pair(pts) << std::endl;
+  auto [d, _] = geometry::closest_pair(pts);
+  std::cout << d << std::endl;
 }
