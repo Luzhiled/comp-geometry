@@ -1,32 +1,39 @@
 #pragma once
 
+#include "src/real-geometry/class/polygon.hpp"
+#include "src/real-geometry/compare/compare-x.hpp"
+#include "src/real-geometry/common/size-alias.hpp"
+#include "src/real-geometry/utility/sign.hpp"
+#include "src/real-geometry/operation/cross-product.hpp"
+#include "src/real-geometry/utility/next-idx.hpp"
+
 #include <complex>
 #include <algorithm>
 
-#include "./base.hpp"
-#include "./polygon.hpp"
-#include "./product.hpp"
-#include "./compare.hpp"
-
 namespace geometry {
-  real_number convex_diameter(const polygon &p) {
-    int n = p.size();
-    if (n == 2) return abs(p[0] - p[1]);
 
-    int i = 0, j = 0;
-    for (int k = 0; k < n; ++k) {
-      if ( compare_x(p[i], p[k])) i = k;
-      if (!compare_x(p[j], p[k])) j = k;
+  template< typename R >
+  R convex_diameter(const polygon<R> &poly) {
+    usize n = poly.size();
+
+    if (n == 2) return std::abs(poly[0] - poly[1]);
+
+    usize i = 0, j = 0;
+    for (usize k = 0; k < n; k++) {
+      if (    compare_x(poly[i], poly[k])) i = k;
+      if (not compare_x(poly[j], poly[k])) j = k;
     }
 
-    real_number res = 0;
-    int si = i, sj = j;
-    while (i != sj || j != si) {
-      res = max(res, abs(p[i] - p[j]));
-      if (sign(cross(p[(i + 1) % n] - p[i], p[(j + 1) % n] - p[j])) == -1) {
-        i = (i + 1) % n;
+    R res{0};
+    usize s = i, t = j;
+    while (i != t or j != s) {
+      res = std::max(res, std::abs(poly[i] - poly[j]));
+      auto u = poly[next_idx(i, n)] - poly[i];
+      auto v = poly[next_idx(j, n)] - poly[j];
+      if (sign(cross_product<R>(u, v)) == -1) {
+        i = next_idx(i, n);
       } else {
-        j = (j + 1) % n;
+        j = next_idx(j, n);
       }
     }
 
