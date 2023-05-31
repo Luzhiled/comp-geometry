@@ -1,14 +1,21 @@
 #pragma once
 
-#include "./polygon.hpp"
-#include "./ccw.hpp"
+#include "src/real-geometry/class/polygon.hpp"
+#include "src/real-geometry/common/size-alias.hpp"
+#include "src/real-geometry/operation/ccw.hpp"
+#include "src/real-geometry/utility/next-idx.hpp"
+#include "src/real-geometry/utility/prev-idx.hpp"
 
 namespace geometry {
-  bool is_convex(const polygon &poly) { // poly given counterclockwise 
-    int n = poly.size();
-    for (int i = 0; i < n; ++i) {
-      if (ccw(poly[(i + n - 1) % n], poly[i], poly[(i + 1) % n]) == -1) return false;
+
+  template< typename R >
+  bool is_convex(const polygon<R> &poly) {
+    usize n = poly.size();
+    for (usize i = 0; i < n; i++) {
+      if (ccw(poly[prev_idx(i, n)], poly[i], poly[next_idx(i, n)]) != -1) continue;
+      return false;
     }
     return true;
   }
+
 }
