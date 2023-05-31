@@ -1,16 +1,21 @@
 #pragma once
 
-#include "./base.hpp"
-#include "./circle.hpp"
-#include "./point.hpp"
-#include "./line.hpp"
-#include "./product.hpp"
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/operation/cross-product.hpp"
 
 namespace geometry {
-  circle circumscribed_circle(const point &a, const point &b, const point &c) {
-    real_number A = norm(b - c), B = norm(c - a), C = norm(a - b);
-    real_number S = norm(cross(b - a, c - a)), T = A + B + C;
-    point p = (A*(T - 2*A) * a + B*(T - 2*B) * b + C*(T - 2*C) * c) / (4 * S);
-    return circle(p, abs(p - a));
+
+  template< typename R >
+  circle<R> circumscribed_circle(const point<R> &a, const point<R> &b, const point<R> &c) {
+    R A = std::norm(b - c), B = std::norm(c - a), C = std::norm(a - b);
+
+    R S = std::norm(cross_product<R>(b - a, c - a));
+    R T = A + B + C;
+
+    point<R> o{(A*(T - 2*A) * a + B*(T - 2*B) * b + C*(T - 2*C) * c) / (4 * S)};
+
+    return circle(o, std::abs(o - a));
   }
+
 }
