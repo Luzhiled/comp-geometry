@@ -20,15 +20,15 @@ namespace geometry::internal {
 
   template< typename R >
   R impl_common_area_ca_cp(const circle<R> &c, const segment<R> &s) {
-    point<R> va = c.center() - s.a, vb = c.center() - s.b;
+    point<R> va = c.o - s.a, vb = c.o - s.b;
     R f = cross_product(va, vb), res = 0;
 
     if (sign(f) == 0) return res;
-    if (sign(std::max(std::abs(va), std::abs(vb)) - c.radius()) <= 0) return f;
+    if (sign(std::max(std::abs(va), std::abs(vb)) - c.r) <= 0) return f;
 
     point<R> d(inner_product(va, vb), cross_product(va, vb));
-    if (sign(distance_sp(s, c.center()) - c.radius()) >= 0) {
-      return std::norm(c.radius()) * std::atan2(d.y(), d.x());
+    if (sign(distance_sp(s, c.o) - c.r) >= 0) {
+      return std::norm(c.r) * std::atan2(d.y(), d.x());
     }
 
     points<R> ps = cross_point_cl(c, {s.a, s.b});

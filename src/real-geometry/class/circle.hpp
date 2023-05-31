@@ -9,10 +9,10 @@ namespace geometry {
 
   template< typename R >
   class circle {
+   public:
     point<R> o;
     R r;
 
-   public:
     circle() = default;
     circle(point<R> o, R r) : o(o), r(r) {}
 
