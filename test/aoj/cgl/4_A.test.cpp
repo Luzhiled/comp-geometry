@@ -1,36 +1,40 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/4/CGL/all/CGL_4_A
+
+#include "src/real-geometry/common/size-alias.hpp"
+#include "src/real-geometry/compare/compare-y.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/class/polygon.hpp"
+#include "src/real-geometry/point-cloud/convex-hull.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
 
 #include <iostream>
 
-#include "../../../src/polygon.hpp"
-#include "../../../src/convex_hull.hpp"
-#include "../../../src/util/io_set.hpp"
-
-using namespace geometry;
 int main() {
-  int n;
+  using R = long double;
+  using usize = geometry::usize;
+
+  usize n;
   std::cin >> n;
 
-  points pts(n);
+  geometry::points<R> pts(n);
   for (auto &p: pts) {
     std::cin >> p;
   }
 
-  polygon poly = convex_hull(pts);
+  geometry::polygon<R> poly = geometry::convex_hull(pts);
 
-  n = (int)poly.size();
-  std::cout << n << std::endl;
+  std::cout << poly.size() << std::endl;
 
-  int idx = 0;
-  for (int i = 0; i < n; ++i) {
-    if (compare_y(poly[i], poly[idx])) {
-      idx = i;
+  usize offset = 0;
+  for (usize i = 0; i < poly.size(); i++) {
+    if (geometry::compare_y(poly[i], poly[offset])) {
+      offset = i;
     }
   }
 
-  IoSetup(0);
-  for (int i = 0; i < n; ++i) {
-    std::cout << poly[(i + idx) % n] << std::endl;
+  geometry::IoSetup(0);
+  for (usize i = 0; i < poly.size(); i++) {
+    auto p = poly[(offset + i) % poly.size()];
+    std::cout << p.x() << " " << p.y() << std::endl;
   }
 }
