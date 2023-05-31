@@ -1,23 +1,31 @@
 #pragma once
 
-#include <complex>
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/utility/equals/vector.hpp"
+#include "src/real-geometry/utility/sign.hpp"
 
-#include "./base.hpp"
-#include "./point.hpp"
-#include "./circle.hpp"
+#include <complex>
+#include <cmath>
 
 namespace geometry {
-  points cross_point_cc(const circle &c1, const circle &c2) {
-    real_number d = abs(c1.p - c2.p), r = c1.r + c2.r;
-    if (sign(d - r) > 0 or sign(d + c1.r - c2.r) < 0) return {};
+
+  template< typename R >
+  points<R> cross_point_cc(const circle<R> &a, const circle<R> &b) {
+    R d = std::abs(a.o - b.o), r = a.r + b.r;
+
+    if (sign(d - r) > 0 or sign(d + a.r - b.r) < 0) return {};
     
-    real_number a = acos((norm(c1.r) - norm(c2.r) + norm(d)) / (2 * c1.r * d));
-    real_number t = arg(c2.p - c1.p);
-    point p = c1.p + polar(c1.r, t + a);
-    point q = c1.p + polar(c1.r, t - a);
-    if (equals(p.real(), q.real()) and equals(p.imag(), q.imag())) return {p};
+    R s = std::acos( (std::norm(a.r) - std::norm(b.r) + std::norm(d)) / (2 * a.r * d) );
+    R t = std::arg(b.o - a.o);
+
+    point<R> p{a.o + std::polar(a.r, t + s)};
+    point<R> q{a.o + std::polar(a.r, t - s)};
+
+    if (equals(p, q)) return {p};
     return {p, q};
   }
+
 }
 
 
