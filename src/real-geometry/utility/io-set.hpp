@@ -3,21 +3,22 @@
 #include <iomanip>
 
 namespace geometry {
-  using namespace std;
+
   class IoSetup {
     using u32 = unsigned int;
 
-    void set(ostream &os, u32 precision) {
-      os << fixed << setprecision(precision);
+    void set(std::ostream &os, u32 precision) {
+      os << std::fixed << std::setprecision(precision);
     }
 
-    public:
+   public:
     IoSetup(u32 precision = 15) {
-      cin.tie(0);
-      ios::sync_with_stdio(0);
+      std::cin.tie(0);
+      std::ios::sync_with_stdio(0);
 
-      set(cout, precision);
-      set(cerr, precision);
+      set(std::cout, precision);
+      set(std::cerr, precision);
     }
   } iosetup;
+
 }
