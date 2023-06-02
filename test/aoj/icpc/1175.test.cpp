@@ -1,16 +1,13 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/1175
+
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/position/intersect-cc.hpp"
 
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
-#include "../../../src/circle.hpp"
-#include "../../../src/intersect_cc.hpp"
-
-using namespace geometry;
-
-using CI = std::pair< circle, int >;
+using CI = std::pair< geometry::circle<geometry::f80>, int >;
 std::vector< int > dp;
 std::vector< int > mask;
 
@@ -18,7 +15,7 @@ void precalc(const std::vector< CI > &cs) {
   int n = cs.size();
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < i; j++) {
-      if (intersect_cc(cs[i].first, cs[j].first) >= 3) continue;
+      if (geometry::intersect_cc(cs[i].first, cs[j].first) >= 3) continue;
       mask[i] |= (1 << j);
     }
   }
@@ -58,9 +55,9 @@ void solve(int n) {
   dp = std::vector< int >(1 << n, -1);
   mask = std::vector< int >(n);
   for (int i = 0; i < n; i++) {
-    circle cir;
+    geometry::circle<geometry::f80> cir;
     int c;
-    std::cin >> cir.p >> cir.r >> c;
+    std::cin >> cir.o >> cir.r >> c;
 
     cs.emplace_back(cir, c);
   }
