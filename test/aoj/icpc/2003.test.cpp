@@ -1,19 +1,27 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2003
+
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/class/polygon.hpp"
+#include "src/real-geometry/class/segment.hpp"
+#include "src/real-geometry/common/const/eps.hpp"
+#include "src/real-geometry/common/float-alias.hpp"
+#include "src/real-geometry/compare/compare-x.hpp"
+#include "src/real-geometry/cross-point/cross-point-ll.hpp"
+#include "src/real-geometry/distance/distance-sp.hpp"
+#include "src/real-geometry/position/intersect-ss.hpp"
+#include "src/real-geometry/utility/sign.hpp"
 
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
-#include "../../../src/is_intersect.hpp"
-#include "../../../src/compare.hpp"
-#include "../../../src/distance_sp.hpp"
-#include "../../../src/cross_point_ll.hpp"
-
-using namespace geometry;
-
 void solve() {
-  set_eps(1e-9);
+  using geometry::f80;
+  using point = geometry::point<f80>;
+  using segment = geometry::segment<f80>;
+  using segments = geometry::segments<f80>;
+
+  geometry::set_eps(1e-9);
 
   segment s;
   std::cin >> s.a >> s.b;
@@ -30,12 +38,12 @@ void solve() {
   using T = std::pair< point, bool >;
   std::vector< T > pts;
   for (int i = 0; i < n; i++) {
-    if (!is_intersect(s, rs[i])) continue;
+    if (not intersect_ss(s, rs[i])) continue;
 
-    point p = cross_point_ll(s, rs[i]);
+    point p = geometry::cross_point_ll<f80>({s.a, s.b}, {rs[i].a, rs[i].b});
 
-    if (sign(distance_sp(s, p)) != 0) continue;
-    if (sign(distance_sp(rs[i], p)) != 0) continue;
+    if (geometry::sign(distance_sp(s, p)) != 0) continue;
+    if (geometry::sign(distance_sp(rs[i], p)) != 0) continue;
 
     pts.emplace_back(p, os[i] xor ls[i]);
   }
