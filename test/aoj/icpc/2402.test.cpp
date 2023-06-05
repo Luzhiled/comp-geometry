@@ -1,20 +1,23 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2402
 // verification-helper: ERROR 0.000001
+
+#include "src/real-geometry/angle/degree-to-radian.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/class/segment.hpp"
+#include "src/real-geometry/distance/distance-ss.hpp"
+#include "src/real-geometry/mapping/rotate.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
 
 #include <iostream>
 #include <algorithm>
 
-#include "../../../src/point.hpp"
-#include "../../../src/distance_ss.hpp"
-#include "../../../src/angle.hpp"
-#include "../../../src/util/io_set.hpp"
-
 using namespace geometry;
 
-const real_number inf = 1e8;
-real_number star_distance(int a, int b, const std::vector< segments > &stars) {
-  real_number res = inf;
+using R = long double;
+const R inf = 1e8;
+
+R star_distance(int a, int b, const std::vector< segments< R > > &stars) {
+  R res = inf;
 
   for (auto &seg_a : stars[a]) {
     for (auto &seg_b : stars[b]) {
@@ -25,22 +28,22 @@ real_number star_distance(int a, int b, const std::vector< segments > &stars) {
   return res;
 }
 
-using Graph = std::vector< std::vector< real_number > >;
+using Graph = std::vector< std::vector< R > >;
 
 void solve(int n, int m, int l) {
-  std::vector< segments > stars(n);
-  Graph G(n, std::vector< real_number >(n));
+  std::vector< segments< R > > stars(n);
+  Graph G(n, std::vector< R >(n));
 
   for (auto &star : stars) {
-    point p;
-    real_number a, r;
+    point< R > p;
+    R a, r;
     std::cin >> p >> a >> r;
 
-    point v(0, r);
-    points ps;
+    point< R > v(0, r);
+    points< R > ps;
     for (int i = 0; i < 6; i++) {
       ps.emplace_back(v);
-      v = rotate(degree_to_radian(144), v);
+      v = rotate<R>(degree_to_radian<R>(144), v);
     }
 
     for (auto &pt : ps) {
@@ -49,7 +52,7 @@ void solve(int n, int m, int l) {
     }
 
     for (int i = 0; i < 5; i++) {
-      segment s(ps[i], ps[i + 1]);
+      segment< R > s(ps[i], ps[i + 1]);
       star.emplace_back(s);
     }
   }
@@ -68,7 +71,7 @@ void solve(int n, int m, int l) {
     }
   }
 
-  cout << G[m][l] << endl;
+  std::cout << G[m][l] << std::endl;
 }
 
 int main() {
