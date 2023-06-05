@@ -36,10 +36,10 @@ namespace geometry {
 
     std::vector< usize > idxs(2 * n);
     polygon<R> poly(2 * n);
-    isize k = 0, i = 0;
+    usize k = 0, i = 0;
 
     auto check = [&](usize i) {
-      return sign(cross_product(poly[k - 1] - poly[k - 2], ps[i].first - poly[k - 1])) == -1;
+      return sign(cross_product<R>(poly[k - 1] - poly[k - 2], ps[i].first - poly[k - 1])) == -1;
     };
 
     while (i < n) {
@@ -51,11 +51,13 @@ namespace geometry {
 
     i = n - 2;
     usize t = k + 1;
-    while (i >= 0) {
+    while (true) {
       while (k >= t and check(i)) k--;
 
       std::tie(poly[k], idxs[k]) = ps[i];
-      k++; i--;
+      k++;
+      if (not i) break;
+      i--;
     }
 
     poly.resize(k - 1);

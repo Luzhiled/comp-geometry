@@ -1,15 +1,5 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2950
 // verification-helper: ERROR 1e-4
-
-#include <iostream>
-#include <complex>
-#include <set>
-#include <unordered_set>
-#include <queue>
-#include <utility>
-#include <vector>
-#include <functional>
 
 #include <random>
 #include <chrono>
@@ -93,10 +83,21 @@ struct RollingHash {
 // }}}
 }
 
-#include "src/contains.hpp"
-#include "src/convex_hull.hpp"
-#include "src/is_intersect.hpp"
-#include "src/util/io_set.hpp"
+#include "src/real-geometry/position/point-polygon-positional-relationships.hpp"
+#include "src/real-geometry/point-cloud/convex-hull-with-index.hpp"
+#include "src/real-geometry/position/intersect-ss.hpp"
+#include "src/real-geometry/operation/cross-product.hpp"
+#include "src/real-geometry/utility/sign.hpp"
+
+#include <iostream>
+#include <complex>
+#include <set>
+#include <unordered_set>
+#include <queue>
+#include <utility>
+#include <vector>
+#include <functional>
+
 template< typename T >
 using vector = std::vector<T>;
 
@@ -105,13 +106,10 @@ void solve(int n, int k) {
   using u64 = long long;
   using std::pair;
 
-  using geometry::point;
-  using geometry::points;
-  using geometry::polygon;
-  using geometry::segment;
-  using geometry::contains;
-  using geometry::is_intersect;
-  using geometry::operator>>;
+  using R = long double;
+  using points = geometry::points<R>;
+  using polygon = geometry::polygon<R>;
+  using segment = geometry::segment<R>;
 
   points pts(n);
   for (auto &pt : pts) std::cin >> pt;
@@ -180,15 +178,15 @@ void solve(int n, int k) {
         int cnt = 0;
         for (int k = 0; k < m; k++) {
           segment s(pts[as[k]], pts[as[(k + 1) % m]]);
-          if (is_intersect(s, s1)) cnt++;
-          if (is_intersect(s, s2)) cnt++;
+          if (intersect_ss(s, s1)) cnt++;
+          if (intersect_ss(s, s2)) cnt++;
         }
         if (cnt != 4) continue;
 
         polygon poly;
         bool f = false;
         for (auto i : vs) poly.emplace_back(pts[i]);
-        for (auto &p : pts) if (contains(poly, p) == geometry::OUT) f = true;
+        for (auto &p : pts) if (point_polygon_positional_relationships(p, poly) == 0) f = true;
         if (f) continue; 
 
         double len = calc_perimeter(vs);
