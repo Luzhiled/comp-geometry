@@ -1,10 +1,16 @@
 #pragma once
 
-#include "./circle.hpp"
-#include "./point.hpp"
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/utility/sign.hpp"
+
+#include <complex>
 
 namespace geometry {
-  bool in_circle(const circle &c, const point &p) {
-    return sign(abs(c.p - p) - c.r) == -1;
+
+  template< typename R >
+  bool in_circle(const circle<R> &c, const point<R> &p) {
+    return sign(std::abs(c.o - p) - c.r) == -1;
   }
+
 }
