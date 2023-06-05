@@ -1,4 +1,3 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2442
 // verification-helper: ERROR 0.0001
 
@@ -12,7 +11,7 @@
 using namespace geometry;
 
 void drop() {
-  std::cout << "NA" << endl;
+  std::cout << "NA" << std::endl;
   exit(0);
 }
 
@@ -36,7 +35,7 @@ int main() {
 
   for (int i = 0; i < n; i++) {
     int j = (i + n / 2) % n;
-    if (is_parallel(ss[i], ss[j]) == false) {
+    if (is_parallel<R>({ss[i].a, ss[i].b}, {ss[j].a, ss[j].b}) == false) {
       drop();
     }
 
@@ -45,5 +44,7 @@ int main() {
     }
   }
 
-  std::cout << (ps[0] + ps[n / 2]) * 0.5 << std::endl;
+  point<R> ans{ps[0] + ps[n / 2]};
+  ans *= 0.5;
+  std::cout << ans.x() << " " << ans.y() << std::endl;
 }
