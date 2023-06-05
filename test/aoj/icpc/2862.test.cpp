@@ -1,23 +1,24 @@
-// verification-helper: IGNORE
 // verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/2862
+
+#include "src/real-geometry/class/circle.hpp"
+#include "src/real-geometry/distance/distance-sp.hpp"
 
 #include <iostream>
 #include <bitset>
 
-#include "../../../src/circle.hpp"
-#include "../../../src/distance_sp.hpp"
-
 using namespace geometry;
 
+using R = long double;
+
 std::vector< int > dp;
-std::vector< real_number > rs;
-segments ss;
+std::vector< R > rs;
+segments<R> ss;
 
 bool can_move(int idx, int bit) {
   int n = rs.size();
   for (int i = 0; i < n; i++) {
     if (i == idx) continue;
-    point p;
+    point<R> p;
     if (bit & (1 << i)) p = ss[i].b;
     else p = ss[i].a;
 
