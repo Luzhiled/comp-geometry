@@ -1,11 +1,15 @@
-#include "./base.hpp"
-#include "./line.hpp"
-#include "./point.hpp"
-#include "./projection.hpp"
+#pragma once
+
+#include "src/real-geometry/class/line.hpp"
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/mapping/projection.hpp"
 
 namespace geometry {
-  real_number distance_lp(const line &l, const point &p) {
-    point pr = projection(l, p);
-    return abs(pr - p);
+
+  template< typename R >
+  R distance_lp(const line<R> &l, const point<R> &p) {
+    point<R> pr = projection(l, p);
+    return std::abs(pr - p);
   }
+
 }
