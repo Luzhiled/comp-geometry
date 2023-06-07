@@ -3,20 +3,19 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
-#include "src/point.hpp"
-#include "src/minimum_covering_circle.hpp"
-#include "src/util/io_set.hpp"
-
-using geometry::operator>>;
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/point-cloud/minimum-covering-circle.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
 
 int main() {
+  using R = long double;
+
   int n;
-  cin >> n;
+  std::cin >> n;
 
-  geometry::points pts(n);
-  for (auto &pt: pts) cin >> pt;
+  geometry::points<R> pts(n);
+  for (auto &pt: pts) std::cin >> pt;
 
-  cout << geometry::minimum_covering_circle(pts, 1333333333).r << endl;
+  std::cout << geometry::minimum_covering_circle(pts, 1333333333).r << std::endl;
 }

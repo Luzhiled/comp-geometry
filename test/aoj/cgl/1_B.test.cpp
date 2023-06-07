@@ -3,23 +3,25 @@
 
 #include <iostream>
 
-#include "../../../src/reflection.hpp"
-#include "../../../src/util/io_set.hpp"
+#include "src/real-geometry/mapping/reflection.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
 
-using namespace geometry;
 int main() {
-  point p1, p2;
+  using R = geometry::f80;
+  geometry::point< R > p1, p2;
   std::cin >> p1 >> p2;
 
-  line l(p1, p2);
+  geometry::line<R> l(p1, p2);
 
   int q;
   std::cin >> q;
 
   while (q--) {
-    point p;
+    geometry::point<R> p;
     std::cin >> p;
 
-    std::cout << reflection(l, p) << std::endl;
+    auto pt = reflection(l, p);
+    std::cout << pt.x() << " " << pt.y() << std::endl;
   }
 }

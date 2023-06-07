@@ -3,16 +3,17 @@
 
 #include <iostream>
 
-#include "../../../src/convex_diameter.hpp"
-#include "../../../src/util/io_set.hpp"
+#include "src/real-geometry/convex/convex-diameter.hpp"
+#include "src/real-geometry/utility/io-set.hpp"
 
-using namespace geometry;
 int main() {
+  using R = long double;
+
   int n;
   std::cin >> n;
 
-  polygon poly(n);
+  geometry::polygon<R> poly(n);
   for (auto &p: poly) std::cin >> p;
 
-  std::cout << convex_diameter(poly) << std::endl;
+  std::cout << geometry::convex_diameter(poly) << std::endl;
 }

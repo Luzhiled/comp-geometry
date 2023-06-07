@@ -2,15 +2,16 @@
 
 #include <iostream>
 
-#include "../../../src/polygon.hpp"
-#include "../../../src/contains.hpp"
+#include "src/real-geometry/class/polygon.hpp"
+#include "src/real-geometry/position/point-polygon-positional-relationships.hpp"
 
-using namespace geometry;
 int main() {
+  using R = long double;
+
   int n;
   std::cin >> n;
 
-  polygon poly(n);
+  geometry::polygon<R> poly(n);
   for (auto &p: poly) {
     std::cin >> p;
   }
@@ -19,9 +20,9 @@ int main() {
   std::cin >> q;
 
   while (q--) {
-    point p;
+    geometry::point<R> p;
     std::cin >> p;
 
-    std::cout << contains(poly, p) << std::endl;
+    std::cout << geometry::point_polygon_positional_relationships(p, poly) << std::endl;
   }
 }

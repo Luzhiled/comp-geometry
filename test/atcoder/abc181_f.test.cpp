@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
 
 // union find {{{
 class union_find {
@@ -45,36 +44,42 @@ class union_find {
 };
 // }}}
 
-#include "src/point.hpp"
-#include "src/distance_lp.hpp"
-using namespace geometry;
+#include "src/real-geometry/class/point.hpp"
+#include "src/real-geometry/distance/distance-lp.hpp"
+#include "src/real-geometry/utility/sign.hpp"
 
 int main() {
+  using R = long double;
+  using line = geometry::line<R>;
+  using point = geometry::point<R>;
+  using points = geometry::points<R>;
+  using geometry::sign;
+
   line t(point(0,  100), point(1,  100));
   line b(point(0, -100), point(1, -100));
 
   int n;
-  cin >> n;
+  std::cin >> n;
 
   points pts(n);
-  for (auto &p : pts) cin >> p;
+  for (auto &p : pts) std::cin >> p;
 
-  real_number ng = 200, ok = 0;
+  R ng = 200, ok = 0;
   for (int lb = 0; lb < 100; lb++) {
-    real_number mid = (ok + ng) / 2;
+    R mid = (ok + ng) / 2;
 
     union_find uf(n + 2);
     int T = n, B = n + 1;
     for (int i = 0; i < n; i++) {
       point p = pts[i];
-      if (sign(distance_lp(t, p) - mid) < 0) uf.unite(T, i);
-      if (sign(distance_lp(b, p) - mid) < 0) uf.unite(B, i);
+      if (sign(geometry::distance_lp(t, p) - mid) < 0) uf.unite(T, i);
+      if (sign(geometry::distance_lp(b, p) - mid) < 0) uf.unite(B, i);
     }
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < i; j++) {
         point p = pts[i], q = pts[j];
-        if (sign(abs(p - q) - mid) < 0) uf.unite(i, j);
+        if (sign(std::abs(p - q) - mid) < 0) uf.unite(i, j);
       }
     }
 
@@ -85,5 +90,5 @@ int main() {
     }
   }
 
-  cout << ok / 2 << endl;
+  std::cout << ok / 2 << std::endl;
 }
