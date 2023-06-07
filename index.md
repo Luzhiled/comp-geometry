@@ -1,124 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: src/_draft
-    pages:
-    - icon: ':warning:'
-      path: src/_draft/mat.h
-      title: src/_draft/mat.h
-  - name: src
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: src/angle.hpp
-      title: src/angle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/area.hpp
-      title: src/area.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/base.hpp
-      title: src/base.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/ccw.hpp
-      title: src/ccw.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/circle.hpp
-      title: src/circle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/circumscribed_circle.hpp
-      title: src/circumscribed_circle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/closest_pair.hpp
-      title: src/closest_pair.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/common_area_cc.hpp
-      title: src/common_area_cc.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/common_area_cp.hpp
-      title: src/common_area_cp.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/compare.hpp
-      title: src/compare.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/contains.hpp
-      title: src/contains.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/convex_cut.hpp
-      title: src/convex_cut.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/convex_diameter.hpp
-      title: src/convex_diameter.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/convex_hull.hpp
-      title: src/convex_hull.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/cross_point_cc.hpp
-      title: src/cross_point_cc.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/cross_point_cl.hpp
-      title: src/cross_point_cl.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/cross_point_ll.hpp
-      title: src/cross_point_ll.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/distance_lp.hpp
-      title: src/distance_lp.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/distance_sp.hpp
-      title: src/distance_sp.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/distance_ss.hpp
-      title: src/distance_ss.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/in_circle.hpp
-      title: src/in_circle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/inscribed_circle.hpp
-      title: src/inscribed_circle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/intersect_cc.hpp
-      title: src/intersect_cc.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/is_convex.hpp
-      title: src/is_convex.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/is_intersect.hpp
-      title: src/is_intersect.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/is_orthogonal.hpp
-      title: src/is_orthogonal.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/is_parallel.hpp
-      title: src/is_parallel.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/line.hpp
-      title: src/line.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/minimum_covering_circle.hpp
-      title: src/minimum_covering_circle.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/point.hpp
-      title: src/point.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/polygon.hpp
-      title: src/polygon.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/product.hpp
-      title: src/product.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/projection.hpp
-      title: src/projection.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/reflection.hpp
-      title: src/reflection.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/segment.hpp
-      title: src/segment.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/tangent_cc.hpp
-      title: src/tangent_cc.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/tangent_cp.hpp
-      title: src/tangent_cp.hpp
   - name: src/integer-geometry
     pages:
     - icon: ':warning:'
@@ -174,11 +56,217 @@ data:
     - icon: ':warning:'
       path: src/integer-geometry/unit-test/unit-test-twice_area.cpp
       title: src/integer-geometry/unit-test/unit-test-twice_area.cpp
-  - name: src/util
+  - name: src/real-geometry/angle
     pages:
     - icon: ':heavy_check_mark:'
-      path: src/util/io_set.hpp
-      title: src/util/io_set.hpp
+      path: src/real-geometry/angle/degree-to-radian.hpp
+      title: src/real-geometry/angle/degree-to-radian.hpp
+    - icon: ':warning:'
+      path: src/real-geometry/angle/get-sighed-angle.hpp
+      title: src/real-geometry/angle/get-sighed-angle.hpp
+    - icon: ':warning:'
+      path: src/real-geometry/angle/get-smaller-angle.hpp
+      title: src/real-geometry/angle/get-smaller-angle.hpp
+    - icon: ':warning:'
+      path: src/real-geometry/angle/radian-to-degree.hpp
+      title: src/real-geometry/angle/radian-to-degree.hpp
+  - name: src/real-geometry/area
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/area/common-area-cc.hpp
+      title: src/real-geometry/area/common-area-cc.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/area/common-area-circle-polygon.hpp
+      title: src/real-geometry/area/common-area-circle-polygon.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/area/polygon-area.hpp
+      title: src/real-geometry/area/polygon-area.hpp
+  - name: src/real-geometry/circle-lib
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/circle-lib/circumscribed-circle.hpp
+      title: src/real-geometry/circle-lib/circumscribed-circle.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/circle-lib/inscribed-circle.hpp
+      title: src/real-geometry/circle-lib/inscribed-circle.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/circle-lib/tangent-cc.hpp
+      title: src/real-geometry/circle-lib/tangent-cc.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/circle-lib/tangent-cp.hpp
+      title: src/real-geometry/circle-lib/tangent-cp.hpp
+  - name: src/real-geometry/class
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/class/circle.hpp
+      title: src/real-geometry/class/circle.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/class/line.hpp
+      title: src/real-geometry/class/line.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/class/point.hpp
+      title: src/real-geometry/class/point.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/class/polygon.hpp
+      title: src/real-geometry/class/polygon.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/class/segment.hpp
+      title: src/real-geometry/class/segment.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/class/vector.hpp
+      title: src/real-geometry/class/vector.hpp
+  - name: src/real-geometry/common/const
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/common/const/eps.hpp
+      title: src/real-geometry/common/const/eps.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/common/const/pi.hpp
+      title: src/real-geometry/common/const/pi.hpp
+  - name: src/real-geometry/common
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/common/float-alias.hpp
+      title: src/real-geometry/common/float-alias.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/common/int-alias.hpp
+      title: src/real-geometry/common/int-alias.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/common/size-alias.hpp
+      title: src/real-geometry/common/size-alias.hpp
+  - name: src/real-geometry/compare
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/compare/compare-x.hpp
+      title: src/real-geometry/compare/compare-x.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/compare/compare-y.hpp
+      title: src/real-geometry/compare/compare-y.hpp
+  - name: src/real-geometry/convex
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/convex/convex-cut.hpp
+      title: src/real-geometry/convex/convex-cut.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/convex/convex-diameter.hpp
+      title: src/real-geometry/convex/convex-diameter.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/convex/is-convex.hpp
+      title: src/real-geometry/convex/is-convex.hpp
+  - name: src/real-geometry/cross-point
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/cross-point/cross-point-cc.hpp
+      title: src/real-geometry/cross-point/cross-point-cc.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/cross-point/cross-point-cl.hpp
+      title: src/real-geometry/cross-point/cross-point-cl.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/cross-point/cross-point-ll.hpp
+      title: src/real-geometry/cross-point/cross-point-ll.hpp
+  - name: src/real-geometry/distance
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/distance/distance-lp.hpp
+      title: src/real-geometry/distance/distance-lp.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/distance/distance-sp.hpp
+      title: src/real-geometry/distance/distance-sp.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/distance/distance-ss.hpp
+      title: src/real-geometry/distance/distance-ss.hpp
+  - name: src/real-geometry/mapping
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/mapping/projection.hpp
+      title: src/real-geometry/mapping/projection.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/mapping/reflection.hpp
+      title: src/real-geometry/mapping/reflection.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/mapping/rotate.hpp
+      title: src/real-geometry/mapping/rotate.hpp
+  - name: src/real-geometry/numbers
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/numbers/ccw.hpp
+      title: src/real-geometry/numbers/ccw.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/numbers/posision-of-point-polygon.hpp
+      title: src/real-geometry/numbers/posision-of-point-polygon.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/numbers/sign.hpp
+      title: src/real-geometry/numbers/sign.hpp
+  - name: src/real-geometry/operation
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/operation/ccw.hpp
+      title: src/real-geometry/operation/ccw.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/operation/cross-product.hpp
+      title: src/real-geometry/operation/cross-product.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/operation/inner-product.hpp
+      title: src/real-geometry/operation/inner-product.hpp
+  - name: src/real-geometry/point-cloud
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/point-cloud/closest-pair.hpp
+      title: src/real-geometry/point-cloud/closest-pair.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/point-cloud/convex-hull-with-index.hpp
+      title: src/real-geometry/point-cloud/convex-hull-with-index.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/point-cloud/convex-hull.hpp
+      title: src/real-geometry/point-cloud/convex-hull.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/point-cloud/minimum-covering-circle.hpp
+      title: src/real-geometry/point-cloud/minimum-covering-circle.hpp
+  - name: src/real-geometry/position
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/position/in-circle.hpp
+      title: src/real-geometry/position/in-circle.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/position/intersect-cc.hpp
+      title: src/real-geometry/position/intersect-cc.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/position/intersect-ss.hpp
+      title: src/real-geometry/position/intersect-ss.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/position/is-orthogonal.hpp
+      title: src/real-geometry/position/is-orthogonal.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/position/is-parallel.hpp
+      title: src/real-geometry/position/is-parallel.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/position/point-polygon-positional-relationships.hpp
+      title: src/real-geometry/position/point-polygon-positional-relationships.hpp
+  - name: src/real-geometry/utility/equals
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/equals/real-number.hpp
+      title: src/real-geometry/utility/equals/real-number.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/equals/vector.hpp
+      title: src/real-geometry/utility/equals/vector.hpp
+  - name: src/real-geometry/utility
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/io-set.hpp
+      title: src/real-geometry/utility/io-set.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/next-idx.hpp
+      title: src/real-geometry/utility/next-idx.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/polygon-to-segments.hpp
+      title: src/real-geometry/utility/polygon-to-segments.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/prev-idx.hpp
+      title: src/real-geometry/utility/prev-idx.hpp
+    - icon: ':heavy_check_mark:'
+      path: src/real-geometry/utility/sign.hpp
+      title: src/real-geometry/utility/sign.hpp
   verificationCategories:
   - name: test/aoj/cgl
     pages:

@@ -46,8 +46,8 @@ data:
   isVerificationFile: false
   path: src/integer-geometry/points.hpp
   requiredBy:
-  - src/integer-geometry/unit-test/unit-test-ntimes_centroid.cpp
   - src/integer-geometry/ntimes_centroid.hpp
+  - src/integer-geometry/unit-test/unit-test-ntimes_centroid.cpp
   timestamp: '2022-05-14 03:45:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
